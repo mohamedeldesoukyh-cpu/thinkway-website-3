@@ -30,12 +30,12 @@ export default function CreatorProgram() {
           className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20"
         >
           <div>
-            <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-5 flex items-center gap-4">
-              <div className="w-6 h-[1px] bg-[#c0392b]" />
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
               For Creators
             </div>
             <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}>
-              CREATOR<br /><span className="text-[#c0392b]">PROGRAM</span>
+              CREATOR<br /><span className="text-[#1535C2]">PROGRAM</span>
             </h2>
           </div>
           <div className="max-w-sm">
@@ -66,7 +66,7 @@ export default function CreatorProgram() {
                 className="w-full flex items-center gap-6 py-7 text-left"
                 onClick={() => setActive(active === i ? null : i)}
               >
-                <span className="text-[10px] font-mono text-[#c0392b] tracking-widest shrink-0 w-6">{mod.num}</span>
+                <span className="text-[10px] font-mono text-[#1535C2] tracking-widest shrink-0 w-6">{mod.num}</span>
                 <h3
                   className="flex-1 font-semibold tracking-[0.12em] uppercase text-sm transition-colors duration-300"
                   style={{ color: active === i ? "#0a0a0a" : "#aaa" }}

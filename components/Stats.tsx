@@ -38,13 +38,13 @@ function StatItem({ item, inView, index }: { item: typeof statsData[0]; inView: 
       transition={{ delay: index * 0.1, duration: 0.8 }}
       className="py-10 px-8 border-b border-r border-[#ebebeb] relative group bg-white"
     >
-      <div className="text-[10px] tracking-[0.2em] uppercase text-[#c0392b] mb-4 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">✦</div>
+      <div className="text-[10px] tracking-[0.2em] uppercase text-[#1535C2] mb-4 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">✦</div>
       <div className="font-black text-[#0a0a0a] leading-none tabular-nums" style={{ fontSize: "clamp(42px, 6vw, 80px)", letterSpacing: "-0.04em" }}>
-        {count}<span className="text-[#c0392b]">{item.suffix}</span>
+        {count}<span className="text-[#1535C2]">{item.suffix}</span>
       </div>
       <div className="text-[11px] tracking-[0.15em] uppercase text-[#0a0a0a] mt-4 mb-1">{item.label}</div>
       <div className="text-[9px] tracking-[0.2em] text-[#ccc] uppercase">{item.sub}</div>
-      <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#c0392b] group-hover:w-full transition-all duration-500" />
+      <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#1535C2] group-hover:w-full transition-all duration-500" />
     </motion.div>
   );
 }
@@ -71,12 +71,12 @@ export default function Stats() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div>
-            <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-5 flex items-center gap-4">
-              <div className="w-6 h-[1px] bg-[#c0392b]" />
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
               By the Numbers
             </div>
             <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}>
-              RESULTS THAT<br /><span className="text-[#c0392b]">SPEAK.</span>
+              RESULTS THAT<br /><span className="text-[#1535C2]">SPEAK.</span>
             </h2>
           </div>
         </motion.div>

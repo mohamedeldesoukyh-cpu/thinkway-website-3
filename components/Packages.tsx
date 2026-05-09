@@ -64,7 +64,7 @@ export default function Packages() {
 
   return (
     <section id="packages" ref={ref} className="section-padding bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-40 pointer-events-none" style={{ background: "linear-gradient(to bottom, #c0392b, transparent)" }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-40 pointer-events-none" style={{ background: "linear-gradient(to bottom, #1535C2, transparent)" }} />
 
       <div className="container-custom">
         <motion.div
@@ -73,11 +73,11 @@ export default function Packages() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-5 flex items-center justify-center gap-4">
-            <div className="w-6 h-[1px] bg-[#c0392b]" />Pricing<div className="w-6 h-[1px] bg-[#c0392b]" />
+          <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center justify-center gap-4">
+            <div className="w-6 h-[1px] bg-[#1535C2]" />Pricing<div className="w-6 h-[1px] bg-[#1535C2]" />
           </div>
           <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}>
-            PRICING &amp;<br /><span className="text-[#c0392b]">PACKAGES</span>
+            PRICING &amp;<br /><span className="text-[#1535C2]">PACKAGES</span>
           </h2>
           <p className="text-[10px] text-[#aaa] tracking-[0.12em] uppercase mt-6 leading-[2.2] max-w-md mx-auto">
             Every package is tailored to your brand&apos;s goals. All pricing is bespoke — these tiers are frameworks, not ceilings.
@@ -96,18 +96,18 @@ export default function Packages() {
               className="relative p-8 overflow-hidden transition-all duration-500"
               style={{
                 background: pkg.highlight ? "#fff" : hovered === i ? "#fff" : "#fafafa",
-                border: pkg.highlight ? "1px solid rgba(192,57,43,0.2)" : "none",
-                boxShadow: pkg.highlight ? "0 8px 40px rgba(192,57,43,0.06)" : "none",
+                border: pkg.highlight ? "1px solid rgba(21,53,194,0.2)" : "none",
+                boxShadow: pkg.highlight ? "0 8px 40px rgba(21,53,194,0.06)" : "none",
               }}
             >
               {pkg.highlight && (
-                <div className="absolute top-0 right-0 bg-[#c0392b] text-white text-[9px] tracking-[0.2em] uppercase px-4 py-2">
+                <div className="absolute top-0 right-0 bg-[#1535C2] text-white text-[9px] tracking-[0.2em] uppercase px-4 py-2">
                   Most Popular
                 </div>
               )}
 
               <div className="mb-8">
-                <h3 className="text-[10px] tracking-[0.25em] uppercase text-[#c0392b] mb-3">{pkg.tier}</h3>
+                <h3 className="text-[10px] tracking-[0.25em] uppercase text-[#1535C2] mb-3">{pkg.tier}</h3>
                 <div className="font-black uppercase text-[#0a0a0a] leading-none" style={{ fontSize: "clamp(28px, 4vw, 44px)", letterSpacing: "-0.04em" }}>
                   {pkg.price}
                 </div>
@@ -127,8 +127,8 @@ export default function Packages() {
               <button
                 className={`w-full mt-8 py-4 text-[10px] tracking-[0.18em] uppercase font-medium transition-all duration-300 ${
                   pkg.highlight
-                    ? "bg-[#c0392b] text-white hover:bg-[#e74c3c]"
-                    : "border border-[#e0e0e0] text-[#aaa] hover:border-[#c0392b] hover:text-[#c0392b]"
+                    ? "bg-[#1535C2] text-white hover:bg-[#2a4fd4]"
+                    : "border border-[#e0e0e0] text-[#aaa] hover:border-[#1535C2] hover:text-[#1535C2]"
                 }`}
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               >

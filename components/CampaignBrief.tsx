@@ -30,7 +30,7 @@ export default function CampaignBrief() {
         className="object-cover object-center opacity-[0.04] pointer-events-none"
         onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
       />
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(192,57,43,0.04) 0%, transparent 70%)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(21,53,194,0.04) 0%, transparent 70%)" }} />
 
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
@@ -40,12 +40,12 @@ export default function CampaignBrief() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-6 flex items-center gap-4">
-              <div className="w-6 h-[1px] bg-[#c0392b]" />
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-6 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
               Let&apos;s Work Together
             </div>
             <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.88] mb-8" style={{ fontSize: "clamp(38px, 5.5vw, 78px)", letterSpacing: "-0.04em" }}>
-              START YOUR<br /><span className="text-[#c0392b]">CAMPAIGN</span>
+              START YOUR<br /><span className="text-[#1535C2]">CAMPAIGN</span>
             </h2>
             <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.4] mb-12 max-w-sm">
               Tell us about your brand and goals. Our team will review your brief and get back within 24 hours with a tailored proposal.
@@ -77,11 +77,11 @@ export default function CampaignBrief() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-col items-center justify-center py-24 text-center border border-[#f0e8e8] bg-[#fdf8f8]"
+                  className="flex flex-col items-center justify-center py-24 text-center border border-[#e8ecf8] bg-[#f6f8ff]"
                 >
-                  <div className="w-14 h-14 border border-[#c0392b] flex items-center justify-center mb-8">
+                  <div className="w-14 h-14 border border-[#1535C2] flex items-center justify-center mb-8">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                      <path d="M4 11l5 5 9-9" stroke="#c0392b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4 11l5 5 9-9" stroke="#1535C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold tracking-[0.1em] uppercase text-[#0a0a0a] mb-3">Brief Received</h3>
@@ -100,7 +100,7 @@ export default function CampaignBrief() {
                     <label className="block text-[9px] tracking-[0.25em] text-[#ccc] uppercase mb-3">Brand Name *</label>
                     <input type="text" required value={form.brand} onChange={(e) => setForm({ ...form, brand: e.target.value })}
                       placeholder="Your brand or company name"
-                      className="w-full bg-transparent text-[11px] text-[#0a0a0a] tracking-[0.08em] outline-none placeholder-[#ddd] border-b border-transparent focus:border-[#c0392b] pb-2 transition-colors" />
+                      className="w-full bg-transparent text-[11px] text-[#0a0a0a] tracking-[0.08em] outline-none placeholder-[#ddd] border-b border-transparent focus:border-[#1535C2] pb-2 transition-colors" />
                   </div>
 
                   {/* Email */}
@@ -108,7 +108,7 @@ export default function CampaignBrief() {
                     <label className="block text-[9px] tracking-[0.25em] text-[#ccc] uppercase mb-3">Contact Email *</label>
                     <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="you@company.com"
-                      className="w-full bg-transparent text-[11px] text-[#0a0a0a] tracking-[0.08em] outline-none placeholder-[#ddd] border-b border-transparent focus:border-[#c0392b] pb-2 transition-colors" />
+                      className="w-full bg-transparent text-[11px] text-[#0a0a0a] tracking-[0.08em] outline-none placeholder-[#ddd] border-b border-transparent focus:border-[#1535C2] pb-2 transition-colors" />
                   </div>
 
                   {/* Budget */}
@@ -118,7 +118,7 @@ export default function CampaignBrief() {
                       {budgetOptions.map((b) => (
                         <button key={b} type="button" onClick={() => setForm({ ...form, budget: b })}
                           className="tag transition-all duration-200"
-                          style={{ borderColor: form.budget === b ? "#c0392b" : "#e0e0e0", color: form.budget === b ? "#c0392b" : "#bbb" }}>
+                          style={{ borderColor: form.budget === b ? "#1535C2" : "#e0e0e0", color: form.budget === b ? "#1535C2" : "#bbb" }}>
                           {b}
                         </button>
                       ))}
@@ -132,7 +132,7 @@ export default function CampaignBrief() {
                       {platformOptions.map((p) => (
                         <button key={p} type="button" onClick={() => toggleArr(selectedPlatforms, p, setSelectedPlatforms)}
                           className="tag transition-all duration-200"
-                          style={{ borderColor: selectedPlatforms.includes(p) ? "#c0392b" : "#e0e0e0", color: selectedPlatforms.includes(p) ? "#c0392b" : "#bbb" }}>
+                          style={{ borderColor: selectedPlatforms.includes(p) ? "#1535C2" : "#e0e0e0", color: selectedPlatforms.includes(p) ? "#1535C2" : "#bbb" }}>
                           {p}
                         </button>
                       ))}
@@ -146,7 +146,7 @@ export default function CampaignBrief() {
                       {goalOptions.map((g) => (
                         <button key={g} type="button" onClick={() => toggleArr(selectedGoals, g, setSelectedGoals)}
                           className="tag transition-all duration-200"
-                          style={{ borderColor: selectedGoals.includes(g) ? "#c0392b" : "#e0e0e0", color: selectedGoals.includes(g) ? "#c0392b" : "#bbb" }}>
+                          style={{ borderColor: selectedGoals.includes(g) ? "#1535C2" : "#e0e0e0", color: selectedGoals.includes(g) ? "#1535C2" : "#bbb" }}>
                           {g}
                         </button>
                       ))}
@@ -158,7 +158,7 @@ export default function CampaignBrief() {
                     <label className="block text-[9px] tracking-[0.25em] text-[#ccc] uppercase mb-3">Target Audience</label>
                     <input type="text" value={form.audience} onChange={(e) => setForm({ ...form, audience: e.target.value })}
                       placeholder="e.g. 18–35 women in the GCC interested in beauty"
-                      className="w-full bg-transparent text-[11px] text-[#0a0a0a] tracking-[0.08em] outline-none placeholder-[#ddd] border-b border-transparent focus:border-[#c0392b] pb-2 transition-colors" />
+                      className="w-full bg-transparent text-[11px] text-[#0a0a0a] tracking-[0.08em] outline-none placeholder-[#ddd] border-b border-transparent focus:border-[#1535C2] pb-2 transition-colors" />
                   </div>
 
                   {/* Timeline */}
@@ -168,7 +168,7 @@ export default function CampaignBrief() {
                       {timelineOptions.map((t) => (
                         <button key={t} type="button" onClick={() => setForm({ ...form, timeline: t })}
                           className="tag transition-all duration-200"
-                          style={{ borderColor: form.timeline === t ? "#c0392b" : "#e0e0e0", color: form.timeline === t ? "#c0392b" : "#bbb" }}>
+                          style={{ borderColor: form.timeline === t ? "#1535C2" : "#e0e0e0", color: form.timeline === t ? "#1535C2" : "#bbb" }}>
                           {t}
                         </button>
                       ))}

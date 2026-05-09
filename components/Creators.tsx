@@ -24,10 +24,10 @@ function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; 
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative border border-[#ebebeb] bg-white p-8 group overflow-hidden card-hover"
-      style={{ borderColor: hovered ? "#c0392b22" : "#ebebeb" }}
+      style={{ borderColor: hovered ? "#1535C222" : "#ebebeb" }}
     >
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-[#c0392b04] to-transparent"
+        className="absolute inset-0 bg-gradient-to-br from-[#1535C204] to-transparent"
         initial={{ opacity: 0 }}
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
@@ -44,7 +44,7 @@ function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; 
             onError={(e) => {
               const parent = (e.currentTarget as HTMLImageElement).parentElement;
               if (parent) {
-                parent.innerHTML = `<div style="width:100%;height:100%;background:linear-gradient(135deg,#c0392b,#870d0d);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">${creator.name.split(" ").map((n: string) => n[0]).join("")}</div>`;
+                parent.innerHTML = `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1535C2,#0b1f8a);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">${creator.name.split(" ").map((n: string) => n[0]).join("")}</div>`;
               }
             }}
           />
@@ -66,7 +66,7 @@ function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; 
           <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">Followers</div>
         </div>
         <div>
-          <div className="text-lg font-bold text-[#c0392b]">{creator.engagement}</div>
+          <div className="text-lg font-bold text-[#1535C2]">{creator.engagement}</div>
           <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">Engagement</div>
         </div>
       </div>
@@ -111,13 +111,13 @@ export default function Creators() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
         >
           <div>
-            <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-5 flex items-center gap-4">
-              <div className="w-6 h-[1px] bg-[#c0392b]" />
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
               Our Network
             </div>
             <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}>
               FEATURED
-              <br /><span className="text-[#c0392b]">CREATORS</span>
+              <br /><span className="text-[#1535C2]">CREATORS</span>
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-4">

@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --accent: #c0392b;
-  --accent-light: #e74c3c;
+  --accent: #1535C2;
+  --accent-light: #2a4fd4;
   --gold: #c9a84c;
   --muted: #888888;
   --border: #e8e8e8;
@@ -61,10 +61,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #fff; }
-::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #1535C2; border-radius: 2px; }
 
 /* Selection */
-::selection { background: #c0392b; color: #fff; }
+::selection { background: #1535C2; color: #fff; }
 
 /* Noise texture overlay */
 body::before {
@@ -107,7 +107,7 @@ body::before {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #c0392b;
+  background: #1535C2;
   color: #fff;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -118,7 +118,7 @@ body::before {
 }
 
 .btn-primary:hover {
-  background: #e74c3c;
+  background: #2a4fd4;
 }
 
 .btn-outline {
@@ -137,9 +137,9 @@ body::before {
 }
 
 .btn-outline:hover {
-  border-color: #c0392b;
-  color: #c0392b;
-  background: rgba(192, 57, 43, 0.04);
+  border-color: #1535C2;
+  color: #1535C2;
+  background: rgba(21, 53, 194, 0.04);
 }
 
 /* Section spacing */
@@ -195,6 +195,6 @@ body::before {
 
 .card-hover:hover {
   transform: translateY(-6px);
-  border-color: #c0392b !important;
+  border-color: #1535C2 !important;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }

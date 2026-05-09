@@ -24,7 +24,7 @@ export default function Manifesto() {
       {/* Accent orb */}
       <div
         className="absolute top-1/2 left-[60%] -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(192,57,43,0.04) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(21,53,194,0.04) 0%, transparent 70%)" }}
       />
 
       <div className="container-custom">
@@ -35,8 +35,8 @@ export default function Manifesto() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-8 flex items-center gap-4">
-              <div className="w-6 h-[1px] bg-[#c0392b]" />
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-8 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
               Our Philosophy
             </div>
 
@@ -46,12 +46,12 @@ export default function Manifesto() {
             >
               CREATORS
               <br />FIRST.
-              <br /><em className="text-[#c0392b] not-italic font-light">RESULTS</em>
+              <br /><em className="text-[#1535C2] not-italic font-light">RESULTS</em>
               <br />ALWAYS.
             </h2>
 
             <div className="mt-12 flex items-start gap-4">
-              <div className="w-[1px] h-20 bg-gradient-to-b from-[#c0392b] to-transparent shrink-0 mt-1" />
+              <div className="w-[1px] h-20 bg-gradient-to-b from-[#1535C2] to-transparent shrink-0 mt-1" />
               <p className="text-[11px] tracking-[0.1em] uppercase leading-[2.4] text-[#999] max-w-sm">
                 We don&apos;t just run campaigns — we build influence.
                 Our network of creators, data-driven strategy, and creative execution
@@ -92,9 +92,9 @@ export default function Manifesto() {
                 transition={{ delay: 0.35 + i * 0.1, duration: 0.7 }}
                 className="flex gap-6 py-7 border-b border-[#f0f0f0] group"
               >
-                <span className="text-[10px] text-[#c0392b] font-mono tracking-widest pt-1 shrink-0">{item.num}</span>
+                <span className="text-[10px] text-[#1535C2] font-mono tracking-widest pt-1 shrink-0">{item.num}</span>
                 <div>
-                  <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-[#0a0a0a] mb-2 group-hover:text-[#c0392b] transition-colors">
+                  <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-[#0a0a0a] mb-2 group-hover:text-[#1535C2] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-[10px] text-[#aaa] tracking-[0.08em] leading-[2]">{item.desc}</p>

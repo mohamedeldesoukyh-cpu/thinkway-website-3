@@ -74,8 +74,8 @@ export default function Services() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
         >
           <div>
-            <div className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase mb-5 flex items-center gap-4">
-              <div className="w-6 h-[1px] bg-[#c0392b]" />
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
               What We Do
             </div>
             <h2
@@ -107,12 +107,12 @@ export default function Services() {
 
               <div
                 className="w-12 h-12 flex items-center justify-center mb-8 transition-colors duration-300"
-                style={{ color: hovered === i ? "#c0392b" : "#ccc" }}
+                style={{ color: hovered === i ? "#1535C2" : "#ccc" }}
               >
                 {s.icon}
               </div>
 
-              <div className="text-[9px] tracking-[0.28em] uppercase text-[#c0392b] mb-4">{s.category}</div>
+              <div className="text-[9px] tracking-[0.28em] uppercase text-[#1535C2] mb-4">{s.category}</div>
 
               <h3
                 className="font-bold uppercase text-[#0a0a0a] leading-[0.95] mb-6 whitespace-pre-line"
@@ -130,7 +130,7 @@ export default function Services() {
               </div>
 
               <motion.div
-                className="absolute bottom-0 left-0 h-[2px] bg-[#c0392b]"
+                className="absolute bottom-0 left-0 h-[2px] bg-[#1535C2]"
                 initial={{ width: 0 }}
                 animate={{ width: hovered === i ? "100%" : 0 }}
                 transition={{ duration: 0.4 }}

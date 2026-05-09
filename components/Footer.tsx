@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ThinkwayLogo from "@/components/ThinkwayLogo";
 
 const footerLinks = {
   Agency: ["About Us", "Our Approach", "Case Studies", "Careers"],
@@ -26,20 +27,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 relative shrink-0">
-                <div className="absolute inset-0 bg-[#c0392b]" />
-                <div className="absolute inset-[3px] bg-[#f8f8f8]" />
-                <div className="absolute inset-[6px] bg-[#c0392b]" />
-              </div>
-              <span className="text-sm font-bold tracking-[0.25em] text-[#0a0a0a] uppercase">THINKWAY</span>
+            <div className="mb-8">
+              <ThinkwayLogo variant="dark" />
             </div>
             <p className="text-[10px] text-[#bbb] tracking-[0.1em] uppercase leading-[2.4] max-w-xs mb-8">
               Where influence meets strategy. We build campaigns that move culture — and move product.
             </p>
             <div className="flex gap-3">
               {["IG", "TT", "LI", "YT"].map((s) => (
-                <div key={s} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#c0392b] hover:text-[#c0392b] transition-all duration-300 cursor-none">
+                <div key={s} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
                   {s}
                 </div>
               ))}
@@ -49,7 +45,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group}>
-              <div className="text-[9px] tracking-[0.28em] uppercase text-[#c0392b] mb-6 font-medium">{group}</div>
+              <div className="text-[9px] tracking-[0.28em] uppercase text-[#1535C2] mb-6 font-medium">{group}</div>
               <ul className="space-y-4">
                 {links.map((link) => (
                   <li key={link}>

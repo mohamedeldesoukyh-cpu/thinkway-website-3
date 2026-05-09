@@ -53,19 +53,19 @@ export default function Hero() {
           playsInline
           onCanPlay={() => setVideoReady(true)}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 0.18 : 0 }}
+          style={{ opacity: videoReady ? 0.60 : 0 }}
         />
         {/* White fallback until video loads */}
         <div
           className="absolute inset-0 bg-white transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
         />
-        {/* Gradient: strong white fade on left for text, gentle fade right */}
+        {/* Gradient: stronger white fade on left so text stays sharp at 60% video opacity */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(255,255,255,0.97) 35%, rgba(255,255,255,0.82) 58%, rgba(255,255,255,0.3) 100%)",
+              "linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.45) 70%, rgba(255,255,255,0.1) 100%)",
           }}
         />
         {/* Top & bottom vignette */}
@@ -81,7 +81,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(192,57,43,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(21,53,194,0.07) 0%, transparent 65%)",
           }}
         />
         {/* Subtle grid */}
@@ -148,7 +148,7 @@ export default function Hero() {
             className="px-6 py-4 text-center"
             style={{
               background: "rgba(255,255,255,0.95)",
-              border: "1px solid rgba(192,57,43,0.2)",
+              border: "1px solid rgba(21,53,194,0.2)",
               boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
             }}
           >
@@ -168,8 +168,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-10"
           >
-            <div className="w-6 h-[1px] bg-[#c0392b]" />
-            <span className="text-[10px] tracking-[0.3em] text-[#c0392b] uppercase font-medium">
+            <div className="w-6 h-[1px] bg-[#1535C2]" />
+            <span className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase font-medium">
               Influencer Marketing · Global Network
             </span>
           </motion.div>
@@ -185,7 +185,7 @@ export default function Hero() {
                   className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
                   style={{ fontSize: "clamp(52px, 8vw, 110px)", letterSpacing: "-0.04em" }}
                 >
-                  {line === "ADS." ? <>ADS<span className="text-[#c0392b]">.</span></> : line}
+                  {line === "ADS." ? <>ADS<span className="text-[#1535C2]">.</span></> : line}
                 </motion.h1>
               </div>
             ))}
@@ -250,7 +250,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[1px] h-10 bg-gradient-to-b from-[#c0392b] to-transparent"
+          className="w-[1px] h-10 bg-gradient-to-b from-[#1535C2] to-transparent"
         />
       </motion.div>
     </section>
