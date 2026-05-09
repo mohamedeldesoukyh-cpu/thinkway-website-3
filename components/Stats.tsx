@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 function useCounter(target: number, inView: boolean, duration = 2000) {
   const [val, setVal] = useState(0);
@@ -61,7 +62,15 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="stats" ref={ref} className="bg-[#060606] overflow-hidden">
+    <section id="stats" ref={ref} className="bg-[#060606] overflow-hidden relative">
+      {/* Analytics background image (analytics-bg.jpg — prompt #7) */}
+      <Image
+        src="/media/analytics-bg.jpg"
+        alt="Analytics visualization"
+        fill
+        className="object-cover object-center opacity-[0.07] pointer-events-none"
+        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+      />
       {/* Section header */}
       <div className="container-custom pt-24 pb-16">
         <motion.div

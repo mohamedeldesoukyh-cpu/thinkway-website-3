@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const creators = [
   {
@@ -15,6 +16,7 @@ const creators = [
     specialty: "Luxury & Fashion",
     location: "Dubai, UAE",
     color: "#c0392b",
+    image: "/media/creator-01.jpg",
   },
   {
     id: "02",
@@ -27,6 +29,7 @@ const creators = [
     specialty: "Consumer Tech",
     location: "Riyadh, KSA",
     color: "#c0392b",
+    image: "/media/creator-02.jpg",
   },
   {
     id: "03",
@@ -39,6 +42,7 @@ const creators = [
     specialty: "Beauty & Skincare",
     location: "Cairo, Egypt",
     color: "#c0392b",
+    image: "/media/creator-03.jpg",
   },
   {
     id: "04",
@@ -51,6 +55,7 @@ const creators = [
     specialty: "Health & Fitness",
     location: "Kuwait City",
     color: "#c0392b",
+    image: "/media/creator-04.jpg",
   },
   {
     id: "05",
@@ -63,6 +68,7 @@ const creators = [
     specialty: "Food & Hospitality",
     location: "Beirut, Lebanon",
     color: "#c0392b",
+    image: "/media/creator-05.jpg",
   },
   {
     id: "06",
@@ -75,6 +81,7 @@ const creators = [
     specialty: "Street Culture",
     location: "London, UK",
     color: "#c0392b",
+    image: "/media/creator-06.jpg",
   },
 ];
 
@@ -101,12 +108,20 @@ function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; 
 
       {/* Header */}
       <div className="flex items-start justify-between mb-6 relative z-10">
-        {/* Avatar placeholder */}
-        <div
-          className="w-12 h-12 flex items-center justify-center text-xs font-bold text-white"
-          style={{ background: `linear-gradient(135deg, #c0392b, #870d0d)` }}
-        >
-          {creator.name.split(" ").map((n) => n[0]).join("")}
+        {/* Avatar */}
+        <div className="w-12 h-12 relative overflow-hidden shrink-0">
+          <Image
+            src={creator.image}
+            alt={creator.name}
+            fill
+            className="object-cover"
+            onError={(e) => {
+              const parent = (e.currentTarget as HTMLImageElement).parentElement;
+              if (parent) {
+                parent.innerHTML = `<div style="width:100%;height:100%;background:linear-gradient(135deg,#c0392b,#870d0d);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">${creator.name.split(" ").map((n: string) => n[0]).join("")}</div>`;
+              }
+            }}
+          />
         </div>
         <span className="text-[10px] font-mono text-[#222] tracking-widest">{creator.id}</span>
       </div>

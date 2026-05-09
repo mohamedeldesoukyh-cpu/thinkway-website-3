@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 export default function Manifesto() {
   const ref = useRef(null);
@@ -9,12 +10,21 @@ export default function Manifesto() {
 
   return (
     <section ref={ref} className="section-padding bg-[#080808] relative overflow-hidden">
-      {/* Accent orb */}
+      {/* Section background image (manifesto.jpg — prompt #3) */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none">
+        <Image
+          src="/media/manifesto.jpg"
+          alt="Creators First"
+          fill
+          className="object-cover object-center opacity-[0.12]"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, #080808 0%, transparent 60%)" }} />
+      </div>
+      {/* Accent orb fallback */}
       <div
         className="absolute top-1/2 left-[60%] -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(192,57,43,0.08) 0%, transparent 70%)",
-        }}
+        style={{ background: "radial-gradient(circle, rgba(192,57,43,0.06) 0%, transparent 70%)" }}
       />
 
       <div className="container-custom">

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const footerLinks = {
   Agency: ["About Us", "Our Approach", "Case Studies", "Careers"],
@@ -11,7 +12,15 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#060606] border-t border-[#0d0d0d]">
+    <footer className="bg-[#060606] border-t border-[#0d0d0d] relative overflow-hidden">
+      {/* Footer texture (footer-texture.jpg — prompt #12) */}
+      <Image
+        src="/media/footer-texture.jpg"
+        alt=""
+        fill
+        className="object-cover object-center opacity-[0.06] pointer-events-none"
+        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+      />
       {/* Main footer */}
       <div className="container-custom py-20">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">

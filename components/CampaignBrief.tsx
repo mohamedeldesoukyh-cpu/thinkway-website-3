@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const budgetOptions = ["$5K – $15K", "$15K – $50K", "$50K – $150K", "$150K+", "Not sure yet"];
 const platformOptions = ["Instagram", "TikTok", "YouTube", "Snapchat", "X (Twitter)"];
@@ -33,7 +34,15 @@ export default function CampaignBrief() {
 
   return (
     <section id="contact" ref={ref} className="section-padding bg-[#080808] relative overflow-hidden">
-      {/* BG accent */}
+      {/* CTA background image (cta-bg.jpg — prompt #11) */}
+      <Image
+        src="/media/cta-bg.jpg"
+        alt="Start your campaign"
+        fill
+        className="object-cover object-center opacity-[0.08] pointer-events-none"
+        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+      />
+      {/* BG accent overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

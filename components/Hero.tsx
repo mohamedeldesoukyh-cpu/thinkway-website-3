@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const platforms = [
   { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
@@ -31,18 +32,27 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-[#080808]">
-      {/* Background image placeholder with gradient overlay */}
+      {/* Hero background image */}
       <div className="absolute inset-0 z-0">
+        <Image
+          src="/media/hero-main.jpg"
+          alt="THINKWAY hero"
+          fill
+          priority
+          className="object-cover object-center opacity-25"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+        />
+        {/* Gradient overlay — always shown, darkens image for text legibility */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 80% at 75% 50%, rgba(192,57,43,0.12) 0%, transparent 70%), linear-gradient(135deg, #080808 0%, #0d0d0d 100%)",
+              "linear-gradient(90deg, #080808 40%, rgba(8,8,8,0.7) 70%, rgba(8,8,8,0.3) 100%), radial-gradient(ellipse 60% 80% at 75% 50%, rgba(192,57,43,0.12) 0%, transparent 70%)",
           }}
         />
-        {/* Grid lines */}
+        {/* Subtle grid */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
             backgroundSize: "80px 80px",
