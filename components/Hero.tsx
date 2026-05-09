@@ -9,7 +9,7 @@ const platforms = [
   { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
   { name: "TikTok", color: "#ff0050", icon: "TT", stat: "1.7B users" },
   { name: "YouTube", color: "#FF0000", icon: "YT", stat: "2.7B users" },
-  { name: "Snapchat", color: "#FFFC00", icon: "SC", stat: "750M users" },
+  { name: "Snapchat", color: "#f5a623", icon: "SC", stat: "750M users" },
 ];
 
 const HEADLINE = ["YOUR BRAND", "DESERVES", "MORE THAN", "ADS."];
@@ -35,21 +35,15 @@ export default function Hero() {
     return () => clearInterval(t);
   }, []);
 
-  // Ensure autoplay on mobile (requires muted + playsInline)
   useEffect(() => {
-    const vid = videoRef.current;
-    if (!vid) return;
-    vid.play().catch(() => {});
+    videoRef.current?.play().catch(() => {});
   }, []);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-[#080808]">
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-white">
 
       {/* ── LOOPING VIDEO BACKGROUND ── */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ scale: videoScale }}
-      >
+      <motion.div className="absolute inset-0 z-0" style={{ scale: videoScale }}>
         <video
           ref={videoRef}
           src={HERO_VIDEO}
@@ -59,22 +53,19 @@ export default function Hero() {
           playsInline
           onCanPlay={() => setVideoReady(true)}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 0.45 : 0 }}
+          style={{ opacity: videoReady ? 0.18 : 0 }}
         />
-
-        {/* Dark fallback shown until video loads */}
+        {/* White fallback until video loads */}
         <div
-          className="absolute inset-0 bg-[#080808] transition-opacity duration-1000"
+          className="absolute inset-0 bg-white transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
         />
-
-        {/* Gradient layers over the video */}
-        {/* Left-to-right: fully opaque on left for text, fades to transparent */}
+        {/* Gradient: strong white fade on left for text, gentle fade right */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, #080808 38%, rgba(8,8,8,0.75) 60%, rgba(8,8,8,0.25) 100%)",
+              "linear-gradient(90deg, rgba(255,255,255,0.97) 35%, rgba(255,255,255,0.82) 58%, rgba(255,255,255,0.3) 100%)",
           }}
         />
         {/* Top & bottom vignette */}
@@ -82,29 +73,29 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(8,8,8,0.6) 0%, transparent 20%, transparent 80%, rgba(8,8,8,0.8) 100%)",
+              "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, transparent 18%, transparent 82%, rgba(255,255,255,0.8) 100%)",
           }}
         />
-        {/* Crimson accent glow on the right */}
+        {/* Crimson accent glow — right side */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(192,57,43,0.15) 0%, transparent 65%)",
+              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(192,57,43,0.07) 0%, transparent 65%)",
           }}
         />
-        {/* Subtle grid overlay */}
+        {/* Subtle grid */}
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
       </motion.div>
 
-      {/* ── FLOATING PLATFORM CARDS (right side, parallax) ── */}
+      {/* ── FLOATING PLATFORM CARDS ── */}
       <motion.div
         className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block z-10"
         style={{ y, opacity }}
@@ -113,10 +104,7 @@ export default function Hero() {
           <motion.div
             key={p.name}
             className="absolute"
-            style={{
-              top: `${18 + i * 20}%`,
-              right: `${8 + (i % 2) * 12}%`,
-            }}
+            style={{ top: `${18 + i * 20}%`, right: `${8 + (i % 2) * 12}%` }}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2 + i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -129,36 +117,27 @@ export default function Hero() {
               <div
                 className="flex items-center gap-3 px-5 py-3"
                 style={{
-                  background: "rgba(8,8,8,0.85)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "rgba(255,255,255,0.92)",
+                  border: "1px solid rgba(0,0,0,0.07)",
                   backdropFilter: "blur(24px)",
-                  boxShadow: `0 0 40px ${p.color}18, 0 8px 32px rgba(0,0,0,0.4)`,
+                  boxShadow: `0 4px 30px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04)`,
                 }}
               >
-                <div
-                  className="w-8 h-8 flex items-center justify-center text-[10px] font-bold shrink-0"
-                  style={{ background: p.color, color: "#fff" }}
-                >
+                <div className="w-8 h-8 flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: p.color, color: "#fff" }}>
                   {p.icon}
                 </div>
                 <div>
-                  <div className="text-white text-xs font-medium tracking-wider">{p.name}</div>
-                  <div className="text-[#555] text-[10px] tracking-widest uppercase">{p.stat}</div>
+                  <div className="text-[#0a0a0a] text-xs font-medium tracking-wider">{p.name}</div>
+                  <div className="text-[#aaa] text-[10px] tracking-widest uppercase">{p.stat}</div>
                 </div>
-                <div
-                  className="ml-2 w-10 h-[1px]"
-                  style={{ background: `linear-gradient(90deg, transparent, ${p.color}90)` }}
-                />
+                <div className="ml-2 w-10 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${p.color}80)` }} />
               </div>
-              <div
-                className="absolute -top-1 -right-1 w-2 h-2 rounded-full"
-                style={{ background: p.color, boxShadow: `0 0 10px ${p.color}` }}
-              />
+              <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full" style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }} />
             </motion.div>
           </motion.div>
         ))}
 
-        {/* Live campaign counter */}
+        {/* Campaign counter */}
         <motion.div
           className="absolute bottom-[22%] right-[18%]"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -168,14 +147,13 @@ export default function Hero() {
           <div
             className="px-6 py-4 text-center"
             style={{
-              background: "rgba(192,57,43,0.1)",
-              border: "1px solid rgba(192,57,43,0.3)",
-              backdropFilter: "blur(20px)",
-              boxShadow: "0 0 40px rgba(192,57,43,0.1)",
+              background: "rgba(255,255,255,0.95)",
+              border: "1px solid rgba(192,57,43,0.2)",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
             }}
           >
-            <div className="text-3xl font-bold text-white tabular-nums">{count}+</div>
-            <div className="text-[10px] tracking-[0.2em] text-[#888] uppercase mt-1">Campaigns Launched</div>
+            <div className="text-3xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
+            <div className="text-[10px] tracking-[0.2em] text-[#aaa] uppercase mt-1">Campaigns Launched</div>
           </div>
         </motion.div>
       </motion.div>
@@ -204,14 +182,10 @@ export default function Hero() {
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  className="block font-black uppercase leading-[0.9] text-white"
+                  className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
                   style={{ fontSize: "clamp(52px, 8vw, 110px)", letterSpacing: "-0.04em" }}
                 >
-                  {line === "ADS." ? (
-                    <>ADS<span className="text-[#c0392b]">.</span></>
-                  ) : (
-                    line
-                  )}
+                  {line === "ADS." ? <>ADS<span className="text-[#c0392b]">.</span></> : line}
                 </motion.h1>
               </div>
             ))}
@@ -222,7 +196,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05 }}
-            className="mt-10 text-[#777] text-xs tracking-[0.12em] uppercase leading-[2.2] max-w-[420px]"
+            className="mt-10 text-[#888] text-xs tracking-[0.12em] uppercase leading-[2.2] max-w-[420px]"
           >
             We connect brands with high-impact creators to drive real results.
             From awareness to conversion — we build campaigns that perform.
@@ -235,29 +209,21 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-wrap items-center gap-4 mt-12"
           >
-            <button
-              className="btn-primary"
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-            >
+            <button className="btn-primary" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>
               Start a Campaign
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
-            <button
-              className="btn-outline"
-              onClick={() => document.querySelector("#creators")?.scrollIntoView({ behavior: "smooth" })}
-            >
+            <button className="btn-outline" onClick={() => document.querySelector("#creators")?.scrollIntoView({ behavior: "smooth" })}>
               View Creators
             </button>
           </motion.div>
 
-          {/* Bottom stats row */}
+          {/* Bottom stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="flex items-center gap-10 mt-20 pt-8 border-t border-[#ffffff0a]"
+            className="flex items-center gap-10 mt-20 pt-8 border-t border-[#ebebeb]"
           >
             {[
               { val: "150M+", label: "Total Reach" },
@@ -265,8 +231,8 @@ export default function Hero() {
               { val: "98%", label: "Client Retention" },
             ].map((s) => (
               <div key={s.label}>
-                <div className="text-xl font-bold text-white tracking-tight">{s.val}</div>
-                <div className="text-[9px] tracking-[0.22em] text-[#555] uppercase mt-1">{s.label}</div>
+                <div className="text-xl font-bold text-[#0a0a0a] tracking-tight">{s.val}</div>
+                <div className="text-[9px] tracking-[0.22em] text-[#bbb] uppercase mt-1">{s.label}</div>
               </div>
             ))}
           </motion.div>
@@ -280,7 +246,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
-        <span className="text-[9px] tracking-[0.3em] text-[#444] uppercase">Scroll</span>
+        <span className="text-[9px] tracking-[0.3em] text-[#ccc] uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}

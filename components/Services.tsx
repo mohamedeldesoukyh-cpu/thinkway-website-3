@@ -64,7 +64,7 @@ export default function Services() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="services" ref={ref} className="section-padding bg-[#060606]">
+    <section id="services" ref={ref} className="section-padding bg-[#f8f8f8]">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -79,19 +79,19 @@ export default function Services() {
               What We Do
             </div>
             <h2
-              className="font-black uppercase text-white leading-[0.9]"
+              className="font-black uppercase text-[#0a0a0a] leading-[0.9]"
               style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}
             >
               SERVICES
             </h2>
           </div>
-          <p className="text-[10px] tracking-[0.1em] text-[#444] uppercase leading-[2.2] max-w-[280px]">
+          <p className="text-[10px] tracking-[0.1em] text-[#aaa] uppercase leading-[2.2] max-w-[280px]">
             A full suite of influencer marketing services — built for brands that demand measurable outcomes.
           </p>
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#111]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e8e8e8]">
           {services.map((s, i) => (
             <motion.div
               key={s.num}
@@ -100,46 +100,35 @@ export default function Services() {
               transition={{ delay: i * 0.1, duration: 0.8 }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className="relative p-10 bg-[#060606] group overflow-hidden transition-all duration-500"
-              style={{
-                background: hovered === i ? "rgba(192,57,43,0.04)" : "#060606",
-              }}
+              className="relative p-10 overflow-hidden transition-all duration-500"
+              style={{ background: hovered === i ? "#fff" : "#fafafa" }}
             >
-              {/* Corner mark */}
-              <span className="absolute top-8 right-8 text-[10px] font-mono text-[#222] tracking-widest">
-                {s.num}
-              </span>
+              <span className="absolute top-8 right-8 text-[10px] font-mono text-[#ddd] tracking-widest">{s.num}</span>
 
-              {/* Icon */}
               <div
                 className="w-12 h-12 flex items-center justify-center mb-8 transition-colors duration-300"
-                style={{ color: hovered === i ? "#c0392b" : "#333" }}
+                style={{ color: hovered === i ? "#c0392b" : "#ccc" }}
               >
                 {s.icon}
               </div>
 
-              {/* Category */}
               <div className="text-[9px] tracking-[0.28em] uppercase text-[#c0392b] mb-4">{s.category}</div>
 
-              {/* Title */}
               <h3
-                className="font-bold uppercase text-white leading-[0.95] mb-6 whitespace-pre-line"
+                className="font-bold uppercase text-[#0a0a0a] leading-[0.95] mb-6 whitespace-pre-line"
                 style={{ fontSize: "clamp(24px, 3vw, 38px)", letterSpacing: "-0.03em" }}
               >
                 {s.title}
               </h3>
 
-              {/* Desc */}
-              <p className="text-[10px] text-[#444] tracking-[0.08em] leading-[2.2] mb-8">{s.desc}</p>
+              <p className="text-[10px] text-[#aaa] tracking-[0.08em] leading-[2.2] mb-8">{s.desc}</p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {s.tags.map((tag) => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
 
-              {/* Bottom border accent */}
               <motion.div
                 className="absolute bottom-0 left-0 h-[2px] bg-[#c0392b]"
                 initial={{ width: 0 }}

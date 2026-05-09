@@ -35,9 +35,9 @@ export default function Navigation() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
-          background: scrolled ? "rgba(8,8,8,0.95)" : "transparent",
+          background: scrolled ? "rgba(255,255,255,0.96)" : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled ? "1px solid #111" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid #ebebeb" : "1px solid transparent",
         }}
       >
         <div className="container-custom flex items-center justify-between h-20">
@@ -49,10 +49,10 @@ export default function Navigation() {
           >
             <div className="w-8 h-8 relative">
               <div className="absolute inset-0 bg-[#c0392b]" />
-              <div className="absolute inset-[3px] bg-[#080808]" />
+              <div className="absolute inset-[3px] bg-white" />
               <div className="absolute inset-[6px] bg-[#c0392b]" />
             </div>
-            <span className="text-sm font-bold tracking-[0.25em] text-white uppercase">
+            <span className="text-sm font-bold tracking-[0.25em] text-[#0a0a0a] uppercase">
               THINKWAY
             </span>
           </a>
@@ -63,7 +63,7 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
-                className="text-[11px] tracking-[0.18em] uppercase text-[#888] hover:text-white transition-colors duration-300"
+                className="text-[11px] tracking-[0.18em] uppercase text-[#999] hover:text-[#0a0a0a] transition-colors duration-300"
               >
                 {link.label}
               </button>
@@ -87,15 +87,15 @@ export default function Navigation() {
           >
             <motion.span
               animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-[1px] bg-white origin-center transition-all"
+              className="block w-6 h-[1px] bg-[#0a0a0a] origin-center transition-all"
             />
             <motion.span
               animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="block w-6 h-[1px] bg-white"
+              className="block w-6 h-[1px] bg-[#0a0a0a]"
             />
             <motion.span
               animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-[1px] bg-white origin-center transition-all"
+              className="block w-6 h-[1px] bg-[#0a0a0a] origin-center transition-all"
             />
           </button>
         </div>
@@ -109,7 +109,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#080808] flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8"
           >
             {navLinks.map((link, i) => (
               <motion.button
@@ -118,7 +118,7 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 onClick={() => handleNav(link.href)}
-                className="text-3xl font-light tracking-[0.1em] uppercase text-white"
+                className="text-3xl font-light tracking-[0.1em] uppercase text-[#0a0a0a]"
               >
                 {link.label}
               </motion.button>

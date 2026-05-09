@@ -36,22 +36,14 @@ function StatItem({ item, inView, index }: { item: typeof statsData[0]; inView: 
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.8 }}
-      className="py-10 px-8 border-b border-r border-[#111] relative group"
+      className="py-10 px-8 border-b border-r border-[#ebebeb] relative group bg-white"
     >
-      <div
-        className="text-[10px] tracking-[0.2em] uppercase text-[#c0392b] mb-4 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        ✦
+      <div className="text-[10px] tracking-[0.2em] uppercase text-[#c0392b] mb-4 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">✦</div>
+      <div className="font-black text-[#0a0a0a] leading-none tabular-nums" style={{ fontSize: "clamp(42px, 6vw, 80px)", letterSpacing: "-0.04em" }}>
+        {count}<span className="text-[#c0392b]">{item.suffix}</span>
       </div>
-      <div
-        className="font-black text-white leading-none tabular-nums"
-        style={{ fontSize: "clamp(42px, 6vw, 80px)", letterSpacing: "-0.04em" }}
-      >
-        {count}
-        <span className="text-[#c0392b]">{item.suffix}</span>
-      </div>
-      <div className="text-[11px] tracking-[0.15em] uppercase text-white mt-4 mb-1">{item.label}</div>
-      <div className="text-[9px] tracking-[0.2em] text-[#333] uppercase">{item.sub}</div>
+      <div className="text-[11px] tracking-[0.15em] uppercase text-[#0a0a0a] mt-4 mb-1">{item.label}</div>
+      <div className="text-[9px] tracking-[0.2em] text-[#ccc] uppercase">{item.sub}</div>
       <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#c0392b] group-hover:w-full transition-all duration-500" />
     </motion.div>
   );
@@ -62,17 +54,16 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="stats" ref={ref} className="bg-[#060606] overflow-hidden relative">
-      {/* Analytics background image (analytics-bg.jpg — prompt #7) */}
+    <section id="stats" ref={ref} className="bg-[#f8f8f8] overflow-hidden relative">
       <Image
         src="/media/analytics-bg.jpg"
-        alt="Analytics visualization"
+        alt="Analytics"
         fill
-        className="object-cover object-center opacity-[0.07] pointer-events-none"
+        className="object-cover object-center opacity-[0.04] pointer-events-none"
         onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
       />
-      {/* Section header */}
-      <div className="container-custom pt-24 pb-16">
+
+      <div className="container-custom pt-24 pb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -84,19 +75,14 @@ export default function Stats() {
               <div className="w-6 h-[1px] bg-[#c0392b]" />
               By the Numbers
             </div>
-            <h2
-              className="font-black uppercase text-white leading-[0.9]"
-              style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}
-            >
-              RESULTS THAT<br />
-              <span className="text-[#c0392b]">SPEAK.</span>
+            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}>
+              RESULTS THAT<br /><span className="text-[#c0392b]">SPEAK.</span>
             </h2>
           </div>
         </motion.div>
       </div>
 
-      {/* Stats grid */}
-      <div className="border-t border-[#111]">
+      <div className="border-t border-[#ebebeb] relative z-10">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-3">
             {statsData.map((s, i) => (
@@ -106,21 +92,19 @@ export default function Stats() {
         </div>
       </div>
 
-      {/* Quote band */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="border-t border-[#111] py-12 mt-0"
+        className="border-t border-[#ebebeb] py-12 relative z-10 bg-white"
       >
         <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6">
-          <blockquote className="text-[13px] text-[#333] tracking-[0.08em] italic max-w-xl leading-[2]">
-            &ldquo;THINKWAY didn&apos;t just find us influencers — they built us a movement. Our brand awareness
-            jumped 340% in 60 days.&rdquo;
+          <blockquote className="text-[13px] text-[#bbb] tracking-[0.08em] italic max-w-xl leading-[2]">
+            &ldquo;THINKWAY didn&apos;t just find us influencers — they built us a movement. Our brand awareness jumped 340% in 60 days.&rdquo;
           </blockquote>
           <div className="shrink-0 text-right">
-            <div className="text-[11px] tracking-[0.15em] text-white uppercase">Ahmed Al-Khalil</div>
-            <div className="text-[9px] tracking-[0.2em] text-[#444] uppercase mt-1">CMO, NovaBrand KSA</div>
+            <div className="text-[11px] tracking-[0.15em] text-[#0a0a0a] uppercase">Ahmed Al-Khalil</div>
+            <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">CMO, NovaBrand KSA</div>
           </div>
         </div>
       </motion.div>

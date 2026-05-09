@@ -45,7 +45,7 @@ function Cursor() {
 
 export default function Home() {
   return (
-    <main className="bg-[#080808] min-h-screen">
+    <main className="bg-white min-h-screen">
       <Cursor />
       <Navigation />
       <Hero />
