@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+
+const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
 
 const platforms = [
   { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
@@ -15,11 +16,15 @@ const HEADLINE = ["YOUR BRAND", "DESERVES", "MORE THAN", "ADS."];
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   const [count, setCount] = useState(0);
+  const [videoReady, setVideoReady] = useState(false);
+
   useEffect(() => {
     const t = setInterval(() => {
       setCount((c) => {
@@ -30,38 +35,80 @@ export default function Hero() {
     return () => clearInterval(t);
   }, []);
 
+  // Ensure autoplay on mobile (requires muted + playsInline)
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    vid.play().catch(() => {});
+  }, []);
+
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-[#080808]">
-      {/* Hero background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/media/hero-main.jpg"
-          alt="THINKWAY hero"
-          fill
-          priority
-          className="object-cover object-center opacity-25"
-          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+
+      {/* ── LOOPING VIDEO BACKGROUND ── */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        style={{ scale: videoScale }}
+      >
+        <video
+          ref={videoRef}
+          src={HERO_VIDEO}
+          autoPlay
+          muted
+          loop
+          playsInline
+          onCanPlay={() => setVideoReady(true)}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          style={{ opacity: videoReady ? 0.45 : 0 }}
         />
-        {/* Gradient overlay — always shown, darkens image for text legibility */}
+
+        {/* Dark fallback shown until video loads */}
+        <div
+          className="absolute inset-0 bg-[#080808] transition-opacity duration-1000"
+          style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
+        />
+
+        {/* Gradient layers over the video */}
+        {/* Left-to-right: fully opaque on left for text, fades to transparent */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, #080808 40%, rgba(8,8,8,0.7) 70%, rgba(8,8,8,0.3) 100%), radial-gradient(ellipse 60% 80% at 75% 50%, rgba(192,57,43,0.12) 0%, transparent 70%)",
+              "linear-gradient(90deg, #080808 38%, rgba(8,8,8,0.75) 60%, rgba(8,8,8,0.25) 100%)",
           }}
         />
-        {/* Subtle grid */}
+        {/* Top & bottom vignette */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0"
           style={{
-            backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            background:
+              "linear-gradient(180deg, rgba(8,8,8,0.6) 0%, transparent 20%, transparent 80%, rgba(8,8,8,0.8) 100%)",
+          }}
+        />
+        {/* Crimson accent glow on the right */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(192,57,43,0.15) 0%, transparent 65%)",
+          }}
+        />
+        {/* Subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
-      </div>
+      </motion.div>
 
-      {/* Floating platform cards */}
-      <motion.div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block" style={{ y, opacity }}>
+      {/* ── FLOATING PLATFORM CARDS (right side, parallax) ── */}
+      <motion.div
+        className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block z-10"
+        style={{ y, opacity }}
+      >
         {platforms.map((p, i) => (
           <motion.div
             key={p.name}
@@ -80,16 +127,16 @@ export default function Hero() {
               className="relative"
             >
               <div
-                className="flex items-center gap-3 px-5 py-3 rounded-none"
+                className="flex items-center gap-3 px-5 py-3"
                 style={{
-                  background: "rgba(12,12,12,0.9)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  backdropFilter: "blur(20px)",
-                  boxShadow: `0 0 30px ${p.color}20`,
+                  background: "rgba(8,8,8,0.85)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  backdropFilter: "blur(24px)",
+                  boxShadow: `0 0 40px ${p.color}18, 0 8px 32px rgba(0,0,0,0.4)`,
                 }}
               >
                 <div
-                  className="w-8 h-8 flex items-center justify-center text-[10px] font-bold"
+                  className="w-8 h-8 flex items-center justify-center text-[10px] font-bold shrink-0"
                   style={{ background: p.color, color: "#fff" }}
                 >
                   {p.icon}
@@ -98,14 +145,14 @@ export default function Hero() {
                   <div className="text-white text-xs font-medium tracking-wider">{p.name}</div>
                   <div className="text-[#555] text-[10px] tracking-widest uppercase">{p.stat}</div>
                 </div>
-                <div className="ml-2">
-                  <div className="w-12 h-[1px] bg-gradient-to-r from-transparent" style={{ background: `linear-gradient(90deg, transparent, ${p.color}80)` }} />
-                </div>
+                <div
+                  className="ml-2 w-10 h-[1px]"
+                  style={{ background: `linear-gradient(90deg, transparent, ${p.color}90)` }}
+                />
               </div>
-              {/* Glow dot */}
               <div
                 className="absolute -top-1 -right-1 w-2 h-2 rounded-full"
-                style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }}
+                style={{ background: p.color, boxShadow: `0 0 10px ${p.color}` }}
               />
             </motion.div>
           </motion.div>
@@ -121,9 +168,10 @@ export default function Hero() {
           <div
             className="px-6 py-4 text-center"
             style={{
-              background: "rgba(192,57,43,0.08)",
-              border: "1px solid rgba(192,57,43,0.25)",
+              background: "rgba(192,57,43,0.1)",
+              border: "1px solid rgba(192,57,43,0.3)",
               backdropFilter: "blur(20px)",
+              boxShadow: "0 0 40px rgba(192,57,43,0.1)",
             }}
           >
             <div className="text-3xl font-bold text-white tabular-nums">{count}+</div>
@@ -132,8 +180,8 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Content */}
-      <motion.div className="container-custom relative z-10 pt-24 pb-16" style={{ opacity }}>
+      {/* ── HERO TEXT CONTENT ── */}
+      <motion.div className="container-custom relative z-20 pt-24 pb-16" style={{ opacity }}>
         <div className="max-w-[720px]">
           {/* Eyebrow */}
           <motion.div
@@ -151,26 +199,21 @@ export default function Hero() {
           {/* Headline */}
           <div className="overflow-hidden">
             {HEADLINE.map((line, i) => (
-              <motion.div
-                key={i}
-                initial={{ y: "100%", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <h1
+              <div key={i} style={{ overflow: "hidden" }}>
+                <motion.h1
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                   className="block font-black uppercase leading-[0.9] text-white"
                   style={{ fontSize: "clamp(52px, 8vw, 110px)", letterSpacing: "-0.04em" }}
                 >
                   {line === "ADS." ? (
-                    <>
-                      ADS
-                      <span className="text-[#c0392b]">.</span>
-                    </>
+                    <>ADS<span className="text-[#c0392b]">.</span></>
                   ) : (
                     line
                   )}
-                </h1>
-              </motion.div>
+                </motion.h1>
+              </div>
             ))}
           </div>
 
@@ -179,7 +222,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05 }}
-            className="mt-10 text-[#666] text-xs tracking-[0.12em] uppercase leading-[2.2] max-w-[420px]"
+            className="mt-10 text-[#777] text-xs tracking-[0.12em] uppercase leading-[2.2] max-w-[420px]"
           >
             We connect brands with high-impact creators to drive real results.
             From awareness to conversion — we build campaigns that perform.
@@ -214,7 +257,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="flex items-center gap-10 mt-20 pt-8 border-t border-[#111]"
+            className="flex items-center gap-10 mt-20 pt-8 border-t border-[#ffffff0a]"
           >
             {[
               { val: "150M+", label: "Total Reach" },
@@ -230,9 +273,9 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* ── SCROLL INDICATOR ── */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.8 }}
