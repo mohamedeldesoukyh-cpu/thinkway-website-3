@@ -8,7 +8,7 @@ const footerLinks = {
   Agency: ["About Us", "Our Approach", "Case Studies", "Careers"],
   Services: ["Influencer Campaigns", "Content Creation", "Performance Marketing", "Brand Strategy"],
   Network: ["Browse Creators", "Creator Program", "Apply as Creator", "Partner Brands"],
-  Connect: ["hello@thinkway.agency", "+971 50 123 4567", "Dubai, UAE", "London, UK"],
+  Connect: ["hello@thinkway.agency", "+20 120 457 000", "Sheikh Zayed – Giza", "Egypt"],
 };
 
 export default function Footer() {

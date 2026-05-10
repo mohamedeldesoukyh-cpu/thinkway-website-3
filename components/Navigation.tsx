@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ThinkwayLogo from "@/components/ThinkwayLogo";
 
 const navLinks = [
+  { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Creators", href: "#creators" },
   { label: "Results", href: "#stats" },

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
+const HERO_VIDEO = "/media/Make_it_looping_animated_extended_202605100400.mp4";
 
 const platforms = [
   { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
@@ -55,17 +55,16 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0.60 : 0 }}
         />
-        {/* White fallback until video loads */}
         <div
           className="absolute inset-0 bg-white transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
         />
-        {/* Gradient: stronger white fade on left so text stays sharp at 60% video opacity */}
+        {/* Left fade so text stays readable */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.45) 70%, rgba(255,255,255,0.1) 100%)",
+              "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.1) 100%)",
           }}
         />
         {/* Top & bottom vignette */}
@@ -73,20 +72,20 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, transparent 18%, transparent 82%, rgba(255,255,255,0.8) 100%)",
+              "linear-gradient(180deg, rgba(255,255,255,0.6) 0%, transparent 15%, transparent 85%, rgba(255,255,255,0.7) 100%)",
           }}
         />
-        {/* Crimson accent glow — right side */}
+        {/* Blue glow */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(21,53,194,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 55% 70% at 80% 50%, rgba(21,53,194,0.06) 0%, transparent 65%)",
           }}
         />
         {/* Subtle grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
               "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
@@ -97,40 +96,40 @@ export default function Hero() {
 
       {/* ── FLOATING PLATFORM CARDS ── */}
       <motion.div
-        className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block z-10"
+        className="absolute right-0 top-0 bottom-0 w-[42%] hidden lg:block z-10"
         style={{ y, opacity }}
       >
         {platforms.map((p, i) => (
           <motion.div
             key={p.name}
             className="absolute"
-            style={{ top: `${18 + i * 20}%`, right: `${8 + (i % 2) * 12}%` }}
+            style={{ top: `${18 + i * 19}%`, right: `${6 + (i % 2) * 10}%` }}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2 + i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.div
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4 + i * 0.7, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
               className="relative"
             >
               <div
-                className="flex items-center gap-3 px-5 py-3"
+                className="flex items-center gap-3 px-4 py-3"
                 style={{
                   background: "rgba(255,255,255,0.92)",
                   border: "1px solid rgba(0,0,0,0.07)",
                   backdropFilter: "blur(24px)",
-                  boxShadow: `0 4px 30px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04)`,
+                  boxShadow: "0 4px 30px rgba(0,0,0,0.08)",
                 }}
               >
-                <div className="w-8 h-8 flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: p.color, color: "#fff" }}>
+                <div className="w-7 h-7 flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: p.color, color: "#fff" }}>
                   {p.icon}
                 </div>
                 <div>
-                  <div className="text-[#0a0a0a] text-xs font-medium tracking-wider">{p.name}</div>
-                  <div className="text-[#aaa] text-[10px] tracking-widest uppercase">{p.stat}</div>
+                  <div className="text-[#0a0a0a] text-[11px] font-medium tracking-wider">{p.name}</div>
+                  <div className="text-[#aaa] text-[9px] tracking-widest uppercase">{p.stat}</div>
                 </div>
-                <div className="ml-2 w-10 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${p.color}80)` }} />
+                <div className="ml-1 w-8 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${p.color}80)` }} />
               </div>
               <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full" style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }} />
             </motion.div>
@@ -145,22 +144,22 @@ export default function Hero() {
           transition={{ delay: 1.8, duration: 0.6 }}
         >
           <div
-            className="px-6 py-4 text-center"
+            className="px-5 py-4 text-center"
             style={{
               background: "rgba(255,255,255,0.95)",
               border: "1px solid rgba(21,53,194,0.2)",
               boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
             }}
           >
-            <div className="text-3xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
-            <div className="text-[10px] tracking-[0.2em] text-[#aaa] uppercase mt-1">Campaigns Launched</div>
+            <div className="text-2xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
+            <div className="text-[9px] tracking-[0.2em] text-[#aaa] uppercase mt-1">Campaigns Launched</div>
           </div>
         </motion.div>
       </motion.div>
 
-      {/* ── HERO TEXT CONTENT ── */}
-      <motion.div className="container-custom relative z-20 pt-24 pb-16" style={{ opacity }}>
-        <div className="max-w-[720px]">
+      {/* ── HERO TEXT CONTENT — full width ── */}
+      <motion.div className="container-custom relative z-20 pt-28 pb-16 w-full" style={{ opacity }}>
+        <div className="w-full max-w-3xl">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +173,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline — readable size */}
           <div className="overflow-hidden">
             {HEADLINE.map((line, i) => (
               <div key={i} style={{ overflow: "hidden" }}>
@@ -183,7 +182,7 @@ export default function Hero() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                   className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
-                  style={{ fontSize: "clamp(52px, 8vw, 110px)", letterSpacing: "-0.04em" }}
+                  style={{ fontSize: "clamp(38px, 5.5vw, 76px)", letterSpacing: "-0.03em" }}
                 >
                   {line === "ADS." ? <>ADS<span className="text-[#1535C2]">.</span></> : line}
                 </motion.h1>
@@ -196,7 +195,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05 }}
-            className="mt-10 text-[#888] text-xs tracking-[0.12em] uppercase leading-[2.2] max-w-[420px]"
+            className="mt-8 text-[#888] text-[11px] tracking-[0.1em] uppercase leading-[2.2] max-w-md"
           >
             We connect brands with high-impact creators to drive real results.
             From awareness to conversion — we build campaigns that perform.
@@ -207,7 +206,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap items-center gap-4 mt-12"
+            className="flex flex-wrap items-center gap-4 mt-10"
           >
             <button className="btn-primary" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>
               Start a Campaign
@@ -223,7 +222,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="flex items-center gap-10 mt-20 pt-8 border-t border-[#ebebeb]"
+            className="flex items-center gap-10 mt-16 pt-8 border-t border-[#ebebeb]"
           >
             {[
               { val: "150M+", label: "Total Reach" },
@@ -231,7 +230,7 @@ export default function Hero() {
               { val: "98%", label: "Client Retention" },
             ].map((s) => (
               <div key={s.label}>
-                <div className="text-xl font-bold text-[#0a0a0a] tracking-tight">{s.val}</div>
+                <div className="text-lg font-bold text-[#0a0a0a] tracking-tight">{s.val}</div>
                 <div className="text-[9px] tracking-[0.22em] text-[#bbb] uppercase mt-1">{s.label}</div>
               </div>
             ))}

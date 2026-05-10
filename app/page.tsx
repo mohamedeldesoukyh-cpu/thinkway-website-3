@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import AboutUs from "@/components/AboutUs";
 import Manifesto from "@/components/Manifesto";
 import Services from "@/components/Services";
 import Creators from "@/components/Creators";
@@ -50,6 +51,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Marquee />
+      <AboutUs />
       <Manifesto />
       <Services />
       <Creators />

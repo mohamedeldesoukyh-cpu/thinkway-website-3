@@ -53,8 +53,8 @@ export default function CampaignBrief() {
             <div className="space-y-6 border-t border-[#f0f0f0] pt-10">
               {[
                 { label: "Email", val: "hello@thinkway.agency" },
-                { label: "WhatsApp", val: "+971 50 123 4567" },
-                { label: "Based in", val: "Dubai, UAE · London, UK" },
+                { label: "Phone", val: "+20 120 457 000" },
+                { label: "Address", val: "Unit No. 2B – Lower Ground Floor – Al Saraya Mall – 44 Central Axis – Sheikh Zayed – Giza – Egypt" },
               ].map((c) => (
                 <div key={c.label} className="flex items-baseline gap-6">
                   <span className="text-[9px] tracking-[0.25em] text-[#ccc] uppercase w-20 shrink-0">{c.label}</span>
