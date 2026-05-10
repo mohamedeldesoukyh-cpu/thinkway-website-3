@@ -1,222 +1,214 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView, useScroll, useTransform, animate } from "framer-motion";
 
 const SOOH_VIDEO = "/media/Make_it_looping_animated_extended_202605100400.mp4";
 
 const pillars = [
-  {
-    num: "01",
-    title: "Billboard Placement",
-    desc: "Your brand on premium digital screens and static billboards across high-traffic locations — malls, highways, city centres.",
-  },
-  {
-    num: "02",
-    title: "Creator Activation",
-    desc: "Influencers film authentic content at the billboard location and publish it across TikTok, Instagram, and Snapchat.",
-  },
-  {
-    num: "03",
-    title: "Double Amplification",
-    desc: "Physical OOH impressions combined with social media reach — one campaign, two powerful channels working together.",
-  },
-  {
-    num: "04",
-    title: "Full Tracking",
-    desc: "We measure both worlds: outdoor impression data plus social engagement, views, and conversions in a single report.",
-  },
+  { num: "01", title: "Billboard Placement", desc: "Premium digital screens and static billboards — malls, highways, city centres." },
+  { num: "02", title: "Creator Activation", desc: "Influencers film authentic content at the billboard and publish across every platform." },
+  { num: "03", title: "Double Amplification", desc: "Physical impressions + social reach. One campaign, two channels, maximum impact." },
+  { num: "04", title: "Full Tracking", desc: "Outdoor impression data and social engagement in a single unified report." },
 ];
 
-const stats = [
-  { val: "10M+", label: "Physical impressions per campaign" },
-  { val: "3×", label: "Higher recall vs OOH alone" },
-  { val: "48h", label: "Average content turnaround" },
+const steps = [
+  { num: "01", title: "Book Your Billboard", desc: "Premium placements in your target markets." },
+  { num: "02", title: "Creator Goes Live", desc: "Authentic vertical content, posted across their channels." },
+  { num: "03", title: "Measure Both Worlds", desc: "Impressions, reach, engagement, conversions — unified." },
 ];
+
+const BIG_STATS = [
+  { val: 10, suffix: "M+", label: "Physical Impressions" },
+  { val: 3, suffix: "×", label: "Higher Recall vs OOH" },
+  { val: 48, suffix: "h", label: "Content Turnaround" },
+];
+
+function AnimCounter({ to, suffix }: { to: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (!inView || !ref.current) return;
+    const ctrl = animate(0, to, {
+      duration: 2.2,
+      ease: "easeOut",
+      onUpdate: (v) => { if (ref.current) ref.current.textContent = Math.round(v) + suffix; },
+    });
+    return ctrl.stop;
+  }, [inView, to, suffix]);
+  return <span ref={ref}>0{suffix}</span>;
+}
+
+const headline = ["SOCIAL", "OUT OF", "HOME."];
 
 export default function SOOH() {
   const ref = useRef(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-10%" });
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-5%" });
   const [videoReady, setVideoReady] = useState(false);
 
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+
   return (
-    <section id="sooh" ref={ref} className="section-padding bg-[#f8f8f8] relative overflow-hidden">
-      {/* Decorative vertical lines */}
-      <div className="absolute top-0 bottom-0 right-[38%] w-px bg-[#efefef] hidden lg:block" />
+    <section id="sooh" ref={sectionRef} className="relative overflow-hidden bg-[#0a0f1e]" style={{ minHeight: "100vh" }}>
 
-      <div className="container-custom">
+      {/* ── FULL-SCREEN VIDEO ── */}
+      <video
+        src={SOOH_VIDEO}
+        autoPlay muted loop playsInline
+        onCanPlay={() => setVideoReady(true)}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+        style={{ opacity: videoReady ? 1 : 0 }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(10,15,30,0.88) 0%, rgba(10,15,30,0.72) 60%, rgba(10,15,30,0.82) 100%)" }} />
+      {/* Blue depth glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 20% 50%, rgba(21,53,194,0.18) 0%, transparent 70%)" }} />
 
-        {/* ── HEADER ── */}
+      <div ref={ref} className="container-custom relative z-10 py-32">
+
+        {/* ── EYEBROW ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-20"
+          initial={{ opacity: 0, x: -30 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="flex items-center gap-4 mb-14"
         >
-          <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
-            <div className="w-6 h-[1px] bg-[#1535C2]" />
-            New Service
-          </div>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            <h2
-              className="font-black uppercase text-[#0a0f1e] leading-[0.88]"
-              style={{ fontSize: "clamp(40px, 6vw, 82px)", letterSpacing: "-0.04em" }}
-            >
-              SOCIAL
-              <br />
-              OUT OF
-              <br />
-              <span className="text-[#1535C2]">HOME.</span>
-            </h2>
-            <div className="max-w-sm pb-2">
-              <p className="text-[11px] text-[#888] tracking-[0.08em] leading-[2.4] uppercase">
-                We take your brand off the screen and onto the street — then back online.
-                SOOH fuses physical billboard presence with creator-driven social content
-                for an impact no single channel can match.
-              </p>
-            </div>
-          </div>
+          <div className="w-6 h-[1px] bg-[#1535C2]" />
+          <span className="text-[10px] tracking-[0.35em] text-[#7b9fff] uppercase">New Service</span>
         </motion.div>
 
-        {/* ── MAIN CONTENT: pillars left, video right ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-px bg-[#e8e8e8]">
+        {/* ── KINETIC HEADLINE ── */}
+        <motion.div style={{ y: textY }} className="mb-20">
+          {headline.map((word, wi) => (
+            <div key={wi} style={{ overflow: "hidden" }}>
+              <motion.h2
+                initial={{ y: "110%", opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : {}}
+                transition={{ delay: 0.1 + wi * 0.14, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="font-black uppercase leading-[0.86] block"
+                style={{
+                  fontSize: "clamp(52px, 9vw, 130px)",
+                  letterSpacing: "-0.04em",
+                  color: word === "HOME." ? "#1535C2" : "rgba(255,255,255,0.92)",
+                  textShadow: "0 4px 60px rgba(0,0,0,0.5)",
+                }}
+              >
+                {word}
+              </motion.h2>
+            </div>
+          ))}
+        </motion.div>
 
-          {/* Left — pillars */}
-          <div className="lg:col-span-2 bg-white">
+        {/* ── BODY: pillars left, stats right ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24">
+
+          {/* Pillars */}
+          <div>
             {pillars.map((p, i) => (
               <motion.div
                 key={p.num}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -28 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.15 + i * 0.1, duration: 0.7 }}
-                className="flex gap-5 p-8 border-b border-[#f4f4f4] group"
+                transition={{ delay: 0.5 + i * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="group flex gap-6 py-7 border-b cursor-none"
+                style={{ borderColor: "rgba(255,255,255,0.08)" }}
               >
-                <span className="text-[10px] font-mono text-[#1535C2] tracking-widest shrink-0 mt-1">{p.num}</span>
+                <span className="text-[10px] font-mono tracking-widest shrink-0 mt-1 transition-colors duration-300 group-hover:text-[#1535C2]"
+                  style={{ color: "rgba(255,255,255,0.25)" }}>
+                  {p.num}
+                </span>
                 <div>
-                  <h3 className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#0a0f1e] mb-2 group-hover:text-[#1535C2] transition-colors">
+                  <h3
+                    className="text-[13px] font-semibold tracking-[0.15em] uppercase mb-2 transition-colors duration-300 group-hover:text-white"
+                    style={{ color: "rgba(255,255,255,0.7)", textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
+                  >
                     {p.title}
                   </h3>
-                  <p className="text-[10px] text-[#aaa] tracking-[0.06em] leading-[2.1]">{p.desc}</p>
+                  <p className="text-[10px] tracking-[0.07em] leading-[2.1]" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    {p.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
-
-            {/* Stats strip */}
-            <div className="grid grid-cols-3 divide-x divide-[#f4f4f4]">
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.6 + i * 0.1 }}
-                  className="p-6 text-center"
-                >
-                  <div className="text-lg font-black text-[#1535C2] tracking-tight leading-none">{s.val}</div>
-                  <div className="text-[8px] tracking-[0.18em] text-[#bbb] uppercase mt-2 leading-[1.8]">{s.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </div>
 
-          {/* Right — video */}
-          <motion.div
-            className="lg:col-span-3 relative bg-[#0a0f1e] overflow-hidden"
-            style={{ minHeight: "520px" }}
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.2, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {/* Video */}
-            <video
-              ref={videoRef}
-              src={SOOH_VIDEO}
-              autoPlay
-              muted
-              loop
-              playsInline
-              onCanPlay={() => setVideoReady(true)}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-              style={{ opacity: videoReady ? 1 : 0 }}
-            />
-
-            {/* Dark fallback */}
-            <div
-              className="absolute inset-0 bg-[#0a0f1e] transition-opacity duration-700"
-              style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
-            />
-
-            {/* Bottom gradient for label */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: "linear-gradient(180deg, transparent 50%, rgba(10,15,30,0.85) 100%)",
-              }}
-            />
-
-            {/* Video label */}
-            <motion.div
-              className="absolute bottom-0 left-0 right-0 p-8 z-10"
-              initial={{ opacity: 0, y: 10 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.7 }}
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-[9px] tracking-[0.28em] uppercase text-[#1535C2] mb-2">
-                    SOOH in Action
-                  </div>
-                  <div className="text-white text-xs font-semibold tracking-[0.1em] uppercase">
-                    Creator × Billboard
-                  </div>
+          {/* Stats — large numbers, no boxes */}
+          <div className="flex flex-col justify-center gap-12 lg:pl-8">
+            {BIG_STATS.map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.6 + i * 0.15, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div
+                  className="font-black leading-none tabular-nums"
+                  style={{ fontSize: "clamp(52px, 7vw, 96px)", letterSpacing: "-0.04em", color: "#1535C2", textShadow: "0 0 60px rgba(21,53,194,0.4)" }}
+                >
+                  <AnimCounter to={s.val} suffix={s.suffix} />
                 </div>
-                {/* Live badge */}
-                <div className="flex items-center gap-2 bg-[#1535C2] px-3 py-2">
-                  <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  <span className="text-[9px] tracking-[0.2em] text-white uppercase font-medium">Live</span>
+                <div className="text-[9px] tracking-[0.28em] uppercase mt-2" style={{ color: "rgba(255,255,255,0.35)" }}>
+                  {s.label}
                 </div>
-              </div>
-            </motion.div>
-          </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* ── HOW IT WORKS — simple 3-step flow ── */}
+        {/* ── HOW IT WORKS — pure text ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-px bg-white border-t border-[#ebebeb]"
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="mb-20"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "48px" }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#f0f0f0]">
-            {[
-              { step: "Step 01", title: "Book Your Billboard", desc: "Choose location, format, and duration. We secure premium placements in your target markets." },
-              { step: "Step 02", title: "Creator Goes Live", desc: "Our matched influencer films vertical content at the billboard and posts across their channels." },
-              { step: "Step 03", title: "Measure Both Worlds", desc: "Receive a unified report: outdoor impressions, social reach, engagement rate, and conversions." },
-            ].map((item, i) => (
-              <div key={item.step} className="p-8 group">
-                <div className="text-[9px] tracking-[0.25em] text-[#1535C2] uppercase mb-4">{item.step}</div>
-                <h3 className="text-sm font-bold tracking-[0.08em] uppercase text-[#0a0f1e] mb-3 group-hover:text-[#1535C2] transition-colors">
+          <div className="text-[9px] tracking-[0.3em] uppercase mb-10" style={{ color: "rgba(255,255,255,0.25)" }}>
+            How It Works
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {steps.map((item, i) => (
+              <motion.div
+                key={item.num}
+                initial={{ opacity: 0, y: 16 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 1 + i * 0.1, duration: 0.7 }}
+                className="group"
+              >
+                <div className="text-[9px] tracking-[0.28em] text-[#1535C2] uppercase mb-3">Step {item.num}</div>
+                <h3
+                  className="text-[13px] font-bold tracking-[0.1em] uppercase mb-2 transition-colors duration-300 group-hover:text-white"
+                  style={{ color: "rgba(255,255,255,0.75)", textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
+                >
                   {item.title}
                 </h3>
-                <p className="text-[10px] text-[#aaa] tracking-[0.06em] leading-[2.2]">{item.desc}</p>
-              </div>
+                <p className="text-[10px] tracking-[0.06em] leading-[2]" style={{ color: "rgba(255,255,255,0.32)" }}>
+                  {item.desc}
+                </p>
+              </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* ── CTA ── */}
+        {/* ── CTA — text only ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.7 }}
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-16 pt-10 border-t border-[#ebebeb]"
+          transition={{ delay: 1.1 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "40px" }}
         >
           <div>
-            <div className="text-sm font-black tracking-[-0.02em] uppercase text-[#0a0f1e]">
+            <div
+              className="font-black tracking-[-0.02em] uppercase"
+              style={{ fontSize: "clamp(16px, 2vw, 22px)", color: "rgba(255,255,255,0.85)", textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+            >
               Ready to own the street — and the feed?
             </div>
-            <div className="text-[10px] text-[#bbb] tracking-widest uppercase mt-1">
-              SOOH campaigns available across the MENA region.
+            <div className="text-[10px] tracking-widest uppercase mt-1" style={{ color: "rgba(255,255,255,0.25)" }}>
+              SOOH campaigns across the MENA region.
             </div>
           </div>
           <button

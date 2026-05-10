@@ -36,7 +36,7 @@ function StatItem({ item, inView, index }: { item: typeof statsData[0]; inView: 
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.8 }}
-      className="py-10 px-8 border-b border-r border-[#ebebeb] relative group bg-white"
+      className="py-10 px-8 border-b border-r border-[#ebebeb] relative group"
     >
       <div className="text-[10px] tracking-[0.2em] uppercase text-[#1535C2] mb-4 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">✦</div>
       <div className="font-black text-[#0a0a0a] leading-none tabular-nums" style={{ fontSize: "clamp(42px, 6vw, 80px)", letterSpacing: "-0.04em" }}>
@@ -96,7 +96,7 @@ export default function Stats() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="border-t border-[#ebebeb] py-12 relative z-10 bg-white"
+        className="border-t border-[#ebebeb] py-12 relative z-10"
       >
         <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6">
           <blockquote className="text-[13px] text-[#bbb] tracking-[0.08em] italic max-w-xl leading-[2]">

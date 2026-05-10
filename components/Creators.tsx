@@ -23,7 +23,7 @@ function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; 
       transition={{ delay: 0.1 + index * 0.08, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative border border-[#ebebeb] bg-white p-8 group overflow-hidden card-hover"
+      className="relative border border-[#ebebeb] p-8 group overflow-hidden card-hover"
       style={{ borderColor: hovered ? "#1535C222" : "#ebebeb" }}
     >
       <motion.div

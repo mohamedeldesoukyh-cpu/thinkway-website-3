@@ -74,9 +74,9 @@ export default function AboutUs() {
         </motion.div>
 
         {/* Two-column: What We Do + Philosophy */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-px bg-[#e8e8e8] mb-px">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 mb-16">
           {/* What We Do */}
-          <div className="lg:col-span-3 bg-[#fafafa]">
+          <div className="lg:col-span-3">
             <div className="p-10 pb-6">
               <div className="text-[9px] tracking-[0.28em] uppercase text-[#1535C2] mb-8 font-medium">What We Do</div>
               <div className="space-y-0">
@@ -104,7 +104,7 @@ export default function AboutUs() {
           </div>
 
           {/* Philosophy + Why */}
-          <div className="lg:col-span-2 bg-white p-10">
+          <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}

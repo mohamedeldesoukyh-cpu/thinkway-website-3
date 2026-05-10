@@ -113,25 +113,13 @@ export default function Hero() {
               transition={{ duration: 4 + i * 0.7, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
               className="relative"
             >
-              <div
-                className="flex items-center gap-3 px-4 py-3"
-                style={{
-                  background: "rgba(255,255,255,0.92)",
-                  border: "1px solid rgba(0,0,0,0.07)",
-                  backdropFilter: "blur(24px)",
-                  boxShadow: "0 4px 30px rgba(0,0,0,0.08)",
-                }}
-              >
-                <div className="w-7 h-7 flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: p.color, color: "#fff" }}>
-                  {p.icon}
-                </div>
+              <div className="flex items-center gap-3 px-2 py-2">
+                <div className="w-2 h-2 rounded-full shrink-0" style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }} />
                 <div>
-                  <div className="text-[#0a0a0a] text-[11px] font-medium tracking-wider">{p.name}</div>
-                  <div className="text-[#aaa] text-[9px] tracking-widest uppercase">{p.stat}</div>
+                  <div className="text-[#0a0a0a] text-[11px] font-semibold tracking-wider">{p.name}</div>
+                  <div className="text-[#888] text-[9px] tracking-widest uppercase">{p.stat}</div>
                 </div>
-                <div className="ml-1 w-8 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${p.color}80)` }} />
               </div>
-              <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full" style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }} />
             </motion.div>
           </motion.div>
         ))}
@@ -143,15 +131,8 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.8, duration: 0.6 }}
         >
-          <div
-            className="px-5 py-4 text-center"
-            style={{
-              background: "rgba(255,255,255,0.95)",
-              border: "1px solid rgba(21,53,194,0.2)",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
-            }}
-          >
-            <div className="text-2xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
             <div className="text-[9px] tracking-[0.2em] text-[#aaa] uppercase mt-1">Campaigns Launched</div>
           </div>
         </motion.div>
