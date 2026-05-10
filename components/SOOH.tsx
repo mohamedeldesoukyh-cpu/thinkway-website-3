@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-const SOOH_VIDEO = "/media/Influencer_talking_about_billboard_202605100112.mp4";
+const SOOH_VIDEO = "/media/Make_it_looping_animated_extended_202605100400.mp4";
 
 const pillars = [
   {
