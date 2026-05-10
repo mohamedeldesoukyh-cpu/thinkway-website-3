@@ -24,7 +24,7 @@ const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
     { label: "Partner Brands", anchor: "#contact" },
   ],
   Connect: [
-    { label: "hello@thinkway.agency" },
+    { label: "hello@thinkwaymedia.com" },
     { label: "+20 120 457 000" },
     { label: "Sheikh Zayed – Giza" },
     { label: "Egypt" },

@@ -52,7 +52,7 @@ export default function CampaignBrief() {
             </p>
             <div className="space-y-6 border-t border-[#f0f0f0] pt-10">
               {[
-                { label: "Email", val: "hello@thinkway.agency" },
+                { label: "Email", val: "hello@thinkwaymedia.com" },
                 { label: "Phone", val: "+20 120 457 000" },
                 { label: "Address", val: "Unit No. 2B – Lower Ground Floor – Al Saraya Mall – 44 Central Axis – Sheikh Zayed – Giza – Egypt" },
               ].map((c) => (
@@ -92,7 +92,15 @@ export default function CampaignBrief() {
               ) : (
                 <motion.form
                   key="form"
-                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    await fetch("/api/submit-brief", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ ...form, platforms: selectedPlatforms, goals: selectedGoals }),
+                    }).catch(() => {});
+                    setSubmitted(true);
+                  }}
                   className="space-y-0 border border-[#ebebeb]"
                 >
                   {/* Brand */}
