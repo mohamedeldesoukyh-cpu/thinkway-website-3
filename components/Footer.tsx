@@ -4,11 +4,31 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ThinkwayLogo from "@/components/ThinkwayLogo";
 
-const footerLinks = {
-  Agency: ["About Us", "Our Approach", "Case Studies", "Careers"],
-  Services: ["Influencer Campaigns", "Content Creation", "Performance Marketing", "Brand Strategy"],
-  Network: ["Browse Creators", "Creator Program", "Apply as Creator", "Partner Brands"],
-  Connect: ["hello@thinkway.agency", "+20 120 457 000", "Sheikh Zayed – Giza", "Egypt"],
+const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
+  Agency: [
+    { label: "About Us", anchor: "#about" },
+    { label: "Our Approach", anchor: "#services" },
+    { label: "Case Studies", anchor: "#stats" },
+    { label: "Careers" },
+  ],
+  Services: [
+    { label: "Influencer Campaigns", anchor: "#services" },
+    { label: "Content Creation", anchor: "#services" },
+    { label: "SOOH", anchor: "#sooh" },
+    { label: "Brand Strategy", anchor: "#services" },
+  ],
+  Network: [
+    { label: "Browse Creators", anchor: "#creators" },
+    { label: "Creator Program", anchor: "#program" },
+    { label: "Apply as Creator", anchor: "#program" },
+    { label: "Partner Brands", anchor: "#contact" },
+  ],
+  Connect: [
+    { label: "hello@thinkway.agency" },
+    { label: "+20 120 457 000" },
+    { label: "Sheikh Zayed – Giza" },
+    { label: "Egypt" },
+  ],
 };
 
 export default function Footer() {
@@ -47,11 +67,20 @@ export default function Footer() {
             <div key={group}>
               <div className="text-[9px] tracking-[0.28em] uppercase text-[#1535C2] mb-6 font-medium">{group}</div>
               <ul className="space-y-4">
-                {links.map((link) => (
-                  <li key={link}>
-                    <span className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none">
-                      {link}
-                    </span>
+                {links.map((item) => (
+                  <li key={item.label}>
+                    {item.anchor ? (
+                      <button
+                        onClick={() => document.querySelector(item.anchor!)?.scrollIntoView({ behavior: "smooth" })}
+                        className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none text-left"
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <span className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase cursor-none">
+                        {item.label}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
