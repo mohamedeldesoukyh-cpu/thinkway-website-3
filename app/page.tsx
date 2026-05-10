@@ -51,13 +51,13 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Marquee />
-      <AboutUs />
       <Manifesto />
       <Services />
       <Creators />
       <Stats />
       <SOOH />
       <CreatorProgram />
+      <AboutUs />
       <CampaignBrief />
       <Footer />
     </main>

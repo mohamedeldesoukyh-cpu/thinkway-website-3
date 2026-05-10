@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const HERO_VIDEO = "/media/Make_it_looping_animated_extended_202605100400.mp4";
+const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
 
 const platforms = [
   { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
