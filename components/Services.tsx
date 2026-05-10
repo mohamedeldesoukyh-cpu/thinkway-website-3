@@ -175,7 +175,7 @@ export default function Services() {
           autoPlay muted loop playsInline
           onCanPlay={() => setVideoReady(true)}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 1 : 0 }}
+          style={{ opacity: videoReady ? 0.6 : 0 }}
         />
       </div>
       {/* Dark overlay — video visible, text readable */}
