@@ -99,7 +99,7 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden cursor-none"
+      className="relative overflow-hidden cursor-none rounded-2xl"
       style={{
         aspectRatio: "9 / 16",
         transform: hovered ? "scale(1.02)" : "scale(1)",

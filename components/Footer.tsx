@@ -43,36 +43,36 @@ export default function Footer() {
       />
 
       {/* Main footer */}
-      <div className="container-custom py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="mb-8">
-              <ThinkwayLogo variant="dark" />
-            </div>
-            <p className="text-[10px] text-[#bbb] tracking-[0.1em] uppercase leading-[2.4] max-w-xs mb-8">
-              Where influence meets strategy. We build campaigns that move culture — and move product.
-            </p>
-            <div className="flex gap-3">
-              {["IG", "TT", "LI", "YT"].map((s) => (
-                <div key={s} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
-                  {s}
-                </div>
-              ))}
-            </div>
+      <div className="container-custom py-20 relative z-10 text-center">
+        {/* Brand — centered */}
+        <div className="flex flex-col items-center mb-16">
+          <div className="mb-6">
+            <ThinkwayLogo variant="dark" />
           </div>
+          <p className="text-[10px] text-[#bbb] tracking-[0.1em] uppercase leading-[2.4] max-w-xs mb-8">
+            Where influence meets strategy. We build campaigns that move culture — and move product.
+          </p>
+          <div className="flex gap-3 justify-center">
+            {["IG", "TT", "LI", "YT"].map((s) => (
+              <div key={s} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
+                {s}
+              </div>
+            ))}
+          </div>
+        </div>
 
-          {/* Links */}
+        {/* Links — centered columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {Object.entries(footerLinks).map(([group, links]) => (
-            <div key={group}>
+            <div key={group} className="flex flex-col items-center">
               <div className="text-[9px] tracking-[0.28em] uppercase text-[#1535C2] mb-6 font-medium">{group}</div>
               <ul className="space-y-4">
                 {links.map((item) => (
-                  <li key={item.label}>
+                  <li key={item.label} className="text-center">
                     {item.anchor ? (
                       <button
                         onClick={() => document.querySelector(item.anchor!)?.scrollIntoView({ behavior: "smooth" })}
-                        className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none text-left"
+                        className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none"
                       >
                         {item.label}
                       </button>
