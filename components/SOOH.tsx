@@ -102,7 +102,7 @@ export default function SOOH() {
         </motion.div>
 
         {/* ── BODY: pillars left, stats right ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24 mt-16">
 
           {/* Pillars */}
           <div>

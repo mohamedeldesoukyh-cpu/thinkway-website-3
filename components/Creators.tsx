@@ -209,7 +209,6 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
           animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -8 }}
           transition={{ duration: 0.3 }}
         >
-          Explore
           <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
             <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
