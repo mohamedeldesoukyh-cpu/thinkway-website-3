@@ -2,14 +2,16 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const categories = [
   {
     id: "01",
     title: "Fashion & Lifestyle Voices",
     desc: "Creators shaping trends and everyday inspiration.",
-    gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%)",
+    image: "/media/Fashion_&_Lifestyle_Voices_Creators_202605100615.jpeg",
     accent: "#e94560",
+    overlay: "linear-gradient(180deg, rgba(10,15,30,0.3) 0%, rgba(10,15,30,0.75) 100%)",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <path d="M14 4C14 4 8 8 8 14s6 10 6 10 6-4 6-10S14 4 14 4z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
@@ -21,8 +23,9 @@ const categories = [
     id: "02",
     title: "Tech & Digital Creators",
     desc: "Voices simplifying innovation and digital culture.",
-    gradient: "linear-gradient(135deg, #0a0f1e 0%, #1535C2 60%, #2a4fd4 100%)",
+    image: "/media/Tech_&_Digital_Creators_Creators_202605100617.jpeg",
     accent: "#7b9fff",
+    overlay: "linear-gradient(180deg, rgba(10,15,30,0.25) 0%, rgba(10,15,30,0.78) 100%)",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <rect x="3" y="6" width="22" height="16" rx="2" stroke="currentColor" strokeWidth="1.2"/>
@@ -34,8 +37,9 @@ const categories = [
     id: "03",
     title: "Beauty & Wellness Experts",
     desc: "Trusted creators driving routines and product discovery.",
-    gradient: "linear-gradient(135deg, #1a0533 0%, #6b2fa0 50%, #c471ed 100%)",
+    image: "/media/Beauty_&_Wellness_Experts_Creators_202605100617.jpeg",
     accent: "#f8b4ff",
+    overlay: "linear-gradient(180deg, rgba(10,15,30,0.2) 0%, rgba(10,15,30,0.72) 100%)",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <path d="M14 4c-1.5 3-5 5-5 9a5 5 0 0010 0c0-4-3.5-6-5-9z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
@@ -47,8 +51,9 @@ const categories = [
     id: "04",
     title: "Fitness & Performance Influencers",
     desc: "Content that motivates action and healthy lifestyles.",
-    gradient: "linear-gradient(135deg, #0d1f0d 0%, #1a4a1a 50%, #2d7a2d 100%)",
+    image: "/media/Fitness_&_Performance_Influencers_Creators_202605100616.jpeg",
     accent: "#7fff7f",
+    overlay: "linear-gradient(180deg, rgba(10,15,30,0.2) 0%, rgba(10,15,30,0.75) 100%)",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <path d="M4 14h3l2-6 4 12 3-8 2 4h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -59,8 +64,9 @@ const categories = [
     id: "05",
     title: "Food & Travel Storytellers",
     desc: "Creators capturing experiences and destinations.",
-    gradient: "linear-gradient(135deg, #1f0a00 0%, #7a2d00 50%, #c45000 100%)",
+    image: "/media/Food_&_Travel_Storytellers_Creators_202605100616.jpeg",
     accent: "#ffb07f",
+    overlay: "linear-gradient(180deg, rgba(10,15,30,0.2) 0%, rgba(10,15,30,0.75) 100%)",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <circle cx="14" cy="12" r="5" stroke="currentColor" strokeWidth="1.2"/>
@@ -73,8 +79,9 @@ const categories = [
     id: "06",
     title: "Culture & Trend Drivers",
     desc: "Voices leading conversations and viral moments.",
-    gradient: "linear-gradient(135deg, #1a0a00 0%, #8b3a00 40%, #ff6b35 100%)",
+    image: "/media/Culture_&_Trend_Drivers_Creators_202605100615.jpeg",
     accent: "#ffd700",
+    overlay: "linear-gradient(180deg, rgba(10,15,30,0.2) 0%, rgba(10,15,30,0.75) 100%)",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <path d="M14 3l2.5 7.5H24l-6.5 4.5 2.5 7.5L14 18l-6 4.5 2.5-7.5L4 10.5h7.5L14 3z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
@@ -95,37 +102,49 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
       onMouseLeave={() => setHovered(false)}
       className="relative border border-[#ebebeb] p-8 group overflow-hidden card-hover"
     >
-      {/* Gradient visual — replaces profile image */}
-      <div className="relative w-full h-36 mb-7 overflow-hidden">
-        <div
-          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-          style={{ background: cat.gradient }}
-        />
-        {/* Noise texture overlay */}
-        <div className="absolute inset-0 opacity-[0.06]"
-          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
-        {/* Glow pulse */}
+      {/* Image panel — animated */}
+      <div className="relative w-full h-48 mb-7 overflow-hidden">
+        {/* Photo with scale-in on hover */}
         <motion.div
-          className="absolute inset-0 rounded-full blur-3xl"
-          style={{ background: cat.accent, opacity: 0.15 }}
-          animate={{ scale: hovered ? 1.3 : 1, opacity: hovered ? 0.28 : 0.15 }}
-          transition={{ duration: 0.6 }}
+          className="absolute inset-0"
+          animate={{ scale: hovered ? 1.08 : 1 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Image
+            src={cat.image}
+            alt={cat.title}
+            fill
+            className="object-cover"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+          />
+        </motion.div>
+
+        {/* Gradient overlay — darkens bottom for text legibility */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: cat.overlay }} />
+
+        {/* Accent glow on hover */}
+        <motion.div
+          className="absolute inset-0 pointer-events-none"
+          animate={{ opacity: hovered ? 0.18 : 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ background: `radial-gradient(ellipse 80% 60% at 50% 100%, ${cat.accent}, transparent)` }}
         />
-        {/* Icon centred */}
-        <div className="absolute inset-0 flex items-center justify-center"
-          style={{ color: cat.accent }}>
-          <motion.div
-            animate={{ scale: hovered ? 1.15 : 1, y: hovered ? -3 : 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            {cat.icon}
-          </motion.div>
-        </div>
+
         {/* Card number */}
         <span className="absolute top-3 right-4 text-[10px] font-mono tracking-widest"
-          style={{ color: "rgba(255,255,255,0.25)" }}>
+          style={{ color: "rgba(255,255,255,0.4)" }}>
           {cat.id}
         </span>
+
+        {/* Icon — bottom left of image */}
+        <motion.div
+          className="absolute bottom-3 left-4"
+          style={{ color: cat.accent }}
+          animate={{ scale: hovered ? 1.15 : 1, y: hovered ? -4 : 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          {cat.icon}
+        </motion.div>
       </div>
 
       {/* Content */}
