@@ -2,18 +2,88 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 
-const creators = [
-  { id: "01", name: "Layla Al-Hassan", handle: "@laylacreates", category: "Lifestyle & Fashion", followers: "2.4M", engagement: "6.8%", platforms: ["IG", "TT", "YT"], location: "Dubai, UAE", image: "/media/creator-01.jpg" },
-  { id: "02", name: "Khalid Mansour", handle: "@khalidtech", category: "Tech & Innovation", followers: "1.8M", engagement: "8.2%", platforms: ["YT", "TT", "IG"], location: "Riyadh, KSA", image: "/media/creator-02.jpg" },
-  { id: "03", name: "Sara Nour", handle: "@saranour.life", category: "Beauty & Wellness", followers: "3.1M", engagement: "7.4%", platforms: ["IG", "SC", "TT"], location: "Cairo, Egypt", image: "/media/creator-03.jpg" },
-  { id: "04", name: "Faisal Al-Rashidi", handle: "@faisalfit", category: "Fitness & Sports", followers: "890K", engagement: "9.1%", platforms: ["IG", "YT", "TT"], location: "Kuwait City", image: "/media/creator-04.jpg" },
-  { id: "05", name: "Nora Bakr", handle: "@norafoodstories", category: "Food & Travel", followers: "1.3M", engagement: "5.9%", platforms: ["IG", "YT", "TT"], location: "Beirut, Lebanon", image: "/media/creator-05.jpg" },
-  { id: "06", name: "Omar Diallo", handle: "@omardiallostyle", category: "Streetwear & Culture", followers: "740K", engagement: "10.3%", platforms: ["TT", "IG", "SC"], location: "London, UK", image: "/media/creator-06.jpg" },
+const categories = [
+  {
+    id: "01",
+    title: "Fashion & Lifestyle Voices",
+    desc: "Creators shaping trends and everyday inspiration.",
+    gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%)",
+    accent: "#e94560",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M14 4C14 4 8 8 8 14s6 10 6 10 6-4 6-10S14 4 14 4z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+        <path d="M8 14h12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    id: "02",
+    title: "Tech & Digital Creators",
+    desc: "Voices simplifying innovation and digital culture.",
+    gradient: "linear-gradient(135deg, #0a0f1e 0%, #1535C2 60%, #2a4fd4 100%)",
+    accent: "#7b9fff",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect x="3" y="6" width="22" height="16" rx="2" stroke="currentColor" strokeWidth="1.2"/>
+        <path d="M9 12l3 3-3 3M15 18h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    id: "03",
+    title: "Beauty & Wellness Experts",
+    desc: "Trusted creators driving routines and product discovery.",
+    gradient: "linear-gradient(135deg, #1a0533 0%, #6b2fa0 50%, #c471ed 100%)",
+    accent: "#f8b4ff",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M14 4c-1.5 3-5 5-5 9a5 5 0 0010 0c0-4-3.5-6-5-9z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+        <path d="M11 17c0 1.657 1.343 3 3 3s3-1.343 3-3" stroke="currentColor" strokeWidth="1.2"/>
+      </svg>
+    ),
+  },
+  {
+    id: "04",
+    title: "Fitness & Performance Influencers",
+    desc: "Content that motivates action and healthy lifestyles.",
+    gradient: "linear-gradient(135deg, #0d1f0d 0%, #1a4a1a 50%, #2d7a2d 100%)",
+    accent: "#7fff7f",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M4 14h3l2-6 4 12 3-8 2 4h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    id: "05",
+    title: "Food & Travel Storytellers",
+    desc: "Creators capturing experiences and destinations.",
+    gradient: "linear-gradient(135deg, #1f0a00 0%, #7a2d00 50%, #c45000 100%)",
+    accent: "#ffb07f",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="12" r="5" stroke="currentColor" strokeWidth="1.2"/>
+        <path d="M14 17v7M10 24h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+        <path d="M7 7.5C8.5 5 11 4 14 4s5.5 1 7 3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    id: "06",
+    title: "Culture & Trend Drivers",
+    desc: "Voices leading conversations and viral moments.",
+    gradient: "linear-gradient(135deg, #1a0a00 0%, #8b3a00 40%, #ff6b35 100%)",
+    accent: "#ffd700",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M14 3l2.5 7.5H24l-6.5 4.5 2.5 7.5L14 18l-6 4.5 2.5-7.5L4 10.5h7.5L14 3z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
 ];
 
-function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; index: number; inView: boolean }) {
+function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index: number; inView: boolean }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -24,75 +94,79 @@ function CreatorCard({ creator, index, inView }: { creator: typeof creators[0]; 
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative border border-[#ebebeb] p-8 group overflow-hidden card-hover"
-      style={{ borderColor: hovered ? "#1535C222" : "#ebebeb" }}
     >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-[#1535C204] to-transparent"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: hovered ? 1 : 0 }}
-        transition={{ duration: 0.4 }}
-      />
-
-      {/* Header */}
-      <div className="flex items-start justify-between mb-6 relative z-10">
-        <div className="w-12 h-12 relative overflow-hidden shrink-0">
-          <Image
-            src={creator.image}
-            alt={creator.name}
-            fill
-            className="object-cover"
-            onError={(e) => {
-              const parent = (e.currentTarget as HTMLImageElement).parentElement;
-              if (parent) {
-                parent.innerHTML = `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1535C2,#0b1f8a);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">${creator.name.split(" ").map((n: string) => n[0]).join("")}</div>`;
-              }
-            }}
-          />
+      {/* Gradient visual — replaces profile image */}
+      <div className="relative w-full h-36 mb-7 overflow-hidden">
+        <div
+          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+          style={{ background: cat.gradient }}
+        />
+        {/* Noise texture overlay */}
+        <div className="absolute inset-0 opacity-[0.06]"
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
+        {/* Glow pulse */}
+        <motion.div
+          className="absolute inset-0 rounded-full blur-3xl"
+          style={{ background: cat.accent, opacity: 0.15 }}
+          animate={{ scale: hovered ? 1.3 : 1, opacity: hovered ? 0.28 : 0.15 }}
+          transition={{ duration: 0.6 }}
+        />
+        {/* Icon centred */}
+        <div className="absolute inset-0 flex items-center justify-center"
+          style={{ color: cat.accent }}>
+          <motion.div
+            animate={{ scale: hovered ? 1.15 : 1, y: hovered ? -3 : 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {cat.icon}
+          </motion.div>
         </div>
-        <span className="text-[10px] font-mono text-[#ddd] tracking-widest">{creator.id}</span>
+        {/* Card number */}
+        <span className="absolute top-3 right-4 text-[10px] font-mono tracking-widest"
+          style={{ color: "rgba(255,255,255,0.25)" }}>
+          {cat.id}
+        </span>
       </div>
 
-      {/* Identity */}
-      <div className="relative z-10 mb-6">
-        <h3 className="text-sm font-semibold tracking-[0.08em] text-[#0a0a0a] mb-1">{creator.name}</h3>
-        <div className="text-[10px] text-[#bbb] tracking-widest">{creator.handle}</div>
-        <div className="mt-2 tag inline-block">{creator.category}</div>
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="text-[9px] tracking-[0.28em] uppercase mb-3 font-medium"
+          style={{ color: cat.accent }}>
+          Category
+        </div>
+
+        <h3 className="text-sm font-bold tracking-[0.06em] text-[#0a0a0a] mb-3 leading-[1.3] group-hover:text-[#1535C2] transition-colors duration-300">
+          {cat.title}
+        </h3>
+
+        <p className="text-[10px] text-[#aaa] tracking-[0.06em] leading-[2]">
+          {cat.desc}
+        </p>
       </div>
 
-      {/* Stats */}
-      <div className="relative z-10 grid grid-cols-2 gap-4 mb-6 pt-6 border-t border-[#f4f4f4]">
-        <div>
-          <div className="text-lg font-bold text-[#0a0a0a]">{creator.followers}</div>
-          <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">Followers</div>
-        </div>
-        <div>
-          <div className="text-lg font-bold text-[#1535C2]">{creator.engagement}</div>
-          <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">Engagement</div>
-        </div>
-      </div>
-
-      {/* Platforms + location */}
-      <div className="relative z-10 flex items-center justify-between">
-        <div className="flex gap-2">
-          {creator.platforms.map((p) => (
-            <span key={p} className="w-7 h-7 flex items-center justify-center text-[9px] font-bold border border-[#ebebeb] text-[#bbb]">
-              {p}
-            </span>
-          ))}
-        </div>
-        <div className="text-[9px] text-[#ccc] tracking-widest">{creator.location}</div>
-      </div>
-
-      {/* CTA row */}
+      {/* CTA */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 10 }}
         transition={{ duration: 0.3 }}
-        className="relative z-10 flex gap-3 mt-6 pt-6 border-t border-[#f4f4f4]"
+        className="relative z-10 mt-6 pt-5 border-t border-[#f4f4f4]"
       >
-        <button className="btn-primary text-[9px] px-4 py-3 flex-1 justify-center">View Profile</button>
-        <button className="btn-outline text-[9px] px-4 py-3 flex-1 justify-center">Case Study</button>
+        <span className="text-[10px] tracking-[0.18em] uppercase text-[#1535C2] font-medium flex items-center gap-2">
+          Explore Category
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </span>
       </motion.div>
+
+      {/* Bottom accent line */}
+      <motion.div
+        className="absolute bottom-0 left-0 h-[2px]"
+        style={{ background: cat.accent }}
+        initial={{ width: 0 }}
+        animate={{ width: hovered ? "100%" : 0 }}
+        transition={{ duration: 0.4 }}
+      />
     </motion.div>
   );
 }
@@ -104,6 +178,8 @@ export default function Creators() {
   return (
     <section id="creators" ref={ref} className="section-padding bg-white">
       <div className="container-custom">
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -115,27 +191,35 @@ export default function Creators() {
               <div className="w-6 h-[1px] bg-[#1535C2]" />
               Our Network
             </div>
-            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em" }}>
-              FEATURED
-              <br /><span className="text-[#1535C2]">CREATORS</span>
+            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em" }}>
+              OUR CREATOR<br /><span className="text-[#1535C2]">NETWORK</span>
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-4">
             <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.2] max-w-xs text-left md:text-right">
-              500+ vetted creators across the MENA region and beyond.
+              A curated ecosystem of creators across MENA and global markets — selected based on relevance, content quality, and performance.
             </p>
-            <button className="btn-outline text-[10px]">
-              Browse All Creators
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </button>
           </div>
         </motion.div>
 
+        {/* 3-col card grid — same layout as before */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#ebebeb]">
-          {creators.map((creator, i) => (
-            <CreatorCard key={creator.id} creator={creator} index={i} inView={inView} />
+          {categories.map((cat, i) => (
+            <CreatorCard key={cat.id} cat={cat} index={i} inView={inView} />
           ))}
         </div>
+
+        {/* Note under grid */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="text-center text-[9px] tracking-[0.18em] text-[#ccc] uppercase mt-10"
+        >
+          Creator selection is tailored for each campaign based on brand objectives and audience fit.
+        </motion.p>
+
       </div>
     </section>
   );
