@@ -95,88 +95,93 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 36 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: 0.1 + index * 0.08, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ delay: 0.1 + index * 0.18, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative border border-[#ebebeb] p-8 group overflow-hidden card-hover"
+      className="relative border border-[#ebebeb] overflow-hidden group w-full max-w-2xl mx-auto"
+      style={{
+        transform: hovered ? "scale(1.02)" : "scale(1)",
+        boxShadow: hovered
+          ? `0 20px 60px rgba(0,0,0,0.10), 0 0 0 1px ${cat.accent}30`
+          : "0 2px 16px rgba(0,0,0,0.04)",
+        transition: "transform 0.25s ease, box-shadow 0.25s ease",
+      }}
     >
-      {/* Image panel — animated */}
-      <div className="relative w-full h-48 mb-7 overflow-hidden">
-        {/* Photo with scale-in on hover */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{ scale: hovered ? 1.08 : 1 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <Image
-            src={cat.image}
-            alt={cat.title}
-            fill
-            className="object-cover"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+      {/* Horizontal inner layout: image left, text right */}
+      <div className="flex flex-col sm:flex-row">
+
+        {/* Image — left panel */}
+        <div className="relative sm:w-72 w-full h-52 sm:h-auto shrink-0 overflow-hidden">
+          <motion.div
+            className="absolute inset-0"
+            animate={{ scale: hovered ? 1.08 : 1 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Image
+              src={cat.image}
+              alt={cat.title}
+              fill
+              className="object-cover"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+          </motion.div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 pointer-events-none" style={{ background: cat.overlay }} />
+
+          {/* Accent glow on hover */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
+            animate={{ opacity: hovered ? 0.22 : 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ background: `radial-gradient(ellipse 80% 80% at 50% 50%, ${cat.accent}, transparent)` }}
           />
-        </motion.div>
 
-        {/* Gradient overlay — darkens bottom for text legibility */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: cat.overlay }} />
-
-        {/* Accent glow on hover */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          animate={{ opacity: hovered ? 0.18 : 0 }}
-          transition={{ duration: 0.5 }}
-          style={{ background: `radial-gradient(ellipse 80% 60% at 50% 100%, ${cat.accent}, transparent)` }}
-        />
-
-        {/* Card number */}
-        <span className="absolute top-3 right-4 text-[10px] font-mono tracking-widest"
-          style={{ color: "rgba(255,255,255,0.4)" }}>
-          {cat.id}
-        </span>
-
-        {/* Icon — bottom left of image */}
-        <motion.div
-          className="absolute bottom-3 left-4"
-          style={{ color: cat.accent }}
-          animate={{ scale: hovered ? 1.15 : 1, y: hovered ? -4 : 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          {cat.icon}
-        </motion.div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10">
-        <div className="text-[9px] tracking-[0.28em] uppercase mb-3 font-medium"
-          style={{ color: cat.accent }}>
-          Category
+          {/* Icon centred on image */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center"
+            style={{ color: cat.accent }}
+            animate={{ scale: hovered ? 1.2 : 1, y: hovered ? -4 : 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {cat.icon}
+          </motion.div>
         </div>
 
-        <h3 className="text-sm font-bold tracking-[0.06em] text-[#0a0a0a] mb-3 leading-[1.3] group-hover:text-[#1535C2] transition-colors duration-300">
-          {cat.title}
-        </h3>
+        {/* Text — right panel */}
+        <div className="flex flex-col justify-center px-8 py-8 flex-1">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-[9px] tracking-[0.28em] uppercase font-medium" style={{ color: cat.accent }}>
+              Category
+            </span>
+            <span className="text-[10px] font-mono tracking-widest text-[#ddd]">{cat.id}</span>
+          </div>
 
-        <p className="text-[10px] text-[#aaa] tracking-[0.06em] leading-[2]">
-          {cat.desc}
-        </p>
+          <h3 className="font-bold tracking-[0.04em] text-[#0a0a0a] mb-3 leading-[1.25] transition-colors duration-300 group-hover:text-[#1535C2]"
+            style={{ fontSize: "clamp(15px, 1.6vw, 20px)" }}>
+            {cat.title}
+          </h3>
+
+          <p className="text-[10px] text-[#aaa] tracking-[0.06em] leading-[2] mb-6">
+            {cat.desc}
+          </p>
+
+          {/* CTA */}
+          <motion.span
+            className="text-[10px] tracking-[0.18em] uppercase font-medium flex items-center gap-2 w-fit"
+            style={{ color: "#1535C2" }}
+            animate={{ opacity: hovered ? 1 : 0.4, x: hovered ? 4 : 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            Explore Category
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.span>
+        </div>
       </div>
-
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 10 }}
-        transition={{ duration: 0.3 }}
-        className="relative z-10 mt-6 pt-5 border-t border-[#f4f4f4]"
-      >
-        <span className="text-[10px] tracking-[0.18em] uppercase text-[#1535C2] font-medium flex items-center gap-2">
-          Explore Category
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-            <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </motion.div>
 
       {/* Bottom accent line */}
       <motion.div
@@ -222,8 +227,8 @@ export default function Creators() {
           </div>
         </motion.div>
 
-        {/* 3-col card grid — same layout as before */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#ebebeb]">
+        {/* Vertical stacked column — centered */}
+        <div className="flex flex-col items-center gap-5">
           {categories.map((cat, i) => (
             <CreatorCard key={cat.id} cat={cat} index={i} inView={inView} />
           ))}
