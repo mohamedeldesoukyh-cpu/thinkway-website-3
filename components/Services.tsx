@@ -162,18 +162,26 @@ export default function Services() {
   return (
     <section id="services" ref={ref} className="section-padding relative overflow-hidden bg-[#0a0f1e]">
 
-      {/* Background video at 100% */}
-      <video
-        src={SERVICES_VIDEO}
-        autoPlay muted loop playsInline
-        onCanPlay={() => setVideoReady(true)}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-opacity duration-1000"
-        style={{ opacity: videoReady ? 1 : 0 }}
-      />
+      {/* Background video at 100% with brushed edges via CSS mask */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          WebkitMaskImage: "radial-gradient(ellipse 82% 80% at 50% 50%, black 45%, transparent 100%)",
+          maskImage: "radial-gradient(ellipse 82% 80% at 50% 50%, black 45%, transparent 100%)",
+        }}
+      >
+        <video
+          src={SERVICES_VIDEO}
+          autoPlay muted loop playsInline
+          onCanPlay={() => setVideoReady(true)}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          style={{ opacity: videoReady ? 1 : 0 }}
+        />
+      </div>
       {/* Dark overlay — video visible, text readable */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(135deg, rgba(10,15,30,0.82) 0%, rgba(10,15,30,0.70) 60%, rgba(10,15,30,0.78) 100%)" }}
+        style={{ background: "linear-gradient(135deg, rgba(10,15,30,0.80) 0%, rgba(10,15,30,0.65) 60%, rgba(10,15,30,0.76) 100%)" }}
       />
 
       <div className="container-custom relative z-10">

@@ -86,29 +86,30 @@ const categories = [
 
 function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index: number; inView: boolean }) {
   const [hovered, setHovered] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 48 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        delay: 0.08 + index * 0.12,
-        duration: 0.75,
+        delay: 0.08 + index * 0.14,
+        duration: 0.85,
         ease: [0.16, 1, 0.3, 1],
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative overflow-hidden cursor-none"
       style={{
-        aspectRatio: "3 / 4",
+        aspectRatio: "9 / 16",
         transform: hovered ? "scale(1.02)" : "scale(1)",
         boxShadow: hovered
-          ? `0 24px 64px rgba(0,0,0,0.18), 0 0 0 1px ${cat.accent}40`
+          ? `0 28px 72px rgba(0,0,0,0.22), 0 0 0 1px ${cat.accent}40`
           : "0 4px 20px rgba(0,0,0,0.06)",
         transition: "transform 0.28s ease, box-shadow 0.28s ease",
       }}
     >
-      {/* Full-card photo */}
+      {/* Full-card photo — fades in once loaded */}
       <motion.div
         className="absolute inset-0"
         animate={{ scale: hovered ? 1.07 : 1 }}
@@ -119,6 +120,8 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
           alt={cat.title}
           fill
           className="object-cover"
+          style={{ opacity: imgLoaded ? 1 : 0, transition: "opacity 0.8s ease" }}
+          onLoad={() => setImgLoaded(true)}
           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
       </motion.div>
@@ -157,13 +160,13 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
 
       {/* Text block — always visible, lifts on hover */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 px-5 pb-5"
+        className="absolute bottom-0 left-0 right-0 px-3 pb-4"
         animate={{ y: hovered ? -6 : 0 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Category label */}
         <motion.div
-          className="text-[9px] tracking-[0.28em] uppercase font-medium mb-2"
+          className="text-[8px] tracking-[0.22em] uppercase font-medium mb-1 truncate"
           style={{ color: cat.accent }}
           animate={{ opacity: hovered ? 1 : 0.7 }}
           transition={{ duration: 0.3 }}
@@ -171,34 +174,44 @@ function CreatorCard({ cat, index, inView }: { cat: typeof categories[0]; index:
           Category
         </motion.div>
 
-        {/* Title */}
+        {/* Title — wraps inside card width */}
         <h3
-          className="font-bold text-white leading-[1.2] mb-2"
-          style={{ fontSize: "clamp(13px, 1.1vw, 16px)", letterSpacing: "-0.01em", textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
+          className="font-bold text-white leading-[1.25] mb-2"
+          style={{
+            fontSize: "clamp(11px, 1.4vw, 14px)",
+            letterSpacing: "-0.01em",
+            textShadow: "0 2px 12px rgba(0,0,0,0.6)",
+            wordBreak: "break-word",
+            hyphens: "auto",
+          }}
         >
           {cat.title}
         </h3>
 
         {/* Desc — slides in on hover */}
         <motion.p
-          className="text-[10px] tracking-[0.05em] leading-[1.8] mb-4"
-          style={{ color: "rgba(255,255,255,0.72)" }}
-          animate={{ opacity: hovered ? 1 : 0, height: hovered ? "auto" : 0 }}
-          transition={{ duration: 0.3 }}
+          className="leading-[1.7] mb-3 overflow-hidden"
+          style={{
+            color: "rgba(255,255,255,0.72)",
+            fontSize: "clamp(9px, 0.85vw, 10px)",
+            letterSpacing: "0.04em",
+          }}
+          animate={{ opacity: hovered ? 1 : 0, maxHeight: hovered ? 80 : 0 }}
+          transition={{ duration: 0.35 }}
         >
           {cat.desc}
         </motion.p>
 
         {/* CTA arrow */}
         <motion.span
-          className="text-[9px] tracking-[0.2em] uppercase font-medium flex items-center gap-2"
-          style={{ color: cat.accent }}
+          className="tracking-[0.18em] uppercase font-medium flex items-center gap-1"
+          style={{ color: cat.accent, fontSize: "clamp(8px, 0.75vw, 9px)" }}
           animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -8 }}
           transition={{ duration: 0.3 }}
         >
-          Explore Category
-          <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
-            <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          Explore
+          <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </motion.span>
       </motion.div>
