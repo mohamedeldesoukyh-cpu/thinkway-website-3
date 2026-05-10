@@ -8,7 +8,7 @@ import Manifesto from "@/components/Manifesto";
 import Services from "@/components/Services";
 import Creators from "@/components/Creators";
 import Stats from "@/components/Stats";
-import Packages from "@/components/Packages";
+import SOOH from "@/components/SOOH";
 import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
 import Footer from "@/components/Footer";
@@ -54,7 +54,7 @@ export default function Home() {
       <Services />
       <Creators />
       <Stats />
-      <Packages />
+      <SOOH />
       <CreatorProgram />
       <CampaignBrief />
       <Footer />
