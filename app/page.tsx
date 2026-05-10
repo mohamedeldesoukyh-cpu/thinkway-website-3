@@ -56,11 +56,11 @@ export default function Home() {
       <Services />
       <Creators />
       <Stats />
-      <Clients />
       <SOOH />
       <CreatorProgram />
       <AboutUs />
       <CampaignBrief />
+      <Clients />
       <Footer />
     </main>
   );

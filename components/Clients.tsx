@@ -16,47 +16,78 @@ export default function Clients() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section ref={ref} className="py-20 bg-white border-y border-[#ebebeb] overflow-hidden">
-      <div className="container-custom">
+    <section ref={ref} className="bg-[#f8f8f8] overflow-hidden">
 
-        {/* Label */}
+      {/* Top rule */}
+      <div className="hr-line mx-12" />
+
+      <div className="container-custom py-24">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-14"
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
         >
-          <div className="w-6 h-[1px] bg-[#1535C2]" />
-          <span className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase">Trusted By</span>
-          <div className="flex-1 h-px bg-[#ebebeb]" />
+          <div>
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
+              Our Clients
+            </div>
+            <h2
+              className="font-black uppercase text-[#0a0f1e] leading-[0.9]"
+              style={{ fontSize: "clamp(28px, 3.5vw, 50px)", letterSpacing: "-0.03em" }}
+            >
+              BRANDS WE&apos;RE<br />
+              <span className="text-[#1535C2]">PROUD TO SERVE</span>
+            </h2>
+          </div>
+          <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.4] max-w-[260px]">
+            We partner with forward-thinking brands that believe in the power of authentic influence and measurable results.
+          </p>
         </motion.div>
 
-        {/* Logo grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#ebebeb]">
+        {/* Logo grid — full colour, 100% opacity */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#e0e0e0]">
           {clients.map((client, i) => (
             <motion.div
               key={client.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group flex items-center justify-center py-10 px-8 bg-white transition-colors duration-400 hover:bg-[#f6f8ff]"
+              className="group relative flex items-center justify-center bg-white py-12 px-10 overflow-hidden transition-colors duration-400 hover:bg-[#f0f4ff]"
             >
-              <div className="relative w-full max-w-[180px] h-[72px] transition-all duration-500"
-                style={{ filter: "grayscale(1) opacity(0.55)" }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.filter = "grayscale(0) opacity(1)")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLDivElement).style.filter = "grayscale(1) opacity(0.55)")}
-              >
+              {/* Hover accent line */}
+              <motion.div
+                className="absolute bottom-0 left-0 h-[2px] bg-[#1535C2]"
+                initial={{ width: 0 }}
+                whileHover={{ width: "100%" }}
+                transition={{ duration: 0.4 }}
+              />
+
+              <div className="relative w-full max-w-[200px] h-[80px]">
                 <Image
                   src={client.src}
                   alt={client.name}
                   fill
-                  className="object-contain"
+                  className="object-contain transition-transform duration-400 group-hover:scale-105"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                 />
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom tagline */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="text-center text-[10px] tracking-[0.2em] text-[#ccc] uppercase mt-10"
+        >
+          Trusted across Egypt &amp; the MENA region
+        </motion.p>
 
       </div>
     </section>
