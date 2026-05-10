@@ -53,11 +53,22 @@ export default function Footer() {
             Where influence meets strategy. We build campaigns that move culture — and move product.
           </p>
           <div className="flex gap-3 justify-center">
-            {["IG", "TT", "LI", "YT"].map((s) => (
-              <div key={s} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
-                {s}
-              </div>
-            ))}
+            {[
+              { label: "IG", href: "https://www.instagram.com/thinkway_tw" },
+              { label: "TT", href: null },
+              { label: "LI", href: "https://www.linkedin.com/company/thinkwaymedia/" },
+              { label: "YT", href: null },
+            ].map(({ label, href }) =>
+              href ? (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
+                  {label}
+                </a>
+              ) : (
+                <div key={label} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
+                  {label}
+                </div>
+              )
+            )}
           </div>
         </div>
 
