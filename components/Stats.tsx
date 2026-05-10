@@ -103,8 +103,8 @@ export default function Stats() {
             &ldquo;THINKWAY didn&apos;t just find us influencers — they built us a movement. Our brand awareness jumped 340% in 60 days.&rdquo;
           </blockquote>
           <div className="shrink-0 text-right">
-            <div className="text-[11px] tracking-[0.15em] text-[#0a0a0a] uppercase">Ahmed Al-Khalil</div>
-            <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">CMO, NovaBrand KSA</div>
+            <div className="text-[11px] tracking-[0.15em] text-[#0a0a0a] uppercase">Summer El Desouky</div>
+            <div className="text-[9px] tracking-[0.2em] text-[#bbb] uppercase mt-1">CEO, GWT</div>
           </div>
         </div>
       </motion.div>
