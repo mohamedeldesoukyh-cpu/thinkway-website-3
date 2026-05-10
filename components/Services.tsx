@@ -175,13 +175,13 @@ export default function Services() {
           autoPlay muted loop playsInline
           onCanPlay={() => setVideoReady(true)}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 0.6 : 0 }}
+          style={{ opacity: videoReady ? 0.4 : 0 }}
         />
       </div>
       {/* Dark overlay — video visible, text readable */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(135deg, rgba(10,15,30,0.80) 0%, rgba(10,15,30,0.65) 60%, rgba(10,15,30,0.76) 100%)" }}
+        style={{ background: "linear-gradient(135deg, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.42) 60%, rgba(10,15,30,0.50) 100%)" }}
       />
 
       <div className="container-custom relative z-10">
