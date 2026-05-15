@@ -9,6 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+
+  metadataBase: new URL("https://thinkwaymedia.com"),
+
+alternates: {
+  canonical: "/",
+},
   title: "THINKWAY — Influencer Marketing Agency",
   description:
     "We connect brands with high-impact creators to drive real results. From awareness to conversion — we build campaigns that perform.",
