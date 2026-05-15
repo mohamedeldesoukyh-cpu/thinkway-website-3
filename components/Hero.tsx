@@ -6,10 +6,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
 
 const platforms = [
-  { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
-  { name: "TikTok", color: "#ff0050", icon: "TT", stat: "1.7B users" },
-  { name: "YouTube", color: "#FF0000", icon: "YT", stat: "2.7B users" },
-  { name: "Snapchat", color: "#f5a623", icon: "SC", stat: "750M users" },
+  { name: "Instagram", color: "#E1306C", icon: "IG" },
+  { name: "TikTok", color: "#ff0050", icon: "TT" },
+  { name: "YouTube", color: "#FF0000", icon: "YT" },
+  { name: "Snapchat", color: "#f5a623", icon: "SC" },
 ];
 
 const HEADLINE = ["YOUR BRAND", "DESERVES", "MORE THAN", "ADS."];
@@ -22,18 +22,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
-  const [count, setCount] = useState(0);
   const [videoReady, setVideoReady] = useState(false);
-
-  useEffect(() => {
-    const t = setInterval(() => {
-      setCount((c) => {
-        if (c >= 500) { clearInterval(t); return 500; }
-        return c + 5;
-      });
-    }, 18);
-    return () => clearInterval(t);
-  }, []);
 
   useEffect(() => {
     videoRef.current?.play().catch(() => {});
@@ -115,27 +104,12 @@ export default function Hero() {
             >
               <div className="flex items-center gap-3 px-2 py-2">
                 <div className="w-2 h-2 rounded-full shrink-0" style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }} />
-                <div>
-                  <div className="text-[#0a0a0a] text-[11px] font-semibold tracking-wider">{p.name}</div>
-                  <div className="text-[#888] text-[9px] tracking-widest uppercase">{p.stat}</div>
-                </div>
+                <div className="text-[#0a0a0a] text-[11px] font-semibold tracking-wider">{p.name}</div>
               </div>
             </motion.div>
           </motion.div>
         ))}
 
-        {/* Campaign counter */}
-        <motion.div
-          className="absolute bottom-[22%] right-[18%]"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
-        >
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
-            <div className="text-[9px] tracking-[0.2em] text-[#aaa] uppercase mt-1">Campaigns Launched</div>
-          </div>
-        </motion.div>
       </motion.div>
 
       {/* ── HERO TEXT CONTENT — full width ── */}
