@@ -94,10 +94,21 @@ export default function CampaignBrief() {
                   key="form"
                   onSubmit={async (e) => {
                     e.preventDefault();
-                    await fetch("/api/submit-brief", {
+                    await fetch("https://formsubmit.co/ajax/hello@thinkwaymedia.com", {
                       method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({ ...form, platforms: selectedPlatforms, goals: selectedGoals }),
+                      headers: { "Content-Type": "application/json", Accept: "application/json" },
+                      body: JSON.stringify({
+                        _subject: `New Campaign Brief — ${form.brand}`,
+                        _template: "table",
+                        _captcha: "false",
+                        Brand: form.brand,
+                        "Contact Email": form.email,
+                        Budget: form.budget,
+                        Platforms: selectedPlatforms.join(", ") || "—",
+                        Goals: selectedGoals.join(", ") || "—",
+                        "Target Audience": form.audience || "—",
+                        Timeline: form.timeline || "—",
+                      }),
                     }).catch(() => {});
                     setSubmitted(true);
                   }}
