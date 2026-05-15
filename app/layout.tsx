@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,16 +10,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-
-  metadataBase: new URL("https://thinkwaymedia.com"),
-
-alternates: {
-  canonical: "/",
-},
   title: "THINKWAY — Influencer Marketing Agency",
   description:
     "We connect brands with high-impact creators to drive real results. From awareness to conversion — we build campaigns that perform.",
-  keywords: ["influencer marketing", "creator agency", "social media campaigns", "content creation", "digital marketing"],
+  keywords: [
+    "influencer marketing",
+    "creator agency",
+    "social media campaigns",
+    "content creation",
+    "digital marketing",
+  ],
 };
 
 export default function RootLayout({
@@ -28,7 +29,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WER3W107Q7"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-WER3W107Q7');
+          `}
+        </Script>
+      </head>
+
+      <body className={`${inter.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
