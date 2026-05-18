@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   `;
 
   const { error } = await resend.emails.send({
-    from: "Thinkway Brief <onboarding@resend.dev>",
+   from: "Thinkway Media <hello@thinkwaymedia.com>",
     to: "hello@thinkwaymedia.com",
     replyTo: email,
     subject: `New Campaign Brief — ${brand}`,
