@@ -9,6 +9,7 @@ export async function POST(req: NextRequest) {
 
   const html = `
     <h2 style="font-family:sans-serif;color:#0a0f1e;">New Campaign Brief — ${brand}</h2>
+    <p><strong>Client Email:</strong> ${email}</p>
     <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;width:100%;">
       <tr><td style="padding:8px 16px 8px 0;color:#888;width:160px;">Brand</td><td style="padding:8px 0;color:#0a0f1e;">${brand}</td></tr>
       <tr><td style="padding:8px 16px 8px 0;color:#888;">Contact Email</td><td style="padding:8px 0;color:#0a0f1e;">${email}</td></tr>
@@ -24,7 +25,7 @@ export async function POST(req: NextRequest) {
   from: "Thinkway Media <noreply@thinkwaymedia.com>",
     to: "hello@thinkwaymedia.com",
     replyTo: email,
-    subject: `New Campaign Brief — ${brand}`,
+    subject: `New Campaign Inquiry from ${brand}`,
     html,
   });
 
