@@ -24,6 +24,25 @@ export async function POST(req: NextRequest) {
   const { error } = await resend.emails.send({
   from: "Thinkway Media <noreply@thinkwaymedia.com>",
     to: "hello@thinkwaymedia.com",
+    await resend.emails.send({
+  from: "Thinkway Media <noreply@thinkwaymedia.com>",
+  to: email,
+  subject: "We Received Your Campaign Brief",
+  html: `
+    <div style="font-family:sans-serif;padding:20px;">
+      <h2>Thank You for Contacting Thinkway Media</h2>
+
+      <p>We’ve successfully received your campaign brief.</p>
+
+      <p>Our team will review your request and get back to you shortly.</p>
+
+      <br/>
+
+      <p><strong>Thinkway Media</strong></p>
+      <p>Influencer Marketing & Digital Campaigns</p>
+    </div>
+  `,
+});
     replyTo: email,
     subject: `New Campaign Inquiry from ${brand}`,
     html,
