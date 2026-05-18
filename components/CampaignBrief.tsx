@@ -53,7 +53,7 @@ export default function CampaignBrief() {
             <div className="space-y-6 border-t border-[#f0f0f0] pt-10">
               {[
                 { label: "Email", val: "hello@thinkwaymedia.com" },
-                { label: "Phone", val: "+20 120 457 000" },
+                { label: "Phone", val: "+201204570000" },
                 { label: "Address", val: "Unit No. 2B – Lower Ground Floor – Al Saraya Mall – 44 Central Axis – Sheikh Zayed – Giza – Egypt" },
               ].map((c) => (
                 <div key={c.label} className="flex items-baseline gap-6">
