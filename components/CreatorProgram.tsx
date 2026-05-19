@@ -232,7 +232,7 @@ export default function CreatorProgram() {
         id="creator-apply"
         className="bg-[#0a0f1e] text-white py-24 px-6"
       >
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto w-full relative z-20">
           <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
             <div className="w-6 h-[1px] bg-[#1535C2]" />
             Creator Application
