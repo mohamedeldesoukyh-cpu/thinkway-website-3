@@ -80,7 +80,10 @@ export default function SOOH() {
         </motion.div>
 
         {/* ── KINETIC HEADLINE ── */}
-        <motion.div style={{ y: textY }} className="mb-20">
+        <motion.div
+  style={{ y: textY }}
+  className="mb-[320px]"
+>
           {headline.map((word, wi) => (
             <div key={wi} style={{ overflow: "hidden" }}>
               <motion.h2
