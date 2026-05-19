@@ -15,40 +15,10 @@ import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
 import Footer from "@/components/Footer";
 
-function Cursor() {
-  const dot = useRef<HTMLDivElement>(null);
-  const ring = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let rx = 0, ry = 0;
-    const onMove = (e: MouseEvent) => {
-      if (dot.current) {
-        dot.current.style.left = e.clientX + "px";
-        dot.current.style.top = e.clientY + "px";
-      }
-      rx += (e.clientX - rx) * 0.18;
-      ry += (e.clientY - ry) * 0.18;
-      if (ring.current) {
-        ring.current.style.left = e.clientX + "px";
-        ring.current.style.top = e.clientY + "px";
-      }
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
-  return (
-    <>
-      <div ref={dot} className="cursor" />
-      <div ref={ring} className="cursor-follower" />
-    </>
-  );
-}
 
 export default function Home() {
   return (
     <main className="bg-white min-h-screen">
-      <Cursor />
       <Navigation />
       <Hero />
       <Marquee />
