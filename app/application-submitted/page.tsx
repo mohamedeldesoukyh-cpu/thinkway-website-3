@@ -1,43 +1,123 @@
 export default function ApplicationSubmittedPage() {
   return (
-    <main className="min-h-screen bg-[#f8f8f6] flex items-center justify-center px-6">
-      <div className="max-w-2xl text-center">
-
-        <div className="mb-8">
-          <p className="text-sm tracking-[0.3em] uppercase text-[#1d3df2] mb-4">
-            Creator Program
-          </p>
-
-          <h1 className="text-5xl md:text-7xl font-black leading-none text-black mb-6">
-            APPLICATION
-            <br />
-            SUBMITTED.
-          </h1>
-
-          <p className="text-[#666] text-lg leading-8 max-w-xl mx-auto">
-            Thank you for applying to the THINKWAY Creator Program.
-            <br />
-            Our team is currently reviewing your profile and social presence.
-          </p>
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#0a0f1e",
+        color: "white",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "sans-serif",
+        padding: "40px",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "700px",
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        {/* Animated Checkmark */}
+        <div
+          style={{
+            width: "120px",
+            height: "120px",
+            borderRadius: "9999px",
+            background: "#1d4ed8",
+            margin: "0 auto 30px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            animation: "pop 0.5s ease",
+            boxShadow: "0 0 40px rgba(37,99,235,0.4)",
+          }}
+        >
+          <svg
+            width="60"
+            height="60"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
         </div>
 
-        <div className="border-t border-black/10 pt-8">
-          <p className="text-black font-semibold text-lg mb-2">
-            What happens next?
-          </p>
+        <p
+          style={{
+            color: "#3b82f6",
+            letterSpacing: "4px",
+            marginBottom: "12px",
+            fontSize: "12px",
+            textTransform: "uppercase",
+          }}
+        >
+          THINKWAY Creator Program
+        </p>
 
-          <p className="text-[#777] leading-7">
-            If your profile matches our upcoming campaigns and creator network,
-            we’ll contact you shortly with the next steps.
-          </p>
-        </div>
+        <h1
+          style={{
+            fontSize: "56px",
+            lineHeight: "1",
+            marginBottom: "24px",
+            fontWeight: "800",
+          }}
+        >
+          Application Submitted
+        </h1>
+
+        <p
+          style={{
+            fontSize: "18px",
+            lineHeight: "1.8",
+            color: "#d1d5db",
+            maxWidth: "600px",
+            margin: "0 auto",
+          }}
+        >
+          Thank you for applying to join THINKWAY.
+          <br />
+          Our creator partnerships team is currently reviewing your profile.
+          <br />
+          If your content aligns with our upcoming campaigns and brand
+          collaborations, we’ll contact you shortly.
+        </p>
 
         <a
           href="/"
-          className="inline-flex items-center justify-center mt-10 bg-[#1d3df2] text-white px-10 py-4 tracking-[0.2em] uppercase text-sm hover:opacity-90 transition"
+          style={{
+            display: "inline-block",
+            marginTop: "40px",
+            background: "#1d4ed8",
+            color: "white",
+            padding: "16px 36px",
+            textDecoration: "none",
+            fontWeight: "600",
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+            transition: "0.3s ease",
+          }}
         >
-          Back to Home
+          Back to Homepage
         </a>
+
+        <style>{`
+          @keyframes pop {
+            0% {
+              transform: scale(0.5);
+              opacity: 0;
+            }
+            100% {
+              transform: scale(1);
+              opacity: 1;
+            }
+          }
+        `}</style>
       </div>
     </main>
   );
