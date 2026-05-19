@@ -35,7 +35,7 @@ await resend.emails.send({
   subject: "We Received Your Campaign Brief",
   html: `
     <div style="font-family:sans-serif;padding:20px;">
-      <h2>Thank You for Contacting Thinkway Media</h2>
+      <h2>Thank You for Contacting Thinkway</h2>
 
       <p>We’ve successfully received your campaign brief.</p>
 
@@ -43,8 +43,8 @@ await resend.emails.send({
 
       <br/>
 
-      <p><strong>Thinkway Media</strong></p>
-      <p>Influencer Marketing & Digital Campaigns</p>
+      <p><strong>Thinkway</strong></p>
+      <p>Marketing & Digital Agency</p>
     </div>
   `,
 });  
