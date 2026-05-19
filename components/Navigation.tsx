@@ -24,9 +24,17 @@ export default function Navigation() {
   }, []);
 
   const handleNav = (href: string) => {
-    setMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
+  setMenuOpen(false);
+
+  if (href.startsWith("/")) {
+    window.location.href = href;
+    return;
+  }
+
+  document.querySelector(href)?.scrollIntoView({
+    behavior: "smooth",
+  });
+};
 
   return (
     <>
