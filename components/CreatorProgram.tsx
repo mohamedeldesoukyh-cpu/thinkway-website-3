@@ -250,10 +250,22 @@ export default function CreatorProgram() {
           </p>
 
           <form
-            action="/api/creator-apply"
-            method="POST"
-            className="space-y-6"
-          >
+  onSubmit={async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const response = await fetch("/api/creator-apply", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      window.location.href = "/application-submitted";
+    }
+  }}
+  className="space-y-6"
+>
             <input
               type="text"
               name="name"
