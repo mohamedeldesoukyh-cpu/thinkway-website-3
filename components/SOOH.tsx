@@ -90,7 +90,7 @@ export default function SOOH() {
                 initial={{ y: "110%", opacity: 0 }}
                 animate={inView ? { y: 0, opacity: 1 } : {}}
                 transition={{ delay: 0.1 + wi * 0.14, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="font-black uppercase leading-[0.72] block"
+                className="font-black uppercase leading-[0.92] block"
                 style={{
                   fontSize: "clamp(52px, 9vw, 130px)",
                   letterSpacing: "-0.04em",
