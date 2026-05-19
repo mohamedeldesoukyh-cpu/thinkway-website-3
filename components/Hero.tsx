@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
@@ -22,18 +22,8 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
-  const [count, setCount] = useState(0);
   const [videoReady, setVideoReady] = useState(false);
 
-  useEffect(() => {
-    const t = setInterval(() => {
-      setCount((c) => {
-        if (c >= 500) { clearInterval(t); return 500; }
-        return c + 5;
-      });
-    }, 18);
-    return () => clearInterval(t);
-  }, []);
 
   useEffect(() => {
     videoRef.current?.play().catch(() => {});
@@ -131,20 +121,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
         ))}
-
-        {/* Campaign counter */}
-        <motion.div
-          className="absolute bottom-[22%] right-[18%]"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
-        >
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#0a0a0a] tabular-nums">{count}+</div>
-            <div className="text-[9px] tracking-[0.2em] text-[#aaa] uppercase mt-1">Campaigns Launched</div>
-          </div>
-        </motion.div>
-      </motion.div>
 
       {/* ── HERO TEXT CONTENT — full width ── */}
       <motion.div className="container-custom relative z-20 pt-28 pb-16 w-full" style={{ opacity }}>
