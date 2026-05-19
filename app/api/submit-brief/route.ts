@@ -23,15 +23,6 @@ export async function POST(req: NextRequest) {
 
   const { error } = await resend.emails.send({
   from: "Thinkway Media <noreply@thinkwaymedia.com>",
-    to: "hello@thinkwaymedia.com",
-    await resend.emails.send({
-  from: "Thinkway Media <noreply@thinkwaymedia.com>",
-    replyTo: email,
-    subject: `New Campaign Inquiry from ${brand}`,
-    html,
-  });
-await resend.emails.send({
-  from: "Thinkway Media <noreply@thinkwaymedia.com>",
   to: "hello@thinkwaymedia.com",
   replyTo: email,
   subject: `New Campaign Inquiry from ${brand}`,
@@ -56,8 +47,7 @@ await resend.emails.send({
       <p>Influencer Marketing & Digital Campaigns</p>
     </div>
   `,
-});
-  
+});  
   if (error) {
     return NextResponse.json({ ok: false, error }, { status: 500 });
   }
