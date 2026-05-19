@@ -77,7 +77,9 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.redirect(
+  new URL("/application-submitted", req.url)
+);
 
   } catch (error) {
     console.error(error);
