@@ -26,6 +26,12 @@ export async function POST(req: NextRequest) {
     to: "hello@thinkwaymedia.com",
     await resend.emails.send({
   from: "Thinkway Media <noreply@thinkwaymedia.com>",
+    replyTo: email,
+    subject: `New Campaign Inquiry from ${brand}`,
+    html,
+  });
+await resend.emails.send({
+  from: "Thinkway Media <noreply@thinkwaymedia.com>",
   to: email,
   subject: "We Received Your Campaign Brief",
   html: `
@@ -43,11 +49,6 @@ export async function POST(req: NextRequest) {
     </div>
   `,
 });
-    replyTo: email,
-    subject: `New Campaign Inquiry from ${brand}`,
-    html,
-  });
-
   if (error) {
     return NextResponse.json({ ok: false, error }, { status: 500 });
   }
