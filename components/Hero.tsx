@@ -6,10 +6,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
 
 const platforms = [
-  { name: "Instagram", color: "#E1306C", icon: "IG", stat: "2.4B users" },
-  { name: "TikTok", color: "#ff0050", icon: "TT", stat: "1.7B users" },
-  { name: "YouTube", color: "#FF0000", icon: "YT", stat: "2.7B users" },
-  { name: "Snapchat", color: "#f5a623", icon: "SC", stat: "750M users" },
+  { name: "Instagram", color: "#E1306C", icon: "IG" },
+  { name: "TikTok", color: "#ff0050", icon: "TT"},
+  { name: "YouTube", color: "#FF0000", icon: "YT" },
+  { name: "Snapchat", color: "#f5a623", icon: "SC" },
 ];
 
 const HEADLINE = ["YOUR BRAND", "DESERVES", "MORE THAN", "ADS."];
