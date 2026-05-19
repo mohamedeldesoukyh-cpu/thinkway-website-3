@@ -7,7 +7,7 @@ const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
 
 const platforms = [
   { name: "Instagram", color: "#E1306C", icon: "IG" },
-  { name: "TikTok", color: "#ff0050", icon: "TT"},
+  { name: "TikTok", color: "#ff0050", icon: "TT" },
   { name: "YouTube", color: "#FF0000", icon: "YT" },
   { name: "Snapchat", color: "#f5a623", icon: "SC" },
 ];
@@ -114,12 +114,20 @@ export default function Hero() {
               className="relative"
             >
               <div className="flex items-center gap-3 px-2 py-2">
-                <div className="w-2 h-2 rounded-full shrink-0" style={{ background: p.color, boxShadow: `0 0 8px ${p.color}` }} />
-                <div>
-                  <div className="text-[#0a0a0a] text-[11px] font-semibold tracking-wider">{p.name}</div>
-                  <div className="text-[#888] text-[9px] tracking-widest uppercase">{p.stat}</div>
-                </div>
-              </div>
+  <div
+    className="w-2 h-2 rounded-full shrink-0"
+    style={{
+      background: p.color,
+      boxShadow: `0 0 8px ${p.color}`,
+    }}
+  />
+
+  <div>
+    <div className="text-[#0a0a0a] text-[11px] font-semibold tracking-wider">
+      {p.name}
+    </div>
+  </div>
+</div>
             </motion.div>
           </motion.div>
         ))}
