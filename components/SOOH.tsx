@@ -87,7 +87,7 @@ export default function SOOH() {
                 initial={{ y: "110%", opacity: 0 }}
                 animate={inView ? { y: 0, opacity: 1 } : {}}
                 transition={{ delay: 0.1 + wi * 0.14, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="font-black uppercase leading-[0.86] block"
+                className="font-black uppercase leading-[0.72] block"
                 style={{
                   fontSize: "clamp(52px, 9vw, 130px)",
                   letterSpacing: "-0.04em",
@@ -102,10 +102,10 @@ export default function SOOH() {
         </motion.div>
 
         {/* ── BODY: pillars left, stats right ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24 mt-40">
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24 mt-20">
+          
           {/* Pillars */}
-          <div className="space-y-5 pt-40">
+          <div className="space-y-8 pt-20">
             {pillars.map((p, i) => (
               <motion.div
                 key={p.num}
