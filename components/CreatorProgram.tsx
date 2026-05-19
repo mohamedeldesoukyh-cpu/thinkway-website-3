@@ -253,15 +253,32 @@ export default function CreatorProgram() {
   onSubmit={async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
 
-    const response = await fetch("/api/creator-apply", {
-      method: "POST",
-      body: formData,
-    });
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      social: (form.elements.namedItem("social") as HTMLInputElement).value,
+      followers: (form.elements.namedItem("followers") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
 
-    if (response.ok) {
-      window.location.href = "/application-submitted";
+    try {
+      const response = await fetch("/api/creator-apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        window.location.href = "/application-submitted";
+      } else {
+        alert("Submission failed");
+      }
+    } catch (err) {
+      alert("Something went wrong");
     }
   }}
   className="space-y-6"
