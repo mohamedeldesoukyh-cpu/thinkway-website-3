@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "content creation",
     "digital marketing",
   ],
+  
+  icons: {
+  icon: "/favicon.png",
+},
 };
 
 export default function RootLayout({
