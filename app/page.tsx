@@ -28,7 +28,6 @@ export default function Home() {
       <Stats />
       <SOOH />
       <CreatorProgram />
-      <AboutUs />
       <CampaignBrief />
       <Clients />
       <Footer />
