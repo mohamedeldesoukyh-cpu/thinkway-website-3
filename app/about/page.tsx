@@ -129,45 +129,82 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* VALUES */}
-      <section className="px-6 py-28 bg-[#f8f8f8]">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-[#1535C2] uppercase tracking-[0.3em] text-xs mb-12">
-            What We Believe
-          </p>
+    {/* VALUES */}
+<section className="py-32 bg-[#f8f8f8] border-t border-[#e5e5e5]">
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Authentic Influence",
-                text: "Real creator partnerships generate stronger engagement and trust than traditional advertising.",
-              },
-              {
-                title: "Performance Driven",
-                text: "Every campaign is built around measurable impact, audience relevance, and ROI.",
-              },
-              {
-                title: "Culture First",
-                text: "We create campaigns designed to feel native to modern social platforms and digital behavior.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-white p-10 rounded-2xl border border-[#ececec]"
-              >
-                <h3 className="text-2xl font-bold mb-6">
-                  {item.title}
-                </h3>
+  <div className="max-w-7xl mx-auto px-6">
 
-                <p className="text-[#666] leading-[1.9]">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
+    <div className="mb-20">
+      <p className="text-[#1535C2] uppercase tracking-[0.35em] text-xs mb-6">
+        What We Believe
+      </p>
+
+      <h2 className="text-black font-black uppercase leading-[0.95] tracking-[-0.05em]"
+        style={{
+          fontSize: "clamp(48px, 6vw, 110px)",
+        }}
+      >
+        Influence Is
+        <br />
+        More Than Reach.
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* Card 1 */}
+      <div className="bg-white p-12 border border-[#e8e8e8] rounded-[24px]">
+        <div className="text-[#1535C2] text-sm tracking-[0.3em] uppercase mb-8">
+          01
         </div>
-      </section>
 
+        <h3 className="text-3xl font-bold text-black mb-6">
+          Authentic Influence
+        </h3>
+
+        <p className="text-[#666] leading-[2] text-lg">
+          Real creator partnerships build stronger engagement,
+          audience trust, and long-term brand perception.
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="bg-white p-12 border border-[#e8e8e8] rounded-[24px]">
+        <div className="text-[#1535C2] text-sm tracking-[0.3em] uppercase mb-8">
+          02
+        </div>
+
+        <h3 className="text-3xl font-bold text-black mb-6">
+          Performance Driven
+        </h3>
+
+        <p className="text-[#666] leading-[2] text-lg">
+          Every campaign is designed around measurable business
+          outcomes, audience relevance, and ROI.
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white p-12 border border-[#e8e8e8] rounded-[24px]">
+        <div className="text-[#1535C2] text-sm tracking-[0.3em] uppercase mb-8">
+          03
+        </div>
+
+        <h3 className="text-3xl font-bold text-black mb-6">
+          Culture First
+        </h3>
+
+        <p className="text-[#666] leading-[2] text-lg">
+          We create campaigns designed to feel native to
+          digital culture, social behavior, and modern audiences.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
       {/* CTA */}
       <section className="px-6 py-32 text-center">
         <div className="max-w-4xl mx-auto">
