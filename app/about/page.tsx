@@ -9,42 +9,91 @@ export default function AboutPage() {
     <main className="bg-white min-h-screen">
       <Navigation />
 
-      {/* HERO */}
-      <section className="relative pt-40 pb-32 px-6 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-[#1535C2] uppercase tracking-[0.3em] text-xs mb-6"
-          >
-            About THINKWAY
-          </motion.p>
+     {/* HERO */}
+<section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-24">
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-[clamp(48px,8vw,110px)] font-black leading-[0.9] tracking-[-0.04em] text-black max-w-5xl"
-          >
-            BUILT FOR
-            <br />
-            MODERN
-            <span className="text-[#1535C2]"> INFLUENCE.</span>
-          </motion.h1>
+  {/* Background glow */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at 70% 40%, rgba(21,53,194,0.08) 0%, transparent 45%)",
+    }}
+  />
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-10 max-w-2xl text-[#666] text-lg leading-[1.9]"
-          >
-            THINKWAY is a next-generation influencer marketing agency helping
-            brands connect with creators, audiences, and culture through
-            impactful digital campaigns and social storytelling.
-          </motion.p>
+  {/* Grid */}
+  <div
+    className="absolute inset-0 opacity-[0.03]"
+    style={{
+      backgroundImage:
+        "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+      backgroundSize: "90px 90px",
+    }}
+  />
+
+  <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <p className="text-[#1535C2] uppercase tracking-[0.35em] text-xs mb-8">
+        About THINKWAY
+      </p>
+    </motion.div>
+
+    <div className="max-w-6xl">
+
+      <motion.h1
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1, duration: 1 }}
+        className="font-black uppercase leading-[0.88] tracking-[-0.06em] text-black"
+        style={{
+          fontSize: "clamp(70px, 11vw, 180px)",
+        }}
+      >
+        BUILT FOR
+        <br />
+
+        MODERN
+        <br />
+
+        <span className="text-[#1535C2]">
+          INFLUENCE.
+        </span>
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35, duration: 0.9 }}
+        className="mt-14 grid lg:grid-cols-2 gap-20 items-start"
+      >
+        <div>
+          <p className="text-[#111] text-2xl leading-[1.6] font-medium">
+            THINKWAY is a next-generation influencer marketing agency
+            helping brands connect with creators, audiences, and culture
+            through impactful digital campaigns and social storytelling.
+          </p>
         </div>
-      </section>
 
+        <div>
+          <p className="text-[#777] leading-[2] text-lg">
+            We combine influencer strategy, Social Out-Of-Home (SOOH),
+            creator partnerships, and performance-driven campaign execution
+            to help brands move beyond traditional advertising and create
+            measurable cultural impact.
+          </p>
+        </div>
+      </motion.div>
+
+    </div>
+
+  </div>
+
+</section>
       {/* STORY */}
       <section className="px-6 py-28 border-t border-[#efefef]">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20">
