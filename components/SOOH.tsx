@@ -105,7 +105,7 @@ export default function SOOH() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24 mt-16">
 
           {/* Pillars */}
-          <div>
+          <div className="space-y-5">
             {pillars.map((p, i) => (
               <motion.div
                 key={p.num}
