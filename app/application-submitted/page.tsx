@@ -3,7 +3,8 @@ export default function ApplicationSubmittedPage() {
     <main
       style={{
         minHeight: "100vh",
-        background: "#0a0f1e",
+        background:
+          "linear-gradient(135deg, #0f172a 0%, #111827 35%, #172554 100%)",
         color: "white",
         display: "flex",
         alignItems: "center",
@@ -25,13 +26,15 @@ export default function ApplicationSubmittedPage() {
             width: "120px",
             height: "120px",
             borderRadius: "9999px",
-            background: "#1d4ed8",
+            background:
+              "linear-gradient(135deg, #2563eb, #1e40af)",
             margin: "0 auto 30px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             animation: "pop 0.5s ease",
-            boxShadow: "0 0 40px rgba(37,99,235,0.4)",
+            boxShadow:
+              "0 10px 50px rgba(37,99,235,0.35)",
           }}
         >
           <svg
@@ -50,7 +53,7 @@ export default function ApplicationSubmittedPage() {
 
         <p
           style={{
-            color: "#3b82f6",
+            color: "#60a5fa",
             letterSpacing: "4px",
             marginBottom: "12px",
             fontSize: "12px",
@@ -93,7 +96,8 @@ export default function ApplicationSubmittedPage() {
           style={{
             display: "inline-block",
             marginTop: "40px",
-            background: "#1d4ed8",
+            background:
+              "linear-gradient(135deg, #2563eb, #1e40af)",
             color: "white",
             padding: "16px 36px",
             textDecoration: "none",
@@ -101,6 +105,9 @@ export default function ApplicationSubmittedPage() {
             letterSpacing: "2px",
             textTransform: "uppercase",
             transition: "0.3s ease",
+            borderRadius: "10px",
+            boxShadow:
+              "0 10px 30px rgba(37,99,235,0.25)",
           }}
         >
           Back to Homepage
