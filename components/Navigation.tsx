@@ -72,7 +72,7 @@ export default function Navigation() {
             : "1px solid rgba(0,0,0,0.03)",
         }}
       >
-       <div className="container-custom pl-6 md:pl-12 flex items-center justify-between h-20">
+       <div className="w-full max-w-[1400px] mx-auto px-16 md:px-32 flex items-center justify-between h-20">
           
           {/* LOGO */}
           <a
