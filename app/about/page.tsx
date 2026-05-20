@@ -1,14 +1,24 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-export default function AboutPage() {
+const { scrollY } = useScroll();
+
+const videoY = useTransform(
+  scrollY,
+  [0, 1000],
+  [0, 220]
+);
   return (
     <main className="bg-[#f5f5f3] text-[#0a0a0a] overflow-hidden relative">
 
       {/* GLOBAL BACKGROUND */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
+      <motion.div
+  className="fixed inset-0 z-0 overflow-hidden"
+  style={{ y: videoY }}
+>
 
         {/* Video */}
         <video
@@ -51,7 +61,7 @@ export default function AboutPage() {
           }}
         />
 
-      </div>
+      </motion.div>
 
       <Navigation />
 
