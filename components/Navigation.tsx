@@ -66,12 +66,12 @@ export default function Navigation() {
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   }}
 >    
-        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28 grid grid-cols-[auto_1fr_auto] items-center h-20">
+        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-[auto_1fr_auto] items-center h-20">
           
           {/* LOGO */}
           <a
   href="/"
-  className="block ml-10"
+  className="block pl-24"
 >
             <ThinkwayLogo variant="dark" />
           </a>
