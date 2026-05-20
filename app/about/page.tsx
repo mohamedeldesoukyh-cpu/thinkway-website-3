@@ -24,24 +24,23 @@ export default function AboutPage() {
           />
         </video>
 
-        {/* Luxury Light Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.82) 100%)",
-          }}
-        />
+       {/* Luxury Overlay */}
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(180deg, rgba(245,245,243,0.45) 0%, rgba(245,245,243,0.58) 100%)",
+  }}
+/>
 
-        {/* Soft Left Fade */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(245,245,243,0.92) 0%, rgba(245,245,243,0.78) 35%, rgba(245,245,243,0.38) 70%, rgba(245,245,243,0.1) 100%)",
-          }}
-        />
-
+{/* Cinematic Left Fade */}
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(90deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.48) 35%, rgba(245,245,243,0.12) 70%, rgba(245,245,243,0.02) 100%)",
+  }}
+/>
         {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.04]"
