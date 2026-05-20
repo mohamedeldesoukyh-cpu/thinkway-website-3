@@ -13,16 +13,19 @@ export default function AboutPage() {
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
 
-        {/* Background Image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-  "url('/media/About-hero.jpeg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        {/* Background Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source
+    src="/media/About-hero.mp4"
+    type="video/mp4"
+  />
+</video>
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/55" />
