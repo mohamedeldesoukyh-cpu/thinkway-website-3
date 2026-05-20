@@ -33,12 +33,12 @@ export default function AboutPage() {
         <Navigation />
 
         {/* ABOUT SECTION */}
-        <section className="pt-[240px] pb-[120px]">
+        <section className="pt-[320px] pb-[120px]">
 
-          <div className="max-w-[980px] mx-auto px-8">
+          <div className="max-w-[1180px] mx-auto px-[80px]">
 
             {/* HEADER */}
-            <div className="mb-20">
+            <div className="mb-20 pl-[40px]">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-5">
                 About Thinkway
@@ -58,7 +58,7 @@ export default function AboutPage() {
             </div>
 
             {/* INTRO */}
-            <div className="max-w-[900px] mb-24">
+           <div className="max-w-[900px] mb-24 pl-[40px]">
 
               <h2 className="text-[18px] leading-[1.4] font-black text-black mb-8">
 
@@ -93,7 +93,7 @@ export default function AboutPage() {
             </div>
 
             {/* TWO COLUMN SECTION */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-28">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 mb-28 pl-[40px]">
 
               {/* WHAT WE DO */}
               <div>
