@@ -16,7 +16,7 @@ export default function AboutPage() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.28] pointer-events-none"
         >
           <source
             src="/media/About-hero.mp4"
@@ -24,12 +24,21 @@ export default function AboutPage() {
           />
         </video>
 
-        {/* Light Overlay */}
+        {/* Luxury Light Overlay */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(245,245,243,0.92) 0%, rgba(245,245,243,0.95) 100%)",
+              "linear-gradient(180deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.82) 100%)",
+          }}
+        />
+
+        {/* Soft Left Fade */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(245,245,243,0.92) 0%, rgba(245,245,243,0.78) 35%, rgba(245,245,243,0.38) 70%, rgba(245,245,243,0.1) 100%)",
           }}
         />
 
