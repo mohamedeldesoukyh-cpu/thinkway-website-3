@@ -95,36 +95,7 @@ export default function CampaignBrief() {
               brief and get back within 24 hours with a tailored proposal.
             </p>
 
-            <div className="space-y-6 border-t border-[#ececec] pt-10">
-              {[
-                {
-                  label: "Email",
-                  val: "hello@thinkwaymedia.com",
-                },
-                {
-                  label: "Phone",
-                  val: "+201204570000",
-                },
-                {
-                  label: "Address",
-                  val: "Unit No. 2B – Lower Ground Floor – Al Saraya Mall – 44 Central Axis – Sheikh Zayed – Giza – Egypt",
-                },
-              ].map((c) => (
-                <div
-                  key={c.label}
-                  className="flex items-baseline gap-6"
-                >
-                  <span className="text-[9px] tracking-[0.25em] text-[#666] uppercase w-20 shrink-0">
-                    {c.label}
-                  </span>
-
-                  <span className="text-[11px] tracking-[0.05em] text-[#444] leading-[1.8]">
-                    {c.val}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                     </motion.div>
 
           {/* FORM */}
           <motion.div
