@@ -5,18 +5,17 @@ import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#f5f5f3] text-[#0a0a0a] overflow-hidden relative">
+    <main className="bg-[#f5f5f3] text-[#0a0a0a] relative overflow-hidden">
 
-      {/* GLOBAL BACKGROUND */}
+      {/* BACKGROUND */}
       <div className="fixed inset-0 z-0 overflow-hidden">
 
-        {/* Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.28] pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"
         >
           <source
             src="/media/About-hero.mp4"
@@ -24,34 +23,14 @@ export default function AboutPage() {
           />
         </video>
 
-        {/* Luxury Overlay */}
-<div
-  className="absolute inset-0"
-  style={{
-    background:
-      "linear-gradient(180deg, rgba(245,245,243,0.45) 0%, rgba(245,245,243,0.58) 100%)",
-  }}
-/>
-
-{/* Cinematic Left Fade */}
-<div
-  className="absolute inset-0"
-  style={{
-    background:
-      "linear-gradient(90deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.48) 35%, rgba(245,245,243,0.12) 70%, rgba(245,245,243,0.02) 100%)",
-  }}
-/>
-
-        {/* Soft Left Fade */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(245,245,243,0.92) 0%, rgba(245,245,243,0.78) 35%, rgba(245,245,243,0.38) 70%, rgba(245,245,243,0.1) 100%)",
+              "rgba(245,245,243,0.72)",
           }}
         />
 
-        {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -66,155 +45,49 @@ export default function AboutPage() {
       <Navigation />
 
       {/* HERO */}
-      <section className="relative z-10 min-h-screen flex items-center">
+      <section className="relative z-10 min-h-screen flex items-center justify-center text-center px-6">
 
-        <div className="max-w-7xl mx-auto px-6 w-full pt-32 pb-20">
+        <div className="max-w-5xl">
 
-          <div className="max-w-3xl">
+          <p className="uppercase tracking-[0.35em] text-[#1535C2] text-xs mb-10">
+            About Thinkway
+          </p>
 
-            {/* Label */}
-            <div className="flex items-center gap-4 mb-10">
+          <h1
+            className="font-black uppercase leading-[0.9] tracking-[-0.06em]"
+            style={{
+              fontSize: "clamp(60px, 10vw, 180px)",
+            }}
+          >
+            MODERN
+            <br />
 
-              <div className="w-8 h-[1px] bg-[#1535C2]" />
-
-              <span className="text-[10px] tracking-[0.35em] uppercase text-[#1535C2] font-medium">
-                About Thinkway
-              </span>
-
-            </div>
-
-            {/* Heading */}
-            <h1
-              className="font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#0a0a0a]"
-              style={{
-                fontSize: "clamp(54px, 8vw, 140px)",
-              }}
-            >
-              MODERN
-              <br />
+            <span className="text-[#1535C2]">
               INFLUENCE.
-              <br />
+            </span>
 
-              <span className="text-[#1535C2]">
-                REAL IMPACT.
-              </span>
+          </h1>
 
-            </h1>
+          <p className="mt-14 max-w-3xl mx-auto text-[#5f5f5f] leading-[2] uppercase tracking-[0.08em] text-[13px]">
 
-            {/* Paragraph */}
-            <p className="mt-12 text-[#5f5f5f] max-w-2xl leading-[2] uppercase tracking-[0.08em] text-[13px]">
+            THINKWAY is a next-generation influencer marketing
+            agency helping brands connect with creators,
+            audiences, and culture through impactful digital
+            storytelling, creator partnerships,
+            performance campaigns, and Social Out-Of-Home experiences.
 
-              THINKWAY is a next-generation influencer marketing
-              agency helping brands connect with creators,
-              audiences, and culture through impactful
-              storytelling, creator partnerships, performance
-              marketing, and Social Out-Of-Home experiences.
-
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mt-14">
-
-              <a
-                href="/#contact"
-                className="bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.25em] text-[11px]"
-              >
-                Start A Campaign
-              </a>
-
-              <a
-                href="#clients"
-                className="border border-[#d9d9d9] px-10 py-5 uppercase tracking-[0.25em] text-[11px] text-[#0a0a0a] bg-white/50 backdrop-blur-sm"
-              >
-                View Clients
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* PHILOSOPHY */}
-      <section className="relative z-10 py-32">
-
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-start">
-
-          <div>
-
-            <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-8">
-              Our Philosophy
-            </p>
-
-            <h2
-              className="font-black leading-[0.95] tracking-[-0.05em]"
-              style={{
-                fontSize: "clamp(44px, 5vw, 90px)",
-              }}
-            >
-              Influence
-              today is
-              built on
-              trust.
-            </h2>
-
-          </div>
-
-          <div className="space-y-8 text-[#5f5f5f] text-[18px] leading-[2]">
-
-            <p>
-              Modern audiences no longer respond to
-              traditional advertising the same way.
-              Brands need authentic voices, trusted creators,
-              and storytelling that feels native to
-              digital culture.
-            </p>
-
-            <p>
-              THINKWAY bridges the gap between brands
-              and creators through strategy, creativity,
-              influencer partnerships, and scalable
-              campaign execution.
-            </p>
-
-            <p>
-              From creator campaigns to Social Out-Of-Home
-              activations, we help brands build awareness,
-              engagement, measurable ROI, and
-              cultural relevance.
-            </p>
-
-          </div>
+          </p>
 
         </div>
 
       </section>
 
       {/* SERVICES */}
-      <section className="relative z-10 py-32 border-t border-black/5">
+      <section className="relative z-10 py-24 border-t border-black/5">
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
 
-          <div className="mb-24">
-
-            <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-6">
-              Services
-            </p>
-
-            <h2
-              className="font-black tracking-[-0.05em]"
-              style={{
-                fontSize: "clamp(44px, 5vw, 90px)",
-              }}
-            >
-              What we do.
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-black/10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
 
             {[
               "Influencer Marketing",
@@ -222,16 +95,11 @@ export default function AboutPage() {
               "Creator Strategy",
               "ROI Campaigns",
             ].map((service) => (
-              <div
-                key={service}
-                className="bg-[#f5f5f3] p-12 min-h-[260px] flex flex-col justify-between"
-              >
+              <div key={service}>
 
-                <div className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
-                  Thinkway
-                </div>
+                <div className="w-10 h-[1px] bg-[#1535C2] mx-auto mb-6" />
 
-                <h3 className="text-[34px] font-bold leading-[1.1] tracking-[-0.03em]">
+                <h3 className="text-[28px] font-black leading-[1.1] tracking-[-0.03em]">
                   {service}
                 </h3>
 
@@ -244,33 +112,60 @@ export default function AboutPage() {
 
       </section>
 
+      {/* PHILOSOPHY */}
+      <section className="relative z-10 py-32">
+
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          <p className="uppercase tracking-[0.35em] text-[#1535C2] text-xs mb-10">
+            Our Philosophy
+          </p>
+
+          <h2
+            className="font-black leading-[0.95] tracking-[-0.05em]"
+            style={{
+              fontSize: "clamp(44px, 6vw, 100px)",
+            }}
+          >
+            REAL
+            CONNECTIONS
+            CREATE REAL
+            RESULTS.
+          </h2>
+
+          <p className="mt-14 text-[#5f5f5f] leading-[2] text-[18px]">
+
+            Modern audiences no longer respond to traditional
+            advertising the same way. Brands need authentic
+            voices, trusted creators, and storytelling
+            designed for digital culture.
+
+          </p>
+
+        </div>
+
+      </section>
+
       {/* CLIENTS */}
-      <section
-        id="clients"
-        className="relative z-10 py-32 border-t border-black/5"
-      >
+      <section className="relative z-10 py-32 border-t border-black/5">
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6 text-center">
 
-          <div className="mb-24">
+          <p className="uppercase tracking-[0.35em] text-[#1535C2] text-xs mb-10">
+            Selected Clients
+          </p>
 
-            <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-6">
-              Selected Clients
-            </p>
+          <h2
+            className="font-black tracking-[-0.05em]"
+            style={{
+              fontSize: "clamp(40px, 5vw, 90px)",
+            }}
+          >
+            BRANDS WE’VE
+            WORKED WITH.
+          </h2>
 
-            <h2
-              className="font-black tracking-[-0.05em]"
-              style={{
-                fontSize: "clamp(44px, 5vw, 90px)",
-              }}
-            >
-              Brands we’ve
-              worked with.
-            </h2>
-
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-black/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mt-20 items-center">
 
             {[
               "/media/AM Group.png",
@@ -280,12 +175,12 @@ export default function AboutPage() {
             ].map((logo, i) => (
               <div
                 key={i}
-                className="bg-[#f5f5f3] h-[220px] flex items-center justify-center p-10"
+                className="bg-white/40 backdrop-blur-sm border border-black/5 p-10 h-[180px] flex items-center justify-center"
               >
                 <img
                   src={logo}
                   alt="client"
-                  className="max-h-[90px] object-contain"
+                  className="max-h-[80px] object-contain"
                 />
               </div>
             ))}
@@ -296,19 +191,19 @@ export default function AboutPage() {
 
       </section>
 
-      {/* FINAL CTA */}
-      <section className="relative z-10 py-40 border-t border-black/5">
+      {/* CTA */}
+      <section className="relative z-10 py-40 text-center border-t border-black/5">
 
-        <div className="max-w-5xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6">
 
-          <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-8">
+          <p className="uppercase tracking-[0.35em] text-[#1535C2] text-xs mb-10">
             Let’s Build Something Impactful
           </p>
 
           <h2
-            className="font-black tracking-[-0.05em] leading-[0.95]"
+            className="font-black leading-[0.92] tracking-[-0.05em]"
             style={{
-              fontSize: "clamp(54px, 7vw, 120px)",
+              fontSize: "clamp(54px, 8vw, 140px)",
             }}
           >
             READY TO
