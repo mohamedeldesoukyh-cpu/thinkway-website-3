@@ -21,12 +21,42 @@ function useCounter(target: number, inView: boolean, duration = 2000) {
 }
 
 const statsData = [
-  { val: 500, suffix: "+", label: "Vetted Creators", sub: "Across 12 countries" },
-  { val: 150, suffix: "M+", label: "Total Network Reach", sub: "Combined audience" },
-  { val: 98, suffix: "%", label: "Client Retention Rate", sub: "Year over year" },
-  { val: 3, suffix: ".2x", label: "Average Campaign ROI", sub: "Above industry avg." },
-  { val: 320, suffix: "+", label: "Campaigns Executed", sub: "Since founding" },
-  { val: 47, suffix: "+", label: "Brand Partners", sub: "Regional & global" },
+  {
+    val: 120,
+    suffix: "+",
+    label: "Verified Creators",
+    sub: "UAE • KSA • Egypt",
+  },
+  {
+    val: 28,
+    suffix: "+",
+    label: "Brand Collaborations",
+    sub: "Fashion • Tech • FMCG",
+  },
+  {
+    val: 12,
+    suffix: "M+",
+    label: "Campaign Reach",
+    sub: "Across Paid & Organic",
+  },
+  {
+    val: 2,
+    suffix: ".4x",
+    label: "Average ROI",
+    sub: "Performance Campaigns",
+  },
+  {
+    val: 18,
+    suffix: "+",
+    label: "Monthly Campaigns",
+    sub: "Managed Across MENA",
+  },
+  {
+    val: 4,
+    suffix: "",
+    label: "Core Markets",
+    sub: "UAE • KSA • Egypt • Kuwait",
+  },
 ];
 
 function StatItem({ item, inView, index }: { item: typeof statsData[0]; inView: boolean; index: number }) {
