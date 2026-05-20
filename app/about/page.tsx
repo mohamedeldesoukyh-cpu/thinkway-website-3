@@ -1,184 +1,171 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
-    <main className="bg-black text-white overflow-hidden">
+    <main className="bg-[#f5f5f3] text-[#0a0a0a] overflow-hidden relative">
+
+      {/* GLOBAL BACKGROUND */}
+      <div className="fixed inset-0 z-0 overflow-hidden">
+
+        {/* Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
+        >
+          <source
+            src="/media/About-hero.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Light Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(245,245,243,0.92) 0%, rgba(245,245,243,0.95) 100%)",
+          }}
+        />
+
+        {/* Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+
+      </div>
 
       <Navigation />
 
-     {/* HERO SECTION */}
-<section className="relative min-h-screen flex items-center overflow-hidden bg-[#f5f5f3]">
+      {/* HERO */}
+      <section className="relative z-10 min-h-screen flex items-center">
 
-  {/* VIDEO BACKGROUND */}
-  <motion.div
-    className="absolute inset-0 z-0"
-  >
-    <video
-      autoPlay
-      muted
-      loop
-      playsInline
-      className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"
-    >
-      <source
-        src="/media/About-hero.mp4"
-        type="video/mp4"
-      />
-    </video>
+        <div className="max-w-7xl mx-auto px-6 w-full pt-32 pb-20">
 
-    {/* Left Fade */}
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "linear-gradient(90deg, rgba(245,245,243,0.97) 0%, rgba(245,245,243,0.88) 35%, rgba(245,245,243,0.55) 65%, rgba(245,245,243,0.18) 100%)",
-      }}
-    />
+          <div className="max-w-3xl">
 
-    {/* Soft Top Fade */}
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(245,245,243,0.7) 0%, transparent 20%, transparent 80%, rgba(245,245,243,0.85) 100%)",
-      }}
-    />
+            {/* Label */}
+            <div className="flex items-center gap-4 mb-10">
 
-    {/* Grid */}
-    <div
-      className="absolute inset-0 opacity-[0.04]"
-      style={{
-        backgroundImage:
-          "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-        backgroundSize: "80px 80px",
-      }}
-    />
-  </motion.div>
+              <div className="w-8 h-[1px] bg-[#1535C2]" />
 
-  {/* CONTENT */}
-  <div className="container-custom relative z-20 pt-32 pb-20 w-full">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-[#1535C2] font-medium">
+                About Thinkway
+              </span>
 
-    <div className="max-w-2xl">
+            </div>
 
-      {/* Eyebrow */}
-      <div className="flex items-center gap-4 mb-10">
+            {/* Heading */}
+            <h1
+              className="font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#0a0a0a]"
+              style={{
+                fontSize: "clamp(54px, 8vw, 140px)",
+              }}
+            >
+              MODERN
+              <br />
+              INFLUENCE.
+              <br />
 
-        <div className="w-6 h-[1px] bg-[#1535C2]" />
+              <span className="text-[#1535C2]">
+                REAL IMPACT.
+              </span>
 
-        <span className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase font-medium">
-          About THINKWAY
-        </span>
+            </h1>
 
-      </div>
+            {/* Paragraph */}
+            <p className="mt-12 text-[#5f5f5f] max-w-2xl leading-[2] uppercase tracking-[0.08em] text-[13px]">
 
-      {/* Heading */}
-      <div className="overflow-hidden">
+              THINKWAY is a next-generation influencer marketing
+              agency helping brands connect with creators,
+              audiences, and culture through impactful
+              storytelling, creator partnerships, performance
+              marketing, and Social Out-Of-Home experiences.
 
-        <h1
-          className="font-black uppercase leading-[0.92] text-[#0a0a0a]"
-          style={{
-            fontSize: "clamp(42px, 6vw, 88px)",
-            letterSpacing: "-0.04em",
-          }}
-        >
-          MODERN
-          <br />
-          INFLUENCE.
-          <br />
+            </p>
 
-          <span className="text-[#1535C2]">
-            REAL IMPACT.
-          </span>
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 mt-14">
 
-        </h1>
+              <a
+                href="/#contact"
+                className="bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.25em] text-[11px]"
+              >
+                Start A Campaign
+              </a>
 
-      </div>
+              <a
+                href="#clients"
+                className="border border-[#d9d9d9] px-10 py-5 uppercase tracking-[0.25em] text-[11px] text-[#0a0a0a] bg-white/50 backdrop-blur-sm"
+              >
+                View Clients
+              </a>
 
-      {/* Paragraph */}
-      <p className="mt-10 text-[#666] text-[14px] tracking-[0.06em] uppercase leading-[2.1] max-w-xl">
+            </div>
 
-        THINKWAY is a next-generation influencer marketing
-        agency helping brands connect with creators,
-        audiences, and culture through high-impact digital
-        storytelling, creator partnerships, and
-        performance-driven campaigns.
+          </div>
 
-      </p>
+        </div>
 
-      {/* Buttons */}
-      <div className="flex flex-wrap items-center gap-4 mt-12">
+      </section>
 
-        <a
-          href="/#contact"
-          className="bg-[#1535C2] text-white px-10 py-5 text-[11px] tracking-[0.25em] uppercase"
-        >
-          Start A Campaign
-        </a>
+      {/* PHILOSOPHY */}
+      <section className="relative z-10 py-32">
 
-        <a
-          href="#clients"
-          className="border border-[#d9d9d9] text-[#0a0a0a] px-10 py-5 text-[11px] tracking-[0.25em] uppercase bg-white/40 backdrop-blur-sm"
-        >
-          View Clients
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-      {/* ABOUT STORY */}
-      <section className="bg-[#0b0b0f] py-32 border-t border-white/10">
-
-        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-start">
 
           <div>
-            <p className="uppercase tracking-[0.3em] text-[#60a5fa] text-xs mb-8">
+
+            <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-8">
               Our Philosophy
             </p>
 
             <h2
-              className="font-semibold leading-[1.05] tracking-[-0.04em]"
+              className="font-black leading-[0.95] tracking-[-0.05em]"
               style={{
-                fontSize: "clamp(38px, 5vw, 70px)",
+                fontSize: "clamp(44px, 5vw, 90px)",
               }}
             >
-              Influence today
-              is built on
-              authenticity,
-              relevance,
-              and culture.
+              Influence
+              today is
+              built on
+              trust.
             </h2>
+
           </div>
 
-          <div className="space-y-8 text-white/70 text-[18px] leading-[2]">
+          <div className="space-y-8 text-[#5f5f5f] text-[18px] leading-[2]">
 
             <p>
-              Modern audiences no longer respond to traditional
-              advertising the same way. Brands need authentic
-              voices, trusted creators, and storytelling that
-              feels native to digital culture.
+              Modern audiences no longer respond to
+              traditional advertising the same way.
+              Brands need authentic voices, trusted creators,
+              and storytelling that feels native to
+              digital culture.
             </p>
 
             <p>
-              THINKWAY bridges the gap between brands and
-              creators through strategy, creativity,
-              influencer partnerships, and scalable campaign
-              execution.
+              THINKWAY bridges the gap between brands
+              and creators through strategy, creativity,
+              influencer partnerships, and scalable
+              campaign execution.
             </p>
 
             <p>
               From creator campaigns to Social Out-Of-Home
               activations, we help brands build awareness,
-              engagement, measurable ROI, and cultural
-              relevance across modern platforms.
+              engagement, measurable ROI, and
+              cultural relevance.
             </p>
 
           </div>
@@ -188,20 +175,20 @@ export default function AboutPage() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-black py-32">
+      <section className="relative z-10 py-32 border-t border-black/5">
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="mb-20">
+          <div className="mb-24">
 
-            <p className="uppercase tracking-[0.3em] text-[#60a5fa] text-xs mb-6">
+            <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-6">
               Services
             </p>
 
             <h2
-              className="font-semibold tracking-[-0.04em]"
+              className="font-black tracking-[-0.05em]"
               style={{
-                fontSize: "clamp(42px, 5vw, 72px)",
+                fontSize: "clamp(44px, 5vw, 90px)",
               }}
             >
               What we do.
@@ -209,7 +196,7 @@ export default function AboutPage() {
 
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-black/10">
 
             {[
               "Influencer Marketing",
@@ -219,15 +206,17 @@ export default function AboutPage() {
             ].map((service) => (
               <div
                 key={service}
-                className="bg-white/[0.03] border border-white/10 rounded-[30px] p-10 hover:bg-white/[0.05] transition-all duration-300"
+                className="bg-[#f5f5f3] p-12 min-h-[260px] flex flex-col justify-between"
               >
-                <div className="text-[#60a5fa] text-xs tracking-[0.3em] mb-8">
-                  THINKWAY
+
+                <div className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
+                  Thinkway
                 </div>
 
-                <h3 className="text-[28px] font-medium leading-[1.2]">
+                <h3 className="text-[34px] font-bold leading-[1.1] tracking-[-0.03em]">
                   {service}
                 </h3>
+
               </div>
             ))}
 
@@ -240,21 +229,21 @@ export default function AboutPage() {
       {/* CLIENTS */}
       <section
         id="clients"
-        className="bg-[#0b0b0f] py-32 border-t border-white/10"
+        className="relative z-10 py-32 border-t border-black/5"
       >
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="mb-20">
+          <div className="mb-24">
 
-            <p className="uppercase tracking-[0.3em] text-[#60a5fa] text-xs mb-6">
+            <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-6">
               Selected Clients
             </p>
 
             <h2
-              className="font-semibold tracking-[-0.04em]"
+              className="font-black tracking-[-0.05em]"
               style={{
-                fontSize: "clamp(42px, 5vw, 72px)",
+                fontSize: "clamp(44px, 5vw, 90px)",
               }}
             >
               Brands we’ve
@@ -263,18 +252,17 @@ export default function AboutPage() {
 
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-black/10">
 
             {[
-              "/AM Group.png",
-              "/Arab Bank of Egypt.jpg",
-              "/Grand water Technologies.jpg",
-              "/Praxo Pharm 2.jpg",
-              "/logo.png",
+              "/media/AM Group.png",
+              "/media/Arab Bank of Egypt.jpg",
+              "/media/Grand water Technologies.jpg",
+              "/media/Praxo Pharm 2.jpg",
             ].map((logo, i) => (
               <div
                 key={i}
-                className="bg-white rounded-[24px] p-8 flex items-center justify-center h-[180px]"
+                className="bg-[#f5f5f3] h-[220px] flex items-center justify-center p-10"
               >
                 <img
                   src={logo}
@@ -291,35 +279,30 @@ export default function AboutPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-black py-40 relative overflow-hidden">
+      <section className="relative z-10 py-40 border-t border-black/5">
 
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 60%)",
-          }}
-        />
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-
-          <p className="uppercase tracking-[0.3em] text-[#60a5fa] text-xs mb-8">
+          <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-8">
             Let’s Build Something Impactful
           </p>
 
           <h2
-            className="font-semibold tracking-[-0.04em] leading-[1]"
+            className="font-black tracking-[-0.05em] leading-[0.95]"
             style={{
-              fontSize: "clamp(52px, 6vw, 90px)",
+              fontSize: "clamp(54px, 7vw, 120px)",
             }}
           >
-            Ready to scale
-            your brand?
+            READY TO
+            <br />
+            SCALE YOUR
+            <br />
+            BRAND?
           </h2>
 
           <a
             href="/#contact"
-            className="inline-block mt-14 bg-[#2563eb] hover:bg-[#1d4ed8] transition-all duration-300 px-12 py-5 uppercase tracking-[0.2em] text-xs font-medium rounded-full"
+            className="inline-block mt-14 bg-[#1535C2] text-white px-12 py-5 uppercase tracking-[0.25em] text-[11px]"
           >
             Start A Campaign
           </a>
