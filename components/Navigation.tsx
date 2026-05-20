@@ -66,7 +66,7 @@ export default function Navigation() {
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   }}
 >    
-        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28 flex items-center h-20">
+        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28 flex items-center justify-between h-20">
           
           {/* LOGO */}
           <a
@@ -92,7 +92,7 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex ml-auto">
+          <div className="hidden md:flex">
 
             <button
               onClick={() => handleNav("/#contact")}
