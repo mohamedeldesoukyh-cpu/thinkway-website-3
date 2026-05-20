@@ -59,14 +59,11 @@ export default function Navigation() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+        className="fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-500"
         style={{
-          background: scrolled
-            ? "rgba(255,255,255,0.92)"
-            : "rgba(255,255,255,0.35)",
+         background: "rgba(255,255,255,0.92)",
 
-          backdropFilter: "blur(20px)",
-
+          backdropFilter: "blur(14px)",
           borderBottom: scrolled
             ? "1px solid rgba(0,0,0,0.06)"
             : "1px solid rgba(0,0,0,0.03)",
