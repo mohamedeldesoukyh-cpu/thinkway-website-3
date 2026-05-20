@@ -88,173 +88,144 @@ export default function AboutPage() {
 
         </section>
 
-       {/* SERVICES + PHILOSOPHY */}
-<section className="py-24">
+        {/* SERVICES + PHILOSOPHY */}
+        <section className="py-28">
 
-  <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto px-6">
 
-    {/* WHAT WE DO */}
-    <div className="mb-28">
+            {/* WHAT WE DO */}
+            <div className="text-center mb-28">
 
-      <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-14 text-center">
-        What We Do
-      </p>
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
+                What We Do
+              </p>
 
-      <div className="space-y-20">
+              <div className="space-y-20">
 
-        {/* ITEM */}
-        <div className="grid md:grid-cols-12 gap-8 items-start">
+                <div>
 
-          <div className="md:col-span-2">
+                  <p className="text-[#1535C2] text-[11px] tracking-[0.3em] mb-5">
+                    01
+                  </p>
 
-            <p className="text-[#1535C2] text-[11px] tracking-[0.3em]">
-              01
-            </p>
+                  <h3 className="text-[24px] md:text-[34px] font-black tracking-[-0.04em] uppercase leading-none">
+                    Influencer Marketing
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-[2] text-[#666] max-w-2xl mx-auto">
+                    We connect brands with the right creators
+                    to deliver authentic storytelling and measurable ROI.
+                  </p>
+
+                </div>
+
+                <div>
+
+                  <p className="text-[#1535C2] text-[11px] tracking-[0.3em] mb-5">
+                    02
+                  </p>
+
+                  <h3 className="text-[24px] md:text-[34px] font-black tracking-[-0.04em] uppercase leading-none">
+                    Social Out-Of-Home
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-[2] text-[#666] max-w-2xl mx-auto">
+                    We transform traditional outdoor media into
+                    dynamic social-driven experiences that extend
+                    beyond the street into digital conversations.
+                  </p>
+
+                </div>
+
+                <div>
+
+                  <p className="text-[#1535C2] text-[11px] tracking-[0.3em] mb-5">
+                    03
+                  </p>
+
+                  <h3 className="text-[24px] md:text-[34px] font-black tracking-[-0.04em] uppercase leading-none">
+                    Campaign Strategy & Execution
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-[2] text-[#666] max-w-2xl mx-auto">
+                    From concept to delivery, we manage end-to-end
+                    campaigns tailored to your business objectives.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* PHILOSOPHY */}
+            <div className="text-center">
+
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
+                Our Philosophy
+              </p>
+
+              <div className="space-y-20">
+
+                <div>
+
+                  <h3 className="text-[24px] md:text-[34px] font-black tracking-[-0.04em] uppercase leading-none">
+
+                    Performance
+                    <br />
+                    Driven
+
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-[2] text-[#666] max-w-xl mx-auto">
+                    Every campaign is built around measurable impact,
+                    audience relevance, and ROI.
+                  </p>
+
+                </div>
+
+                <div>
+
+                  <h3 className="text-[24px] md:text-[34px] font-black tracking-[-0.04em] uppercase leading-none">
+
+                    Authentic
+                    <br />
+                    Influence
+
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-[2] text-[#666] max-w-xl mx-auto">
+                    Real creator partnerships generate stronger
+                    engagement and trust than traditional advertising.
+                  </p>
+
+                </div>
+
+                <div>
+
+                  <h3 className="text-[24px] md:text-[34px] font-black tracking-[-0.04em] uppercase leading-none">
+
+                    Culture
+                    <br />
+                    First
+
+                  </h3>
+
+                  <p className="mt-6 text-[14px] leading-[2] text-[#666] max-w-xl mx-auto">
+                    We create campaigns designed to feel native to
+                    modern social platforms and digital behavior.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
-          <div className="md:col-span-10">
+        </section>
 
-            <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-[-0.04em] leading-none mb-5">
-              Influencer Marketing
-            </h3>
-
-            <p className="text-[14px] leading-[2] text-[#666] max-w-2xl">
-              We connect brands with the right creators to deliver
-              authentic storytelling and measurable ROI.
-            </p>
-
-          </div>
-
-        </div>
-
-        {/* ITEM */}
-        <div className="grid md:grid-cols-12 gap-8 items-start">
-
-          <div className="md:col-span-2">
-
-            <p className="text-[#1535C2] text-[11px] tracking-[0.3em]">
-              02
-            </p>
-
-          </div>
-
-          <div className="md:col-span-10">
-
-            <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-[-0.04em] leading-none mb-5">
-              Social Out-Of-Home
-            </h3>
-
-            <p className="text-[14px] leading-[2] text-[#666] max-w-2xl">
-              We transform traditional outdoor media into dynamic
-              social-driven experiences that extend beyond the street
-              into digital conversations.
-            </p>
-
-          </div>
-
-        </div>
-
-        {/* ITEM */}
-        <div className="grid md:grid-cols-12 gap-8 items-start">
-
-          <div className="md:col-span-2">
-
-            <p className="text-[#1535C2] text-[11px] tracking-[0.3em]">
-              03
-            </p>
-
-          </div>
-
-          <div className="md:col-span-10">
-
-            <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-[-0.04em] leading-none mb-5">
-              Campaign Strategy & Execution
-            </h3>
-
-            <p className="text-[14px] leading-[2] text-[#666] max-w-2xl">
-              From concept to delivery, we manage end-to-end campaigns
-              tailored to your business objectives.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    {/* PHILOSOPHY */}
-    <div>
-
-      <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-14 text-center">
-        Our Philosophy
-      </p>
-
-      <div className="grid md:grid-cols-3 gap-14">
-
-        {/* CARD */}
-        <div>
-
-          <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-[-0.04em] leading-none mb-5">
-
-            Performance
-            <br />
-            Driven
-
-          </h3>
-
-          <p className="text-[14px] leading-[2] text-[#666]">
-            Every campaign is built around measurable impact,
-            audience relevance, and ROI.
-          </p>
-
-        </div>
-
-        {/* CARD */}
-        <div>
-
-          <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-[-0.04em] leading-none mb-5">
-
-            Authentic
-            <br />
-            Influence
-
-          </h3>
-
-          <p className="text-[14px] leading-[2] text-[#666]">
-            Real creator partnerships generate stronger engagement
-            and trust than traditional advertising.
-          </p>
-
-        </div>
-
-        {/* CARD */}
-        <div>
-
-          <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-[-0.04em] leading-none mb-5">
-
-            Culture
-            <br />
-            First
-
-          </h3>
-
-          <p className="text-[14px] leading-[2] text-[#666]">
-            We create campaigns designed to feel native to modern
-            social platforms and digital behavior.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
       </div>
 
     </main>
