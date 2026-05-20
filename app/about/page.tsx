@@ -45,59 +45,51 @@ export default function AboutPage() {
         <Navigation />
 
         {/* HERO */}
-        <section className="pt-44 pb-16 border-b border-black/5 min-h-[70vh] flex items-center">
+<section className="pt-56 pb-20 min-h-[78vh] flex items-center justify-center border-b border-black/5">
 
-          <div className="max-w-6xl mx-auto px-6 w-full">
+  <div className="max-w-3xl mx-auto px-6 text-center">
 
-            <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
-              About Thinkway
-            </p>
+    <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
+      About Thinkway
+    </p>
 
-            <div className="max-w-2xl">
+    <h1 className="text-[28px] md:text-[40px] font-black leading-[0.95] tracking-[-0.05em] uppercase">
 
-              <h1 className="text-[42px] md:text-[58px] font-black leading-[0.92] tracking-[-0.05em] uppercase">
+      ABOUT
+      <br />
 
-                ABOUT
-                <br />
+      <span className="text-[#1535C2]">
+        THINKWAY
+      </span>
 
-                <span className="text-[#1535C2]">
-                  THINKWAY
-                </span>
+    </h1>
 
-              </h1>
+    <p className="mt-8 text-[13px] leading-[2.1] text-[#666] max-w-2xl mx-auto">
 
-              <div className="mt-8">
+      At Thinkway, we don't just run campaigns — we create impact.
 
-                <p className="text-[15px] leading-[2] text-[#5f5f5f]">
+      <br />
+      <br />
 
-                  At Thinkway, we don't just run campaigns — we create impact.
+      We are a modern marketing agency specializing in
+      Social Out-Of-Home (SOOH) and Influencer Marketing,
+      built to connect brands with audiences in smarter,
+      more engaging ways.
 
-                  <br />
-                  <br />
+      <br />
+      <br />
 
-                  We are a modern marketing agency specializing in
-                  Social Out-Of-Home (SOOH) and Influencer Marketing,
-                  built to connect brands with audiences in smarter,
-                  more engaging ways.
+      Our approach combines strategic thinking,
+      data-driven insights, and creative execution
+      to deliver campaigns that don't just look good —
+      but perform.
 
-                  <br />
-                  <br />
+    </p>
 
-                  Our approach combines strategic thinking,
-                  data-driven insights, and creative execution
-                  to deliver campaigns that don't just look good —
-                  but perform.
+  </div>
 
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
+</section>
+        
         {/* MAIN CONTENT */}
         <section className="py-20">
 
