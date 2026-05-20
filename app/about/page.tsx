@@ -94,9 +94,9 @@ export default function AboutPage() {
         {/* MAIN CONTENT */}
 <section className="py-24 overflow-hidden">
 
-  <div className="max-w-6xl mx-auto px-8">
+  <div className="max-w-6xl mx-auto px-16 lg:px-24">
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+   <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-start">
 
       {/* LEFT SIDE */}
       <div className="w-full">
