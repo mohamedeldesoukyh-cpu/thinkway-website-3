@@ -24,7 +24,6 @@ export default function Home() {
       <Manifesto />
       <Services />
       <Creators />
-      <Stats />
       <SOOH />
       <CreatorProgram />
       <CampaignBrief />
