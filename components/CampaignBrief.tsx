@@ -125,7 +125,6 @@ export default function CampaignBrief() {
               ))}
             </div>
           </motion.div>
-</motion.div>
 
 <div className="mt-10 border-t border-[#e5e5e5] pt-6">
 
