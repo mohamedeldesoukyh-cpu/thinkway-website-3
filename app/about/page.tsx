@@ -18,7 +18,7 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url('/need_like_this_but_for_202605200256.jpeg')",
+  "url('/media/About-hero.jpeg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
