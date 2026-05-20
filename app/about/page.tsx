@@ -23,7 +23,7 @@ export default function AboutPage() {
           />
         </video>
 
-        <div className="absolute inset-0 bg-white/90" />
+       <div className="absolute inset-0 bg-white/55" />
 
       </div>
 
