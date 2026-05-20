@@ -35,10 +35,9 @@ export default function AboutPage() {
         {/* ABOUT SECTION */}
        <section className="pt-[40px] pb-[120px]">
 
-  <div className="max-w-[1180px] mx-auto pl-[160px] pr-[80px]">
-
+  <div className="w-full max-w-[1400px] mx-auto px-[80px] md:px-[120px]">
     {/* HEADER */}
-    <div className="pl-[40px] mb-20">
+    <div className="mb-20">
 
       <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-5">
         About Thinkway
@@ -58,7 +57,7 @@ export default function AboutPage() {
     </div>
 
     {/* INTRO */}
-    <div className="max-w-[900px] pl-[40px] mb-24">
+    <div className="max-w-[900px] mb-24">
 
       <h2 className="text-[18px] leading-[1.4] font-black text-black mb-8">
 
@@ -88,7 +87,7 @@ export default function AboutPage() {
 
     </div>
             {/* TWO COLUMN SECTION */}
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 mb-28 pl-[40px]">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-28">
 
               {/* WHAT WE DO */}
               <div>
