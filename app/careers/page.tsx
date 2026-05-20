@@ -26,6 +26,13 @@ export default function CareersPage() {
 
         <p className="mt-4 text-[#b0b0b0] uppercase tracking-[0.2em] text-[10px]">
           No open positions currently.
+          <a
+  href="/"
+  className="inline-flex items-center gap-3 mt-10 bg-[#1535C2] text-white px-8 py-4 text-[11px] tracking-[0.2em] uppercase hover:bg-[#2a4fd4] transition-all duration-300"
+>
+  Back To Home
+  <span>→</span>
+</a>
         </p>
 
       </div>
