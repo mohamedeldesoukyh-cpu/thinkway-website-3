@@ -1,35 +1,56 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export default function AboutPage() {
 
-  const { scrollY } = useScroll();
+  useEffect(() => {
 
-  const videoY = useTransform(
-    scrollY,
-    [0, 1000],
-    [0, 220]
-  );
+    const video = document.getElementById(
+      "bgVideo"
+    ) as HTMLVideoElement;
+
+    if (!video) return;
+
+    video.pause();
+
+    const handleScroll = () => {
+
+      const scrollTop = window.scrollY;
+
+      const maxScroll =
+        document.body.scrollHeight - window.innerHeight;
+
+      const scrollFraction = scrollTop / maxScroll;
+
+      const duration = video.duration || 1;
+
+      video.currentTime = duration * scrollFraction;
+
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
+
+  }, []);
 
   return (
     <main className="bg-[#f5f5f3] text-[#0a0a0a] overflow-hidden relative">
 
       {/* GLOBAL BACKGROUND */}
-      <motion.div
-        className="fixed inset-0 z-0 overflow-hidden"
-        style={{ y: videoY }}
-      >
+      <div className="fixed inset-0 z-0 overflow-hidden">
 
-        {/* Video */}
+        {/* VIDEO */}
         <video
-          autoPlay
+          id="bgVideo"
           muted
-          loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.28] pointer-events-none"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
           <source
             src="/media/About-hero.mp4"
@@ -37,7 +58,7 @@ export default function AboutPage() {
           />
         </video>
 
-        {/* Luxury Overlay */}
+        {/* OVERLAY */}
         <div
           className="absolute inset-0"
           style={{
@@ -46,7 +67,7 @@ export default function AboutPage() {
           }}
         />
 
-        {/* Cinematic Left Fade */}
+        {/* LEFT FADE */}
         <div
           className="absolute inset-0"
           style={{
@@ -55,7 +76,7 @@ export default function AboutPage() {
           }}
         />
 
-        {/* Grid */}
+        {/* GRID */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -65,7 +86,7 @@ export default function AboutPage() {
           }}
         />
 
-      </motion.div>
+      </div>
 
       <Navigation />
 
@@ -76,7 +97,7 @@ export default function AboutPage() {
 
           <div className="max-w-3xl">
 
-            {/* Label */}
+            {/* LABEL */}
             <div className="flex items-center gap-4 mb-10">
 
               <div className="w-8 h-[1px] bg-[#1535C2]" />
@@ -87,7 +108,7 @@ export default function AboutPage() {
 
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h1
               className="font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#0a0a0a]"
               style={{
@@ -105,7 +126,7 @@ export default function AboutPage() {
 
             </h1>
 
-            {/* Paragraph */}
+            {/* PARAGRAPH */}
             <p className="mt-12 text-[#5f5f5f] max-w-2xl leading-[2] uppercase tracking-[0.08em] text-[13px]">
 
               THINKWAY is a next-generation influencer marketing
@@ -116,7 +137,7 @@ export default function AboutPage() {
 
             </p>
 
-            {/* Buttons */}
+            {/* BUTTONS */}
             <div className="flex flex-wrap gap-4 mt-14">
 
               <a
