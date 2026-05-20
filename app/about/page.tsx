@@ -23,6 +23,7 @@ export default function AboutPage() {
             type="video/mp4"
           />
         </video>
+        
 
         {/* LIGHT OVERLAY */}
         <div className="absolute inset-0 bg-[#f5f5f3]/88" />
