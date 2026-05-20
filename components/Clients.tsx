@@ -9,7 +9,7 @@ const clients = [
   { name: "Arab Bank of Egypt",       src: "/media/Arab Bank of Egypt.jpg" },
   { name: "Grand Water Technologies", src: "/media/Grand water Technologies.jpg" },
   { name: "Praxo Pharm",               src: "/media/Praxo Pharm 2.jpg" },
-  { name: "Pharco",               src: "/media/Pharco.jpg" },
+  { name: "Pharco",               src: "/media/Pharco.Png" },
 ];
 
 export default function Clients() {
