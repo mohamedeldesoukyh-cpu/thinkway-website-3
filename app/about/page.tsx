@@ -33,65 +33,60 @@ export default function AboutPage() {
         <Navigation />
 
         {/* ABOUT SECTION */}
-        <section className="pt-[420px] pb-[120px]">
+        <section className="pt-[220px] pb-[120px]">
 
-          <div className="max-w-[1180px] mx-auto px-[80px]">
+  <div className="max-w-[1180px] mx-auto px-[80px]">
 
-            {/* HEADER */}
-            <div className="mb-20 pl-[40px]">
+    {/* HEADER */}
+    <div className="pl-[40px] mb-20">
 
-              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-5">
-                About Thinkway
-              </p>
+      <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-5">
+        About Thinkway
+      </p>
 
-              <h1 className="text-[30px] leading-[0.95] font-black uppercase tracking-[-0.03em] text-black">
+      <h1 className="text-[30px] leading-[0.95] font-black uppercase tracking-[-0.03em] text-black">
 
-                ABOUT
-                <br />
+        ABOUT
+        <br />
 
-                <span className="text-[#1535C2]">
-                  THINKWAY
-                </span>
+        <span className="text-[#1535C2]">
+          THINKWAY
+        </span>
 
-              </h1>
+      </h1>
 
-            </div>
+    </div>
 
-            {/* INTRO */}
-           <div className="max-w-[900px] mb-24 pl-[40px]">
+    {/* INTRO */}
+    <div className="max-w-[900px] pl-[40px] mb-24">
 
-              <h2 className="text-[18px] leading-[1.4] font-black text-black mb-8">
+      <h2 className="text-[18px] leading-[1.4] font-black text-black mb-8">
 
-                We Don't Just Run Campaigns —
-                <br />
-                We Build Lasting Impact.
+        We Don't Just Run Campaigns —
+        <br />
+        We Build Lasting Impact.
 
-              </h2>
+      </h2>
 
-              <div className="space-y-6 text-[13px] leading-[2] text-[#5f5f5f] font-light">
+      <div className="space-y-6 text-[13px] leading-[2] text-[#5f5f5f] font-light">
 
-                <p>
-                  Thinkway is a modern marketing agency redefining how brands show up in the world.
-                  Specializing in Social Out-Of-Home (SOOH) and Influencer Marketing,
-                  we sit at the intersection of culture, technology, and creativity —
-                  helping brands move beyond traditional advertising and into the spaces
-                  where real attention lives.
-                </p>
+        <p>
+          Thinkway is a modern marketing agency redefining how brands show up in the world.
+          Specializing in Social Out-Of-Home (SOOH) and Influencer Marketing,
+          we sit at the intersection of culture, technology, and creativity —
+          helping brands move beyond traditional advertising and into the spaces
+          where real attention lives.
+        </p>
 
-                <p>
-                  We were founded on a simple but powerful belief:
-                  that the most effective marketing doesn't interrupt people —
-                  it resonates with them.
-                  In a world of shrinking attention spans and growing skepticism
-                  toward conventional advertising,
-                  we build campaigns that feel native,
-                  timely, and genuinely engaging.
-                </p>
+        <p>
+          We were founded on a simple but powerful belief:
+          that the most effective marketing doesn't interrupt people —
+          it resonates with them.
+        </p>
 
-              </div>
+      </div>
 
-            </div>
-
+    </div>
             {/* TWO COLUMN SECTION */}
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 mb-28 pl-[40px]">
 
