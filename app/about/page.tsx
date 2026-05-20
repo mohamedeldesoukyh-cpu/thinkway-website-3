@@ -133,7 +133,6 @@ export default function AboutPage() {
   </div>
 
 </section>
-      </section>
 
       {/* ABOUT STORY */}
       <section className="bg-[#0b0b0f] py-32 border-t border-white/10">
