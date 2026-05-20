@@ -91,13 +91,18 @@ body::before {
 
 /* Tag */
 .tag {
-  display: inline-block;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  padding: 14px 22px;
+  border: 1px solid #cfcfcf;
+  background: white;
+  color: #111;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 6px 14px;
-  border: 1px solid #e0e0e0;
-  color: #999;
+  transition: all 0.25s ease;
+}
+.tag:hover {
+  border-color: #1535C2;
+  color: #1535C2;
 }
 
 /* Button base */
