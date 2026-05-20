@@ -6,11 +6,11 @@ import ThinkwayLogo from "@/components/ThinkwayLogo";
 
 const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
   Agency: [
-    { label: "About Us", anchor: "#about" },
-    { label: "Our Approach", anchor: "#services" },
-    { label: "Case Studies", anchor: "#stats" },
-    { label: "Careers" },
-  ],
+  { label: "About Us", anchor: "/about" },
+  { label: "Our Approach", anchor: "/about#why-thinkway" },
+  { label: "Careers", anchor: "/careers" },
+],
+  
   Services: [
     { label: "Influencer Campaigns", anchor: "#services" },
     { label: "Content Creation", anchor: "#services" },
@@ -80,13 +80,13 @@ export default function Footer() {
               <ul className="space-y-4">
                 {links.map((item) => (
                   <li key={item.label} className="text-center">
-                    {item.anchor ? (
-                      <button
-                        onClick={() => document.querySelector(item.anchor!)?.scrollIntoView({ behavior: "smooth" })}
-                        className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none"
-                      >
-                        {item.label}
-                      </button>
+                   {item.anchor ? (
+  <a
+    href={item.anchor}
+    className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none"
+  >
+    {item.label}
+  </a>
                     ) : (
                       <span className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase cursor-none">
                         {item.label}
