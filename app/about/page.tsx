@@ -45,60 +45,60 @@ export default function AboutPage() {
         <Navigation />
 
         {/* HERO */}
-<section className="pt-56 pb-20 min-h-[78vh] flex items-center justify-center border-b border-black/5">
+        <section className="pt-64 pb-24 min-h-[72vh] flex items-center justify-center border-b border-black/5">
 
-  <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="max-w-3xl mx-auto px-6 text-center">
 
-    <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
-      About Thinkway
-    </p>
+            <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
+              About Thinkway
+            </p>
 
-    <h1 className="text-[28px] md:text-[40px] font-black leading-[0.95] tracking-[-0.05em] uppercase">
+            <h1 className="text-[24px] md:text-[38px] font-black leading-[0.95] tracking-[-0.05em] uppercase">
 
-      ABOUT
-      <br />
+              ABOUT
+              <br />
 
-      <span className="text-[#1535C2]">
-        THINKWAY
-      </span>
+              <span className="text-[#1535C2]">
+                THINKWAY
+              </span>
 
-    </h1>
+            </h1>
 
-    <p className="mt-8 text-[13px] leading-[2.1] text-[#666] max-w-2xl mx-auto">
+            <p className="mt-8 text-[12px] md:text-[13px] leading-[2.1] text-[#666] max-w-2xl mx-auto">
 
-      At Thinkway, we don't just run campaigns — we create impact.
+              At Thinkway, we don't just run campaigns — we create impact.
 
-      <br />
-      <br />
+              <br />
+              <br />
 
-      We are a modern marketing agency specializing in
-      Social Out-Of-Home (SOOH) and Influencer Marketing,
-      built to connect brands with audiences in smarter,
-      more engaging ways.
+              We are a modern marketing agency specializing in
+              Social Out-Of-Home (SOOH) and Influencer Marketing,
+              built to connect brands with audiences in smarter,
+              more engaging ways.
 
-      <br />
-      <br />
+              <br />
+              <br />
 
-      Our approach combines strategic thinking,
-      data-driven insights, and creative execution
-      to deliver campaigns that don't just look good —
-      but perform.
+              Our approach combines strategic thinking,
+              data-driven insights, and creative execution
+              to deliver campaigns that don't just look good —
+              but perform.
 
-    </p>
+            </p>
 
-  </div>
+          </div>
 
-</section>
-        
+        </section>
+
         {/* MAIN CONTENT */}
-        <section className="py-20">
+        <section className="py-24">
 
-          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+          <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-12 gap-20">
 
             {/* LEFT */}
             <div className="lg:col-span-7">
 
-              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
                 What We Do
               </p>
 
@@ -109,17 +109,17 @@ export default function AboutPage() {
 
                   <div className="flex items-start gap-5">
 
-                    <span className="text-[#1535C2] text-[12px] mt-1">
+                    <span className="text-[#1535C2] text-[11px] mt-1">
                       01
                     </span>
 
                     <div>
 
-                      <h3 className="text-[20px] font-black uppercase tracking-[-0.03em]">
+                      <h3 className="text-[16px] md:text-[18px] font-black uppercase tracking-[-0.03em]">
                         Influencer Marketing
                       </h3>
 
-                      <p className="mt-3 text-[#666] leading-[1.9] text-[15px]">
+                      <p className="mt-3 text-[#666] leading-[1.9] text-[13px]">
                         We connect brands with the right creators
                         to deliver authentic storytelling and measurable ROI.
                       </p>
@@ -135,17 +135,17 @@ export default function AboutPage() {
 
                   <div className="flex items-start gap-5">
 
-                    <span className="text-[#1535C2] text-[12px] mt-1">
+                    <span className="text-[#1535C2] text-[11px] mt-1">
                       02
                     </span>
 
                     <div>
 
-                      <h3 className="text-[20px] font-black uppercase tracking-[-0.03em]">
+                      <h3 className="text-[16px] md:text-[18px] font-black uppercase tracking-[-0.03em]">
                         Social Out-Of-Home
                       </h3>
 
-                      <p className="mt-3 text-[#666] leading-[1.9] text-[15px]">
+                      <p className="mt-3 text-[#666] leading-[1.9] text-[13px]">
                         We transform traditional outdoor media
                         into dynamic social-driven experiences
                         that extend beyond the street into digital conversations.
@@ -162,17 +162,17 @@ export default function AboutPage() {
 
                   <div className="flex items-start gap-5">
 
-                    <span className="text-[#1535C2] text-[12px] mt-1">
+                    <span className="text-[#1535C2] text-[11px] mt-1">
                       03
                     </span>
 
                     <div>
 
-                      <h3 className="text-[20px] font-black uppercase tracking-[-0.03em]">
+                      <h3 className="text-[16px] md:text-[18px] font-black uppercase tracking-[-0.03em]">
                         Campaign Strategy & Execution
                       </h3>
 
-                      <p className="mt-3 text-[#666] leading-[1.9] text-[15px]">
+                      <p className="mt-3 text-[#666] leading-[1.9] text-[13px]">
                         From concept to delivery, we manage end-to-end
                         campaigns tailored to your business objectives.
                       </p>
@@ -190,7 +190,7 @@ export default function AboutPage() {
             {/* RIGHT */}
             <div className="lg:col-span-5">
 
-              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
                 Our Philosophy
               </p>
 
@@ -198,13 +198,13 @@ export default function AboutPage() {
 
                 <div className="pb-8 border-b border-black/6">
 
-                  <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
+                  <h3 className="text-[17px] md:text-[19px] font-black leading-[1.05] tracking-[-0.04em]">
                     Performance
                     <br />
                     Driven
                   </h3>
 
-                  <p className="mt-4 text-[#666] leading-[1.9] text-[14px]">
+                  <p className="mt-4 text-[#666] leading-[1.9] text-[12px]">
                     Every campaign is built around measurable impact,
                     audience relevance, and ROI.
                   </p>
@@ -213,13 +213,13 @@ export default function AboutPage() {
 
                 <div className="pb-8 border-b border-black/6">
 
-                  <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
+                  <h3 className="text-[17px] md:text-[19px] font-black leading-[1.05] tracking-[-0.04em]">
                     Authentic
                     <br />
                     Influence
                   </h3>
 
-                  <p className="mt-4 text-[#666] leading-[1.9] text-[14px]">
+                  <p className="mt-4 text-[#666] leading-[1.9] text-[12px]">
                     Real creator partnerships generate stronger
                     engagement and trust than traditional advertising.
                   </p>
@@ -228,13 +228,13 @@ export default function AboutPage() {
 
                 <div className="pb-8 border-b border-black/6">
 
-                  <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
+                  <h3 className="text-[17px] md:text-[19px] font-black leading-[1.05] tracking-[-0.04em]">
                     Culture
                     <br />
                     First
                   </h3>
 
-                  <p className="mt-4 text-[#666] leading-[1.9] text-[14px]">
+                  <p className="mt-4 text-[#666] leading-[1.9] text-[12px]">
                     We create campaigns designed to feel native
                     to modern social platforms and digital behavior.
                   </p>
@@ -254,7 +254,7 @@ export default function AboutPage() {
 
           <div className="max-w-6xl mx-auto px-6">
 
-            <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-14 text-center">
+            <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-14 text-center">
               Selected Clients
             </p>
 
@@ -269,13 +269,13 @@ export default function AboutPage() {
 
                 <div
                   key={i}
-                  className="h-[140px] flex items-center justify-center p-8 border border-black/6"
+                  className="h-[120px] flex items-center justify-center border border-black/6 bg-white/20 backdrop-blur-sm"
                 >
 
                   <img
                     src={logo}
                     alt="client"
-                    className="max-h-[70px] object-contain"
+                    className="max-h-[55px] object-contain opacity-90"
                   />
 
                 </div>
