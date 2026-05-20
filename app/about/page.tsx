@@ -33,7 +33,7 @@ export default function AboutPage() {
         <Navigation />
 
         {/* ABOUT SECTION */}
-        <section className="pt-[320px] pb-[120px]">
+        <section className="pt-[420px] pb-[120px]">
 
           <div className="max-w-[1180px] mx-auto px-[80px]">
 
