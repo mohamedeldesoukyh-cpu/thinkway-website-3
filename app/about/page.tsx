@@ -14,7 +14,20 @@ export default function AboutPage() {
 
     if (!video) return;
 
-    video.pause();
+    let targetTime = 0;
+    let currentTime = 0;
+
+    const updateVideo = () => {
+
+      currentTime += (targetTime - currentTime) * 0.08;
+
+      if (video.duration) {
+        video.currentTime = currentTime;
+      }
+
+      requestAnimationFrame(updateVideo);
+
+    };
 
     const handleScroll = () => {
 
@@ -25,16 +38,23 @@ export default function AboutPage() {
 
       const scrollFraction = scrollTop / maxScroll;
 
-      const duration = video.duration || 1;
-
-      video.currentTime = duration * scrollFraction;
+      targetTime = video.duration * scrollFraction;
 
     };
 
+    video.addEventListener("loadedmetadata", () => {
+
+      requestAnimationFrame(updateVideo);
+
+    });
+
     window.addEventListener("scroll", handleScroll);
 
-    return () =>
+    return () => {
+
       window.removeEventListener("scroll", handleScroll);
+
+    };
 
   }, []);
 
@@ -49,7 +69,7 @@ export default function AboutPage() {
           id="bgVideo"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
           <source
