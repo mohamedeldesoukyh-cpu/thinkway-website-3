@@ -125,7 +125,27 @@ export default function CampaignBrief() {
               ))}
             </div>
           </motion.div>
+</motion.div>
 
+<div className="mt-10 border-t border-[#e5e5e5] pt-6">
+
+  <p className="text-[10px] tracking-[0.2em] uppercase text-[#1535C2] mb-4">
+    Quick Connect
+  </p>
+
+  <div className="space-y-3 text-[11px] text-[#8d8d8d] leading-[2] uppercase tracking-[0.08em]">
+
+    <p>• Response within 24 hours</p>
+
+    <p>• UAE & Egypt market support</p>
+
+    <p>• Influencer & SOOH campaigns</p>
+
+  </div>
+
+</div>
+
+{/* FORM */}
           {/* FORM */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
