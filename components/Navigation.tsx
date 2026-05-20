@@ -66,19 +66,19 @@ export default function Navigation() {
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   }}
 >    
-        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28 flex items-center justify-between h-20">
+        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28 grid grid-cols-[auto_1fr_auto] items-center h-20">
           
           {/* LOGO */}
           <a
   href="/"
-  className="block mr-24"
+  className="block ml-10"
 >
             <ThinkwayLogo variant="dark" />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-
+          <div className="hidden md:flex items-center gap-8 justify-center">
+            
             {navLinks.map((link) => (
               <button
                 key={link.href}
