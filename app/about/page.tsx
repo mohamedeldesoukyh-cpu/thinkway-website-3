@@ -10,103 +10,129 @@ export default function AboutPage() {
 
       <Navigation />
 
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+     {/* HERO SECTION */}
+<section className="relative min-h-screen flex items-center overflow-hidden bg-[#f5f5f3]">
 
-        {/* Background Video */}
-<video
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="absolute inset-0 w-full h-full object-cover"
->
-  <source
-    src="/media/About-hero.mp4"
-    type="video/mp4"
-  />
-</video>
+  {/* VIDEO BACKGROUND */}
+  <motion.div
+    className="absolute inset-0 z-0"
+  >
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"
+    >
+      <source
+        src="/media/About-hero.mp4"
+        type="video/mp4"
+      />
+    </video>
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+    {/* Left Fade */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(245,245,243,0.97) 0%, rgba(245,245,243,0.88) 35%, rgba(245,245,243,0.55) 65%, rgba(245,245,243,0.18) 100%)",
+      }}
+    />
 
-        {/* Blue Glow */}
-        <div
-          className="absolute top-0 right-0 w-[700px] h-[700px]"
+    {/* Soft Top Fade */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(245,245,243,0.7) 0%, transparent 20%, transparent 80%, rgba(245,245,243,0.85) 100%)",
+      }}
+    />
+
+    {/* Grid */}
+    <div
+      className="absolute inset-0 opacity-[0.04]"
+      style={{
+        backgroundImage:
+          "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+        backgroundSize: "80px 80px",
+      }}
+    />
+  </motion.div>
+
+  {/* CONTENT */}
+  <div className="container-custom relative z-20 pt-32 pb-20 w-full">
+
+    <div className="max-w-2xl">
+
+      {/* Eyebrow */}
+      <div className="flex items-center gap-4 mb-10">
+
+        <div className="w-6 h-[1px] bg-[#1535C2]" />
+
+        <span className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase font-medium">
+          About THINKWAY
+        </span>
+
+      </div>
+
+      {/* Heading */}
+      <div className="overflow-hidden">
+
+        <h1
+          className="font-black uppercase leading-[0.92] text-[#0a0a0a]"
           style={{
-            background:
-              "radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%)",
+            fontSize: "clamp(42px, 6vw, 88px)",
+            letterSpacing: "-0.04em",
           }}
-        />
+        >
+          MODERN
+          <br />
+          INFLUENCE.
+          <br />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <span className="text-[#1535C2]">
+            REAL IMPACT.
+          </span>
 
-          <div className="max-w-3xl">
+        </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="uppercase tracking-[0.35em] text-[#60a5fa] text-xs mb-8"
-            >
-              About THINKWAY
-            </motion.p>
+      </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 35 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="font-semibold tracking-[-0.04em] leading-[0.95]"
-              style={{
-                fontSize: "clamp(54px, 8vw, 110px)",
-              }}
-            >
-              Modern influence.
-              <br />
-              Real impact.
-            </motion.h1>
+      {/* Paragraph */}
+      <p className="mt-10 text-[#666] text-[14px] tracking-[0.06em] uppercase leading-[2.1] max-w-xl">
 
-            <motion.p
-              initial={{ opacity: 0, y: 35 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="mt-10 text-[20px] leading-[2] text-white/75 max-w-2xl"
-            >
-              THINKWAY is a next-generation influencer marketing
-              agency helping brands connect with audiences,
-              creators, and culture through impactful digital
-              storytelling, creator partnerships, and
-              performance-driven campaigns.
-            </motion.p>
+        THINKWAY is a next-generation influencer marketing
+        agency helping brands connect with creators,
+        audiences, and culture through high-impact digital
+        storytelling, creator partnerships, and
+        performance-driven campaigns.
 
-            <motion.div
-              initial={{ opacity: 0, y: 35 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="mt-12 flex gap-5"
-            >
+      </p>
 
-              <a
-                href="/#contact"
-                className="bg-[#2563eb] hover:bg-[#1d4ed8] transition-all duration-300 px-10 py-5 uppercase tracking-[0.2em] text-xs font-medium rounded-full"
-              >
-                Start A Campaign
-              </a>
+      {/* Buttons */}
+      <div className="flex flex-wrap items-center gap-4 mt-12">
 
-              <a
-                href="#clients"
-                className="border border-white/20 hover:border-white/50 transition-all duration-300 px-10 py-5 uppercase tracking-[0.2em] text-xs font-medium rounded-full backdrop-blur-sm"
-              >
-                Our Clients
-              </a>
+        <a
+          href="/#contact"
+          className="bg-[#1535C2] text-white px-10 py-5 text-[11px] tracking-[0.25em] uppercase"
+        >
+          Start A Campaign
+        </a>
 
-            </motion.div>
+        <a
+          href="#clients"
+          className="border border-[#d9d9d9] text-[#0a0a0a] px-10 py-5 text-[11px] tracking-[0.25em] uppercase bg-white/40 backdrop-blur-sm"
+        >
+          View Clients
+        </a>
 
-          </div>
+      </div>
 
-        </div>
+    </div>
 
+  </div>
+
+</section>
       </section>
 
       {/* ABOUT STORY */}
