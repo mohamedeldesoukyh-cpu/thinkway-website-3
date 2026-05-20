@@ -7,8 +7,8 @@ export default function AboutPage() {
   return (
     <main className="bg-[#f7f7f5] min-h-screen overflow-hidden relative">
 
-      {/* BACKGROUND */}
-      <div className="fixed inset-0 z-0 opacity-[0.12]">
+      {/* GLOBAL VIDEO BACKGROUND */}
+      <div className="fixed inset-0 z-0 opacity-[0.10]">
 
         <video
           autoPlay
@@ -23,28 +23,28 @@ export default function AboutPage() {
           />
         </video>
 
-        <div className="absolute inset-0 bg-white/88" />
+        <div className="absolute inset-0 bg-white/90" />
 
       </div>
 
-      {/* PAGE */}
+      {/* PAGE CONTENT */}
       <div className="relative z-10">
 
         <Navigation />
 
-        {/* CONTENT */}
-        <section className="pt-[180px] pb-[140px]">
+        {/* ABOUT SECTION */}
+        <section className="pt-[240px] pb-[120px]">
 
-          <div className="max-w-[1100px] mx-auto px-8">
+          <div className="max-w-[980px] mx-auto px-8">
 
             {/* HEADER */}
-            <div className="mb-24">
+            <div className="mb-20">
 
-              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-6">
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-5">
                 About Thinkway
               </p>
 
-              <h1 className="text-[56px] leading-[0.9] font-black uppercase tracking-[-0.05em] text-black">
+              <h1 className="text-[30px] leading-[0.95] font-black uppercase tracking-[-0.03em] text-black">
 
                 ABOUT
                 <br />
@@ -58,9 +58,9 @@ export default function AboutPage() {
             </div>
 
             {/* INTRO */}
-            <div className="max-w-[980px] mb-28">
+            <div className="max-w-[900px] mb-24">
 
-              <h2 className="text-[30px] leading-[1.2] font-black text-black mb-10">
+              <h2 className="text-[18px] leading-[1.4] font-black text-black mb-8">
 
                 We Don't Just Run Campaigns —
                 <br />
@@ -68,72 +68,72 @@ export default function AboutPage() {
 
               </h2>
 
-              <div className="space-y-8 text-[17px] leading-[2] text-[#5f5f5f] font-light">
+              <div className="space-y-6 text-[13px] leading-[2] text-[#5f5f5f] font-light">
 
                 <p>
                   Thinkway is a modern marketing agency redefining how brands show up in the world.
-                  Specializing in Social Out-Of-Home (SOOH) and Influencer Marketing, we sit at the
-                  intersection of culture, technology, and creativity — helping brands move beyond
-                  traditional advertising and into the spaces where real attention lives.
+                  Specializing in Social Out-Of-Home (SOOH) and Influencer Marketing,
+                  we sit at the intersection of culture, technology, and creativity —
+                  helping brands move beyond traditional advertising and into the spaces
+                  where real attention lives.
                 </p>
 
                 <p>
-                  We were founded on a simple but powerful belief: that the most effective marketing
-                  doesn't interrupt people — it resonates with them. In a world of shrinking attention
-                  spans and growing skepticism toward conventional advertising, we build campaigns that
-                  feel native, timely, and genuinely engaging.
+                  We were founded on a simple but powerful belief:
+                  that the most effective marketing doesn't interrupt people —
+                  it resonates with them.
+                  In a world of shrinking attention spans and growing skepticism
+                  toward conventional advertising,
+                  we build campaigns that feel native,
+                  timely, and genuinely engaging.
                 </p>
 
               </div>
 
             </div>
 
-            {/* TWO COLUMNS */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32">
+            {/* TWO COLUMN SECTION */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-28">
 
               {/* WHAT WE DO */}
               <div>
 
-                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
                   What We Do
                 </p>
 
-                <div className="space-y-14">
+                <div className="space-y-12">
 
                   <div>
 
-                    <h3 className="text-[22px] font-black uppercase mb-5">
+                    <h3 className="text-[16px] font-black uppercase mb-4">
                       Social Out-Of-Home (SOOH)
                     </h3>
 
-                    <p className="text-[15px] leading-[2] text-[#666]">
+                    <p className="text-[12px] leading-[2] text-[#666]">
                       Social Out-Of-Home is the evolution of outdoor advertising —
                       where physical presence meets digital amplification.
                       We design campaigns that don't just occupy a billboard or a screen;
-                      they spark conversations online, generate organic reach,
+                      they spark conversations online,
+                      generate organic reach,
                       and turn real-world moments into shareable content.
-                      From high-traffic urban placements to hyper-targeted digital displays,
-                      we make sure your brand is seen — and talked about.
                     </p>
 
                   </div>
 
                   <div>
 
-                    <h3 className="text-[22px] font-black uppercase mb-5">
+                    <h3 className="text-[16px] font-black uppercase mb-4">
                       Influencer Marketing
                     </h3>
 
-                    <p className="text-[15px] leading-[2] text-[#666]">
-                      Influencer Marketing, done right, is one of the most powerful
-                      trust-building tools available to brands today.
-                      We don't believe in chasing follower counts.
-                      We identify voices that genuinely align with your brand's values —
-                      micro, macro, and everything in between —
+                    <p className="text-[12px] leading-[2] text-[#666]">
+                      Influencer Marketing, done right,
+                      is one of the most powerful trust-building tools
+                      available to brands today.
+                      We identify voices that genuinely align with your brand's values
                       and craft partnerships that feel authentic to the audience
                       and meaningful to the creator.
-                      The result is content that converts,
-                      not just content that exists.
                     </p>
 
                   </div>
@@ -145,74 +145,76 @@ export default function AboutPage() {
               {/* HOW WE THINK */}
               <div>
 
-                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
                   How We Think
                 </p>
 
-                <div className="space-y-10">
+                <div className="space-y-8">
 
-                  <p className="text-[15px] leading-[2] text-[#666]">
+                  <p className="text-[12px] leading-[2] text-[#666]">
                     Every campaign we build starts with a question:
                     what does this audience actually care about?
-                    From there, we layer in data intelligence,
-                    cultural context, and creative strategy
+                    From there,
+                    we layer in data intelligence,
+                    cultural context,
+                    and creative strategy
                     to develop work that speaks to people — not at them.
                   </p>
 
-                  <p className="text-[15px] leading-[2] text-[#666]">
+                  <p className="text-[12px] leading-[2] text-[#666]">
                     Our process is built around three core pillars:
                   </p>
 
-                  <div className="space-y-10 pt-4">
+                  <div className="space-y-8 pt-2">
 
                     <div>
 
-                      <span className="text-[#1535C2] text-[11px] tracking-[0.3em] uppercase">
+                      <span className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
                         01
                       </span>
 
-                      <h3 className="text-[20px] font-black uppercase mt-2 mb-3">
+                      <h3 className="text-[15px] font-black uppercase mt-2 mb-2">
                         Strategic Thinking
                       </h3>
 
-                      <p className="text-[15px] leading-[2] text-[#666]">
-                        We study your market, competitors,
+                      <p className="text-[12px] leading-[2] text-[#666]">
+                        We study your market,
+                        competitors,
                         and audience before a single creative asset is produced.
-                        Strategy is the lens through which every decision is made.
+                        Strategy guides every decision we make.
                       </p>
 
                     </div>
 
                     <div>
 
-                      <span className="text-[#1535C2] text-[11px] tracking-[0.3em] uppercase">
+                      <span className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
                         02
                       </span>
 
-                      <h3 className="text-[20px] font-black uppercase mt-2 mb-3">
+                      <h3 className="text-[15px] font-black uppercase mt-2 mb-2">
                         Data-Driven Insights
                       </h3>
 
-                      <p className="text-[15px] leading-[2] text-[#666]">
-                        Real-time analytics, audience behavior data,
-                        and performance metrics inform every approach
-                        and continuously optimize campaigns in motion.
+                      <p className="text-[12px] leading-[2] text-[#666]">
+                        Real-time analytics,
+                        audience behavior data,
+                        and performance metrics continuously optimize campaigns in motion.
                       </p>
 
                     </div>
 
                     <div>
 
-                      <span className="text-[#1535C2] text-[11px] tracking-[0.3em] uppercase">
+                      <span className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
                         03
                       </span>
 
-                      <h3 className="text-[20px] font-black uppercase mt-2 mb-3">
+                      <h3 className="text-[15px] font-black uppercase mt-2 mb-2">
                         Creative Execution
                       </h3>
 
-                      <p className="text-[15px] leading-[2] text-[#666]">
-                        Ideas without execution are just ideas.
+                      <p className="text-[12px] leading-[2] text-[#666]">
                         Our creative team translates strategy into compelling,
                         visually powerful campaigns built for modern platforms.
                       </p>
@@ -228,13 +230,13 @@ export default function AboutPage() {
             </div>
 
             {/* WHY THINKWAY */}
-            <div className="max-w-[980px] border-t border-black/10 pt-20">
+            <div className="max-w-[900px] border-t border-black/10 pt-16">
 
-              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
                 Why Thinkway
               </p>
 
-              <div className="space-y-8 text-[17px] leading-[2] text-[#5f5f5f] font-light">
+              <div className="space-y-6 text-[13px] leading-[2] text-[#5f5f5f] font-light">
 
                 <p>
                   The marketing landscape is noisier than ever.
@@ -244,11 +246,14 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  We are a team of strategists, creatives, analysts,
-                  and cultural enthusiasts who bring both rigor and imagination
-                  to every brief.
+                  We are a team of strategists,
+                  creatives,
+                  analysts,
+                  and cultural enthusiasts
+                  who bring both rigor and imagination to every brief.
                   We work as true partners to our clients —
-                  embedded in your goals, invested in your growth,
+                  embedded in your goals,
+                  invested in your growth,
                   and accountable to real outcomes.
                 </p>
 
