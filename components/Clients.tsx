@@ -50,14 +50,14 @@ export default function Clients() {
         </motion.div>
 
         {/* Logo grid — full colour, 100% opacity */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#e0e0e0]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           {clients.map((client, i) => (
             <motion.div
               key={client.name}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex items-center justify-center bg-white py-12 px-10 overflow-hidden transition-colors duration-400 hover:bg-[#f0f4ff]"
+              className="group relative flex items-center justify-center py-12 px-10 overflow-hidden"
             >
               {/* Hover accent line */}
               <motion.div
