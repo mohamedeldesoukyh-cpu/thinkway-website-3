@@ -94,10 +94,10 @@ export default function AboutPage() {
         {/* MAIN CONTENT */}
         <section className="py-24">
 
-          <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-12 gap-20">
+          <div className="max-w-6xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-16">
 
             {/* LEFT */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6 pl-2 md:pl-4">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
                 What We Do
@@ -189,7 +189,7 @@ export default function AboutPage() {
             </div>
 
             {/* RIGHT */}
-            <div className="lg:col-span-5">
+           <div className="lg:col-span-5 lg:col-start-8">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
                 Our Philosophy
