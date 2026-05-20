@@ -250,22 +250,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 1.5 }}
             className="flex items-center gap-10 mt-16 pt-8 border-t border-[#ebebeb]"
           >
-            {[
-              { val: "150M+", label: "Total Reach" },
-              { val: "3.2x", label: "Avg. ROI" },
-              { val: "98%", label: "Client Retention" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div className="text-lg font-bold text-[#0a0a0a] tracking-tight">
-                  {s.val}
-                </div>
-
-                <div className="text-[9px] tracking-[0.22em] text-[#bbb] uppercase mt-1">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+                     </motion.div>
         </div>
       </motion.div>
 
