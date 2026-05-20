@@ -19,7 +19,7 @@ export default function AboutPage() {
 
     const updateVideo = () => {
 
-      currentTime += (targetTime - currentTime) * 0.08;
+      currentTime += (targetTime - currentTime) * 0.06;
 
       if (video.duration) {
         video.currentTime = currentTime;
@@ -33,15 +33,16 @@ export default function AboutPage() {
 
       const scrollTop = window.scrollY;
 
-      const maxScroll =
-        document.body.scrollHeight - window.innerHeight;
+      /* ONLY FIRST PART OF PAGE CONTROLS VIDEO */
+      const maxScroll = window.innerHeight * 2.2;
 
       const scrollFraction = scrollTop / maxScroll;
 
-     targetTime = Math.min(
-  video.duration,
-  video.duration * scrollFraction * 2.2
-);
+      targetTime = Math.min(
+        video.duration,
+        video.duration * scrollFraction * 1.15
+      );
+
     };
 
     video.addEventListener("loadedmetadata", () => {
@@ -80,12 +81,12 @@ export default function AboutPage() {
           />
         </video>
 
-        {/* OVERLAY */}
+        {/* MAIN OVERLAY */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(245,245,243,0.45) 0%, rgba(245,245,243,0.58) 100%)",
+              "linear-gradient(180deg, rgba(245,245,243,0.30) 0%, rgba(245,245,243,0.42) 100%)",
           }}
         />
 
@@ -94,13 +95,13 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.48) 35%, rgba(245,245,243,0.12) 70%, rgba(245,245,243,0.02) 100%)",
+              "linear-gradient(90deg, rgba(245,245,243,0.78) 0%, rgba(245,245,243,0.45) 32%, rgba(245,245,243,0.10) 68%, rgba(245,245,243,0.02) 100%)",
           }}
         />
 
         {/* GRID */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
               "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
@@ -132,9 +133,9 @@ export default function AboutPage() {
 
             {/* HEADING */}
             <h1
-              className="font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#0a0a0a]"
+              className="font-black uppercase leading-[0.88] tracking-[-0.05em] text-[#0a0a0a]"
               style={{
-                fontSize: "clamp(54px, 8vw, 140px)",
+                fontSize: "clamp(42px, 6vw, 92px)",
               }}
             >
               MODERN
@@ -149,7 +150,7 @@ export default function AboutPage() {
             </h1>
 
             {/* PARAGRAPH */}
-            <p className="mt-12 text-[#5f5f5f] max-w-2xl leading-[2] uppercase tracking-[0.08em] text-[13px]">
+            <p className="mt-10 text-[#555] max-w-xl leading-[2] uppercase tracking-[0.08em] text-[12px]">
 
               THINKWAY is a next-generation influencer marketing
               agency helping brands connect with creators,
@@ -160,7 +161,7 @@ export default function AboutPage() {
             </p>
 
             {/* BUTTONS */}
-            <div className="flex flex-wrap gap-4 mt-14">
+            <div className="flex flex-wrap gap-4 mt-12">
 
               <a
                 href="/#contact"
@@ -171,7 +172,7 @@ export default function AboutPage() {
 
               <a
                 href="#clients"
-                className="border border-[#d9d9d9] px-10 py-5 uppercase tracking-[0.25em] text-[11px] text-[#0a0a0a] bg-white/50 backdrop-blur-sm"
+                className="border border-[#d0d0d0] px-10 py-5 uppercase tracking-[0.25em] text-[11px] text-[#0a0a0a] bg-white/50 backdrop-blur-sm"
               >
                 View Clients
               </a>
@@ -185,7 +186,7 @@ export default function AboutPage() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="relative z-10 py-32">
+      <section className="relative z-10 py-28">
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-start">
 
@@ -198,7 +199,7 @@ export default function AboutPage() {
             <h2
               className="font-black leading-[0.95] tracking-[-0.05em]"
               style={{
-                fontSize: "clamp(44px, 5vw, 90px)",
+                fontSize: "clamp(38px, 5vw, 76px)",
               }}
             >
               Influence
@@ -209,7 +210,7 @@ export default function AboutPage() {
 
           </div>
 
-          <div className="space-y-8 text-[#5f5f5f] text-[18px] leading-[2]">
+          <div className="space-y-8 text-[#555] text-[17px] leading-[2]">
 
             <p>
               Modern audiences no longer respond to
@@ -240,11 +241,11 @@ export default function AboutPage() {
       </section>
 
       {/* SERVICES */}
-      <section className="relative z-10 py-32 border-t border-black/5">
+      <section className="relative z-10 py-28 border-t border-black/5">
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="mb-24">
+          <div className="mb-20">
 
             <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-6">
               Services
@@ -253,7 +254,7 @@ export default function AboutPage() {
             <h2
               className="font-black tracking-[-0.05em]"
               style={{
-                fontSize: "clamp(44px, 5vw, 90px)",
+                fontSize: "clamp(38px, 5vw, 76px)",
               }}
             >
               What we do.
@@ -271,14 +272,14 @@ export default function AboutPage() {
             ].map((service) => (
               <div
                 key={service}
-                className="bg-[#f5f5f3] p-12 min-h-[260px] flex flex-col justify-between"
+                className="bg-[#f5f5f3] p-10 min-h-[240px] flex flex-col justify-between"
               >
 
                 <div className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
                   Thinkway
                 </div>
 
-                <h3 className="text-[34px] font-bold leading-[1.1] tracking-[-0.03em]">
+                <h3 className="text-[30px] font-bold leading-[1.1] tracking-[-0.03em]">
                   {service}
                 </h3>
 
@@ -294,12 +295,12 @@ export default function AboutPage() {
       {/* CLIENTS */}
       <section
         id="clients"
-        className="relative z-10 py-32 border-t border-black/5"
+        className="relative z-10 py-28 border-t border-black/5"
       >
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="mb-24">
+          <div className="mb-20">
 
             <p className="uppercase tracking-[0.3em] text-[#1535C2] text-xs mb-6">
               Selected Clients
@@ -308,7 +309,7 @@ export default function AboutPage() {
             <h2
               className="font-black tracking-[-0.05em]"
               style={{
-                fontSize: "clamp(44px, 5vw, 90px)",
+                fontSize: "clamp(38px, 5vw, 76px)",
               }}
             >
               Brands we’ve
@@ -344,7 +345,7 @@ export default function AboutPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative z-10 py-40 border-t border-black/5">
+      <section className="relative z-10 py-36 border-t border-black/5">
 
         <div className="max-w-5xl mx-auto px-6 text-center">
 
@@ -353,9 +354,9 @@ export default function AboutPage() {
           </p>
 
           <h2
-            className="font-black tracking-[-0.05em] leading-[0.95]"
+            className="font-black tracking-[-0.05em] leading-[0.92]"
             style={{
-              fontSize: "clamp(54px, 7vw, 120px)",
+              fontSize: "clamp(44px, 6vw, 92px)",
             }}
           >
             READY TO
