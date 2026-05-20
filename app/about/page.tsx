@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#f7f7f5] min-h-screen overflow-hidden relative pt-[110px]">
+    <main className="bg-[#f7f7f5] min-h-screen relative">
 
       {/* GLOBAL VIDEO BACKGROUND */}
       <div className="fixed inset-0 z-0 opacity-[0.10]">
@@ -28,12 +28,12 @@ export default function AboutPage() {
       </div>
 
       {/* PAGE CONTENT */}
-      <div className="relative z-10 pt-[120px]">
+      <div className="relative z-10">
 
         <Navigation />
 
         {/* ABOUT SECTION */}
-       <section className="pt-[40px] pb-[120px]">
+       <section className="pt-[160px] pb-[120px]">
 
   <div className="w-full max-w-[1400px] mx-auto px-[80px] md:px-[120px]">
     {/* HEADER */}
