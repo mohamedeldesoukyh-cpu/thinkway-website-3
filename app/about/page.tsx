@@ -38,8 +38,10 @@ export default function AboutPage() {
 
       const scrollFraction = scrollTop / maxScroll;
 
-      targetTime = video.duration * scrollFraction;
-
+     targetTime = Math.min(
+  video.duration,
+  video.duration * scrollFraction * 2.2
+);
     };
 
     video.addEventListener("loadedmetadata", () => {
