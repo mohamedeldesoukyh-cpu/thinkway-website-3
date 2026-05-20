@@ -66,7 +66,7 @@ export default function Navigation() {
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   }}
 >    
-        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28 flex items-center justify-between h-20">
+        <div className="w-full max-w-[1400px] mx-auto px-16 md:px-24 lg:px-36 flex items-center justify-between h-20">
           
           {/* LOGO */}
           <a
@@ -77,7 +77,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 ml-16">
+          <div className="hidden md:flex items-center gap-8 ml-24">
 
             {navLinks.map((link) => (
               <button
