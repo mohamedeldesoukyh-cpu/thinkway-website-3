@@ -25,7 +25,7 @@ const statsData = [
     val: 120,
     suffix: "+",
     label: "Verified Creators",
-    sub: "UAE • KSA • Egypt",
+    sub: "Across Egypt",
   },
   {
     val: 28,
@@ -37,7 +37,7 @@ const statsData = [
     val: 12,
     suffix: "M+",
     label: "Campaign Reach",
-    sub: "Across Paid & Organic",
+    sub: "Paid & Organic Reach",
   },
   {
     val: 2,
@@ -49,13 +49,13 @@ const statsData = [
     val: 18,
     suffix: "+",
     label: "Monthly Campaigns",
-    sub: "Managed Across MENA",
+    sub: "Creator-Led Activations",
   },
   {
     val: 4,
-    suffix: "",
-    label: "Core Markets",
-    sub: "UAE • KSA • Egypt • Kuwait",
+    suffix: "+",
+    label: "Industries Served",
+    sub: "Retail • Banking • Telecom",
   },
 ];
 
