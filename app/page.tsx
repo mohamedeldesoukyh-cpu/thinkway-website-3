@@ -12,7 +12,6 @@ import Clients from "@/components/Clients";
 import SOOH from "@/components/SOOH";
 import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
-import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
 
@@ -29,7 +28,6 @@ export default function Home() {
       <CreatorProgram />
       <CampaignBrief />
       <Clients />
-      <ContactUs />
       <Footer />
     </main>
   );
