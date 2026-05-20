@@ -95,27 +95,37 @@ export default function CampaignBrief() {
               brief and get back within 24 hours with a tailored proposal.
             </p>
 
+            <div className="space-y-6 border-t border-[#ececec] pt-10">
+              {[
+                {
+                  label: "Email",
+                  val: "hello@thinkwaymedia.com",
+                },
+                {
+                  label: "Phone",
+                  val: "+201204570000",
+                },
+                {
+                  label: "Address",
+                  val: "Unit No. 2B – Lower Ground Floor – Al Saraya Mall – 44 Central Axis – Sheikh Zayed – Giza – Egypt",
+                },
+              ].map((c) => (
+                <div
+                  key={c.label}
+                  className="flex items-baseline gap-6"
+                >
+                  <span className="text-[9px] tracking-[0.25em] text-[#666] uppercase w-20 shrink-0">
+                    {c.label}
+                  </span>
+
+                  <span className="text-[11px] tracking-[0.05em] text-[#444] leading-[1.8]">
+                    {c.val}
+                  </span>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-<div className="mt-10 border-t border-[#e5e5e5] pt-6">
-
-  <p className="text-[10px] tracking-[0.2em] uppercase text-[#1535C2] mb-4">
-    Quick Connect
-  </p>
-
-  <div className="space-y-3 text-[11px] text-[#8d8d8d] leading-[2] uppercase tracking-[0.08em]">
-
-    <p>• Response within 24 hours</p>
-
-    <p>• UAE & Egypt market support</p>
-
-    <p>• Influencer & SOOH campaigns</p>
-
-  </div>
-
-</div>
-
-{/* FORM */}
           {/* FORM */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
