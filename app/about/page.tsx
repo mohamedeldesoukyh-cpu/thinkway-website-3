@@ -5,283 +5,209 @@ import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
-    <main className="relative bg-[#f5f5f3] text-[#0a0a0a] overflow-hidden">
+    <main className="bg-[#f7f7f5] min-h-screen overflow-hidden">
 
       {/* GLOBAL BACKGROUND */}
-      <div className="fixed inset-0 z-0">
-
-        {/* VIDEO BACKGROUND */}
+      <div className="fixed inset-0 z-0 opacity-[0.12]">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.08]"
+          className="w-full h-full object-cover"
         >
-          <source
-            src="/media/About-hero.mp4"
-            type="video/mp4"
-          />
+          <source src="/media/About-hero.mp4" type="video/mp4" />
         </video>
-        
 
-        {/* LIGHT OVERLAY */}
-        <div className="absolute inset-0 bg-[#f5f5f3]/88" />
-
-        {/* GRID */}
-        <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        />
-
+        <div className="absolute inset-0 bg-white/88" />
       </div>
 
-      {/* PAGE CONTENT */}
+      {/* CONTENT */}
       <div className="relative z-10">
 
         <Navigation />
 
-        {/* HERO */}
-        <section className="pt-64 pb-24 min-h-[72vh] flex items-center justify-center border-b border-black/5">
+        {/* ABOUT SECTION */}
+        <section className="pt-[180px] pb-[140px]">
 
-          <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="max-w-[1050px] mx-auto px-8">
 
-            <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
-              About Thinkway
-            </p>
+            {/* TITLE */}
+            <div className="mb-20">
 
-            <h1 className="text-[24px] md:text-[38px] font-black leading-[0.95] tracking-[-0.05em] uppercase">
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-6">
+                About Thinkway
+              </p>
 
-              ABOUT
-              <br />
-
-              <span className="text-[#1535C2]">
-                THINKWAY
-              </span>
-
-            </h1>
-
-            <p className="mt-8 text-[12px] md:text-[13px] leading-[2.1] text-[#666] max-w-2xl mx-auto">
-
-              At Thinkway, we don't just run campaigns — we create impact.
-
-              <br />
-              <br />
-
-              We are a modern marketing agency specializing in
-              Social Out-Of-Home (SOOH) and Influencer Marketing,
-              built to connect brands with audiences in smarter,
-              more engaging ways.
-
-              <br />
-              <br />
-
-              Our approach combines strategic thinking,
-              data-driven insights, and creative execution
-              to deliver campaigns that don't just look good —
-              but perform.
-
-            </p>
-
-          </div>
-
-        </section>
-
-       {/* MAIN CONTENT */}
-<section className="py-24 overflow-hidden">
-
-  <div className="w-full max-w-[1200px] mx-auto px-[120px]">
-
-    <div className="grid grid-cols-2 gap-[140px]">
-
-      {/* LEFT SIDE */}
-      <div>
-
-        <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
-          What We Do
-        </p>
-
-        <div className="space-y-10">
-
-          <div className="border-b border-black/5 pb-8">
-
-            <div className="flex gap-4">
-
-              <span className="text-[#1535C2] text-[11px] mt-[2px]">
-                01
-              </span>
-
-              <div>
-
-                <h3 className="text-[17px] font-black uppercase">
-                  Influencer Marketing
-                </h3>
-
-                <p className="mt-3 text-[13px] leading-[1.9] text-[#666]">
-                  We connect brands with the right creators
-                  to deliver authentic storytelling and measurable ROI.
-                </p>
-
-              </div>
+              <h1 className="text-[58px] leading-[0.92] font-black uppercase tracking-[-0.05em] text-black">
+                ABOUT
+                <br />
+                <span className="text-[#1535C2]">
+                  THINKWAY
+                </span>
+              </h1>
 
             </div>
 
-          </div>
+            {/* CONTENT */}
+            <div className="space-y-20">
 
-          <div className="border-b border-black/5 pb-8">
+              {/* INTRO */}
+              <div className="max-w-[900px]">
 
-            <div className="flex gap-4">
+                <h2 className="text-[28px] leading-[1.2] font-black text-black mb-8">
+                  We Don't Just Run Campaigns — We Build Lasting Impact.
+                </h2>
 
-              <span className="text-[#1535C2] text-[11px] mt-[2px]">
-                02
-              </span>
+                <div className="space-y-8 text-[18px] leading-[2] text-[#5d5d5d] font-light">
 
-              <div>
+                  <p>
+                    Thinkway is a modern marketing agency redefining how brands
+                    show up in the world. Specializing in Social Out-Of-Home
+                    (SOOH) and Influencer Marketing, we sit at the intersection
+                    of culture, technology, and creativity — helping brands move
+                    beyond traditional advertising and into the spaces where
+                    real attention lives.
+                  </p>
 
-                <h3 className="text-[17px] font-black uppercase">
-                  Social Out-Of-Home
-                </h3>
-
-                <p className="mt-3 text-[13px] leading-[1.9] text-[#666]">
-                  We transform traditional outdoor media into dynamic
-                  social-driven experiences that extend beyond the street
-                  into digital conversations.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div className="border-b border-black/5 pb-8">
-
-            <div className="flex gap-4">
-
-              <span className="text-[#1535C2] text-[11px] mt-[2px]">
-                03
-              </span>
-
-              <div>
-
-                <h3 className="text-[17px] font-black uppercase">
-                  Campaign Strategy & Execution
-                </h3>
-
-                <p className="mt-3 text-[13px] leading-[1.9] text-[#666]">
-                  From concept to delivery, we manage end-to-end campaigns
-                  tailored to your business objectives.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* RIGHT SIDE */}
-      <div>
-
-        <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-8">
-          Our Philosophy
-        </p>
-
-        <div className="space-y-10">
-
-          <div className="border-b border-black/5 pb-8">
-
-            <h3 className="text-[18px] font-black leading-[1.05]">
-              Performance
-              <br />
-              Driven
-            </h3>
-
-            <p className="mt-4 text-[13px] leading-[1.9] text-[#666]">
-              Every campaign is built around measurable impact,
-              audience relevance, and ROI.
-            </p>
-
-          </div>
-
-          <div className="border-b border-black/5 pb-8">
-
-            <h3 className="text-[18px] font-black leading-[1.05]">
-              Authentic
-              <br />
-              Influence
-            </h3>
-
-            <p className="mt-4 text-[13px] leading-[1.9] text-[#666]">
-              Real creator partnerships generate stronger engagement
-              and trust than traditional advertising.
-            </p>
-
-          </div>
-
-          <div className="border-b border-black/5 pb-8">
-
-            <h3 className="text-[18px] font-black leading-[1.05]">
-              Culture
-              <br />
-              First
-            </h3>
-
-            <p className="mt-4 text-[13px] leading-[1.9] text-[#666]">
-              We create campaigns designed to feel native to modern
-              social platforms and digital behavior.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-        {/* CLIENTS */}
-        <section className="py-20 border-t border-black/5">
-
-          <div className="max-w-6xl mx-auto px-6">
-
-            <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-14 text-center">
-              Selected Clients
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-
-              {[
-                "/media/AM Group.png",
-                "/media/Arab Bank of Egypt.jpg",
-                "/media/Grand water Technologies.jpg",
-                "/media/Praxo Pharm 2.jpg",
-              ].map((logo, i) => (
-
-                <div
-                  key={i}
-                  className="h-[120px] flex items-center justify-center border border-black/6 bg-white/20 backdrop-blur-sm"
-                >
-
-                  <img
-                    src={logo}
-                    alt="client"
-                    className="max-h-[55px] object-contain opacity-90"
-                  />
+                  <p>
+                    We were founded on a simple but powerful belief: that the
+                    most effective marketing doesn't interrupt people — it
+                    resonates with them. In a world of shrinking attention spans
+                    and growing skepticism toward conventional advertising, we
+                    build campaigns that feel native, timely, and genuinely
+                    engaging.
+                  </p>
 
                 </div>
 
-              ))}
+              </div>
+
+              {/* WHAT WE DO */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+
+                <div>
+
+                  <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+                    What We Do
+                  </p>
+
+                  <div className="space-y-8">
+
+                    <div>
+                      <h3 className="text-[24px] font-black uppercase mb-5">
+                        Social Out-Of-Home (SOOH)
+                      </h3>
+
+                      <p className="text-[16px] leading-[2] text-[#666]">
+                        Social Out-Of-Home (SOOH) is the evolution of outdoor
+                        advertising — where physical presence meets digital
+                        amplification. We design campaigns that don't just
+                        occupy a billboard or a screen; they spark conversations
+                        online, generate organic reach, and turn real-world
+                        moments into shareable content.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[24px] font-black uppercase mb-5">
+                        Influencer Marketing
+                      </h3>
+
+                      <p className="text-[16px] leading-[2] text-[#666]">
+                        Influencer Marketing, done right, is one of the most
+                        powerful trust-building tools available to brands today.
+                        We identify voices that genuinely align with your
+                        brand's values and craft partnerships that feel
+                        authentic to the audience and meaningful to the creator.
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                {/* HOW WE THINK */}
+                <div>
+
+                  <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+                    How We Think
+                  </p>
+
+                  <div className="space-y-8">
+
+                    <div>
+                      <h3 className="text-[22px] font-black mb-4">
+                        Strategic Thinking
+                      </h3>
+
+                      <p className="text-[16px] leading-[2] text-[#666]">
+                        We study your market, competitors, and audience before a
+                        single creative asset is produced. Strategy guides every
+                        decision we make.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[22px] font-black mb-4">
+                        Data-Driven Insights
+                      </h3>
+
+                      <p className="text-[16px] leading-[2] text-[#666]">
+                        We use analytics, audience behavior data, and
+                        performance metrics to optimize campaigns continuously in
+                        motion.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[22px] font-black mb-4">
+                        Creative Execution
+                      </h3>
+
+                      <p className="text-[16px] leading-[2] text-[#666]">
+                        Our creative team transforms strategy into compelling,
+                        visually powerful campaigns built for modern platforms
+                        and environments.
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* WHY THINKWAY */}
+              <div className="max-w-[950px] pt-10 border-t border-black/10">
+
+                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
+                  Why Thinkway
+                </p>
+
+                <div className="space-y-8 text-[18px] leading-[2] text-[#5d5d5d] font-light">
+
+                  <p>
+                    The marketing landscape is noisier than ever. Brands face
+                    the dual challenge of cutting through the clutter while
+                    maintaining authenticity. We exist to solve exactly that.
+                  </p>
+
+                  <p>
+                    We are a team of strategists, creatives, analysts, and
+                    cultural enthusiasts who bring both rigor and imagination to
+                    every brief. We work as true partners to our clients —
+                    embedded in your goals, invested in your growth, and
+                    accountable to real outcomes.
+                  </p>
+
+                  <p className="text-black font-medium">
+                    At Thinkway, we measure our success by yours.
+                  </p>
+
+                </div>
+
+              </div>
 
             </div>
 
