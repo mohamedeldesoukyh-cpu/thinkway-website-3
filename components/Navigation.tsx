@@ -53,23 +53,20 @@ export default function Navigation() {
   return (
     <>
       <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className="fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-500"
-        style={{
-         background: "rgba(255,255,255,0.92)",
-
-          backdropFilter: "blur(14px)",
-          borderBottom: scrolled
-            ? "1px solid rgba(0,0,0,0.06)"
-            : "1px solid rgba(0,0,0,0.03)",
-        }}
-      >
-       <div className="w-full max-w-[1400px] mx-auto px-10 md:px-16 flex items-center justify-between h-20">
+  initial={{ y: -100, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{
+    duration: 0.8,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  className="sticky top-0 left-0 right-0 z-50 transition-all duration-500"
+  style={{
+    background: "rgba(255,255,255,0.96)",
+    backdropFilter: "blur(16px)",
+    borderBottom: "1px solid rgba(0,0,0,0.05)",
+  }}
+>    
+        <div className="w-full max-w-[1400px] mx-auto px-10 md:px-16 flex items-center justify-between h-20">
           
           {/* LOGO */}
           <a
