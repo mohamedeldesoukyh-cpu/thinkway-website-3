@@ -35,7 +35,7 @@ export default function AboutPage() {
         {/* ABOUT SECTION */}
        <section className="pt-[60px] pb-[120px]">
          
-  <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16">
+  <div className="w-full max-w-[1400px] mx-auto px-10 md:px-20 lg:px-28">
     {/* HEADER */}
     <div className="mb-20">
 
