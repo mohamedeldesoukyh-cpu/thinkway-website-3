@@ -4,21 +4,24 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const { scrollY } = useScroll();
+export default function AboutPage() {
 
-const videoY = useTransform(
-  scrollY,
-  [0, 1000],
-  [0, 220]
-);
+  const { scrollY } = useScroll();
+
+  const videoY = useTransform(
+    scrollY,
+    [0, 1000],
+    [0, 220]
+  );
+
   return (
     <main className="bg-[#f5f5f3] text-[#0a0a0a] overflow-hidden relative">
 
       {/* GLOBAL BACKGROUND */}
       <motion.div
-  className="fixed inset-0 z-0 overflow-hidden"
-  style={{ y: videoY }}
->
+        className="fixed inset-0 z-0 overflow-hidden"
+        style={{ y: videoY }}
+      >
 
         {/* Video */}
         <video
@@ -34,23 +37,24 @@ const videoY = useTransform(
           />
         </video>
 
-       {/* Luxury Overlay */}
-<div
-  className="absolute inset-0"
-  style={{
-    background:
-      "linear-gradient(180deg, rgba(245,245,243,0.45) 0%, rgba(245,245,243,0.58) 100%)",
-  }}
-/>
+        {/* Luxury Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(245,245,243,0.45) 0%, rgba(245,245,243,0.58) 100%)",
+          }}
+        />
 
-{/* Cinematic Left Fade */}
-<div
-  className="absolute inset-0"
-  style={{
-    background:
-      "linear-gradient(90deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.48) 35%, rgba(245,245,243,0.12) 70%, rgba(245,245,243,0.02) 100%)",
-  }}
-/>
+        {/* Cinematic Left Fade */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(245,245,243,0.72) 0%, rgba(245,245,243,0.48) 35%, rgba(245,245,243,0.12) 70%, rgba(245,245,243,0.02) 100%)",
+          }}
+        />
+
         {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.04]"
