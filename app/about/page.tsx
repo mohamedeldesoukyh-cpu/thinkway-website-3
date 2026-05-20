@@ -45,17 +45,17 @@ export default function AboutPage() {
         <Navigation />
 
         {/* HERO */}
-        <section className="pt-32 pb-20 border-b border-black/5">
+        <section className="pt-44 pb-16 border-b border-black/5 min-h-[70vh] flex items-center">
 
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-6 w-full">
 
             <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
               About Thinkway
             </p>
 
-            <div className="max-w-4xl">
+            <div className="max-w-2xl">
 
-              <h1 className="text-[48px] md:text-[72px] font-black leading-[0.9] tracking-[-0.06em] uppercase">
+              <h1 className="text-[42px] md:text-[58px] font-black leading-[0.92] tracking-[-0.05em] uppercase">
 
                 ABOUT
                 <br />
@@ -66,7 +66,7 @@ export default function AboutPage() {
 
               </h1>
 
-              <div className="mt-10 max-w-3xl">
+              <div className="mt-8">
 
                 <p className="text-[15px] leading-[2] text-[#5f5f5f]">
 
@@ -101,23 +101,23 @@ export default function AboutPage() {
         {/* MAIN CONTENT */}
         <section className="py-20">
 
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-20">
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
 
-            {/* LEFT SIDE */}
+            {/* LEFT */}
             <div className="lg:col-span-7">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
                 What We Do
               </p>
 
-              <div className="space-y-10">
+              <div className="space-y-8">
 
-                {/* SERVICE 1 */}
-                <div className="border-b border-black/6 pb-8">
+                {/* SERVICE */}
+                <div className="border-b border-black/6 pb-7">
 
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-5">
 
-                    <span className="text-[#1535C2] text-[12px] font-medium mt-1">
+                    <span className="text-[#1535C2] text-[12px] mt-1">
                       01
                     </span>
 
@@ -127,7 +127,7 @@ export default function AboutPage() {
                         Influencer Marketing
                       </h3>
 
-                      <p className="mt-4 text-[#666] leading-[1.9] text-[15px]">
+                      <p className="mt-3 text-[#666] leading-[1.9] text-[15px]">
                         We connect brands with the right creators
                         to deliver authentic storytelling and measurable ROI.
                       </p>
@@ -138,12 +138,12 @@ export default function AboutPage() {
 
                 </div>
 
-                {/* SERVICE 2 */}
-                <div className="border-b border-black/6 pb-8">
+                {/* SERVICE */}
+                <div className="border-b border-black/6 pb-7">
 
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-5">
 
-                    <span className="text-[#1535C2] text-[12px] font-medium mt-1">
+                    <span className="text-[#1535C2] text-[12px] mt-1">
                       02
                     </span>
 
@@ -153,10 +153,10 @@ export default function AboutPage() {
                         Social Out-Of-Home
                       </h3>
 
-                      <p className="mt-4 text-[#666] leading-[1.9] text-[15px]">
-                        We transform traditional outdoor media into
-                        dynamic social-driven experiences that extend
-                        beyond the street into digital conversations.
+                      <p className="mt-3 text-[#666] leading-[1.9] text-[15px]">
+                        We transform traditional outdoor media
+                        into dynamic social-driven experiences
+                        that extend beyond the street into digital conversations.
                       </p>
 
                     </div>
@@ -165,12 +165,12 @@ export default function AboutPage() {
 
                 </div>
 
-                {/* SERVICE 3 */}
-                <div className="border-b border-black/6 pb-8">
+                {/* SERVICE */}
+                <div className="border-b border-black/6 pb-7">
 
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-5">
 
-                    <span className="text-[#1535C2] text-[12px] font-medium mt-1">
+                    <span className="text-[#1535C2] text-[12px] mt-1">
                       03
                     </span>
 
@@ -180,7 +180,7 @@ export default function AboutPage() {
                         Campaign Strategy & Execution
                       </h3>
 
-                      <p className="mt-4 text-[#666] leading-[1.9] text-[15px]">
+                      <p className="mt-3 text-[#666] leading-[1.9] text-[15px]">
                         From concept to delivery, we manage end-to-end
                         campaigns tailored to your business objectives.
                       </p>
@@ -195,17 +195,16 @@ export default function AboutPage() {
 
             </div>
 
-            {/* RIGHT SIDE */}
+            {/* RIGHT */}
             <div className="lg:col-span-5">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
                 Our Philosophy
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
 
-                {/* CARD 1 */}
-                <div className="border border-black/5 bg-white/45 backdrop-blur-sm p-7">
+                <div className="pb-8 border-b border-black/6">
 
                   <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
                     Performance
@@ -220,8 +219,7 @@ export default function AboutPage() {
 
                 </div>
 
-                {/* CARD 2 */}
-                <div className="border border-black/5 bg-white/45 backdrop-blur-sm p-7">
+                <div className="pb-8 border-b border-black/6">
 
                   <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
                     Authentic
@@ -236,8 +234,7 @@ export default function AboutPage() {
 
                 </div>
 
-                {/* CARD 3 */}
-                <div className="border border-black/5 bg-white/45 backdrop-blur-sm p-7">
+                <div className="pb-8 border-b border-black/6">
 
                   <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
                     Culture
@@ -263,7 +260,7 @@ export default function AboutPage() {
         {/* CLIENTS */}
         <section className="py-20 border-t border-black/5">
 
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-6">
 
             <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-14 text-center">
               Selected Clients
@@ -280,7 +277,7 @@ export default function AboutPage() {
 
                 <div
                   key={i}
-                  className="bg-white/45 backdrop-blur-sm border border-black/5 h-[140px] flex items-center justify-center p-8"
+                  className="h-[140px] flex items-center justify-center p-8 border border-black/6"
                 >
 
                   <img
