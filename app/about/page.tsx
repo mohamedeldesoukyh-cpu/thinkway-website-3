@@ -28,12 +28,12 @@ export default function AboutPage() {
       </div>
 
       {/* PAGE CONTENT */}
-      <div className="relative z-10">
+      <div className="relative z-10 pt-[120px]">
 
         <Navigation />
 
         {/* ABOUT SECTION */}
-        <section className="pt-[220px] pb-[120px]">
+        <section className="pt-[80px] pb-[120px]">
 
   <div className="max-w-[1180px] mx-auto px-[80px]">
 
