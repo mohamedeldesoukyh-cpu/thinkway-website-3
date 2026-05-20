@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Results", href: "/#stats" },
   { label: "SOOH", href: "/#sooh" },
   { label: "Program", href: "/#program" },
-  { label: "Contact Us", href="/contact-us" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navigation() {
