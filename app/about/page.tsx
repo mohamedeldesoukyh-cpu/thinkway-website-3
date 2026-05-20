@@ -1,202 +1,272 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import ThinkwayLogo from "@/components/ThinkwayLogo";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/#services" },
-  { label: "Creators", href: "/#creators" },
-  { label: "Results", href: "/#stats" },
-  { label: "SOOH", href: "/#sooh" },
-  { label: "Program", href: "/#program" },
-];
-
-export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-
-    window.addEventListener("scroll", onScroll, {
-      passive: true,
-    });
-
-    return () =>
-      window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const handleNav = (href: string) => {
-    setMenuOpen(false);
-
-    // Homepage sections
-    if (href.startsWith("/#")) {
-      window.location.href = href;
-      return;
-    }
-
-    // Pages
-    if (href.startsWith("/")) {
-      window.location.href = href;
-      return;
-    }
-
-    // Same-page sections
-    document.querySelector(href)?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
+export default function AboutPage() {
   return (
-    <>
-      <motion.nav
-  initial={{ y: -100, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{
-    duration: 0.8,
-    ease: [0.16, 1, 0.3, 1],
-  }}
-  className="sticky top-0 left-0 right-0 z-50 transition-all duration-500"
-  style={{
-    background: "rgba(255,255,255,0.96)",
-    backdropFilter: "blur(16px)",
-    borderBottom: "1px solid rgba(0,0,0,0.05)",
-  }}
->    
-        <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16 flex items-center justify-between h-20">
-          
-          {/* LOGO */}
-          <a
-            href="/"
-            className="block"
-          >
-            <ThinkwayLogo variant="dark" />
-          </a>
+    <main className="bg-[#f7f7f5] min-h-screen relative">
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 ml-16">
+      {/* GLOBAL VIDEO BACKGROUND */}
+      <div className="fixed inset-0 z-0 opacity-[0.10]">
 
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link.href)}
-                className="text-[11px] tracking-[0.22em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors duration-300"
-              >
-                {link.label}
-              </button>
-            ))}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source
+            src="/media/About-hero.mp4"
+            type="video/mp4"
+          />
+        </video>
 
-          </div>
+       <div className="absolute inset-0 bg-white/55" />
 
-          {/* CTA */}
-          <div className="hidden md:flex">
+      </div>
 
-            <button
-              onClick={() => handleNav("/#contact")}
-              className="bg-[#1535C2] text-white px-8 py-4 uppercase tracking-[0.22em] text-[10px] hover:opacity-90 transition"
-            >
-              Start A Campaign
-            </button>
+      {/* PAGE CONTENT */}
+      <div className="relative z-10">
 
-          </div>
+        <Navigation />
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-[5px] p-2"
-          >
+        {/* ABOUT SECTION */}
+       <section className="pt-[60px] pb-[120px]">
+         
+  <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16">
+    {/* HEADER */}
+    <div className="mb-20">
 
-            <motion.span
-              animate={
-                menuOpen
-                  ? { rotate: 45, y: 7 }
-                  : { rotate: 0, y: 0 }
-              }
-              className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
-            />
+      <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-5">
+        About Thinkway
+      </p>
 
-            <motion.span
-              animate={
-                menuOpen
-                  ? { opacity: 0 }
-                  : { opacity: 1 }
-              }
-              className="block w-6 h-[1px] bg-[#0a0f1e]"
-            />
+      <h1 className="text-[30px] leading-[0.95] font-black uppercase tracking-[-0.03em] text-black">
 
-            <motion.span
-              animate={
-                menuOpen
-                  ? { rotate: -45, y: -7 }
-                  : { rotate: 0, y: 0 }
-              }
-              className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
-            />
+        ABOUT
+        <br />
 
-          </button>
+        <span className="text-[#1535C2]">
+          THINKWAY
+        </span>
 
-        </div>
-      </motion.nav>
+      </h1>
 
-      {/* MOBILE MENU */}
-      <AnimatePresence>
+    </div>
 
-        {menuOpen && (
+    {/* INTRO */}
+    <div className="max-w-[900px] mb-24">
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
-          >
+      <h2 className="text-[18px] leading-[1.4] font-black text-black mb-8">
 
-            {/* Mobile Logo */}
-            <div className="absolute top-7 left-7">
-              <ThinkwayLogo variant="dark" />
+        We Don't Just Run Campaigns —
+        <br />
+        We Build Lasting Impact.
+
+      </h2>
+
+      <div className="space-y-6 text-[13px] leading-[2] text-[#5f5f5f] font-light">
+
+        <p>
+          Thinkway is a modern marketing agency redefining how brands show up in the world.
+          Specializing in Social Out-Of-Home (SOOH) and Influencer Marketing,
+          we sit at the intersection of culture, technology, and creativity —
+          helping brands move beyond traditional advertising and into the spaces
+          where real attention lives.
+        </p>
+
+        <p>
+          We were founded on a simple but powerful belief:
+          that the most effective marketing doesn't interrupt people —
+          it resonates with them.
+        </p>
+
+      </div>
+
+    </div>
+            {/* TWO COLUMN SECTION */}
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-28">
+
+              {/* WHAT WE DO */}
+              <div>
+
+                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
+                  What We Do
+                </p>
+
+                <div className="space-y-12">
+
+                  <div>
+
+                    <h3 className="text-[16px] font-black uppercase mb-4">
+                      Social Out-Of-Home (SOOH)
+                    </h3>
+
+                    <p className="text-[12px] leading-[2] text-[#666]">
+                      Social Out-Of-Home is the evolution of outdoor advertising —
+                      where physical presence meets digital amplification.
+                      We design campaigns that don't just occupy a billboard or a screen;
+                      they spark conversations online,
+                      generate organic reach,
+                      and turn real-world moments into shareable content.
+                    </p>
+
+                  </div>
+
+                  <div>
+
+                    <h3 className="text-[16px] font-black uppercase mb-4">
+                      Influencer Marketing
+                    </h3>
+
+                    <p className="text-[12px] leading-[2] text-[#666]">
+                      Influencer Marketing, done right,
+                      is one of the most powerful trust-building tools
+                      available to brands today.
+                      We identify voices that genuinely align with your brand's values
+                      and craft partnerships that feel authentic to the audience
+                      and meaningful to the creator.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* HOW WE THINK */}
+              <div>
+
+                <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
+                  How We Think
+                </p>
+
+                <div className="space-y-8">
+
+                  <p className="text-[12px] leading-[2] text-[#666]">
+                    Every campaign we build starts with a question:
+                    what does this audience actually care about?
+                    From there,
+                    we layer in data intelligence,
+                    cultural context,
+                    and creative strategy
+                    to develop work that speaks to people — not at them.
+                  </p>
+
+                  <p className="text-[12px] leading-[2] text-[#666]">
+                    Our process is built around three core pillars:
+                  </p>
+
+                  <div className="space-y-8 pt-2">
+
+                    <div>
+
+                      <span className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
+                        01
+                      </span>
+
+                      <h3 className="text-[15px] font-black uppercase mt-2 mb-2">
+                        Strategic Thinking
+                      </h3>
+
+                      <p className="text-[12px] leading-[2] text-[#666]">
+                        We study your market,
+                        competitors,
+                        and audience before a single creative asset is produced.
+                        Strategy guides every decision we make.
+                      </p>
+
+                    </div>
+
+                    <div>
+
+                      <span className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
+                        02
+                      </span>
+
+                      <h3 className="text-[15px] font-black uppercase mt-2 mb-2">
+                        Data-Driven Insights
+                      </h3>
+
+                      <p className="text-[12px] leading-[2] text-[#666]">
+                        Real-time analytics,
+                        audience behavior data,
+                        and performance metrics continuously optimize campaigns in motion.
+                      </p>
+
+                    </div>
+
+                    <div>
+
+                      <span className="text-[#1535C2] text-[10px] tracking-[0.3em] uppercase">
+                        03
+                      </span>
+
+                      <h3 className="text-[15px] font-black uppercase mt-2 mb-2">
+                        Creative Execution
+                      </h3>
+
+                      <p className="text-[12px] leading-[2] text-[#666]">
+                        Our creative team translates strategy into compelling,
+                        visually powerful campaigns built for modern platforms.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
-            {/* Links */}
-            {navLinks.map((link, i) => (
+            {/* WHY THINKWAY */}
+            <div className="max-w-[900px] border-t border-black/10 pt-16">
 
-              <motion.button
-                key={link.href}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: i * 0.08,
-                  duration: 0.4,
-                }}
-                onClick={() => handleNav(link.href)}
-                className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
-              >
-                {link.label}
-              </motion.button>
+              <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6">
+                Why Thinkway
+              </p>
 
-            ))}
+              <div className="space-y-6 text-[13px] leading-[2] text-[#5f5f5f] font-light">
 
-            {/* Mobile CTA */}
-            <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: navLinks.length * 0.08,
-                duration: 0.4,
-              }}
-              onClick={() => handleNav("/#contact")}
-              className="mt-6 bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.22em] text-[11px]"
-            >
-              Start A Campaign
-            </motion.button>
+                <p>
+                  The marketing landscape is noisier than ever.
+                  Brands face the dual challenge of cutting through the clutter
+                  while maintaining authenticity.
+                  We exist to solve exactly that.
+                </p>
 
-          </motion.div>
+                <p>
+                  We are a team of strategists,
+                  creatives,
+                  analysts,
+                  and cultural enthusiasts
+                  who bring both rigor and imagination to every brief.
+                  We work as true partners to our clients —
+                  embedded in your goals,
+                  invested in your growth,
+                  and accountable to real outcomes.
+                </p>
 
-        )}
+                <p className="text-black font-medium">
+                  At Thinkway, we measure our success by yours.
+                </p>
 
-      </AnimatePresence>
-    </>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <Footer />
+
+      </div>
+
+    </main>
   );
 }
