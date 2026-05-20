@@ -28,7 +28,7 @@ export default function AboutPage() {
 </video>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/40" />
 
         {/* Blue Glow */}
         <div
