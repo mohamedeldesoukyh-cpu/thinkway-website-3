@@ -8,11 +8,11 @@ import AboutUs from "@/components/AboutUs";
 import Manifesto from "@/components/Manifesto";
 import Services from "@/components/Services";
 import Creators from "@/components/Creators";
+import Stats from "@/components/Stats";
 import Clients from "@/components/Clients";
 import SOOH from "@/components/SOOH";
 import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
-import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
 
@@ -25,11 +25,11 @@ export default function Home() {
       <Manifesto />
       <Services />
       <Creators />
+      <Stats />
       <SOOH />
       <CreatorProgram />
       <CampaignBrief />
       <Clients />
-      <ContactUs />
       <Footer />
     </main>
   );
