@@ -10,7 +10,7 @@ export default function AboutPage() {
       {/* GLOBAL BACKGROUND */}
       <div className="fixed inset-0 z-0">
 
-        {/* VIDEO */}
+        {/* VIDEO BACKGROUND */}
         <video
           autoPlay
           muted
@@ -39,13 +39,13 @@ export default function AboutPage() {
 
       </div>
 
-      {/* CONTENT */}
+      {/* PAGE CONTENT */}
       <div className="relative z-10">
 
         <Navigation />
 
         {/* HERO */}
-        <section className="pt-44 pb-28 border-b border-black/5">
+        <section className="pt-32 pb-20 border-b border-black/5">
 
           <div className="max-w-7xl mx-auto px-6">
 
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
             <div className="max-w-4xl">
 
-              <h1 className="text-[72px] md:text-[110px] font-black leading-[0.88] tracking-[-0.06em] uppercase">
+              <h1 className="text-[48px] md:text-[72px] font-black leading-[0.9] tracking-[-0.06em] uppercase">
 
                 ABOUT
                 <br />
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
               <div className="mt-10 max-w-3xl">
 
-                <p className="text-[17px] leading-[2] text-[#5c5c5c]">
+                <p className="text-[15px] leading-[2] text-[#5f5f5f]">
 
                   At Thinkway, we don't just run campaigns — we create impact.
 
@@ -98,12 +98,12 @@ export default function AboutPage() {
 
         </section>
 
-        {/* CONTENT SECTION */}
-        <section className="py-28">
+        {/* MAIN CONTENT */}
+        <section className="py-20">
 
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-20">
 
-            {/* LEFT */}
+            {/* LEFT SIDE */}
             <div className="lg:col-span-7">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
@@ -112,7 +112,7 @@ export default function AboutPage() {
 
               <div className="space-y-10">
 
-                {/* ITEM */}
+                {/* SERVICE 1 */}
                 <div className="border-b border-black/6 pb-8">
 
                   <div className="flex items-start gap-6">
@@ -123,14 +123,13 @@ export default function AboutPage() {
 
                     <div>
 
-                      <h3 className="text-[28px] font-black uppercase tracking-[-0.03em]">
+                      <h3 className="text-[20px] font-black uppercase tracking-[-0.03em]">
                         Influencer Marketing
                       </h3>
 
                       <p className="mt-4 text-[#666] leading-[1.9] text-[15px]">
                         We connect brands with the right creators
-                        to deliver authentic storytelling and
-                        measurable ROI.
+                        to deliver authentic storytelling and measurable ROI.
                       </p>
 
                     </div>
@@ -139,7 +138,7 @@ export default function AboutPage() {
 
                 </div>
 
-                {/* ITEM */}
+                {/* SERVICE 2 */}
                 <div className="border-b border-black/6 pb-8">
 
                   <div className="flex items-start gap-6">
@@ -150,14 +149,14 @@ export default function AboutPage() {
 
                     <div>
 
-                      <h3 className="text-[28px] font-black uppercase tracking-[-0.03em]">
+                      <h3 className="text-[20px] font-black uppercase tracking-[-0.03em]">
                         Social Out-Of-Home
                       </h3>
 
                       <p className="mt-4 text-[#666] leading-[1.9] text-[15px]">
-                        We transform traditional outdoor media
-                        into dynamic social-driven experiences
-                        that extend beyond the street into digital conversations.
+                        We transform traditional outdoor media into
+                        dynamic social-driven experiences that extend
+                        beyond the street into digital conversations.
                       </p>
 
                     </div>
@@ -166,7 +165,7 @@ export default function AboutPage() {
 
                 </div>
 
-                {/* ITEM */}
+                {/* SERVICE 3 */}
                 <div className="border-b border-black/6 pb-8">
 
                   <div className="flex items-start gap-6">
@@ -177,13 +176,13 @@ export default function AboutPage() {
 
                     <div>
 
-                      <h3 className="text-[28px] font-black uppercase tracking-[-0.03em]">
+                      <h3 className="text-[20px] font-black uppercase tracking-[-0.03em]">
                         Campaign Strategy & Execution
                       </h3>
 
                       <p className="mt-4 text-[#666] leading-[1.9] text-[15px]">
-                        From concept to delivery, we manage
-                        end-to-end campaigns tailored to your business objectives.
+                        From concept to delivery, we manage end-to-end
+                        campaigns tailored to your business objectives.
                       </p>
 
                     </div>
@@ -196,54 +195,57 @@ export default function AboutPage() {
 
             </div>
 
-            {/* RIGHT */}
+            {/* RIGHT SIDE */}
             <div className="lg:col-span-5">
 
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[11px] mb-8">
                 Our Philosophy
               </p>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
 
-                <div className="border border-black/5 bg-white/40 backdrop-blur-sm p-8">
+                {/* CARD 1 */}
+                <div className="border border-black/5 bg-white/45 backdrop-blur-sm p-7">
 
-                  <h3 className="text-[30px] font-black leading-[1] tracking-[-0.04em]">
+                  <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
                     Performance
                     <br />
                     Driven
                   </h3>
 
-                  <p className="mt-5 text-[#666] leading-[1.9] text-[15px]">
+                  <p className="mt-4 text-[#666] leading-[1.9] text-[14px]">
                     Every campaign is built around measurable impact,
                     audience relevance, and ROI.
                   </p>
 
                 </div>
 
-                <div className="border border-black/5 bg-white/40 backdrop-blur-sm p-8">
+                {/* CARD 2 */}
+                <div className="border border-black/5 bg-white/45 backdrop-blur-sm p-7">
 
-                  <h3 className="text-[30px] font-black leading-[1] tracking-[-0.04em]">
+                  <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
                     Authentic
                     <br />
                     Influence
                   </h3>
 
-                  <p className="mt-5 text-[#666] leading-[1.9] text-[15px]">
-                    Real creator partnerships generate stronger engagement
-                    and trust than traditional advertising.
+                  <p className="mt-4 text-[#666] leading-[1.9] text-[14px]">
+                    Real creator partnerships generate stronger
+                    engagement and trust than traditional advertising.
                   </p>
 
                 </div>
 
-                <div className="border border-black/5 bg-white/40 backdrop-blur-sm p-8">
+                {/* CARD 3 */}
+                <div className="border border-black/5 bg-white/45 backdrop-blur-sm p-7">
 
-                  <h3 className="text-[30px] font-black leading-[1] tracking-[-0.04em]">
+                  <h3 className="text-[22px] font-black leading-[1.05] tracking-[-0.04em]">
                     Culture
                     <br />
                     First
                   </h3>
 
-                  <p className="mt-5 text-[#666] leading-[1.9] text-[15px]">
+                  <p className="mt-4 text-[#666] leading-[1.9] text-[14px]">
                     We create campaigns designed to feel native
                     to modern social platforms and digital behavior.
                   </p>
@@ -259,7 +261,7 @@ export default function AboutPage() {
         </section>
 
         {/* CLIENTS */}
-        <section className="py-28 border-t border-black/5">
+        <section className="py-20 border-t border-black/5">
 
           <div className="max-w-7xl mx-auto px-6">
 
@@ -278,13 +280,13 @@ export default function AboutPage() {
 
                 <div
                   key={i}
-                  className="bg-white/45 backdrop-blur-sm border border-black/5 h-[180px] flex items-center justify-center p-10"
+                  className="bg-white/45 backdrop-blur-sm border border-black/5 h-[140px] flex items-center justify-center p-8"
                 >
 
                   <img
                     src={logo}
                     alt="client"
-                    className="max-h-[80px] object-contain"
+                    className="max-h-[70px] object-contain"
                   />
 
                 </div>
