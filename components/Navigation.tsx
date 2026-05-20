@@ -97,7 +97,7 @@ export default function Navigation() {
 
             <button
               onClick={() => handleNav("/#contact")}
-              className="bg-[#1535C2] text-white px-8 py-4 text-[10px] tracking-[0.22em] uppercase border border-[#1535C2] hover:bg-[#0f2ba3] transition-all duration-300"
+              className="bg-[#1535C2] text-white h-[54px] px-10 uppercase tracking-[0.22em] text-[10px] font-medium hover:bg-[#0f2ba3] transition-all duration-300 flex items-center justify-center"
             >
               Start A Campaign
             </button>
