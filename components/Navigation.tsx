@@ -100,7 +100,9 @@ export default function Navigation() {
     className="bg-[#1535C2] text-white h-[54px] px-10 uppercase tracking-[0.22em] text-[10px] font-medium hover:bg-[#0f2ba3] transition-all duration-300 flex items-center justify-center"
   >
     Start A Campaign
-  </button>
+  <button className="bg-[#1535C2] hover:bg-[#2347db] text-white text-[11px] tracking-[0.22em] uppercase px-8 h-[52px] rounded-none transition-all duration-300 hover:shadow-[0_10px_40px_rgba(21,53,194,0.25)]">
+  Start A Campaign
+</button>
 
 </div>
 
