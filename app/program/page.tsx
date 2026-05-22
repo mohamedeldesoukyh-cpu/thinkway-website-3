@@ -94,33 +94,72 @@ export default function ProgramPage() {
 
               <div className="bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[32px] p-10">
 
-                <form className="space-y-10">
+                <form
+                  className="space-y-10"
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+
+                    const formData = new FormData(e.currentTarget);
+
+                    const data = {
+                      name: formData.get("name"),
+                      email: formData.get("email"),
+                      social: formData.get("social"),
+                      followers: formData.get("followers"),
+                      message: formData.get("message"),
+                    };
+
+                    try {
+                      const response = await fetch("/api/creator-apply", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                      });
+
+                      if (response.ok) {
+  window.location.href = "/application-submitted";
+} else {
+  alert("Submission failed.");
+}
+                    } catch (error) {
+                      console.error(error);
+                      alert("Something went wrong.");
+                    }
+                  }}
+                >
 
                   <input
+                    name="name"
                     type="text"
                     placeholder="Full Name"
                     className="w-full border-0 border-b border-white/10 bg-transparent py-5 text-[14px] outline-none text-white focus:border-[#2f54ff] transition-colors placeholder:text-[#71717a]"
                   />
 
                   <input
+                    name="email"
                     type="email"
                     placeholder="Email Address"
                     className="w-full border-0 border-b border-white/10 bg-transparent py-5 text-[14px] outline-none text-white focus:border-[#2f54ff] transition-colors placeholder:text-[#71717a]"
                   />
 
                   <input
+                    name="social"
                     type="text"
                     placeholder="Instagram / TikTok Username"
                     className="w-full border-0 border-b border-white/10 bg-transparent py-5 text-[14px] outline-none text-white focus:border-[#2f54ff] transition-colors placeholder:text-[#71717a]"
                   />
 
                   <input
+                    name="followers"
                     type="text"
                     placeholder="Followers Count"
                     className="w-full border-0 border-b border-white/10 bg-transparent py-5 text-[14px] outline-none text-white focus:border-[#2f54ff] transition-colors placeholder:text-[#71717a]"
                   />
 
                   <textarea
+                    name="message"
                     placeholder="Why do you want to join?"
                     className="w-full border-0 border-b border-white/10 bg-transparent py-5 min-h-[140px] text-[14px] outline-none resize-none text-white focus:border-[#2f54ff] transition-colors placeholder:text-[#71717a]"
                   />
