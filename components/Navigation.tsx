@@ -32,19 +32,16 @@ export default function Navigation() {
   const handleNav = (href: string) => {
     setMenuOpen(false);
 
-    // Homepage sections
     if (href.startsWith("/#")) {
       window.location.href = href;
       return;
     }
 
-    // Pages
     if (href.startsWith("/")) {
       window.location.href = href;
       return;
     }
 
-    // Same-page sections
     document.querySelector(href)?.scrollIntoView({
       behavior: "smooth",
     });
@@ -53,33 +50,29 @@ export default function Navigation() {
   return (
     <>
       <motion.nav
-  initial={{ y: -100, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{
-    duration: 0.8,
-    ease: [0.16, 1, 0.3, 1],
-  }}
-  className="fixed top-0 left-0 right-0 z-[999999] transition-all duration-500 backdrop-blur-xl bg-white/90 border-b border-black/[0.05]"
-  style={{
-    position: "fixed",
-    background: "rgba(255,255,255,0.96)",
-    backdropFilter: "blur(16px)",
-    borderBottom: "1px solid rgba(0,0,0,0.05)",
-  }}
->
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between h-20">
-          
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="fixed top-0 left-0 right-0 z-[999999] transition-all duration-500"
+        style={{
+          position: "fixed",
+          background: "rgba(255,255,255,0.96)",
+          backdropFilter: "blur(16px)",
+          borderBottom: "1px solid rgba(0,0,0,0.05)",
+        }}
+      >
+        <div className="w-full max-w-[1440px] mx-auto px-12 md:px-16 lg:px-24 flex items-center justify-between h-20">
+
           {/* LOGO */}
-          <a
-  href="/"
-  className="block"
->
+          <a href="/" className="block">
             <ThinkwayLogo variant="dark" />
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 justify-center">
-            
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -89,51 +82,35 @@ export default function Navigation() {
                 {link.label}
               </button>
             ))}
-
           </div>
 
           {/* CTA */}
-<div className="hidden md:flex items-center">
-  <button
-    onClick={() => handleNav("/#contact")}
-    className="btn-primary"
-  >
-    Start A Campaign
-  </button>
-</div>
+          <div className="hidden md:flex items-center">
+            <button
+              onClick={() => handleNav("/#contact")}
+              className="btn-primary"
+            >
+              Start A Campaign
+            </button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden flex flex-col gap-[5px] p-2"
           >
-
             <motion.span
-              animate={
-                menuOpen
-                  ? { rotate: 45, y: 7 }
-                  : { rotate: 0, y: 0 }
-              }
+              animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
               className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
             />
-
             <motion.span
-              animate={
-                menuOpen
-                  ? { opacity: 0 }
-                  : { opacity: 1 }
-              }
+              animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
               className="block w-6 h-[1px] bg-[#0a0f1e]"
             />
-
             <motion.span
-              animate={
-                menuOpen
-                  ? { rotate: -45, y: -7 }
-                  : { rotate: 0, y: 0 }
-              }
+              animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
               className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
             />
-
           </button>
 
         </div>
@@ -141,9 +118,7 @@ export default function Navigation() {
 
       {/* MOBILE MENU */}
       <AnimatePresence>
-
         {menuOpen && (
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -153,48 +128,4 @@ export default function Navigation() {
           >
 
             {/* Mobile Logo */}
-            <div className="absolute top-7 left-7">
-              <ThinkwayLogo variant="dark" />
-            </div>
-
-            {/* Links */}
-            {navLinks.map((link, i) => (
-
-              <motion.button
-                key={link.href}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: i * 0.08,
-                  duration: 0.4,
-                }}
-                onClick={() => handleNav(link.href)}
-                className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
-              >
-                {link.label}
-              </motion.button>
-
-            ))}
-
-            {/* Mobile CTA */}
-            <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: navLinks.length * 0.08,
-                duration: 0.4,
-              }}
-              onClick={() => handleNav("/#contact")}
-              className="mt-6 bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.22em] text-[11px]"
-            >
-              Start A Campaign
-            </motion.button>
-
-          </motion.div>
-
-        )}
-
-      </AnimatePresence>
-    </>
-  );
-}
+            <d
