@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --accent: #1535C2;
+  --accent-light: #2a4fd4;
+  --gold: #c9a84c;
+  --muted: #888888;
+  --border: #e8e8e8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+/* Custom cursor */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #0a0a0a;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.12s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+}
+
+/* Scrollbar */
+
+/* Selection */
+::selection { background: #1535C2; color: #fff; }
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.3;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0a0a0a 0%, #555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Horizontal rule */
+.hr-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e0e0e0 30%, #e0e0e0 70%, transparent);
+}
+
+/* Tag */
+.tag {
+  padding: 14px 22px;
+  border: 1px solid #cfcfcf;
+  background: white;
+  color: #111;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+.tag:hover {
+  border-color: #1535C2;
+  color: #1535C2;
+}
+
+/* Button base */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1535C2;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  transition: background 0.3s, transform 0.3s;
+  cursor: none;
+}
+
+.btn-primary:hover {
+  background: #2a4fd4;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #0a0a0a;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 1px solid #d8d8d8;
+  transition: border-color 0.3s, background 0.3s;
+  cursor: none;
+}
+
+.btn-outline:hover {
+  border-color: #1535C2;
+  color: #1535C2;
+  background: rgba(21, 53, 194, 0.04);
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+/* Container */
+.container-custom {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding: 0 24px;
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* Reveal animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.4s;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: #1535C2 !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+input,
+textarea {
+  color: #0a0a0a;
+  caret-color: #1535C2;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(0,0,0,0.35);
+}
+* {
+  cursor: auto !important;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+section,
+div {
+  max-width: 100%;
+}

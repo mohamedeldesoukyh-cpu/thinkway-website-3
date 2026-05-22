@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 52" fill="none">
+  <!-- THINKWAY wordmark — heavy geometric sans -->
+  <text
+    x="0" y="38"
+    font-family="'Inter','Helvetica Neue','Arial Black',Arial,sans-serif"
+    font-weight="900"
+    font-size="44"
+    letter-spacing="-1.5"
+    fill="#0a0f1e"
+  >THINKWAY</text>
+  <!-- Blue dot accent -->
+  <circle cx="4" cy="48" r="4" fill="#1535C2"/>
+  <!-- Thin rule -->
+  <line x1="13" y1="48" x2="340" y2="48" stroke="#d8d8d8" stroke-width="0.8"/>
+</svg>

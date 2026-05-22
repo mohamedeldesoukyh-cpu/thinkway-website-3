@@ -1,0 +1,117 @@
+{
+  "project": "Influencer Marketing Agency Website",
+  "style_notes": "Dark premium aesthetic. Color palette: deep black (#0a0a0a), rich crimson red (#c0392b / #e74c3c), off-white (#f5f5f5), subtle gold accents (#d4af37). Cinematic lighting, ultra-high resolution, editorial photography feel. Reference: Groowth agency dark luxury brand identity.",
+  "visuals": [
+    {
+      "id": 1,
+      "section": "Hero",
+      "label": "Hero — Influencer with Floating Social Platforms",
+      "placement": "Full-bleed background, right side of split layout. Text overlay on left.",
+      "aspect_ratio": "16:9 or 3:2",
+      "prompt": "Ultra-premium editorial photograph of a confident young woman influencer standing center-right, wearing sleek all-black high-fashion outfit, studio dark background fading to deep black. Around her, glowing holographic social media platform icons (Instagram, TikTok, YouTube, X/Twitter) floating in mid-air like orbiting satellites, rendered as translucent glass-morphism UI cards with subtle crimson red glow edges. Each card shows blurred engagement metrics — likes, followers, views — in minimal white typography. Cinematic rim lighting from behind in deep red. Left third of frame intentionally dark and empty for text overlay. Shot on Phase One medium format, 85mm lens, shallow depth of field, ultra-sharp subject, bokeh background. Mood: luxury tech, aspirational, futuristic. --ar 3:2 --style raw --q 2"
+    },
+    {
+      "id": 2,
+      "section": "Hero — Alternative",
+      "label": "Hero — Male Influencer Dark Neon Studio",
+      "placement": "Full-bleed hero background alternative (A/B variant)",
+      "aspect_ratio": "16:9",
+      "prompt": "Cinematic wide-angle shot of a charismatic male influencer in his late 20s, dressed in a tailored dark charcoal suit, standing in an enormous dark studio space. Neon red light strips streak across the floor and ceiling behind him in dramatic perspective lines converging at vanishing point. Multiple floating translucent screens displaying social media dashboards, viral video thumbnails, and analytics graphs surround him in a halo. Deep shadow on the left third for hero text placement. The overall mood evokes power, influence, and digital authority. Shot on Sony FX3, 24mm anamorphic, deep blacks, crimson and white color grading. Ultra-photorealistic, 8K resolution. --ar 16:9 --style raw"
+    },
+    {
+      "id": 3,
+      "section": "About / Mission",
+      "label": "About — Hands Shaking Through Digital Portal",
+      "placement": "Full-width section image or left-column image in two-column layout",
+      "aspect_ratio": "4:3",
+      "prompt": "Conceptual editorial photograph: two hands reaching toward each other — one belonging to a creator/influencer (casual, tattoos, ring light reflection in fingernails) and one a corporate brand hand (suit sleeve, clean) — meeting through a glowing holographic portal made of translucent crimson and white light particles. Background is deep matte black. The portal radiates soft volumetric light. Symbolizes the bridge between creators and brands. Macro lens detail on hands, dramatic studio lighting. Color grade: deep blacks, crimson glow, minimal white. Ultra-sharp, hyper-realistic, editorial magazine quality. --ar 4:3 --style raw --q 2"
+    },
+    {
+      "id": 4,
+      "section": "Services",
+      "label": "Services — Command Center / War Room Aesthetic",
+      "placement": "Full-bleed background for services section",
+      "aspect_ratio": "16:9",
+      "prompt": "Wide cinematic shot of a sleek dark glass-walled agency command center room viewed from above at a 45-degree angle. Inside, three stylish professionals — diverse, fashionable — lean over a large illuminated dark table scattered with glowing holographic campaign dashboards, influencer profile cards, and performance analytics. Large floor-to-ceiling monitors on the wall display social media campaign maps, heat maps of audience reach, and creator rosters. Red and white ambient lighting. Architectural photography style, ultra-premium interior. The mood is strategic, powerful, elite. Shot wide, 24mm, sharp throughout, deep depth of field. 8K photorealistic. --ar 16:9 --style raw"
+    },
+    {
+      "id": 5,
+      "section": "Influencer Roster / Talent",
+      "label": "Roster — Premium Creator Collective Portrait",
+      "placement": "Section hero or grid background image",
+      "aspect_ratio": "3:2",
+      "prompt": "Ultra-premium group editorial portrait of five diverse, stylish influencers — different genders, ethnicities, aesthetics (streetwear, fashion, fitness, tech, lifestyle) — posed in a staggered editorial formation in an all-black studio. Each person is lit with a subtle individual rim light in deep red. They look directly into the camera with commanding confidence. Minimal props: one holds a smartphone displaying a viral reel, another has a camera. The collective energy is aspirational and inclusive. Shot on Hasselblad, 50mm, uniform dark background, high-contrast lighting. Vogue editorial quality. --ar 3:2 --style raw --q 2"
+    },
+    {
+      "id": 6,
+      "section": "Campaign Showcase / Case Study",
+      "label": "Campaign — Viral Moment Explosion",
+      "placement": "Case study feature image or campaign results visual",
+      "aspect_ratio": "1:1 or 4:3",
+      "prompt": "Dynamic conceptual editorial image: a smartphone held in a dark hand at center frame, screen erupting with an explosion of colorful social media content — photos, video thumbnails, comment bubbles, heart emojis, fire emojis — all bursting outward in 3D space like a supernova, transitioning from vivid on-screen colors to black-and-white at the dark edges of the frame. Background: pure matte black. The phone screen glows brilliantly. Crimson red light wraps the hand and wrist. Hyper-realistic CGI-photography hybrid, 8K detail, cinematic grade. Symbolizes a campaign going viral. --ar 4:3 --style raw"
+    },
+    {
+      "id": 7,
+      "section": "Results / Analytics & Stats",
+      "label": "Analytics — Data Visualization Hologram",
+      "placement": "Background for statistics / numbers section",
+      "aspect_ratio": "16:9",
+      "prompt": "Moody cinematic photograph of a lone female analyst silhouetted against enormous floor-to-ceiling holographic data visualizations in a dark loft space. The holograms display bar graphs of follower growth, pie charts of audience demographics, trajectory curves of engagement rate, and large glowing numbers (10M+, 340%, $2.4B). All visualizations are in translucent crimson red, white, and pale gold. The room is otherwise pitch black except for the hologram glow reflecting on the dark polished concrete floor. Wide-angle, cinematic, ultra-premium data-meets-fashion aesthetic. 8K, photorealistic. --ar 16:9 --style raw"
+    },
+    {
+      "id": 8,
+      "section": "Brand Partnerships",
+      "label": "Partnerships — Luxury Brand Unboxing Moment",
+      "placement": "Section image for brand collaboration showcase",
+      "aspect_ratio": "4:3",
+      "prompt": "Close-up editorial photograph of immaculate hands with red manicure gently opening a matte black luxury brand gift box with a crimson ribbon. Inside the box, a premium product sits on black tissue paper, glowing softly. A smartphone on a minimal ring light stand records the moment, displaying the influencer's face on screen in vertical TikTok format. Background: blurred upscale dark marble surface. Warm key light, cold fill, red accent glow. Shot on Canon R5, 100mm macro, ultra-sharp product detail, ultra-premium editorial beauty/luxury aesthetic. Symbolizes brand-influencer collaboration. --ar 4:3 --style raw --q 2"
+    },
+    {
+      "id": 9,
+      "section": "Process / How It Works",
+      "label": "Process — Strategic Planning Table Top View",
+      "placement": "Top-down flat-lay for process or methodology section",
+      "aspect_ratio": "1:1 or 4:3",
+      "prompt": "Immaculate top-down flat-lay photograph on a large matte black surface. Carefully arranged objects: an open dark leather notebook with handwritten campaign strategy notes in white ink, a sleek black smartphone displaying an influencer analytics dashboard, a glowing tablet showing a mood board of creator content, a red marker, a black espresso cup, printed influencer profile cards fanned out, and small branded campaign report sheets. Everything perfectly composed and evenly lit with soft directional studio light. Crisp detail, premium texture, no clutter. Dark luxury editorial product photography aesthetic. --ar 4:3 --style raw --q 2"
+    },
+    {
+      "id": 10,
+      "section": "Testimonials / Social Proof",
+      "label": "Testimonials — Influencer Recording a Testimonial",
+      "placement": "Background or feature image for testimonials section",
+      "aspect_ratio": "3:2",
+      "prompt": "Candid-style editorial photograph of a confident female influencer in her 30s, sitting in a minimal dark designer chair in a softly lit studio, speaking directly to a professional camera on a tripod. She is dressed in a sleek monochrome outfit. Behind her: a blurred dark bookshelf with subtle crimson-spine books and a faint neon red glow strip. Expression: genuine, authoritative, warm. The setup reads as authentic high-end content creation. Shallow depth of field, bokeh, cinematic color grade with rich blacks. Shot on Sony A7S III, 35mm, natural studio light mixed with a red practical. --ar 3:2 --style raw"
+    },
+    {
+      "id": 11,
+      "section": "CTA / Contact",
+      "label": "CTA — Bold Call to Action Dark Backdrop",
+      "placement": "Full-bleed background for the final CTA / contact section",
+      "aspect_ratio": "16:9",
+      "prompt": "Dramatic wide cinematic photograph: a single confident influencer/entrepreneur figure stands at the end of a long dark corridor with enormous floor-to-ceiling glass windows on both sides. Through the windows, a blurred night cityscape with glowing red and white city lights. The figure faces away from the camera, silhouetted, looking out at the city — a posture of ambition and opportunity. A faint red glow halos their outline. The corridor stretches in perfect linear perspective. Deep blacks, minimal highlights, ultra-cinematic. Shot on RED Komodo, 28mm, anamorphic, high-contrast grade. 8K. --ar 16:9 --style raw"
+    },
+    {
+      "id": 12,
+      "section": "Footer / Background Texture",
+      "label": "Footer — Abstract Dark Luxury Texture",
+      "placement": "Footer background or section divider",
+      "aspect_ratio": "16:4 or 21:9",
+      "prompt": "Abstract macro-photography texture: deep matte black brushed metal surface with extremely subtle diagonal light streaks in deep crimson red and pale gold, resembling the surface of a luxury card or high-end product packaging. Soft directional light from one side creates gentle gradient. No text, no people, purely textural. Ultra-high resolution, 8K macro detail, premium material photography. Used as a dark footer or section background texture. --ar 21:9 --style raw --q 2"
+    }
+  ],
+  "usage_instructions": {
+    "recommended_generators": [
+      "Midjourney v6.1 (paste the full prompt including --ar and --style flags)",
+      "DALL-E 3 via ChatGPT (remove Midjourney flags, describe style in prose)",
+      "Stable Diffusion XL + ComfyUI (adapt prompts, remove Midjourney flags)",
+      "Adobe Firefly (simplify prompt, use style reference uploads)"
+    ],
+    "tips": [
+      "For Midjourney: use /imagine and paste the prompt field exactly. Adjust --q 2 to --q 1 for faster generation.",
+      "Use a dark consistent color grade across all images (deep blacks, crimson accents) to maintain visual cohesion.",
+      "Generate 4 variations per prompt and select the best one.",
+      "For hero images, leave the left 40% compositionally dark/empty for text overlay legibility.",
+      "All images should be exported at minimum 2560x1440px for web use."
+    ]
+  }
+}
