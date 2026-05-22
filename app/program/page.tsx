@@ -9,8 +9,8 @@ export default function ProgramPage() {
 
       <Navigation />
 
-      <div className="container-custom relative z-10 pt-[220px]">
-        
+      <div className="relative min-h-screen overflow-hidden">
+
         {/* Glow */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -30,7 +30,7 @@ export default function ProgramPage() {
           }}
         />
 
-        <div className="container-custom relative z-10 pt-24">
+        <div className="container-custom relative z-10 pt-[240px] pb-32">
 
           <div className="grid lg:grid-cols-2 gap-24 items-start">
 
@@ -43,12 +43,13 @@ export default function ProgramPage() {
               </div>
 
               <h1
-  className="font-black uppercase leading-[0.9] mb-8"
-  style={{
-    fontSize: "clamp(42px,5vw,84px)",
-    letterSpacing: "-0.06em",
-  }}
->  APPLY TO
+                className="font-black uppercase leading-[0.9] mb-8"
+                style={{
+                  fontSize: "clamp(42px,5vw,84px)",
+                  letterSpacing: "-0.06em",
+                }}
+              >
+                APPLY TO
                 <br />
                 THE
                 <span className="text-[#2f54ff]"> PROGRAM.</span>
@@ -135,7 +136,7 @@ export default function ProgramPage() {
 
         </div>
 
-      </section>
+      </div>
 
       <Footer />
 
