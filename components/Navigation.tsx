@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Creators", href: "/#creators" },
   { label: "SOOH", href: "/#sooh" },
   { label: "Program", href: "/#program" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 export default function Navigation() {
