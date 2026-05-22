@@ -59,8 +59,6 @@ export default function CreatorProgram() {
       ref={ref}
       className="section-padding bg-[#f8f8f8] relative"
     >
-      <div className="absolute top-0 bottom-0 left-[20%] w-px bg-[#efefef] hidden lg:block" />
-      <div className="absolute top-0 bottom-0 right-[20%] w-px bg-[#efefef] hidden lg:block" />
 
       <div className="container-custom">
         <motion.div
