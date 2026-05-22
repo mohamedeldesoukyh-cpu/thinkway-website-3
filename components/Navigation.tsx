@@ -26,17 +26,14 @@ export default function Navigation() {
 
   const handleNav = (href: string) => {
     setMenuOpen(false);
-
     if (href.startsWith("/#")) {
       window.location.href = href;
       return;
     }
-
     if (href.startsWith("/")) {
       window.location.href = href;
       return;
     }
-
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -54,7 +51,10 @@ export default function Navigation() {
           borderBottom: "1px solid rgba(0,0,0,0.05)",
         }}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-12 md:px-16 lg:px-24 flex items-center justify-between h-20">
+        <div
+          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-20"
+          style={{ padding: "0 48px" }}
+        >
 
           {/* LOGO */}
           <a href="/" className="block">
@@ -116,7 +116,6 @@ export default function Navigation() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
           >
-
             <div className="absolute top-7 left-7">
               <ThinkwayLogo variant="dark" />
             </div>
@@ -143,7 +142,6 @@ export default function Navigation() {
             >
               Start A Campaign
             </motion.button>
-
           </motion.div>
         )}
       </AnimatePresence>
