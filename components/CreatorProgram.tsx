@@ -54,294 +54,173 @@ export default function CreatorProgram() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <>
-      <section
-        id="program"
-        ref={ref}
-        className="section-padding bg-[#f8f8f8] relative"
-      >
-        <div className="absolute top-0 bottom-0 left-[20%] w-px bg-[#efefef] hidden lg:block" />
-        <div className="absolute top-0 bottom-0 right-[20%] w-px bg-[#efefef] hidden lg:block" />
+    <section
+      id="program"
+      ref={ref}
+      className="section-padding bg-[#f8f8f8] relative"
+    >
+      <div className="absolute top-0 bottom-0 left-[20%] w-px bg-[#efefef] hidden lg:block" />
+      <div className="absolute top-0 bottom-0 right-[20%] w-px bg-[#efefef] hidden lg:block" />
 
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20"
-          >
-            <div>
-              <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
-                <div className="w-6 h-[1px] bg-[#1535C2]" />
-                For Creators
-              </div>
-
-              <h2
-                className="font-black uppercase text-[#0a0a0a] leading-[0.9]"
-                style={{
-                  fontSize: "clamp(36px, 5vw, 70px)",
-                  letterSpacing: "-0.04em",
-                }}
-              >
-                CREATOR
-                <br />
-                <span className="text-[#1535C2]">PROGRAM</span>
-              </h2>
+      <div className="container-custom">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20"
+        >
+          <div>
+            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
+              <div className="w-6 h-[1px] bg-[#1535C2]" />
+              For Creators
             </div>
 
-            <div className="max-w-sm">
-              <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.4] mb-6">
-                An intensive development program for creators who want to grow
-                their influence, attract premium brand deals, and build a
-                sustainable career online.
-              </p>
+            <h2
+              className="font-black uppercase text-[#0a0a0a] leading-[0.9]"
+              style={{
+                fontSize: "clamp(36px, 5vw, 70px)",
+                letterSpacing: "-0.04em",
+              }}
+            >
+              CREATOR
+              <br />
+              <span className="text-[#1535C2]">PROGRAM</span>
+            </h2>
+          </div>
 
-              <div className="flex gap-6">
-                {[
-                  ["6", "Modules"],
-                  ["19", "Total Weeks"],
-                  ["Live", "Sessions"],
-                ].map(([val, label]) => (
-                  <div key={label}>
-                    <div className="text-xl font-bold text-[#0a0a0a]">
-                      {val}
-                    </div>
+          <div className="max-w-sm">
+            <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.4] mb-6">
+              An intensive development program for creators who want to grow
+              their influence, attract premium brand deals, and build a
+              sustainable career online.
+            </p>
 
-                    <div className="text-[9px] tracking-[0.2em] text-[#ccc] uppercase mt-1">
-                      {label}
-                    </div>
+            <div className="flex gap-6">
+              {[
+                ["6", "Modules"],
+                ["19", "Total Weeks"],
+                ["Live", "Sessions"],
+              ].map(([val, label]) => (
+                <div key={label}>
+                  <div className="text-xl font-bold text-[#0a0a0a]">
+                    {val}
                   </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
 
-          <div className="border-t border-[#ebebeb]">
-            {modules.map((mod, i) => (
-              <motion.div
-                key={mod.num}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.1 + i * 0.07, duration: 0.7 }}
-                className="border-b border-[#ebebeb] group"
+                  <div className="text-[9px] tracking-[0.2em] text-[#ccc] uppercase mt-1">
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="border-t border-[#ebebeb]">
+          {modules.map((mod, i) => (
+            <motion.div
+              key={mod.num}
+              initial={{ opacity: 0, x: -20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.1 + i * 0.07, duration: 0.7 }}
+              className="border-b border-[#ebebeb] group"
+            >
+              <button
+                className="w-full flex items-center gap-6 py-7 text-left"
+                onClick={() => setActive(active === i ? null : i)}
               >
-                <button
-                  className="w-full flex items-center gap-6 py-7 text-left"
-                  onClick={() => setActive(active === i ? null : i)}
+                <span className="text-[10px] font-mono text-[#1535C2] tracking-widest shrink-0 w-6">
+                  {mod.num}
+                </span>
+
+                <h3
+                  className="flex-1 font-semibold tracking-[0.12em] uppercase text-sm transition-colors duration-300"
+                  style={{
+                    color: active === i ? "#0a0a0a" : "#aaa",
+                  }}
                 >
-                  <span className="text-[10px] font-mono text-[#1535C2] tracking-widest shrink-0 w-6">
-                    {mod.num}
+                  {mod.title}
+                </h3>
+
+                <div className="flex items-center gap-6 shrink-0">
+                  <span className="hidden md:block text-[9px] tracking-[0.15em] text-[#ccc] uppercase">
+                    {mod.duration}
                   </span>
 
-                  <h3
-                    className="flex-1 font-semibold tracking-[0.12em] uppercase text-sm transition-colors duration-300"
-                    style={{
-                      color: active === i ? "#0a0a0a" : "#aaa",
-                    }}
+                  <span className="hidden md:block text-[9px] tracking-[0.15em] text-[#ccc] uppercase">
+                    {mod.level}
+                  </span>
+
+                  <motion.div
+                    animate={{ rotate: active === i ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-6 h-6 border border-[#e0e0e0] flex items-center justify-center text-[#bbb] text-lg leading-none"
                   >
-                    {mod.title}
-                  </h3>
+                    +
+                  </motion.div>
+                </div>
+              </button>
 
-                  <div className="flex items-center gap-6 shrink-0">
-                    <span className="hidden md:block text-[9px] tracking-[0.15em] text-[#ccc] uppercase">
-                      {mod.duration}
-                    </span>
-
-                    <span className="hidden md:block text-[9px] tracking-[0.15em] text-[#ccc] uppercase">
-                      {mod.level}
-                    </span>
-
-                    <motion.div
-                      animate={{ rotate: active === i ? 45 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-6 h-6 border border-[#e0e0e0] flex items-center justify-center text-[#bbb] text-lg leading-none"
-                    >
-                      +
-                    </motion.div>
-                  </div>
-                </button>
-
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: active === i ? "auto" : 0,
-                    opacity: active === i ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="overflow-hidden"
-                >
-                  <div className="pb-8 pl-12 pr-4">
-                    <p className="text-[10px] text-[#aaa] tracking-[0.1em] leading-[2.4] max-w-2xl">
-                      {mod.desc}
-                    </p>
-                  </div>
-                </motion.div>
+              <motion.div
+                initial={false}
+                animate={{
+                  height: active === i ? "auto" : 0,
+                  opacity: active === i ? 1 : 0,
+                }}
+                transition={{
+                  duration: 0.4,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="overflow-hidden"
+              >
+                <div className="pb-8 pl-12 pr-4">
+                  <p className="text-[10px] text-[#aaa] tracking-[0.1em] leading-[2.4] max-w-2xl">
+                    {mod.desc}
+                  </p>
+                </div>
               </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
+        </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-16 pt-10 border-t border-[#ebebeb]"
-          >
-            <div>
-              <div className="text-sm font-semibold tracking-[0.12em] uppercase text-[#0a0a0a]">
-                Ready to grow?
-              </div>
-
-              <div className="text-[10px] text-[#bbb] tracking-widest uppercase mt-1">
-                Limited spots available per cohort.
-              </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.7 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-16 pt-10 border-t border-[#ebebeb]"
+        >
+          <div>
+            <div className="text-sm font-semibold tracking-[0.12em] uppercase text-[#0a0a0a]">
+              Ready to grow?
             </div>
 
-            <button
-              className="btn-primary"
-              onClick={() =>
-                document
-                  .querySelector("#creator-apply")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Apply to the Program
-
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M1 7h12M7 1l6 6-6 6"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </motion.div>
-        </div>
-      </section>
-
-      <section
-        id="creator-apply"
-        className="bg-[#0a0f1e] text-white py-24 px-6"
-      >
-        <div className="max-w-3xl mx-auto w-full relative z-20">
-          <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4">
-            <div className="w-6 h-[1px] bg-[#1535C2]" />
-            Creator Application
+            <div className="text-[10px] text-[#bbb] tracking-widest uppercase mt-1">
+              Limited spots available per cohort.
+            </div>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-8">
-            APPLY TO
-            <br />
-            THE PROGRAM
-          </h2>
+          <a
+            href="/program"
+            className="btn-primary inline-flex items-center gap-3"
+          >
+            Apply to the Program
 
-          <p className="text-white/60 mb-12 tracking-[0.08em] uppercase text-[11px] leading-[2]">
-            Submit your information and our creator management team will contact
-            you shortly.
-          </p>
-
-          <form
-  onSubmit={async (e) => {
-    e.preventDefault();
-
-    const form = e.currentTarget;
-
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      social: (form.elements.namedItem("social") as HTMLInputElement).value,
-      followers: (form.elements.namedItem("followers") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-    };
-
-    try {
-      const response = await fetch("/api/creator-apply", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        window.location.href = "/application-submitted";
-      } else {
-        alert("Submission failed");
-      }
-    } catch (err) {
-      alert("Something went wrong");
-    }
-  }}
-  className="space-y-6"
->
-            <input
-              type="text"
-              name="name"
-              placeholder="FULL NAME"
-              required
-              className="w-full bg-transparent border border-white/10 p-5 text-sm tracking-[0.12em] uppercase outline-none focus:border-[#1535C2]"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="EMAIL ADDRESS"
-              required
-              className="w-full bg-transparent border border-white/10 p-5 text-sm tracking-[0.12em] uppercase outline-none focus:border-[#1535C2]"
-            />
-
-            <input
-              type="text"
-              name="social"
-              placeholder="INSTAGRAM / TIKTOK USERNAME"
-              required
-              className="w-full bg-transparent border border-white/10 p-5 text-sm tracking-[0.12em] uppercase outline-none focus:border-[#1535C2]"
-            />
-
-            <input
-              type="text"
-              name="followers"
-              placeholder="FOLLOWERS COUNT"
-              className="w-full bg-transparent border border-white/10 p-5 text-sm tracking-[0.12em] uppercase outline-none focus:border-[#1535C2]"
-            />
-
-            <textarea
-              name="message"
-              rows={6}
-              placeholder="WHY DO YOU WANT TO JOIN?"
-              className="w-full bg-transparent border border-white/10 p-5 text-sm tracking-[0.12em] uppercase outline-none focus:border-[#1535C2]"
-            />
-
-            <button type="submit" className="btn-primary">
-              Submit Application
-
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M1 7h12M7 1l6 6-6 6"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </section>
-    </>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <path
+                d="M1 7h12M7 1l6 6-6 6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </motion.div>
+      </div>
+    </section>
   );
 }
