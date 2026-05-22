@@ -30,7 +30,7 @@ export default function Home() {
       <CampaignBrief />
       <Clients />
       <Footer />
-<AIChat />
-</main>
+      <AIChat />
+    </main>
   );
 }

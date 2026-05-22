@@ -26,7 +26,6 @@ body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   cursor: none;
-  margin-right: calc(-1 * (100vw - 100%));
 }
 
 /* Custom cursor */
@@ -58,8 +57,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
-
-/* Scrollbar */
 
 /* Selection */
 ::selection { background: #1535C2; color: #fff; }
@@ -201,26 +198,13 @@ body::before {
   border-color: #1535C2 !important;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
+
+/* Input colors — each page controls its own via inline styles or Tailwind */
 input,
 textarea {
-  color: #0a0a0a;
-  caret-color: #1535C2;
+  caret-color: currentColor;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: rgba(0,0,0,0.35);
-}
 * {
   cursor: auto !important;
-}
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-section,
-div {
-  max-width: 100%;
 }
