@@ -9,8 +9,8 @@ export default function ProgramPage() {
 
       <Navigation />
 
-      <section className="relative min-h-screen pt-[260px] pb-32 overflow-hidden">
-
+      <div className="container-custom relative z-10 pt-[220px]">
+        
         {/* Glow */}
         <div
           className="absolute inset-0 pointer-events-none"
