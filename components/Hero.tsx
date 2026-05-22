@@ -101,7 +101,7 @@ export default function Hero() {
 <div
   className="absolute bottom-0 left-0 right-0"
   style={{
-    height: "450px",
+    height: "300px",
     background:
       "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 75%, transparent 100%)",
   }}
