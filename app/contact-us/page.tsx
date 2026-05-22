@@ -85,29 +85,34 @@ export default function ContactPage() {
                   <input
                     type="text"
                     placeholder="Full Name"
+                    style={{ color: "#111" }}
                     className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
                   />
 
                   <input
                     type="email"
                     placeholder="Email Address"
+                    style={{ color: "#111" }}
                     className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
                   />
 
                   <input
                     type="text"
                     placeholder="Company Name"
+                    style={{ color: "#111" }}
                     className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
                   />
 
                   <input
                     type="text"
                     placeholder="Phone Number"
+                    style={{ color: "#111" }}
                     className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
                   />
 
                   <textarea
                     placeholder="Tell us about your project..."
+                    style={{ color: "#111" }}
                     className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 min-h-[140px] text-[14px] outline-none resize-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
                   />
 
