@@ -96,7 +96,7 @@ export default function Navigation() {
 <div className="hidden md:flex items-center">
   <button
     onClick={() => handleNav("/#contact")}
-    className="bg-[#1535C2] text-white text-[11px] tracking-[0.18em] uppercase px-[42px] h-[54px] transition-all duration-300 hover:bg-[#2347db] flex items-center justify-center"
+    className="btn-primary"
   >
     Start A Campaign
   </button>
