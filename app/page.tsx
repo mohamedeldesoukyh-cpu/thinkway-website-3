@@ -12,25 +12,21 @@ import SOOH from "@/components/SOOH";
 import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
 import Footer from "@/components/Footer";
-import AIChat from "@/components/AIChat";
 
 export default function Home() {
   return (
-    <>
-      <main className="bg-white min-h-screen w-full overflow-x-hidden">
-        <Navigation />
-        <Hero />
-        <Marquee />
-        <Manifesto />
-        <Services />
-        <Creators />
-        <SOOH />
-        <CreatorProgram />
-        <CampaignBrief />
-        <Clients />
-        <Footer />
-      </main>
-      <AIChat />
-    </>
+    <main className="bg-white min-h-screen w-full overflow-x-hidden">
+      <Navigation />
+      <Hero />
+      <Marquee />
+      <Manifesto />
+      <Services />
+      <Creators />
+      <SOOH />
+      <CreatorProgram />
+      <CampaignBrief />
+      <Clients />
+      <Footer />
+    </main>
   );
 }

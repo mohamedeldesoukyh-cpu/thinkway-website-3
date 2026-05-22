@@ -30,7 +30,11 @@ export default function Hero() {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    videoRef.current?.play().catch(() => {});
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.playsInline = true;
+    video.play().catch(() => {});
   }, []);
 
   return (
@@ -50,6 +54,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          webkit-playsinline="true"
           onCanPlay={() => setVideoReady(true)}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0.6 : 0 }}
@@ -97,16 +102,15 @@ export default function Hero() {
           }}
         />
 
-      {/* Bottom Fade — covers watermark */}
-<div
-  className="absolute bottom-0 left-0 right-0"
-  style={{
-    height: "180px",
-    background:
-      "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0.8) 75%, transparent 100%)",
-  }}
-/>
-
+        {/* Bottom Fade */}
+        <div
+          className="absolute bottom-0 left-0 right-0"
+          style={{
+            height: "180px",
+            background:
+              "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0.8) 75%, transparent 100%)",
+          }}
+        />
       </motion.div>
 
       {/* FLOATING PLATFORMS */}
@@ -166,7 +170,6 @@ export default function Hero() {
       >
         <div className="w-full max-w-3xl">
 
-          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -179,7 +182,6 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Headlines */}
           <div className="overflow-hidden">
             {HEADLINE.map((line, i) => (
               <div key={i} style={{ overflow: "hidden" }}>
@@ -207,7 +209,6 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Subtext */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -218,7 +219,6 @@ export default function Hero() {
             From awareness to conversion — we build campaigns that perform.
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -239,7 +239,6 @@ export default function Hero() {
             </button>
           </motion.div>
 
-          {/* Bottom Stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -250,7 +249,6 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20"
         initial={{ opacity: 0 }}

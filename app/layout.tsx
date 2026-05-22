@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import AIChat from "@/components/AIChat";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,10 +21,9 @@ export const metadata: Metadata = {
     "content creation",
     "digital marketing",
   ],
-  
   icons: {
-  icon: "/favicon.png",
-},
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -43,14 +43,13 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-WER3W107Q7');
           `}
         </Script>
       </head>
-
       <body className={`${inter.variable} antialiased`}>
         {children}
+        <AIChat />
       </body>
     </html>
   );
