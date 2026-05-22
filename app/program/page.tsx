@@ -9,7 +9,7 @@ export default function ProgramPage() {
 
       <Navigation />
 
-      <section className="relative pt-[180px] pb-32 overflow-hidden">
+      <section className="relative pt-[220px] pb-32 overflow-hidden">
 
         {/* Glow */}
         <div
@@ -43,13 +43,12 @@ export default function ProgramPage() {
               </div>
 
               <h1
-                className="font-black uppercase leading-[0.88] mb-8"
-                style={{
-                  fontSize: "clamp(60px,8vw,120px)",
-                  letterSpacing: "-0.06em",
-                }}
-              >
-                APPLY TO
+  className="font-black uppercase leading-[0.9] mb-8"
+  style={{
+    fontSize: "clamp(48px,6vw,92px)",
+    letterSpacing: "-0.06em",
+  }}
+>                APPLY TO
                 <br />
                 THE
                 <span className="text-[#2f54ff]"> PROGRAM.</span>
