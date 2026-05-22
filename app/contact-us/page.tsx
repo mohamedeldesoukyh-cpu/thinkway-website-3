@@ -58,22 +58,12 @@ export default function ContactPage() {
 
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">Email</div>
-                  
-                    href="mailto:hello@thinkwaymedia.com"
-                    className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors"
-                  >
-                    hello@thinkwaymedia.com
-                  </a>
+                  <a href="mailto:hello@thinkwaymedia.com" className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors">hello@thinkwaymedia.com</a>
                 </div>
 
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">Phone</div>
-                  
-                    href="tel:+201204570000"
-                    className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors"
-                  >
-                    +20 120 457 0000
-                  </a>
+                  <a href="tel:+201204570000" className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors">+20 120 457 0000</a>
                 </div>
 
                 <div>
