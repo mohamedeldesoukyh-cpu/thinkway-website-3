@@ -128,4 +128,38 @@ export default function Navigation() {
           >
 
             {/* Mobile Logo */}
-            <d
+            <div className="absolute top-7 left-7">
+              <ThinkwayLogo variant="dark" />
+            </div>
+
+            {/* Links */}
+            {navLinks.map((link, i) => (
+              <motion.button
+                key={link.href}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                onClick={() => handleNav(link.href)}
+                className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
+              >
+                {link.label}
+              </motion.button>
+            ))}
+
+            {/* Mobile CTA */}
+            <motion.button
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navLinks.length * 0.08, duration: 0.4 }}
+              onClick={() => handleNav("/#contact")}
+              className="mt-6 bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.22em] text-[11px]"
+            >
+              Start A Campaign
+            </motion.button>
+
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
