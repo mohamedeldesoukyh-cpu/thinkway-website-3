@@ -60,14 +60,15 @@ export default function Navigation() {
     duration: 0.8,
     ease: [0.16, 1, 0.3, 1],
   }}
-  className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-500"
+  className="fixed top-0 left-0 right-0 z-[999999] transition-all duration-500"
   style={{
+    position: "fixed",
     background: "rgba(255,255,255,0.96)",
     backdropFilter: "blur(16px)",
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   }}
->    
-<div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between h-20">
+>
+        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between h-20">
           
           {/* LOGO */}
           <a
