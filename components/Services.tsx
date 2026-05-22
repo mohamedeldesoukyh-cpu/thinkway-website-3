@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-const SERVICES_VIDEO = "/media/Influencer_marketing_services_fo…_202605100439.mp4";
+const SERVICES_VIDEO = "/media/Influencer_marketing_services_202605100439.mp4";
 
 const influencerServices = [
   {
