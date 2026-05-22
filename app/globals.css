@@ -58,8 +58,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Scrollbar */
-
 /* Selection */
 ::selection { background: #1535C2; color: #fff; }
 
@@ -201,15 +199,28 @@ body::before {
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 
-input,
-textarea {
+/* Dark background forms - white text (program page) */
+.form-dark input,
+.form-dark textarea {
   color: white;
   caret-color: white;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: rgba(255,255,255,0.45);
+.form-dark input::placeholder,
+.form-dark textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Light background forms - dark text (contact page) */
+.form-light input,
+.form-light textarea {
+  color: #111;
+  caret-color: #111;
+}
+
+.form-light input::placeholder,
+.form-light textarea::placeholder {
+  color: #999;
 }
 
 * {
