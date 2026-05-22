@@ -26,7 +26,6 @@ body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   cursor: none;
-  margin-right: calc(-1 * (100vw - 100%));
 }
 
 /* Custom cursor */
@@ -201,6 +200,7 @@ body::before {
   border-color: #1535C2 !important;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
+
 input,
 textarea {
   color: white;
@@ -211,6 +211,7 @@ input::placeholder,
 textarea::placeholder {
   color: rgba(255,255,255,0.45);
 }
+
 * {
   cursor: auto !important;
 }
