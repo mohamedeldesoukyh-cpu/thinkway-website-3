@@ -69,7 +69,7 @@ function AIChat() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-6 right-5 z-[9999] flex items-center gap-3"
+          className="fixed bottom-6 right-4 z-[99999] flex items-center gap-3"
         >
           <button
             onClick={() => setOpen(true)}
@@ -96,7 +96,7 @@ function AIChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="fixed z-[9999] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col"
+            className="fixed z-[99999] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col"
             style={chatStyle}
           >
             <div className="px-7 py-5 border-b border-[#f1f1f1] bg-white relative flex items-center justify-center">
