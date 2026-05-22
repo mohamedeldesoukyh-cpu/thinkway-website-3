@@ -9,7 +9,7 @@ export default function ProgramPage() {
 
       <Navigation />
 
-      <div className="relative min-h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden pt-32">
 
         {/* Glow */}
         <div
@@ -30,7 +30,7 @@ export default function ProgramPage() {
           }}
         />
 
-        <div className="container-custom relative z-10 pt-[240px] pb-32">
+        <div className="container-custom relative z-10 py-32">
 
           <div className="grid lg:grid-cols-2 gap-24 items-start">
 
