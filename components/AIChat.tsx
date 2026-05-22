@@ -8,7 +8,7 @@ function AIChat() {
     {
       role: "assistant",
       content:
-        "Welcome to Thinkway AI. Ask about SOOH advertising, influencer campaigns, creators, UGC, TikTok strategy, or brand growth."
+        "Welcome to Thinkway AI. Ask about SOOH advertising, influencer campaigns, creators, UGC, TikTok strategy, or brand growth.",
     },
   ]);
 
@@ -21,10 +21,7 @@ function AIChat() {
 
     const updatedMessages = [
       ...messages,
-      {
-        role: "user",
-        content: input,
-      },
+      { role: "user", content: input },
     ];
 
     setMessages(updatedMessages);
@@ -34,30 +31,20 @@ function AIChat() {
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          messages: updatedMessages,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: updatedMessages }),
       });
 
       const data = await response.json();
 
       setMessages([
         ...updatedMessages,
-        {
-          role: "assistant",
-          content: data.text,
-        },
+        { role: "assistant", content: data.text },
       ]);
     } catch {
       setMessages([
         ...updatedMessages,
-        {
-          role: "assistant",
-          content: "Something went wrong.",
-        },
+        { role: "assistant", content: "Something went wrong." },
       ]);
     }
 
@@ -67,35 +54,31 @@ function AIChat() {
   return (
     <>
       {/* Floating Trigger */}
-{!open && (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="fixed bottom-8 right-10 z-[9999] flex items-center gap-4"
-  >
-    {/* Text Pill */}
-    <button
-      onClick={() => setOpen(true)}
-      className="h-16 px-8 rounded-full bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_0_40px_rgba(21,53,194,0.18)] text-[15px] font-semibold text-[#111] hover:scale-[1.03] hover:shadow-[0_0_60px_rgba(21,53,194,0.35)] transition-all duration-500"
-    >
-      Try Thinkway AI
-    </button>
+      {!open && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="fixed bottom-6 right-5 z-[9999] flex items-center gap-3"
+        >
+          {/* Text Pill — hidden on mobile */}
+          <button
+            onClick={() => setOpen(true)}
+            className="hidden sm:flex h-14 px-6 rounded-full bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_0_40px_rgba(21,53,194,0.18)] text-[14px] font-semibold text-[#111] hover:scale-[1.03] hover:shadow-[0_0_60px_rgba(21,53,194,0.35)] transition-all duration-500"
+          >
+            Try Thinkway AI
+          </button>
 
-    {/* Rotating AI Orb */}
-    <motion.button
-      animate={{ rotate: 360 }}
-      transition={{
-        repeat: Infinity,
-        duration: 8,
-        ease: "linear",
-      }}
-      onClick={() => setOpen(true)}
-      className="w-16 h-16 rounded-full bg-[#1535C2] shadow-[0_0_45px_rgba(21,53,194,0.55)] flex items-center justify-center text-white text-2xl hover:scale-110 transition-all duration-500"
-    >
-      ✦
-    </motion.button>
-  </motion.div>
-)}
+          {/* Rotating AI Orb */}
+          <motion.button
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+            onClick={() => setOpen(true)}
+            className="w-14 h-14 rounded-full bg-[#1535C2] shadow-[0_0_45px_rgba(21,53,194,0.55)] flex items-center justify-center text-white text-2xl hover:scale-110 transition-all duration-500"
+          >
+            ✦
+          </motion.button>
+        </motion.div>
+      )}
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -104,57 +87,60 @@ function AIChat() {
             initial={{ opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
-            transition={{
-              duration: 0.3,
+            transition={{ duration: 0.3 }}
+            className="fixed z-[9999] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col backdrop-blur-xl"
+            style={{
+              bottom: "0",
+              right: "0",
+              width: "100%",
+              height: "100%",
+              borderRadius: "0",
             }}
-            className="fixed bottom-8 right-10 z-[9999] w-[420px] h-[650px] bg-white rounded-[32px] shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col backdrop-blur-xl"
+            // Desktop overrides
+            {...(typeof window !== "undefined" && window.innerWidth >= 640
+              ? {
+                  style: {
+                    bottom: "24px",
+                    right: "20px",
+                    width: "420px",
+                    height: "650px",
+                    borderRadius: "32px",
+                  },
+                }
+              : {})}
           >
-           {/* Header */}
-<div className="px-7 py-5 border-b border-[#f1f1f1] bg-white relative flex items-center justify-center">
+            {/* Header */}
+            <div className="px-7 py-5 border-b border-[#f1f1f1] bg-white relative flex items-center justify-center">
+              <img
+                src="/media/Thinkway AI Logo.jpg"
+                alt="Thinkway AI"
+                className="h-14 object-contain"
+              />
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute right-5 w-10 h-10 rounded-full bg-[#f7f7f7] hover:bg-[#efefef] transition-all duration-300 flex items-center justify-center text-[#111]"
+              >
+                ✕
+              </button>
+            </div>
 
-  {/* Logo Center */}
-  <img
-    src="/media/Thinkway AI Logo.jpg"
-    alt="Thinkway AI"
-    className="h-14 object-contain"
-  />
-
-  {/* Close Button */}
-  <button
-    onClick={() => setOpen(false)}
-    className="absolute right-5 w-10 h-10 rounded-full bg-[#f7f7f7] hover:bg-[#efefef] transition-all duration-300 flex items-center justify-center text-[#111]"
-  >
-    ✕
-  </button>
-
-</div>
             {/* Messages */}
             <div className="flex-1 overflow-y-auto px-5 py-5 space-y-5 bg-[#fafafa]">
               {messages.map((m, i) => (
                 <div
                   key={i}
-                  className={`flex ${
-                    m.role === "user"
-                      ? "justify-end"
-                      : "justify-start"
-                  }`}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-  className={
-    m.role === "user"
-      ? "bg-[#1535C2] text-white px-4 py-3 rounded-[24px] max-w-[85%] shadow-sm leading-4 text-[10px]"
-      : "bg-white border border-[#ececec] text-[#111] px-4 py-3 rounded-[24px] max-w-[85%] shadow-sm leading-6 text-[15px]"
-  }
->
-                    <p
-  className={
-    i === 0
-      ? "text-[12px] leading-5"
-      : ""
-  }
->
-  {m.content}
-</p>
+                    className={
+                      m.role === "user"
+                        ? "bg-[#1535C2] text-white px-4 py-3 rounded-[24px] max-w-[85%] shadow-sm leading-4 text-[10px]"
+                        : "bg-white border border-[#ececec] text-[#111] px-4 py-3 rounded-[24px] max-w-[85%] shadow-sm leading-6 text-[15px]"
+                    }
+                  >
+                    <p className={i === 0 ? "text-[12px] leading-5" : ""}>
+                      {m.content}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -168,30 +154,24 @@ function AIChat() {
 
             {/* Input */}
             <div className="p-5 border-t border-[#f1f1f1] bg-white">
-  <div className="flex items-center gap-3 bg-[#f7f7f7] rounded-2xl px-4 py-3">
-    
-    <input
-  value={input}
-  onChange={(e) => setInput(e.target.value)}
-  onKeyDown={(e) => {
-    if (e.key === "Enter" && !loading) {
-      sendMessage();
-    }
-  }}
-  placeholder="Ask Thinkway AI..."
-  className="flex-1 bg-transparent outline-none text-[14px] text-[#111] placeholder:text-[#999]"
-/>
-
-<button
-  onClick={sendMessage}
-  className="w-11 h-11 rounded-xl bg-[#1535C2] text-white flex items-center justify-center hover:scale-105 transition-all duration-300"
->
-  ↑
-</button>
-  </div>
-
-
-  </div>
+              <div className="flex items-center gap-3 bg-[#f7f7f7] rounded-2xl px-4 py-3">
+                <input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !loading) sendMessage();
+                  }}
+                  placeholder="Ask Thinkway AI..."
+                  className="flex-1 bg-transparent outline-none text-[14px] text-[#111] placeholder:text-[#999]"
+                />
+                <button
+                  onClick={sendMessage}
+                  className="w-11 h-11 rounded-xl bg-[#1535C2] text-white flex items-center justify-center hover:scale-105 transition-all duration-300"
+                >
+                  ↑
+                </button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
