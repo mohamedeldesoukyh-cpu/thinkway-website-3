@@ -9,7 +9,7 @@ export default function ContactPage() {
 
       <Navigation />
 
-      <section className="relative pt-48 pb-32 overflow-hidden">
+      <section className="relative pt-[180px] pb-32 overflow-hidden">
 
         {/* Background Glow */}
         <div
@@ -32,7 +32,7 @@ export default function ContactPage() {
 
         <div className="container-custom relative z-10">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 items-start">
 
             {/* LEFT */}
             <div>
@@ -45,10 +45,10 @@ export default function ContactPage() {
 
               {/* Title */}
               <h1
-                className="font-black uppercase text-[#0a0a0a] leading-[0.9] mb-8"
+                className="font-black uppercase text-[#0a0a0a] leading-[0.88] mb-8"
                 style={{
-                  fontSize: "clamp(48px,7vw,96px)",
-                  letterSpacing: "-0.05em",
+                  fontSize: "clamp(56px,7vw,110px)",
+                  letterSpacing: "-0.06em",
                 }}
               >
                 LET’S BUILD
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="text-[#111] text-[15px] leading-[1.9]">
-                    +201204570000
+                    +20 120 457 0000
                   </div>
                 </div>
 
@@ -104,45 +104,49 @@ export default function ContactPage() {
             {/* RIGHT */}
             <div>
 
-              <form className="space-y-10">
+              <div className="bg-white/80 backdrop-blur-xl border border-[#ececec] rounded-[28px] p-10 shadow-[0_20px_80px_rgba(0,0,0,0.05)]">
 
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                />
+                <form className="space-y-10">
 
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                />
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
+                  />
 
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
+                  />
 
-                <input
-                  type="text"
-                  placeholder="Phone Number"
-                  className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                />
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
+                  />
 
-                <textarea
-                  placeholder="Tell us about your project..."
-                  className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 min-h-[140px] text-[14px] outline-none resize-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                />
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
+                  />
 
-                <button
-                  type="submit"
-                  className="btn-primary"
-                >
-                  Send Message
-                </button>
+                  <textarea
+                    placeholder="Tell us about your project..."
+                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 min-h-[140px] text-[14px] outline-none resize-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
+                  />
 
-              </form>
+                  <button
+                    type="submit"
+                    className="btn-primary"
+                  >
+                    Send Message
+                  </button>
+
+                </form>
+
+              </div>
 
             </div>
 
