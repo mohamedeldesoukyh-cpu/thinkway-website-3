@@ -9,7 +9,7 @@ export default function ProgramPage() {
 
       <Navigation />
 
-      <section className="relative pt-[220px] pb-32 overflow-hidden">
+      <section className="relative min-h-screen pt-[260px] pb-32 overflow-hidden">
 
         {/* Glow */}
         <div
