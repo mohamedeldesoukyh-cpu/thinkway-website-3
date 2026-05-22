@@ -103,7 +103,7 @@ export default function Hero() {
   style={{
     height: "450px",
     background:
-      "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 30%, rgba(255,255,255,0.5) 60%, transparent 100%)",
+      "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 75%, transparent 100%)",
   }}
 />
 
