@@ -64,7 +64,7 @@ export default function Navigation() {
           borderBottom: "1px solid rgba(0,0,0,0.05)",
         }}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-12 md:px-16 lg:px-24 flex items-center justify-between h-20">
+        <div className="w-full mx-auto flex items-center justify-between h-20" style={{ paddingLeft: "80px", paddingRight: "80px" }}>
 
           {/* LOGO */}
           <a href="/" className="block ml-8">
