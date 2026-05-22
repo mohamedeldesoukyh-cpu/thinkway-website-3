@@ -9,7 +9,7 @@ export default function ProgramPage() {
 
       <Navigation />
 
-      <div className="relative min-h-screen overflow-hidden pt-32">
+      <div className="relative min-h-screen overflow-hidden pt-20">
 
         {/* Glow */}
         <div
@@ -30,7 +30,7 @@ export default function ProgramPage() {
           }}
         />
 
-        <div className="container-custom relative z-10 py-32">
+        <div className="container-custom relative z-10 pt-[160px] pb-32">
 
           <div className="grid lg:grid-cols-2 gap-24 items-start">
 
@@ -56,7 +56,7 @@ export default function ProgramPage() {
               </h1>
 
               <p className="text-[15px] text-[#a1a1aa] leading-[2] max-w-md mb-14">
-                Join Thinkway’s creator network and collaborate with premium
+                Join Thinkway's creator network and collaborate with premium
                 brands across influencer marketing, SOOH campaigns, UGC,
                 and performance-driven activations.
               </p>
