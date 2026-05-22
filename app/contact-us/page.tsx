@@ -40,13 +40,11 @@ export default function ContactPage() {
             {/* LEFT */}
             <div>
 
-              {/* Eyebrow */}
               <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-6 flex items-center gap-4">
                 <div className="w-6 h-[1px] bg-[#1535C2]" />
                 Contact Us
               </div>
 
-              {/* Title */}
               <h1
                 className="font-black uppercase text-[#0a0a0a] leading-[0.88] mb-8"
                 style={{
@@ -60,31 +58,35 @@ export default function ContactPage() {
                 <span className="text-[#1535C2]"> GREAT.</span>
               </h1>
 
-              {/* Paragraph */}
               <p className="text-[15px] text-[#666] leading-[2] max-w-md mb-14">
                 Whether you're planning a campaign, partnership, or collaboration —
                 we'd love to hear from you.
               </p>
 
-              {/* Contact Info */}
               <div className="space-y-8">
 
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">
                     Email
                   </div>
-                  <div className="text-[#111] text-[15px] leading-[1.9]">
+                  
+                    href="mailto:hello@thinkwaymedia.com"
+                    className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors"
+                  >
                     hello@thinkwaymedia.com
-                  </div>
+                  </a>
                 </div>
 
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">
                     Phone
                   </div>
-                  <div className="text-[#111] text-[15px] leading-[1.9]">
+                  
+                    href="tel:+201204570000"
+                    className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors"
+                  >
                     +20 120 457 0000
-                  </div>
+                  </a>
                 </div>
 
                 <div>
