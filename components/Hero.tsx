@@ -30,12 +30,18 @@ export default function Hero() {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    video.playsInline = true;
-    video.play().catch(() => {});
-  }, []);
+  const video = videoRef.current;
+  if (!video) return;
+  video.muted = true;
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      video.setAttribute("playsinline", "true");
+      video.setAttribute("webkit-playsinline", "true");
+      video.play().catch(() => {});
+    });
+  }
+}, []);
 
   return (
     <section
@@ -48,18 +54,17 @@ export default function Hero() {
         style={{ scale: videoScale }}
       >
         <video
-          ref={videoRef}
-          src={HERO_VIDEO}
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          onCanPlay={() => setVideoReady(true)}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 0.6 : 0 }}
-        />
-
+  ref={videoRef}
+  autoPlay
+  muted
+  loop
+  playsInline
+  onCanPlay={() => setVideoReady(true)}
+  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+  style={{ opacity: videoReady ? 0.6 : 0 }}
+>
+  <source src={HERO_VIDEO} type="video/mp4" />
+</video>
         <div
           className="absolute inset-0 bg-white transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
