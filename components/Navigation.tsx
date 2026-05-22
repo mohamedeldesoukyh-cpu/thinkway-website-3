@@ -67,7 +67,7 @@ export default function Navigation() {
     borderBottom: "1px solid rgba(0,0,0,0.05)",
   }}
 >
-        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between h-20">
+        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between h-20">
           
           {/* LOGO */}
           <a
