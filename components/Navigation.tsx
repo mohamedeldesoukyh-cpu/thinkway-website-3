@@ -1,138 +1,152 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ThinkwayLogo from "@/components/ThinkwayLogo";
 
-export default function ContactPage() {
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/#services" },
+  { label: "Creators", href: "/#creators" },
+  { label: "SOOH", href: "/#sooh" },
+  { label: "Program", href: "/#program" },
+  { label: "Contact Us", href: "/contact-us" },
+];
+
+export default function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleNav = (href: string) => {
+    setMenuOpen(false);
+
+    if (href.startsWith("/#")) {
+      window.location.href = href;
+      return;
+    }
+
+    if (href.startsWith("/")) {
+      window.location.href = href;
+      return;
+    }
+
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <main className="bg-white min-h-screen overflow-x-hidden">
-
-      <Navigation />
-
-      <section
-        className="relative pb-32 overflow-hidden"
-        style={{ paddingTop: "80px" }}
+    <>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-0 left-0 right-0 z-[999999] transition-all duration-500"
+        style={{
+          position: "fixed",
+          background: "rgba(255,255,255,0.96)",
+          backdropFilter: "blur(16px)",
+          borderBottom: "1px solid rgba(0,0,0,0.05)",
+        }}
       >
+        <div className="w-full max-w-[1440px] mx-auto px-12 md:px-16 lg:px-24 flex items-center justify-between h-20">
 
-        {/* Background Glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(circle at 20% 30%, rgba(21,53,194,0.05) 0%, transparent 35%)",
-          }}
-        />
+          {/* LOGO */}
+          <a href="/" className="block">
+            <ThinkwayLogo variant="dark" />
+          </a>
 
-        {/* Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{
-            backgroundImage: "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        />
-
-        <div className="container-custom relative z-10" style={{ paddingTop: "120px" }}>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 items-start">
-
-            {/* LEFT */}
-            <div>
-
-              <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-6 flex items-center gap-4">
-                <div className="w-6 h-[1px] bg-[#1535C2]" />
-                Contact Us
-              </div>
-
-              <h1
-                className="font-black uppercase text-[#0a0a0a] leading-[0.88] mb-8"
-                style={{ fontSize: "clamp(56px,7vw,110px)", letterSpacing: "-0.06em" }}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8 justify-center">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => handleNav(link.href)}
+                className="text-[11px] tracking-[0.22em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors duration-300"
               >
-                LET&apos;S BUILD
-                <br />
-                SOMETHING
-                <span className="text-[#1535C2]"> GREAT.</span>
-              </h1>
-
-              <p className="text-[15px] text-[#666] leading-[2] max-w-md mb-14">
-                Whether you&apos;re planning a campaign, partnership, or collaboration — we&apos;d love to hear from you.
-              </p>
-
-              <div className="space-y-8">
-
-                <div>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">Email</div>
-                  <a href="mailto:hello@thinkwaymedia.com" className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors">
-                    hello@thinkwaymedia.com
-                  </a>
-                </div>
-
-                <div>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">Phone</div>
-                  <a href="tel:+201204570000" className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors">
-                    +20 120 457 0000
-                  </a>
-                </div>
-
-                <div>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">Address</div>
-                  <div className="text-[#111] text-[15px] leading-[1.9]">
-                    Sheikh Zayed — Giza
-                    <br />
-                    Egypt
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* RIGHT */}
-            <div>
-              <div className="bg-white/80 backdrop-blur-xl border border-[#ececec] rounded-[28px] p-10 shadow-[0_20px_80px_rgba(0,0,0,0.05)]">
-                <form className="space-y-10">
-
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                  />
-
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                  />
-
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                  />
-
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 text-[14px] outline-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                  />
-
-                  <textarea
-                    placeholder="Tell us about your project..."
-                    className="w-full border-0 border-b border-[#d9d9d9] bg-transparent py-5 min-h-[140px] text-[14px] outline-none resize-none focus:border-[#1535C2] transition-colors placeholder:text-[#999]"
-                  />
-
-                  <button type="submit" className="btn-primary">
-                    Send Message
-                  </button>
-
-                </form>
-              </div>
-            </div>
-
+                {link.label}
+              </button>
+            ))}
           </div>
+
+          {/* CTA */}
+          <div className="hidden md:flex items-center">
+            <button
+              onClick={() => handleNav("/contact-us")}
+              className="btn-primary"
+            >
+              Start A Campaign
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex flex-col gap-[5px] p-2"
+          >
+            <motion.span
+              animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
+            />
+            <motion.span
+              animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="block w-6 h-[1px] bg-[#0a0f1e]"
+            />
+            <motion.span
+              animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
+            />
+          </button>
+
         </div>
-      </section>
+      </motion.nav>
 
-      <Footer />
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+          >
 
-    </main>
+            <div className="absolute top-7 left-7">
+              <ThinkwayLogo variant="dark" />
+            </div>
+
+            {navLinks.map((link, i) => (
+              <motion.button
+                key={link.href}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                onClick={() => handleNav(link.href)}
+                className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
+              >
+                {link.label}
+              </motion.button>
+            ))}
+
+            <motion.button
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navLinks.length * 0.08, duration: 0.4 }}
+              onClick={() => handleNav("/contact-us")}
+              className="mt-6 bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.22em] text-[11px]"
+            >
+              Start A Campaign
+            </motion.button>
+
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
