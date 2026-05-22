@@ -57,10 +57,7 @@ export default function Hero() {
 
         <div
           className="absolute inset-0 bg-white transition-opacity duration-1000"
-          style={{
-            opacity: videoReady ? 0 : 1,
-            pointerEvents: "none",
-          }}
+          style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
         />
 
         {/* Left Fade */}
@@ -99,6 +96,13 @@ export default function Hero() {
             backgroundSize: "80px 80px",
           }}
         />
+
+        {/* Watermark Cover */}
+        <div
+          className="absolute bottom-0 left-0 bg-white"
+          style={{ width: "200px", height: "70px" }}
+        />
+
       </motion.div>
 
       {/* FLOATING PLATFORMS */}
@@ -140,7 +144,6 @@ export default function Hero() {
                     boxShadow: `0 0 8px ${p.color}`,
                   }}
                 />
-
                 <div>
                   <div className="text-[#0a0a0a] text-[11px] font-semibold tracking-wider">
                     {p.name}
@@ -158,6 +161,7 @@ export default function Hero() {
         style={{ opacity }}
       >
         <div className="w-full max-w-3xl">
+
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,7 +170,6 @@ export default function Hero() {
             className="flex items-center gap-4 mb-10"
           >
             <div className="w-6 h-[1px] bg-[#1535C2]" />
-
             <span className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase font-medium">
               Influencer Marketing · Global Network
             </span>
@@ -191,9 +194,7 @@ export default function Hero() {
                   }}
                 >
                   {line === "ADS." ? (
-                    <>
-                      ADS<span className="text-[#1535C2]">.</span>
-                    </>
+                    <>ADS<span className="text-[#1535C2]">.</span></>
                   ) : (
                     line
                   )}
@@ -222,22 +223,13 @@ export default function Hero() {
           >
             <button
               className="btn-primary"
-              onClick={() =>
-                document
-                  .querySelector("#contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Start a Campaign
             </button>
-
             <button
               className="btn-outline"
-              onClick={() =>
-                document
-                  .querySelector("#creators")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.querySelector("#creators")?.scrollIntoView({ behavior: "smooth" })}
             >
               View Creators
             </button>
@@ -249,8 +241,8 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
             className="flex items-center gap-10 mt-16 pt-8 border-t border-[#ebebeb]"
-          >
-                     </motion.div>
+          />
+
         </div>
       </motion.div>
 
@@ -261,20 +253,14 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
-        <span className="text-[9px] tracking-[0.3em] text-[#ccc] uppercase">
-          Scroll
-        </span>
-
+        <span className="text-[9px] tracking-[0.3em] text-[#ccc] uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{
-            duration: 1.6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
           className="w-[1px] h-10 bg-gradient-to-b from-[#1535C2] to-transparent"
         />
       </motion.div>
+
     </section>
   );
 }
