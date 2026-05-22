@@ -18,77 +18,94 @@ function AIChat() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 640);
-    const handleResize = () => setIsMobile(window.innerWidth < 640);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
-
-    const updatedMessages = [
-      ...messages,
-      { role: "user", content: input },
-    ];
-
+    const updatedMessages = [...messages, { role: "user", content: input }];
     setMessages(updatedMessages);
     setInput("");
     setLoading(true);
-
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: updatedMessages }),
       });
-
       const data = await response.json();
-
-      setMessages([
-        ...updatedMessages,
-        { role: "assistant", content: data.text },
-      ]);
+      setMessages([...updatedMessages, { role: "assistant", content: data.text }]);
     } catch {
-      setMessages([
-        ...updatedMessages,
-        { role: "assistant", content: "Something went wrong." },
-      ]);
+      setMessages([...updatedMessages, { role: "assistant", content: "Something went wrong." }]);
     }
-
     setLoading(false);
   };
 
-  const chatStyle = isMobile
-    ? { top: 0, left: 0, right: 0, bottom: 0, borderRadius: 0 }
-    : { bottom: "24px", right: "20px", width: "420px", height: "650px", borderRadius: "32px" };
-
   return (
     <>
+      {/* Trigger Button */}
       {!open && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-6 right-4 z-[99999] flex items-center gap-3"
+        <div
+          style={{
+            position: "fixed",
+            bottom: "24px",
+            right: "16px",
+            zIndex: 999999,
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+          }}
         >
+          {/* Text pill - desktop only */}
+          {!isMobile && (
+            <button
+              onClick={() => setOpen(true)}
+              style={{
+                height: "56px",
+                padding: "0 24px",
+                borderRadius: "999px",
+                background: "rgba(255,255,255,0.95)",
+                border: "1px solid rgba(255,255,255,0.4)",
+                boxShadow: "0 0 40px rgba(21,53,194,0.18)",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: "#111",
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Try Thinkway AI
+            </button>
+          )}
+
+          {/* Blue orb - always visible */}
           <button
             onClick={() => setOpen(true)}
-            className="hidden sm:flex h-14 px-6 rounded-full bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_0_40px_rgba(21,53,194,0.18)] text-[14px] font-semibold text-[#111] hover:scale-[1.03] transition-all duration-500"
-          >
-            Try Thinkway AI
-          </button>
-
-          <motion.button
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-            onClick={() => setOpen(true)}
-            className="w-14 h-14 rounded-full bg-[#1535C2] shadow-[0_0_45px_rgba(21,53,194,0.55)] flex items-center justify-center text-white text-2xl hover:scale-110 transition-all duration-500"
+            style={{
+              width: "56px",
+              height: "56px",
+              borderRadius: "50%",
+              background: "#1535C2",
+              boxShadow: "0 0 45px rgba(21,53,194,0.55)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontSize: "24px",
+              cursor: "pointer",
+              border: "none",
+              flexShrink: 0,
+            }}
           >
             ✦
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       )}
 
+      {/* Chat Window */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -96,64 +113,83 @@ function AIChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="fixed z-[99999] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col"
-            style={chatStyle}
+            style={
+              isMobile
+                ? {
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    zIndex: 999999,
+                    background: "white",
+                    display: "flex",
+                    flexDirection: "column",
+                    borderRadius: 0,
+                  }
+                : {
+                    position: "fixed",
+                    bottom: "24px",
+                    right: "20px",
+                    width: "420px",
+                    height: "650px",
+                    zIndex: 999999,
+                    background: "white",
+                    borderRadius: "32px",
+                    boxShadow: "0 20px 80px rgba(0,0,0,0.18)",
+                    border: "1px solid #ececec",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                  }
+            }
           >
-            <div className="px-7 py-5 border-b border-[#f1f1f1] bg-white relative flex items-center justify-center">
-              <img
-                src="/media/Thinkway AI Logo.jpg"
-                alt="Thinkway AI"
-                className="h-14 object-contain"
-              />
+            {/* Header */}
+            <div style={{ padding: "20px 28px", borderBottom: "1px solid #f1f1f1", background: "white", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <img src="/media/Thinkway AI Logo.jpg" alt="Thinkway AI" style={{ height: "56px", objectFit: "contain" }} />
               <button
                 onClick={() => setOpen(false)}
-                className="absolute right-5 w-10 h-10 rounded-full bg-[#f7f7f7] hover:bg-[#efefef] transition-all duration-300 flex items-center justify-center text-[#111]"
+                style={{ position: "absolute", right: "20px", width: "40px", height: "40px", borderRadius: "50%", background: "#f7f7f7", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}
               >
                 ✕
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-5 py-5 space-y-5 bg-[#fafafa]">
+            {/* Messages */}
+            <div style={{ flex: 1, overflowY: "auto", padding: "20px", display: "flex", flexDirection: "column", gap: "16px", background: "#fafafa" }}>
               {messages.map((m, i) => (
-                <div
-                  key={i}
-                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={
-                      m.role === "user"
-                        ? "bg-[#1535C2] text-white px-4 py-3 rounded-[24px] max-w-[85%] shadow-sm leading-4 text-[10px]"
-                        : "bg-white border border-[#ececec] text-[#111] px-4 py-3 rounded-[24px] max-w-[85%] shadow-sm leading-6 text-[15px]"
-                    }
-                  >
-                    <p className={i === 0 ? "text-[12px] leading-5" : ""}>
-                      {m.content}
-                    </p>
+                <div key={i} style={{ display: "flex", justifyContent: m.role === "user" ? "flex-end" : "flex-start" }}>
+                  <div style={{
+                    maxWidth: "85%",
+                    padding: "12px 16px",
+                    borderRadius: "24px",
+                    fontSize: i === 0 ? "12px" : m.role === "user" ? "10px" : "15px",
+                    lineHeight: m.role === "user" ? "1.4" : "1.7",
+                    background: m.role === "user" ? "#1535C2" : "white",
+                    color: m.role === "user" ? "white" : "#111",
+                    border: m.role === "user" ? "none" : "1px solid #ececec",
+                    boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
+                  }}>
+                    {m.content}
                   </div>
                 </div>
               ))}
-
-              {loading && (
-                <div className="text-[13px] text-[#888]">
-                  Thinkway AI is thinking...
-                </div>
-              )}
+              {loading && <div style={{ fontSize: "13px", color: "#888" }}>Thinkway AI is thinking...</div>}
             </div>
 
-            <div className="p-5 border-t border-[#f1f1f1] bg-white">
-              <div className="flex items-center gap-3 bg-[#f7f7f7] rounded-2xl px-4 py-3">
+            {/* Input */}
+            <div style={{ padding: "20px", borderTop: "1px solid #f1f1f1", background: "white" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "#f7f7f7", borderRadius: "16px", padding: "12px 16px" }}>
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !loading) sendMessage();
-                  }}
+                  onKeyDown={(e) => { if (e.key === "Enter" && !loading) sendMessage(); }}
                   placeholder="Ask Thinkway AI..."
-                  className="flex-1 bg-transparent outline-none text-[14px] text-[#111] placeholder:text-[#999]"
+                  style={{ flex: 1, background: "transparent", border: "none", outline: "none", fontSize: "14px", color: "#111" }}
                 />
                 <button
                   onClick={sendMessage}
-                  className="w-11 h-11 rounded-xl bg-[#1535C2] text-white flex items-center justify-center hover:scale-105 transition-all duration-300"
+                  style={{ width: "44px", height: "44px", borderRadius: "12px", background: "#1535C2", color: "white", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px" }}
                 >
                   ↑
                 </button>
