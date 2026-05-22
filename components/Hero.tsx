@@ -97,15 +97,15 @@ export default function Hero() {
           }}
         />
 
-        {/* Bottom Fade — covers watermark */}
-        <div
-          className="absolute bottom-0 left-0 right-0"
-          style={{
-            height: "180px",
-            background:
-              "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 40%, transparent 100%)",
-          }}
-        />
+       {/* Bottom Fade — covers watermark */}
+<div
+  className="absolute bottom-0 left-0 right-0"
+  style={{
+    height: "320px",
+    background:
+      "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 30%, rgba(255,255,255,0.5) 60%, transparent 100%)",
+  }}
+/>
 
       </motion.div>
 
