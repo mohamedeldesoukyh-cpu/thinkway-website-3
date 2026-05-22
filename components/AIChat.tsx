@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function AIChat() {
@@ -15,6 +15,14 @@ function AIChat() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 640);
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -51,24 +59,25 @@ function AIChat() {
     setLoading(false);
   };
 
+  const chatStyle = isMobile
+    ? { top: 0, left: 0, right: 0, bottom: 0, borderRadius: 0 }
+    : { bottom: "24px", right: "20px", width: "420px", height: "650px", borderRadius: "32px" };
+
   return (
     <>
-      {/* Floating Trigger */}
       {!open && (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="fixed bottom-6 right-5 z-[9999] flex items-center gap-3"
         >
-          {/* Text Pill — hidden on mobile */}
           <button
             onClick={() => setOpen(true)}
-            className="hidden sm:flex h-14 px-6 rounded-full bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_0_40px_rgba(21,53,194,0.18)] text-[14px] font-semibold text-[#111] hover:scale-[1.03] hover:shadow-[0_0_60px_rgba(21,53,194,0.35)] transition-all duration-500"
+            className="hidden sm:flex h-14 px-6 rounded-full bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_0_40px_rgba(21,53,194,0.18)] text-[14px] font-semibold text-[#111] hover:scale-[1.03] transition-all duration-500"
           >
             Try Thinkway AI
           </button>
 
-          {/* Rotating AI Orb */}
           <motion.button
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
@@ -80,7 +89,6 @@ function AIChat() {
         </motion.div>
       )}
 
-      {/* Chat Window */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -88,28 +96,9 @@ function AIChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="fixed z-[9999] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col backdrop-blur-xl"
-            style={{
-              bottom: "0",
-              right: "0",
-              width: "100%",
-              height: "100%",
-              borderRadius: "0",
-            }}
-            // Desktop overrides
-            {...(typeof window !== "undefined" && window.innerWidth >= 640
-              ? {
-                  style: {
-                    bottom: "24px",
-                    right: "20px",
-                    width: "420px",
-                    height: "650px",
-                    borderRadius: "32px",
-                  },
-                }
-              : {})}
+            className="fixed z-[9999] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.18)] border border-[#ececec] overflow-hidden flex flex-col"
+            style={chatStyle}
           >
-            {/* Header */}
             <div className="px-7 py-5 border-b border-[#f1f1f1] bg-white relative flex items-center justify-center">
               <img
                 src="/media/Thinkway AI Logo.jpg"
@@ -124,7 +113,6 @@ function AIChat() {
               </button>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto px-5 py-5 space-y-5 bg-[#fafafa]">
               {messages.map((m, i) => (
                 <div
@@ -152,7 +140,6 @@ function AIChat() {
               )}
             </div>
 
-            {/* Input */}
             <div className="p-5 border-t border-[#f1f1f1] bg-white">
               <div className="flex items-center gap-3 bg-[#f7f7f7] rounded-2xl px-4 py-3">
                 <input
