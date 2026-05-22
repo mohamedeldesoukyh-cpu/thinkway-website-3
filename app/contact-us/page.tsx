@@ -9,7 +9,10 @@ export default function ContactPage() {
 
       <Navigation />
 
-      <section className="relative pt-[180px] pb-32 overflow-hidden">
+      <section
+        className="relative pb-32 overflow-hidden"
+        style={{ paddingTop: "80px" }}
+      >
 
         {/* Background Glow */}
         <div
@@ -30,7 +33,7 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10" style={{ paddingTop: "120px" }}>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 items-start">
 
@@ -51,7 +54,7 @@ export default function ContactPage() {
                   letterSpacing: "-0.06em",
                 }}
               >
-                LET’S BUILD
+                LET'S BUILD
                 <br />
                 SOMETHING
                 <span className="text-[#1535C2]"> GREAT.</span>
@@ -70,7 +73,6 @@ export default function ContactPage() {
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">
                     Email
                   </div>
-
                   <div className="text-[#111] text-[15px] leading-[1.9]">
                     hello@thinkwaymedia.com
                   </div>
@@ -80,7 +82,6 @@ export default function ContactPage() {
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">
                     Phone
                   </div>
-
                   <div className="text-[#111] text-[15px] leading-[1.9]">
                     +20 120 457 0000
                   </div>
@@ -88,9 +89,8 @@ export default function ContactPage() {
 
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2">
-                    Location
+                    Address
                   </div>
-
                   <div className="text-[#111] text-[15px] leading-[1.9]">
                     Sheikh Zayed — Giza
                     <br />
