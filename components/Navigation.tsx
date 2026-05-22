@@ -93,19 +93,14 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-<div className="hidden md:flex">
-
+<div className="hidden md:flex items-center">
   <button
     onClick={() => handleNav("/#contact")}
-    className="bg-[#1535C2] text-white h-[54px] px-10 uppercase tracking-[0.22em] text-[10px] font-medium hover:bg-[#0f2ba3] transition-all duration-300 flex items-center justify-center"
+    className="bg-[#1535C2] hover:bg-[#2347db] text-white text-[11px] tracking-[0.22em] uppercase px-8 h-[52px] transition-all duration-300 hover:shadow-[0_10px_40px_rgba(21,53,194,0.25)] flex items-center justify-center"
   >
     Start A Campaign
-  <button className="bg-[#1535C2] hover:bg-[#2347db] text-white text-[11px] tracking-[0.22em] uppercase px-8 h-[52px] rounded-none transition-all duration-300 hover:shadow-[0_10px_40px_rgba(21,53,194,0.25)]">
-  Start A Campaign
-</button>
-
+  </button>
 </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
