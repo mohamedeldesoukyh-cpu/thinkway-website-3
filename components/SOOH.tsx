@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, useScroll, useTransform, animate } from "framer-motion";
 
-const SOOH_VIDEO = "/media/Make_it_looping_animated_extended_202605100400.mp4";
+const SOOH_VIDEO = "/media/Make_it_looping_animated_202605100400.mp4";
 
 const pillars = [
   { num: "01", title: "Billboard Placement", desc: "Premium digital screens and static billboards — malls, highways, city centres." },
