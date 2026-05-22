@@ -13,6 +13,7 @@ import SOOH from "@/components/SOOH";
 import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
 import Footer from "@/components/Footer";
+import AIChat from "@/components/AIChat";
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <CampaignBrief />
       <Clients />
       <Footer />
+      <AIChat />
     </main>
   );
 }
