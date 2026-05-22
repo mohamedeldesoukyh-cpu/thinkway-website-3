@@ -199,28 +199,10 @@ body::before {
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 
-/* Dark background forms - white text (program page) */
-.form-dark input,
-.form-dark textarea {
-  color: white;
-  caret-color: white;
-}
-
-.form-dark input::placeholder,
-.form-dark textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-/* Light background forms - dark text (contact page) */
-.form-light input,
-.form-light textarea {
-  color: #111;
-  caret-color: #111;
-}
-
-.form-light input::placeholder,
-.form-light textarea::placeholder {
-  color: #999;
+/* Input colors — each page controls its own via inline styles or Tailwind */
+input,
+textarea {
+  caret-color: currentColor;
 }
 
 * {
