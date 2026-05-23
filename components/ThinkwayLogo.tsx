@@ -9,10 +9,10 @@ export default function ThinkwayLogo({ variant = "dark", className = "" }: Think
   return (
     <div className={`select-none ${className}`}>
       <img
-        src="/media/Logo.png"
+        src="/media/TW_Logo_B_Wordmark.svg"
         alt="Thinkway"
         style={{
-          height: "40px",
+          height: "36px",
           width: "auto",
           filter: variant === "light" ? "brightness(0) invert(1)" : "none",
         }}
