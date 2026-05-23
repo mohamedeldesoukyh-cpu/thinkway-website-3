@@ -6,11 +6,10 @@ import ThinkwayLogo from "@/components/ThinkwayLogo";
 
 const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
   Agency: [
-  { label: "About Us", anchor: "/about" },
-  { label: "Our Approach", anchor: "/about#why-thinkway" },
-  { label: "Careers", anchor: "/careers" },
-],
-  
+    { label: "About Us", anchor: "/about" },
+    { label: "Our Approach", anchor: "/about#why-thinkway" },
+    { label: "Careers", anchor: "/careers" },
+  ],
   Services: [
     { label: "Influencer Campaigns", anchor: "#services" },
     { label: "Content Creation", anchor: "#services" },
@@ -44,6 +43,7 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="container-custom py-20 relative z-10 text-center">
+
         {/* Brand — centered */}
         <div className="flex flex-col items-center mb-16">
           <div className="mb-6">
@@ -52,23 +52,37 @@ export default function Footer() {
           <p className="text-[10px] text-[#bbb] tracking-[0.1em] uppercase leading-[2.4] max-w-xs mb-8">
             Where influence meets strategy. We build campaigns that move culture — and move product.
           </p>
-          <div className="flex gap-3 justify-center">
-            {[
-              { label: "IG", href: "https://www.instagram.com/thinkway_tw" },
-              { label: "TT", href: null },
-              { label: "LI", href: "https://www.linkedin.com/company/thinkwaymedia/" },
-              { label: "YT", href: null },
-            ].map(({ label, href }) =>
-              href ? (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
-                  {label}
-                </a>
-              ) : (
-                <div key={label} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
-                  {label}
-                </div>
-              )
-            )}
+
+          {/* Social Icons — Instagram + LinkedIn only */}
+          <div className="flex gap-4 justify-center">
+            
+              href="https://www.instagram.com/thinkway_media/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden"
+            >
+              <Image
+                src="/media/Instagram.svg.png"
+                alt="Instagram"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
+            </a>
+            
+              href="https://www.linkedin.com/company/thinkwaymedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden"
+            >
+              <Image
+                src="/media/new-LinkedIn-icon-blue-png-large-size.png"
+                alt="LinkedIn"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
+            </a>
           </div>
         </div>
 
@@ -80,13 +94,13 @@ export default function Footer() {
               <ul className="space-y-4">
                 {links.map((item) => (
                   <li key={item.label} className="text-center">
-                   {item.anchor ? (
-  <a
-    href={item.anchor}
-    className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none"
-  >
-    {item.label}
-  </a>
+                    {item.anchor ? (
+                      
+                        href={item.anchor}
+                        className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none"
+                      >
+                        {item.label}
+                      </a>
                     ) : (
                       <span className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase cursor-none">
                         {item.label}
