@@ -37,7 +37,7 @@ export default function AboutPage() {
               <h1
   className="font-black uppercase text-black"
   style={{
-    fontSize: isAr ? "clamp(80px,14vw,180px)" : "clamp(56px,8vw,120px)",
+    fontSize: isAr ? "clamp(52px,8vw,110px)" : "clamp(56px,8vw,120px)",
     letterSpacing: isAr ? "-0.03em" : "-0.05em",
     lineHeight: isAr ? "0.85" : "0.9",
     fontFamily: isAr ? "var(--font-cairo)" : "inherit",
