@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
+import en from "../messages/en.json";
+import ar from "../messages/ar.json";
 
 type Language = "en" | "ar";
 
@@ -10,10 +12,7 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const translations = {
-  en: require("../messages/en.json"),
-  ar: require("../messages/ar.json"),
-};
+const translations = { en, ar };
 
 const LanguageContext = createContext<LanguageContextType>({
   lang: "en",
