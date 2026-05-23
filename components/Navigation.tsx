@@ -62,9 +62,8 @@ export default function Navigation() {
         }}
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
-        <div
-          <div className="w-full mx-auto flex items-center justify-between h-20" style={{ paddingLeft: "80px", paddingRight: "80px" }}>
-        >
+        <div className="w-full max-w-[1440px] mx-auto h-[82px] px-4 lg:px-12">
+  <div className="flex items-center justify-between h-full">
           {/* LOGO */}
           <a
   href="/"
