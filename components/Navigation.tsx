@@ -66,7 +66,6 @@ export default function Navigation() {
           {/* LOGO */}
           <a
             className="block shrink-0"
-            className="block shrink-0 pl-4 lg:pl-0"
             
           >
             <ThinkwayLogo variant="dark" />
