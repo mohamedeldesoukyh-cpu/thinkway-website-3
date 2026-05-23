@@ -120,7 +120,17 @@ export default function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 pt-24">
           <div>
             <motion.div initial={{ opacity: 0, x: -16 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.1, duration: 0.7 }} className="mb-24">
-              <h3 className="font-black uppercase text-white leading-[0.9]" style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", ...fontStyle }}>
+              <h3
+  className="font-black uppercase text-white leading-[1.05]"
+  style={{
+    fontSize:
+      lang === "ar"
+        ? "clamp(14px, 1.5vw, 22px)"
+        : "clamp(28px, 3vw, 48px)",
+    letterSpacing: "-0.03em",
+    lineHeight: "1.3",
+    ...fontStyle,
+  }}>
                 {lang === "ar" ? "التسويق\nعبر المؤثرين" : "Influencer\nMarketing"}
               </h3>
             </motion.div>
