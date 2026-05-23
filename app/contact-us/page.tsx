@@ -43,7 +43,7 @@ export default function ContactPage() {
               <h1
                 className="font-black uppercase text-[#0a0a0a] leading-[0.88] mb-8"
                 style={{
-                  fontSize: isAr ? "clamp(36px,5vw,72px)" : "clamp(56px,7vw,110px)",
+                  fontSize: isAr ? "clamp(24px,3.5vw,52px)" : "clamp(56px,7vw,110px)",
                   letterSpacing: isAr ? "-0.03em" : "-0.06em",
                   lineHeight: isAr ? "1.2" : "0.88",
                   ...fontAr,
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2" style={fontAr}>{t("contact.phoneLabel")}</div>
-                  <a href="tel:+201204570000" className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors">+20 120 457 0000</a>
+                  <a href="tel:+201204570000" dir="ltr" className="text-[#111] text-[15px] leading-[1.9] hover:text-[#1535C2] transition-colors inline-block">+20 120 457 0000</a>
                 </div>
                 <div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-[#999] mb-2" style={fontAr}>{t("contact.addressLabel")}</div>
