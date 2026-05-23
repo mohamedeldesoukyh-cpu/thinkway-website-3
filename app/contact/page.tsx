@@ -30,9 +30,9 @@ export default function ContactPage() {
             <h1
               className="font-black uppercase text-[#0a0a0a] mb-8"
               style={{
-                fontSize: isAr ? "clamp(20px,2.8vw,40px)" : "clamp(56px,7vw,110px)",
-letterSpacing: isAr ? "-0.02em" : "-0.06em",
-lineHeight: isAr ? "1.5" : "0.88",
+                fontSize: isAr ? "clamp(16px,2vw,28px)" : "clamp(56px,7vw,110px)",
+letterSpacing: isAr ? "0em" : "-0.06em",
+lineHeight: isAr ? "2.2" : "0.88",
                 ...fontAr,
               }}
             >
