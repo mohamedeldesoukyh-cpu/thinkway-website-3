@@ -29,12 +29,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const toggleLang = () => {
-    const newLang = lang === "en" ? "ar" : "en";
-    setLang(newLang);
-    localStorage.setItem("thinkway_lang", newLang);
-    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
-    document.documentElement.lang = newLang;
-  };
+  const newLang = lang === "en" ? "ar" : "en";
+  setLang(newLang);
+  localStorage.setItem("thinkway_lang", newLang);
+  document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = newLang;
+  window.location.reload();
+};
 
   useEffect(() => {
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
