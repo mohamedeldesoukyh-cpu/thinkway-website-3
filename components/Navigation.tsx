@@ -68,7 +68,7 @@ export default function Navigation() {
           {/* LOGO */}
           <a
             href="/"
-            className="block shrink-0 max-w-[140px] lg:max-w-none"
+            className="block shrink-0 pl-4 lg:pl-0"
             style={{ order: lang === "ar" ? 3 : 1 }}
           >
             <ThinkwayLogo variant="dark" />
