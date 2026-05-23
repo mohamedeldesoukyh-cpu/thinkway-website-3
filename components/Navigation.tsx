@@ -95,6 +95,14 @@ export default function Navigation() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
 
+              {/* CTA Button */}
+              <button
+                onClick={() => handleNav("/#contact")}
+                className="btn-primary"
+              >
+                {t("nav.startCampaign")}
+              </button>
+
               {/* Desktop Language Switch */}
               <button
                 onClick={toggleLang}
@@ -107,14 +115,6 @@ export default function Navigation() {
                 }}
               >
                 {lang === "en" ? "عربي" : "EN"}
-              </button>
-
-              {/* CTA Button */}
-              <button
-                onClick={() => handleNav("/#contact")}
-                className="btn-primary"
-              >
-                {t("nav.startCampaign")}
               </button>
             </div>
 
