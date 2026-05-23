@@ -116,6 +116,14 @@ export default function Navigation() {
 
         </div>
       </motion.nav>
+      {/* Mobile Language Switch */}
+<button
+  onClick={toggleLang}
+  className="md:hidden h-[36px] min-w-[42px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
+  style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+>
+  {lang === "en" ? "عربي" : "EN"}
+</button>
 
       {/* MOBILE MENU */}
       <AnimatePresence>
