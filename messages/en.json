@@ -61,5 +61,47 @@
     "services": "Services",
     "network": "Network",
     "connect": "Connect"
-  }
+  ,
+  "creators": {
+    "eyebrow": "Our Network",
+    "title": "OUR CREATOR",
+    "title2": "NETWORK",
+    "desc": "A curated ecosystem of creators across MENA and global markets — selected based on relevance, content quality, and performance.",
+    "note": "Creator selection is tailored for each campaign based on brand objectives and audience fit.",
+    "category": "Category",
+    "explore": "Explore"
+  },
+  "sooh": {
+    "eyebrow": "New Service",
+    "headline1": "SOCIAL",
+    "headline2": "OUT OF",
+    "headline3": "HOME.",
+    "howItWorks": "How It Works",
+    "step": "Step",
+    "cta": "Ready to own the street — and the feed?",
+    "ctaSub": "SOOH campaigns across the MENA region.",
+    "ctaBtn": "Launch a SOOH Campaign",
+    "stat1": "Physical Impressions",
+    "stat2": "Higher Recall vs OOH",
+    "stat3": "Content Turnaround"
+  },
+  "program": {
+    "eyebrow": "For Creators",
+    "title": "CREATOR",
+    "title2": "PROGRAM",
+    "desc": "An intensive development program for creators who want to grow their influence, attract premium brand deals, and build a sustainable career online.",
+    "modules": "Modules",
+    "weeks": "Total Weeks",
+    "sessions": "Sessions",
+    "readyToGrow": "Ready to grow?",
+    "limited": "Limited spots available per cohort.",
+    "apply": "Apply to the Program"
+  },
+  "services": {
+    "eyebrow": "What We Do",
+    "title": "SERVICES",
+    "desc": "AI-assisted strategy. Human-led execution. Built for brands that demand measurable outcomes.",
+    "influencer": "Influencer Marketing",
+    "sooh": "Social Out-of-Home"
+  }}
 }
