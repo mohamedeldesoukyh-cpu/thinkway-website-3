@@ -41,10 +41,8 @@ export default function Footer() {
         onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
       />
 
-      {/* Main footer */}
       <div className="container-custom py-20 relative z-10 text-center">
 
-        {/* Brand — centered */}
         <div className="flex flex-col items-center mb-16">
           <div className="mb-6">
             <ThinkwayLogo variant="dark" />
@@ -53,7 +51,6 @@ export default function Footer() {
             Where influence meets strategy. We build campaigns that move culture — and move product.
           </p>
 
-          {/* Social Icons — Instagram + LinkedIn only */}
           <div className="flex gap-4 justify-center">
             
               href="https://www.instagram.com/thinkway_media/"
@@ -86,7 +83,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Links — centered columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group} className="flex flex-col items-center">
@@ -114,10 +110,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
       <div className="hr-line mx-12" />
 
-      {/* Bottom bar */}
       <div className="container-custom py-8 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
         <div className="text-[9px] tracking-[0.18em] text-[#ccc] uppercase">
           © 2026 THINKWAY Agency. All rights reserved.
@@ -129,7 +123,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Large watermark */}
       <div className="overflow-hidden border-t border-[#efefef] relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
