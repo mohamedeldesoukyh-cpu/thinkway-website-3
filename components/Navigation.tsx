@@ -62,8 +62,9 @@ export default function Navigation() {
         }}
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
-        <div className="w-full max-w-[1440px] mx-auto h-[82px] px-4 lg:px-12">
-  <div className="flex items-center justify-between h-full">
+        <div
+          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] px-4 lg:px-12"
+        >
           {/* LOGO */}
           <a
   href="/"
@@ -123,7 +124,7 @@ export default function Navigation() {
             {/* Mobile Language Switch */}
             <button
               onClick={toggleLang}
-              className="lg:hidden flex h-[36px] min-w-[42px] items-center justify-center px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
+              className="lg:hidden h-[36px] min-w-[42px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
               style={{
                 fontFamily:
                   lang === "ar"
