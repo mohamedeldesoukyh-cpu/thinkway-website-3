@@ -84,7 +84,6 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
       className="group py-8 px-2 border-b border-white/25 cursor-none"
     >
       <div className="flex items-start gap-6">
-        {/* Number */}
         <span
           className="text-[10px] font-mono tracking-widest shrink-0 mt-1 transition-colors duration-300"
           style={{ color: isHovered ? "#1535C2" : "rgba(255,255,255,0.4)" }}
@@ -92,7 +91,6 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
           {s.num}
         </span>
 
-        {/* Content */}
         <div className="flex-1 min-w-0">
           <div
             className="text-[9px] tracking-[0.28em] uppercase mb-2 transition-colors duration-300"
@@ -124,8 +122,10 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
             {s.desc}
           </motion.p>
 
-          <div className="flex flex-wrap gap-2 transition-all duration-400"
-            style={{ opacity: isHovered ? 1 : 0 }}>
+          <div
+            className="flex flex-wrap gap-2 transition-all duration-400"
+            style={{ opacity: isHovered ? 1 : 0 }}
+          >
             {s.tags.map((tag) => (
               <span
                 key={tag}
@@ -138,7 +138,6 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
           </div>
         </div>
 
-        {/* Arrow indicator */}
         <motion.div
           animate={{ x: isHovered ? 0 : -6, opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
@@ -162,7 +161,6 @@ export default function Services() {
   return (
     <section id="services" ref={ref} className="section-padding relative overflow-hidden bg-[#0a0f1e]">
 
-      {/* Background video at 100% with brushed edges via CSS mask */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -178,7 +176,7 @@ export default function Services() {
           style={{ opacity: videoReady ? 0.4 : 0 }}
         />
       </div>
-      {/* Dark overlay — video visible, text readable */}
+
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "linear-gradient(135deg, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.42) 60%, rgba(10,15,30,0.50) 100%)" }}
@@ -186,29 +184,31 @@ export default function Services() {
 
       <div className="container-custom relative z-10">
 
-        {/* Section header */}
         <motion.div
-  initial={{ opacity: 0, x: -16 }}
-  animate={inView ? { opacity: 1, x: 0 } : {}}
-  transition={{ delay: 0.1, duration: 0.7 }}
-  className="flex items-center gap-3 mb-6"
->
-  <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-  <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
-    Influencer Marketing
-  </span>
-  <span
-    className="text-[8px] tracking-[0.18em] uppercase px-2 py-1"
-    style={{ background: "rgba(21,53,194,0.3)", color: "#7b9fff", borderRadius: "4px" }}
-  >
-    AI-Powered
-  </span>
-</motion.div>
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <div className="text-[10px] tracking-[0.3em] text-[#7b9fff] uppercase mb-5 flex items-center gap-4">
+            <div className="w-6 h-[1px] bg-[#1535C2]" />
+            What We Do
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2
+              className="font-black uppercase text-white leading-[0.9]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
+            >
+              SERVICES
+            </h2>
+            <p className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]" style={{ color: "rgba(255,255,255,0.4)" }}>
+              AI-assisted strategy. Human-led execution. Built for brands that demand measurable outcomes.
+            </p>
+          </div>
+        </motion.div>
 
-        {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
-          {/* ── INFLUENCER MARKETING ── */}
           <div>
             <motion.div
               initial={{ opacity: 0, x: -16 }}
@@ -217,21 +217,17 @@ export default function Services() {
               className="flex items-center gap-3 mb-6"
             >
               <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-<span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
-  Influencer Marketing
-</span>
-<span
-  className="text-[8px] tracking-[0.18em] uppercase px-2 py-1 ml-2"
-  style={{ background: "rgba(21,53,194,0.3)", color: "#7b9fff", borderRadius: "4px" }}
->
-  AI-Powered
-</span>              {influencerServices.map((s, i) => (
+              <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
+                Influencer Marketing
+              </span>
+            </motion.div>
+            <div>
+              {influencerServices.map((s, i) => (
                 <ServiceItem key={s.num} s={s} i={i} hovered={hovered} setHovered={setHovered} idx={i} />
               ))}
             </div>
           </div>
 
-          {/* ── SOCIAL OUT-OF-HOME ── */}
           <div>
             <motion.div
               initial={{ opacity: 0, x: 16 }}
