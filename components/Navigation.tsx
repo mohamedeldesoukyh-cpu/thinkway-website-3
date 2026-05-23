@@ -123,7 +123,6 @@ export default function Navigation() {
               >
                 {lang === "en" ? "\u0639\u0631\u0628\u064a" : "EN"}
               </button>
-              </button>
             </div>
 
             {/* Mobile Language Switch */}
