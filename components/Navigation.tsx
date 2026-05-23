@@ -5,21 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import ThinkwayLogo from "@/components/ThinkwayLogo";
 import { useLang } from "@/components/LanguageProvider";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/#services" },
-  { label: "Creators", href: "/#creators" },
-  { label: "Results", href: "/#stats" },
-  { label: "SOOH", href: "/#sooh" },
-  { label: "Program", href: "/#program" },
-  { label: "Contact Us", href: "/contact-us" },
-];
-
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { lang, toggleLang } = useLang();
+  const { lang, toggleLang, t } = useLang();
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.services"), href: "/#services" },
+    { label: t("nav.creators"), href: "/#creators" },
+    { label: t("nav.results"), href: "/#stats" },
+    { label: t("nav.sooh"), href: "/#sooh" },
+    { label: t("nav.program"), href: "/#program" },
+    { label: t("nav.contactUs"), href: "/contact-us" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -52,6 +52,7 @@ export default function Navigation() {
           backdropFilter: "blur(20px)",
           borderBottom: "1px solid rgba(0,0,0,0.04)",
         }}
+        dir={lang === "ar" ? "rtl" : "ltr"}
       >
         <div
           className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px]"
@@ -70,6 +71,7 @@ export default function Navigation() {
                 key={link.href}
                 onClick={() => handleNav(link.href)}
                 className="text-[11px] tracking-[0.24em] uppercase text-[#8d8d8d] hover:text-[#1535C2] transition-all duration-300"
+                style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
               >
                 {link.label}
               </button>
@@ -77,20 +79,21 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-<div className="hidden md:flex items-center gap-3">
-  <button
-    onClick={toggleLang}
-    className="text-[11px] tracking-[0.2em] uppercase text-[#8d8d8d] hover:text-[#1535C2] transition-colors duration-300 border border-[#e0e0e0] px-4 py-2 hover:border-[#1535C2]"
-  >
-    {lang === "en" ? "عربي" : "EN"}
-  </button>
-  <button
-    onClick={() => handleNav("/#contact")}
-    className="btn-primary"
-  >
-    {lang === "en" ? "Start A Campaign" : "ابدأ حملتك"}
-  </button>
-</div>
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleLang}
+              className="text-[11px] tracking-[0.2em] uppercase text-[#8d8d8d] hover:text-[#1535C2] transition-colors duration-300 border border-[#e0e0e0] px-4 py-2 hover:border-[#1535C2]"
+            >
+              {lang === "en" ? "عربي" : "EN"}
+            </button>
+            <button
+              onClick={() => handleNav("/#contact")}
+              className="btn-primary"
+            >
+              {t("nav.startCampaign")}
+            </button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -122,6 +125,7 @@ export default function Navigation() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+            dir={lang === "ar" ? "rtl" : "ltr"}
           >
             <div className="absolute top-7 left-7">
               <ThinkwayLogo variant="dark" />
@@ -135,6 +139,7 @@ export default function Navigation() {
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 onClick={() => handleNav(link.href)}
                 className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
+                style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
               >
                 {link.label}
               </motion.button>
@@ -147,8 +152,20 @@ export default function Navigation() {
               onClick={() => handleNav("/#contact")}
               className="mt-6 bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.22em] text-[11px]"
             >
-              Start A Campaign
+              {t("nav.startCampaign")}
             </motion.button>
+
+            {/* Language toggle in mobile menu */}
+            <motion.button
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: (navLinks.length + 1) * 0.08, duration: 0.4 }}
+              onClick={toggleLang}
+              className="text-[13px] tracking-[0.2em] uppercase text-[#8d8d8d] border border-[#e0e0e0] px-6 py-3"
+            >
+              {lang === "en" ? "عربي" : "EN"}
+            </motion.button>
+
           </motion.div>
         )}
       </AnimatePresence>
