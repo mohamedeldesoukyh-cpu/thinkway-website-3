@@ -88,13 +88,13 @@ export default function Creators() {
     <section id="creators" ref={ref} className="section-padding bg-white" dir={lang === "ar" ? "rtl" : "ltr"}>
       <div className="container-custom">
 
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className={`flex flex-col md:flex-row md:items-end justify-between gap-8 ${lang === "ar" ? "mb-6" : "mb-16"}`}>
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className={`flex flex-col md:flex-row md:items-end justify-between gap-2 ${lang === "ar" ? "mb-2" : "mb-16"}`}
           <div>
-            <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+            <div className={`text-[10px] tracking-[0.3em] text-[#1535C2] uppercase flex items-center gap-4 ${lang === "ar" ? "mb-1" : "mb-5"}`}>
               <div className="w-6 h-[1px] bg-[#1535C2]" />
               {t("creators.eyebrow")}
             </div>
-            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: lang === "ar" ? "clamp(22px, 3vw, 42px)" : "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: lang === "ar" ? "clamp(16px, 2vw, 28px)" : "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", lineHeight: "1.2", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
   {t("creators.title")}<br /><span className="text-[#1535C2]">{t("creators.title2")}</span>
 </h2>
           </div>
