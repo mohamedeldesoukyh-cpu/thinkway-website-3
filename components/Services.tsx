@@ -230,7 +230,7 @@ export default function Services() {
               initial={{ opacity: 0, x: -16 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.1, duration: 0.7 }}
-              className="mb-10"
+              className="mb-20"
             >
               
               <h3
@@ -260,7 +260,7 @@ export default function Services() {
               initial={{ opacity: 0, x: 16 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="mb-10"
+              className="mb-20"
             >
               
               <h3
