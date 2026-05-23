@@ -169,7 +169,7 @@ function AIChat() {
                     maxWidth: "85%",
                     padding: "12px 16px",
                     borderRadius: "24px",
-                    fontSize: i === 0 ? "12px" : m.role === "user" ? "10px" : "14px",
+                    fontSize: i === 0 ? "12px" : "14px",
                     lineHeight: m.role === "user" ? "1.4" : "1.7",
                     background: m.role === "user" ? "#1535C2" : "white",
                     color: m.role === "user" ? "white" : "#111",
