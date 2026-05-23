@@ -159,7 +159,7 @@ export default function Hero() {
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
+                  className={`block font-black uppercase text-[#0a0a0a] ${lang === "ar" ? "leading-[1.3]" : "leading-[0.9]"}`}
                   style={{
                     fontSize: lang === "ar" ? "clamp(24px, 3.2vw, 48px)" : "clamp(38px, 5.5vw, 76px)",
                     letterSpacing: lang === "ar" ? "-0.01em" : "-0.03em",
