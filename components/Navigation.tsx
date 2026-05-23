@@ -61,6 +61,7 @@ export default function Navigation() {
           borderBottom: "1px solid rgba(0,0,0,0.04)",
         }}
         dir={lang === "ar" ? "rtl" : "ltr"}
+      >
         <div className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] px-4 lg:px-12 ${lang === "ar" ? "flex-row-reverse pr-4 lg:pr-12 pl-10 lg:pl-16" : "pl-10 lg:pl-16 pr-4 lg:pr-12"}`}>
           {/* LOGO */}
           <a
