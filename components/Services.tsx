@@ -188,27 +188,22 @@ export default function Services() {
 
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <div className="text-[10px] tracking-[0.3em] text-[#7b9fff] uppercase mb-5 flex items-center gap-4">
-            <div className="w-6 h-[1px] bg-[#1535C2]" />
-            What We Do
-          </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h2
-              className="font-black uppercase text-white leading-[0.9]"
-              style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
-            >
-              SERVICES
-            </h2>
-            <p className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Two powerful disciplines, one agency — built for brands that demand measurable outcomes.
-            </p>
-          </div>
-        </motion.div>
+  initial={{ opacity: 0, x: -16 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ delay: 0.1, duration: 0.7 }}
+  className="flex items-center gap-3 mb-6"
+>
+  <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
+  <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
+    Influencer Marketing
+  </span>
+  <span
+    className="text-[8px] tracking-[0.18em] uppercase px-2 py-1 ml-2"
+    style={{ background: "rgba(21,53,194,0.3)", color: "#7b9fff", borderRadius: "4px" }}
+  >
+    AI-Powered
+  </span>
+</motion.div>
 
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
