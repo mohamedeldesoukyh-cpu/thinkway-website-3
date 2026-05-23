@@ -116,14 +116,38 @@ export default function Navigation() {
 
         </div>
       </motion.nav>
-      {/* Mobile Language Switch */}
-<button
-  onClick={toggleLang}
-  className="md:hidden h-[36px] min-w-[42px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
-  style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
->
-  {lang === "en" ? "عربي" : "EN"}
-</button>
+      {/* Mobile Actions */}
+<div className="lg:hidden flex items-center gap-3">
+
+  {/* Mobile Language Switch */}
+  <button
+    onClick={toggleLang}
+    className="h-[36px] min-w-[42px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
+    style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+  >
+    {lang === "en" ? "عربي" : "EN"}
+  </button>
+
+  {/* Mobile Menu Button */}
+  <button
+    onClick={() => setMenuOpen(!menuOpen)}
+    className="flex flex-col gap-[5px] p-2"
+  >
+    <motion.span
+      animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+      className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
+    />
+    <motion.span
+      animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+      className="block w-6 h-[1px] bg-[#0a0f1e]"
+    />
+    <motion.span
+      animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+      className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
+    />
+  </button>
+
+</div>
 
       {/* MOBILE MENU */}
       <AnimatePresence>
