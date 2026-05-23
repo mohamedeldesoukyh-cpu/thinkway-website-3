@@ -85,7 +85,7 @@ export default function SOOH() {
           <span className="text-[10px] tracking-[0.35em] text-[#7b9fff] uppercase" style={fontStyle}>{t("sooh.eyebrow")}</span>
         </motion.div>
 
-        <motion.div style={{ y: textY }} className="mb-[320px]">
+        <motion.div style={{ y: textY }} className={lang === "ar" ? "mb-[160px]" : "mb-[320px]"}>
           {headline.map((word, wi) => (
             <div key={wi} style={{ overflow: "hidden" }}>
               <motion.h2
@@ -117,7 +117,8 @@ export default function SOOH() {
           <div className="flex flex-col justify-center gap-12 lg:pl-8">
             {BIG_STATS.map((s, i) => (
               <motion.div key={s.labelKey} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 + i * 0.15, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-                <div className="font-black leading-none tabular-nums" style={{ fontSize: "clamp(52px, 7vw, 96px)", letterSpacing: "-0.04em", color: "#1535C2", textShadow: "0 0 60px rgba(21,53,194,0.4)" }}>
+                <div className="font-black leading-none tabular-nums"
+style={{ fontSize: lang === "ar" ? "clamp(36px, 5vw, 72px)" : "clamp(52px, 7vw, 96px)", letterSpacing: "-0.04em", color: "#1535C2", textShadow: "0 0 60px rgba(21,53,194,0.4)" }}>
                   <AnimCounter to={s.val} suffix={s.suffix} />
                 </div>
                 <div className="text-[9px] tracking-[0.28em] uppercase mt-2" style={{ color: "rgba(255,255,255,0.35)", ...fontStyle }}>{t(s.labelKey)}</div>
