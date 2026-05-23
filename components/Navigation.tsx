@@ -157,16 +157,7 @@ export default function Navigation() {
   {lang === "en" ? "عربي" : "EN"}
 </motion.button>
 
-            {/* Language toggle in mobile menu */}
-            <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: (navLinks.length + 1) * 0.08, duration: 0.4 }}
-              onClick={toggleLang}
-              className="text-[13px] tracking-[0.2em] uppercase text-[#8d8d8d] border border-[#e0e0e0] px-6 py-3"
-            >
-              {lang === "en" ? "عربي" : "EN"}
-            </motion.button>
+            
 
           </motion.div>
         )}
