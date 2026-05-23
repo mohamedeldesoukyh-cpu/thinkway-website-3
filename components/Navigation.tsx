@@ -22,29 +22,19 @@ export default function Navigation() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
-
     window.addEventListener("scroll", onScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleNav = (href: string) => {
     setMenuOpen(false);
-
-    if (href.startsWith("/#")) {
-      window.location.href = href;
-      return;
-    }
-
-    if (href.startsWith("/")) {
-      window.location.href = href;
-      return;
-    }
-
-    document.querySelector(href)?.scrollIntoView({
-      behavior: "smooth",
-    });
+    if (href.startsWith("/#")) { window.location.href = href; return; }
+    if (href.startsWith("/")) { window.location.href = href; return; }
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const isAr = lang === "ar";
+  const fontAr = { fontFamily: isAr ? "var(--font-cairo)" : "inherit" };
 
   return (
     <>
@@ -54,35 +44,38 @@ export default function Navigation() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="sticky top-0 left-0 right-0 z-[100] transition-all duration-500 shadow-sm"
         style={{
-          background: scrolled
-            ? "rgba(255,255,255,0.98)"
-            : "rgba(255,255,255,0.92)",
+          background: scrolled ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.92)",
           backdropFilter: "blur(20px)",
           borderBottom: "1px solid rgba(0,0,0,0.04)",
         }}
-        dir={lang === "ar" ? "rtl" : "ltr"}
+        dir={isAr ? "rtl" : "ltr"}
       >
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "82px", width: "100%", maxWidth: "1440px", margin: "0 auto", flexDirection: lang === "ar" ? "row-reverse" : "row", paddingLeft: lang === "ar" ? "48px" : "40px", paddingRight: lang === "ar" ? "40px" : "48px" }}>
-          <a href="/"
-            className="block shrink-0"
-            
-          >
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "82px",
+          width: "100%",
+          maxWidth: "1440px",
+          margin: "0 auto",
+          flexDirection: isAr ? "row-reverse" : "row",
+          paddingLeft: isAr ? "48px" : "40px",
+          paddingRight: isAr ? "40px" : "48px",
+        }}>
+
+          {/* LOGO */}
+          <a href="/" className="block shrink-0">
             <ThinkwayLogo variant="dark" />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10 justify-center" >
+          <div className="hidden lg:flex items-center gap-10 justify-center">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
                 className="text-[11px] tracking-[0.24em] uppercase text-[#8d8d8d] hover:text-[#1535C2] transition-all duration-300"
-                style={{
-                  fontFamily:
-                    lang === "ar"
-                      ? "var(--font-cairo)"
-                      : "inherit",
-                }}
+                style={fontAr}
               >
                 {link.label}
               </button>
@@ -90,34 +83,19 @@ export default function Navigation() {
           </div>
 
           {/* RIGHT SIDE ACTIONS */}
-          <div className="flex items-center gap-3 shrink-0" >
+          <div className="flex items-center gap-3 shrink-0">
 
-            {/* Desktop CTA */}
+            {/* Desktop actions */}
             <div className="hidden lg:flex items-center gap-3" style={{ flexDirection: "row" }}>
-
-              {/* Desktop Language Switch */}
               <button
                 onClick={toggleLang}
                 className="h-[38px] min-w-[44px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center rounded-none"
-                style={{
-                  fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit",
-                }}
+                style={fontAr}
               >
-                {lang === "en" ? "عربي" : "EN"}
+                {isAr ? "EN" : "عربي"}
               </button>
-
-              {/* CTA Button */}
-              <button
-                className="btn-primary"
-              >
+              <button onClick={() => handleNav("/#contact")} className="btn-primary">
                 {t("nav.startCampaign")}
-              </button>
-              <button
-                onClick={toggleLang}
-                className="h-[38px] min-w-[44px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center rounded-none"
-                style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
-              >
-                {lang === "en" ? "\u0639\u0631\u0628\u064a" : "EN"}
               </button>
             </div>
 
@@ -125,36 +103,62 @@ export default function Navigation() {
             <button
               onClick={toggleLang}
               className="lg:hidden h-[36px] min-w-[42px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
-              style={{
-                fontFamily:
-                  lang === "ar"
-                    ? "var(--font-cairo)"
-                    : "inherit",
-              }}
+              style={fontAr}
             >
-              {lang === "en" ? "عربي" : "EN"}
+              {isAr ? "EN" : "عربي"}
             </button>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden flex shrink-0 flex-col gap-[5px] p-2"
+            <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden flex shrink-0 flex-col gap-[5px] p-2">
+              <motion.span animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }} className="block w-6 h-[1px] bg-[#0a0f1e] origin-center" />
+              <motion.span animate={menuOpen ? { opacity: 0 } : { opacity: 1 }} className="block w-6 h-[1px] bg-[#0a0f1e]" />
+              <motion.span animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }} className="block w-6 h-[1px] bg-[#0a0f1e] origin-center" />
+            </button>
+
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+            dir={isAr ? "rtl" : "ltr"}
+          >
+            <div className={`absolute top-7 ${isAr ? "right-7" : "left-7"}`}>
+              <ThinkwayLogo variant="dark" />
+            </div>
+            {navLinks.map((link, i) => (
+              <motion.button
+                key={link.href}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                onClick={() => handleNav(link.href)}
+                className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
+                style={fontAr}
+              >
+                {link.label}
+              </motion.button>
+            ))}
+            <motion.button
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: (navLinks.length + 1) * 0.08, duration: 0.4 }}
+              onClick={toggleLang}
+              className="h-[44px] px-6 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[11px] tracking-[0.18em] uppercase flex items-center justify-center"
+              style={fontAr}
             >
-              <motion.span
-                animate={
-                  menuOpen
-                    ? { rotate: 45, y: 7 }
-                    : { rotate: 0, y: 0 }
-                }
-                className="block w-6 h-[1px] bg-[#0a0f1e] origin-center"
-              />
-
-              <motion.span
-                animate={
-                  menuOpen
-                    ? { opacity: 0 }
-                    : { opacity: 1 }
-                }
-                className="block w-6 h-[1px] bg-[#0a0f1e]"
-              />
-
+              {isAr ? "EN" : "عربي"}
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
