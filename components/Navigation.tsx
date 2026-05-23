@@ -67,9 +67,12 @@ export default function Navigation() {
           className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] px-4 lg:px-12"
         >
           {/* LOGO */}
-          <a href="/" className="block">
-            <ThinkwayLogo variant="dark" />
-          </a>
+          <a
+  href="/"
+  className="block shrink-0 max-w-[140px] lg:max-w-none"
+>
+  <ThinkwayLogo variant="dark" />
+</a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-10 justify-center">
