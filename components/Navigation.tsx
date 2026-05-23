@@ -91,7 +91,7 @@ export default function Navigation() {
           </div>
 
           {/* RIGHT SIDE ACTIONS */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
@@ -122,7 +122,7 @@ export default function Navigation() {
             {/* Mobile Language Switch */}
             <button
               onClick={toggleLang}
-              className="lg:hidden h-[36px] min-w-[42px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
+              className="lg:hidden flex h-[36px] min-w-[42px] items-center justify-center px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center"
               style={{
                 fontFamily:
                   lang === "ar"
@@ -136,7 +136,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden flex flex-col gap-[5px] p-2"
+              className="lg:hidden flex shrink-0 flex-col gap-[5px] p-2"
             >
               <motion.span
                 animate={
