@@ -222,12 +222,15 @@ export default function Services() {
               className="flex items-center gap-3 mb-6"
             >
               <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-              <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
-                Influencer Marketing
-              </span>
-            </motion.div>
-            <div>
-              {influencerServices.map((s, i) => (
+<span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
+  Influencer Marketing
+</span>
+<span
+  className="text-[8px] tracking-[0.18em] uppercase px-2 py-1 ml-2"
+  style={{ background: "rgba(21,53,194,0.3)", color: "#7b9fff", borderRadius: "4px" }}
+>
+  AI-Powered
+</span>              {influencerServices.map((s, i) => (
                 <ServiceItem key={s.num} s={s} i={i} hovered={hovered} setHovered={setHovered} idx={i} />
               ))}
             </div>

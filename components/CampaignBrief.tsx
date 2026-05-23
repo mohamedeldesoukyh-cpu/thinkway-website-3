@@ -370,11 +370,14 @@ export default function CampaignBrief() {
                   </div>
 
                   {/* SUBMIT */}
-                  <div className="p-6">
-                    <button
-                      type="submit"
-                      className="btn-primary w-full justify-center"
-                    >
+<div className="p-6">
+  <p className="text-[10px] tracking-[0.1em] uppercase text-[#999] text-center mb-4">
+    ✦ Our AI matches your brief with the right creators within 24 hours
+  </p>
+  <button
+    type="submit"
+    className="btn-primary w-full justify-center"
+  >
                       Submit Brief
 
                       <svg

@@ -54,8 +54,9 @@ export default function Manifesto() {
               <div className="w-[1px] h-20 bg-gradient-to-b from-[#1535C2] to-transparent shrink-0 mt-1" />
               <p className="text-[11px] tracking-[0.1em] uppercase leading-[2.4] text-[#999] max-w-sm">
                 We don&apos;t just run campaigns — we build influence.
-                Our network of creators, data-driven strategy, and creative execution
-                deliver measurable impact for brands across the region.
+AI-assisted strategy. Human-led execution. Our network of creators,
+data intelligence, and creative direction deliver measurable impact
+for brands across the region.
               </p>
             </div>
 
