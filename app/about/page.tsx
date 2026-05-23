@@ -35,13 +35,18 @@ export default function AboutPage() {
                 {t("about.eyebrow")}
               </p>
               <h1
-                className="font-black uppercase leading-[0.9] text-black"
-                style={{ fontSize: "clamp(56px,8vw,120px)", letterSpacing: "-0.05em", ...fontAr }}
-              >
-                {t("about.title1")}
-                <br />
-                <span className="text-[#1535C2]">{t("about.title2")}</span>
-              </h1>
+  className="font-black uppercase text-black"
+  style={{
+    fontSize: isAr ? "clamp(80px,14vw,180px)" : "clamp(56px,8vw,120px)",
+    letterSpacing: isAr ? "-0.03em" : "-0.05em",
+    lineHeight: isAr ? "0.85" : "0.9",
+    fontFamily: isAr ? "var(--font-cairo)" : "inherit",
+  }}
+>
+  {t("about.title1")}
+  <br />
+  <span className="text-[#1535C2]">{t("about.title2")}</span>
+</h1>
             </div>
 
             {/* INTRO */}
