@@ -154,7 +154,7 @@ export default function Hero() {
 
           <div className="overflow-hidden">
             {headline.map((line, i) => (
-              <div key={i} style={{ overflow: "hidden" }}>
+  <div key={i} style={{ overflow: "visible" }}>
                 <motion.h1
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
