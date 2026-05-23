@@ -41,7 +41,7 @@ export default function CreatorProgram() {
               <div className="w-6 h-[1px] bg-[#1535C2]" />
               {t("program.eyebrow")}
             </div>
-            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em", ...fontStyle }}>
+            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: lang === "ar" ? "clamp(26px, 3.5vw, 52px)" : "clamp(36px, 5vw, 70px)", letterSpacing: "-0.04em", ...fontStyle }}>
               {t("program.title")}
               <br />
               <span className="text-[#1535C2]">{t("program.title2")}</span>

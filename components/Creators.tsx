@@ -88,7 +88,7 @@ export default function Creators() {
     <section id="creators" ref={ref} className="section-padding bg-white" dir={lang === "ar" ? "rtl" : "ltr"}>
       <div className="container-custom">
 
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className={`flex flex-col md:flex-row md:items-end justify-between gap-8 ${lang === "ar" ? "mb-6" : "mb-16"}`}>
           <div>
             <div className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase mb-5 flex items-center gap-4" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
               <div className="w-6 h-[1px] bg-[#1535C2]" />

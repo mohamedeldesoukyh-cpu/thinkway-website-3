@@ -39,7 +39,7 @@ export default function Clients() {
             </div>
             <h2
               className="font-black uppercase text-[#0a0f1e] leading-[0.9]"
-              style={{ fontSize: "clamp(28px, 3.5vw, 50px)", letterSpacing: "-0.03em", ...fontStyle }}
+              style={{ fontSize: lang === "ar" ? "clamp(20px, 2.5vw, 38px)" : "clamp(28px, 3.5vw, 50px)", letterSpacing: "-0.03em", ...fontStyle }}
             >
               {lang === "ar" ? "علامات تجارية" : "BRANDS WE'RE"}<br />
               <span className="text-[#1535C2]">{lang === "ar" ? "نفخر بخدمتها" : "PROUD TO SERVE"}</span>

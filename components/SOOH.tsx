@@ -93,7 +93,7 @@ export default function SOOH() {
                 animate={inView ? { y: 0, opacity: 1 } : {}}
                 transition={{ delay: 0.1 + wi * 0.14, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="font-black uppercase leading-[1] block"
-                style={{ fontSize: "clamp(52px, 9vw, 130px)", letterSpacing: "-0.04em", color: wi === 2 ? "#1535C2" : "rgba(255,255,255,0.92)", textShadow: "0 4px 60px rgba(0,0,0,0.5)", ...fontStyle }}
+                style={{ fontSize: lang === "ar" ? "clamp(36px, 6vw, 90px)" : "clamp(52px, 9vw, 130px)", letterSpacing: "-0.04em", color: wi === 2 ? "#1535C2" : "rgba(255,255,255,0.92)", textShadow: "0 4px 60px rgba(0,0,0,0.5)", ...fontStyle }}
               >
                 {word}
               </motion.h2>
