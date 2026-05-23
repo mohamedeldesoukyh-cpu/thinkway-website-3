@@ -178,7 +178,7 @@ useEffect(() => {
 
             {/* Messages */}
             <div style={{ flex: 1, overflowY: "auto", padding: "20px", display: "flex", flexDirection: "column", gap: "16px", background: "#fafafa" }}>
-              {messages.map((m, i) => (
+              {messages.map((m: {role: string; content: string}, i: number) => (
                 <div key={i} style={{ display: "flex", justifyContent: m.role === "user" ? "flex-end" : "flex-start" }}>
                   <div style={{
                     maxWidth: "85%",
