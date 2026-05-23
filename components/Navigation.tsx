@@ -79,7 +79,7 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <button
   onClick={toggleLang}
   className="h-[38px] min-w-[44px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center rounded-none"
