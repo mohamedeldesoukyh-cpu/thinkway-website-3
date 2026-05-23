@@ -33,13 +33,7 @@ const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
 export default function Footer() {
   return (
     <footer className="bg-[#f8f8f8] border-t border-[#ebebeb] relative overflow-hidden">
-      <Image
-        src="/media/footer-texture.jpg"
-        alt=""
-        fill
-        className="object-cover object-center opacity-[0.04] pointer-events-none"
-        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-      />
+      <Image src="/media/footer-texture.jpg" alt="" fill className="object-cover object-center opacity-[0.04] pointer-events-none" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
 
       <div className="container-custom py-20 relative z-10 text-center">
 
@@ -52,33 +46,11 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 justify-center">
-            
-              href="https://www.instagram.com/thinkway_media/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden"
-            >
-              <Image
-                src="/media/Instagram.svg.png"
-                alt="Instagram"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
+            <a href="https://www.instagram.com/thinkway_media/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden">
+              <Image src="/media/Instagram.svg.png" alt="Instagram" width={20} height={20} className="object-contain" />
             </a>
-            
-              href="https://www.linkedin.com/company/thinkwaymedia/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden"
-            >
-              <Image
-                src="/media/new-LinkedIn-icon-blue-png-large-size.png"
-                alt="LinkedIn"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
+            <a href="https://www.linkedin.com/company/thinkwaymedia/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden">
+              <Image src="/media/new-LinkedIn-icon-blue-png-large-size.png" alt="LinkedIn" width={20} height={20} className="object-contain" />
             </a>
           </div>
         </div>
@@ -91,16 +63,9 @@ export default function Footer() {
                 {links.map((item) => (
                   <li key={item.label} className="text-center">
                     {item.anchor ? (
-                      
-                        href={item.anchor}
-                        className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none"
-                      >
-                        {item.label}
-                      </a>
+                      <a href={item.anchor} className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase hover:text-[#0a0a0a] transition-colors duration-300 cursor-none">{item.label}</a>
                     ) : (
-                      <span className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase cursor-none">
-                        {item.label}
-                      </span>
+                      <span className="text-[10px] tracking-[0.1em] text-[#bbb] uppercase cursor-none">{item.label}</span>
                     )}
                   </li>
                 ))}
@@ -124,16 +89,8 @@ export default function Footer() {
       </div>
 
       <div className="overflow-hidden border-t border-[#efefef] relative z-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="container-custom"
-        >
-          <div
-            className="font-black uppercase text-[#efefef] leading-none select-none pointer-events-none"
-            style={{ fontSize: "clamp(60px, 14vw, 200px)", letterSpacing: "-0.06em", lineHeight: 0.85 }}
-          >
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.5 }} className="container-custom">
+          <div className="font-black uppercase text-[#efefef] leading-none select-none pointer-events-none" style={{ fontSize: "clamp(60px, 14vw, 200px)", letterSpacing: "-0.06em", lineHeight: 0.85 }}>
             THINKWAY
           </div>
         </motion.div>
