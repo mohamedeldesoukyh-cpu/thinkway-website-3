@@ -53,7 +53,7 @@ export default function Navigation() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="sticky top-0 left-0 right-0 z-[100] transition-all duration-500 shadow-sm"
         style={{
-          background: scrolled ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.92)",
+          background: "rgba(255,255,255,1)",
           backdropFilter: "blur(20px)",
           borderBottom: "1px solid rgba(0,0,0,0.04)",
         }}
