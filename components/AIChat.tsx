@@ -67,7 +67,7 @@ useEffect(() => {
 
       if (data.leadCaptured) {
         setTimeout(() => {
-          setMessages(prev => [...prev, {
+          setMessages((prev: {role: string; content: string}[]) => [...prev, {
             role: "assistant",
             content: "✅ You're all set! Our team will reach out within 24 hours. Is there anything else I can help you with?",
           }]);
