@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cairo } from "next/font/google";
 import Script from "next/script";
 import AIWrapper from "@/components/AIWrapper";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const cairo = Cairo({
+  subsets: ["arabic"],
+  variable: "--font-cairo",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
@@ -47,9 +54,11 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} antialiased`}>
-        {children}
-        <AIWrapper />
+      <body className={`${inter.variable} ${cairo.variable} antialiased`}>
+        <LanguageProvider>
+          {children}
+          <AIWrapper />
+        </LanguageProvider>
       </body>
     </html>
   );

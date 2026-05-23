@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "creators": "Creators",
+    "results": "Results",
+    "sooh": "SOOH",
+    "program": "Program",
+    "contactUs": "Contact Us",
+    "startCampaign": "Start A Campaign"
+  },
+  "hero": {
+    "eyebrow": "Influencer Marketing · Global Network",
+    "line1": "YOUR BRAND",
+    "line2": "DESERVES",
+    "line3": "MORE THAN",
+    "line4": "ADS",
+    "sub": "We connect brands with high-impact creators to drive real results. From awareness to conversion — we build campaigns that perform.",
+    "cta1": "Start a Campaign",
+    "cta2": "View Creators"
+  },
+  "footer": {
+    "tagline": "Where influence meets strategy. We build campaigns that move culture — and move product.",
+    "copyright": "© 2026 THINKWAY Agency. All rights reserved.",
+    "agency": "Agency",
+    "services": "Services",
+    "network": "Network",
+    "connect": "Connect"
+  }
+}

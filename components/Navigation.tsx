@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThinkwayLogo from "@/components/ThinkwayLogo";
+import { useLang } from "@/components/LanguageProvider";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -18,6 +19,7 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, toggleLang } = useLang();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -75,15 +77,20 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex">
-            <button
-              onClick={() => handleNav("/#contact")}
-              className="btn-primary"
-            >
-              Start A Campaign
-            </button>
-          </div>
-
+<div className="hidden md:flex items-center gap-3">
+  <button
+    onClick={toggleLang}
+    className="text-[11px] tracking-[0.2em] uppercase text-[#8d8d8d] hover:text-[#1535C2] transition-colors duration-300 border border-[#e0e0e0] px-4 py-2 hover:border-[#1535C2]"
+  >
+    {lang === "en" ? "عربي" : "EN"}
+  </button>
+  <button
+    onClick={() => handleNav("/#contact")}
+    className="btn-primary"
+  >
+    {lang === "en" ? "Start A Campaign" : "ابدأ حملتك"}
+  </button>
+</div>
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
