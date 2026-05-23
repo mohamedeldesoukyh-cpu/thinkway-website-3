@@ -223,7 +223,7 @@ export default function Services() {
   </div>
 </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mt-32">
 
           <div>
             <motion.div
