@@ -63,7 +63,7 @@ export default function Navigation() {
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
         <div
-          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] pl-10 pr-4 lg:pl-16 lg:pr-12"
+          className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] ${lang === "ar" ? "pr-10 pl-4 lg:pr-16 lg:pl-12" : "pl-10 pr-4 lg:pl-16 lg:pr-12"}`}
         >
           {/* LOGO */}
           <a
@@ -184,7 +184,7 @@ export default function Navigation() {
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {/* Mobile Logo */}
-            <div className="absolute top-7 left-7">
+            <div className={`absolute top-7 ${lang === "ar" ? "right-7" : "left-7"}`}>
               <ThinkwayLogo variant="dark" />
             </div>
 
