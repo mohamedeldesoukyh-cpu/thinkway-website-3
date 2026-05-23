@@ -14,7 +14,7 @@ export default function ThinkwayLogo({ variant = "dark", className = "" }: Think
         style={{
           height: "36px",
           width: "auto",
-          filter: variant === "light" ? "brightness(0) invert(1)" : "brightness(0)",
+          filter: variant === "light" ? "brightness(0) invert(1)" : "brightness(0) invert(0)",
         }}
       />
     </div>
