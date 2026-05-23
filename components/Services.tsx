@@ -201,7 +201,7 @@ export default function Services() {
   initial={{ opacity: 0, y: 24 }}
   animate={inView ? { opacity: 1, y: 0 } : {}}
   transition={{ duration: 0.8 }}
-  className="mb-40"
+  className="mb-24"
 >
   <div className="text-[10px] tracking-[0.3em] text-[#7b9fff] uppercase mb-5 flex items-center gap-4">
     <div className="w-6 h-[1px] bg-[#1535C2]" />
@@ -230,7 +230,7 @@ export default function Services() {
               initial={{ opacity: 0, x: -16 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.1, duration: 0.7 }}
-              className="mb-40"
+              className="mb-24"
             >
               
               <h3
