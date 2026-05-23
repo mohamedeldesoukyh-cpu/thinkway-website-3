@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="container-custom" style={{ paddingTop: "120px", paddingBottom: "120px" }}>
 
             {/* HEADER */}
-            <div className="mb-24">
+            <div className="mb-24" style={{ marginTop: "-60px" }}>
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6 flex items-center gap-4" style={fontAr}>
                 <span className="w-6 h-[1px] bg-[#1535C2] inline-block" />
                 {t("about.eyebrow")}
