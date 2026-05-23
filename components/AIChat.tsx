@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function AIChat() {
@@ -16,6 +16,7 @@ function AIChat() {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 640);
@@ -23,6 +24,10 @@ function AIChat() {
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -181,6 +186,7 @@ function AIChat() {
                   Thinkway AI is thinking...
                 </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input */}
