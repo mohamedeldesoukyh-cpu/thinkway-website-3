@@ -94,9 +94,9 @@ export default function Creators() {
               <div className="w-6 h-[1px] bg-[#1535C2]" />
               {t("creators.eyebrow")}
             </div>
-            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
-              {t("creators.title")}<br /><span className="text-[#1535C2]">{t("creators.title2")}</span>
-            </h2>
+            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: lang === "ar" ? "clamp(22px, 3vw, 42px)" : "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+  {t("creators.title")}<br /><span className="text-[#1535C2]">{t("creators.title2")}</span>
+</h2>
           </div>
           <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.2] max-w-xs text-left md:text-right" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
             {t("creators.desc")}

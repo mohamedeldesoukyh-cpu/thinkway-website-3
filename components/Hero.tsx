@@ -135,7 +135,7 @@ export default function Hero() {
 
       {/* HERO CONTENT */}
       <motion.div className="container-custom relative z-20 pt-28 pb-16 w-full" style={{ opacity }}>
-        <div className="w-full max-w-3xl">
+        <div className={`w-full ${lang === "ar" ? "max-w-4xl" : "max-w-3xl"}`}>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
