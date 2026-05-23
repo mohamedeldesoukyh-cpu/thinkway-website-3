@@ -95,5 +95,26 @@
     "services": "Services",
     "network": "Network",
     "connect": "Connect"
+  },
+  "contact": {
+    "eyebrow": "Contact Us",
+    "title1": "LET'S BUILD",
+    "title2": "SOMETHING GREAT.",
+    "desc": "Whether you're planning a campaign, partnership, or collaboration — we'd love to hear from you.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "address": "Sheikh Zayed — Giza\nEgypt",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "you@company.com",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company Name",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "submit": "Send Message",
+    "bottom1": "Influence Meets",
+    "bottom2": "Performance.",
+    "backHome": "Back To Home"
   }
 }
