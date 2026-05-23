@@ -232,15 +232,7 @@ export default function Services() {
               transition={{ delay: 0.1, duration: 0.7 }}
               className="mb-10"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-                <span
-                  className="text-[10px] tracking-[0.3em] uppercase"
-                  style={{ color: "rgba(255,255,255,0.35)" }}
-                >
-                  01 — Service
-                </span>
-              </div>
+              
               <h3
                 className="font-black uppercase text-white leading-[0.9]"
                 style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em" }}
@@ -270,15 +262,7 @@ export default function Services() {
               transition={{ delay: 0.2, duration: 0.7 }}
               className="mb-10"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-                <span
-                  className="text-[10px] tracking-[0.3em] uppercase"
-                  style={{ color: "rgba(255,255,255,0.35)" }}
-                >
-                  02 — Service
-                </span>
-              </div>
+              
               <h3
                 className="font-black uppercase text-white leading-[0.9]"
                 style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em" }}
