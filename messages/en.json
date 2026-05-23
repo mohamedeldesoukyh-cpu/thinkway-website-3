@@ -44,24 +44,6 @@
     "influencer": "Influencer Marketing",
     "sooh": "Social Out-of-Home"
   },
-  "campaign": {
-    "eyebrow": "Let's Work Together",
-    "title1": "START YOUR",
-    "title2": "CAMPAIGN",
-    "desc": "Tell us about your brand and goals. Our team will review your brief and get back within 24 hours with a tailored proposal.",
-    "aiNote": "Our AI matches your brief with the right creators within 24 hours",
-    "submit": "Submit Brief",
-    "success": "Brief Received",
-    "successDesc": "Thank you. Our team will review your campaign brief and respond within 24 hours."
-  },
-  "footer": {
-    "tagline": "Where influence meets strategy. We build campaigns that move culture — and move product.",
-    "copyright": "© 2026 THINKWAY Agency. All rights reserved.",
-    "agency": "Agency",
-    "services": "Services",
-    "network": "Network",
-    "connect": "Connect"
-  ,
   "creators": {
     "eyebrow": "Our Network",
     "title": "OUR CREATOR",
@@ -97,11 +79,22 @@
     "limited": "Limited spots available per cohort.",
     "apply": "Apply to the Program"
   },
-  "services": {
-    "eyebrow": "What We Do",
-    "title": "SERVICES",
-    "desc": "AI-assisted strategy. Human-led execution. Built for brands that demand measurable outcomes.",
-    "influencer": "Influencer Marketing",
-    "sooh": "Social Out-of-Home"
-  }}
+  "campaign": {
+    "eyebrow": "Let's Work Together",
+    "title1": "START YOUR",
+    "title2": "CAMPAIGN",
+    "desc": "Tell us about your brand and goals. Our team will review your brief and get back within 24 hours with a tailored proposal.",
+    "aiNote": "Our AI matches your brief with the right creators within 24 hours",
+    "submit": "Submit Brief",
+    "success": "Brief Received",
+    "successDesc": "Thank you. Our team will review your campaign brief and respond within 24 hours."
+  },
+  "footer": {
+    "tagline": "Where influence meets strategy. We build campaigns that move culture — and move product.",
+    "copyright": "© 2026 THINKWAY Agency. All rights reserved.",
+    "agency": "Agency",
+    "services": "Services",
+    "network": "Network",
+    "connect": "Connect"
+  }
 }
