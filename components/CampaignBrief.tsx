@@ -72,7 +72,7 @@ export default function CampaignBrief() {
 
             <h2
               className="font-black uppercase text-[#0a0a0a] leading-[0.88] mb-8"
-              style={{ fontSize: lang === "ar" ? "clamp(28px, 4vw, 58px)" : "clamp(38px, 5.5vw, 78px)", letterSpacing: "-0.04em", ...fontStyle }}
+              style={{ fontSize: lang === "ar" ? "clamp(18px, 2.5vw, 36px)" : "clamp(38px, 5.5vw, 78px)", letterSpacing: "-0.04em", lineHeight: "1.2", ...fontStyle }}
             >
               {t("campaign.title1")}
               <br />
