@@ -101,8 +101,8 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
 
           <motion.h3
             className="font-bold uppercase leading-[1] mb-3 transition-colors duration-300"
-            style={{
-              fontSize: "clamp(16px, 1.8vw, 22px)",
+           style={{
+  fontSize: "clamp(13px, 1.2vw, 16px)",
               letterSpacing: "-0.02em",
               color: isHovered ? "#ffffff" : "rgba(255,255,255,0.85)",
               textShadow: "0 2px 20px rgba(0,0,0,0.5)",
@@ -211,16 +211,25 @@ export default function Services() {
 
           <div>
             <motion.div
-              initial={{ opacity: 0, x: -16 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.1, duration: 0.7 }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-              <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
-                Influencer Marketing
-              </span>
-            </motion.div>
+  initial={{ opacity: 0, x: -16 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ delay: 0.1, duration: 0.7 }}
+  className="mb-10"
+>
+  <div className="flex items-center gap-3 mb-3">
+    <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
+    <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>
+      01 — Service
+    </span>
+  </div>
+  <h3
+    className="font-black uppercase text-white leading-[0.9]"
+    style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
+  >
+    Influencer
+    <br />Marketing
+  </h3>
+</motion.div>
             <div>
               {influencerServices.map((s, i) => (
                 <ServiceItem key={s.num} s={s} i={i} hovered={hovered} setHovered={setHovered} idx={i} />
@@ -230,17 +239,25 @@ export default function Services() {
 
           <div>
             <motion.div
-              initial={{ opacity: 0, x: 16 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-              <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white">
-                Social Out-of-Home
-              </span>
-            </motion.div>
-            <div>
+  initial={{ opacity: 0, x: 16 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ delay: 0.2, duration: 0.7 }}
+  className="mb-10"
+>
+  <div className="flex items-center gap-3 mb-3">
+    <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
+    <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>
+      02 — Service
+    </span>
+  </div>
+  <h3
+    className="font-black uppercase text-white leading-[0.9]"
+    style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
+  >
+    Social
+    <br />Out-of-Home
+  </h3>
+</motion.div>
               {soohServices.map((s, i) => (
                 <ServiceItem key={s.num} s={s} i={i} hovered={hovered} setHovered={setHovered} idx={i + 10} />
               ))}
