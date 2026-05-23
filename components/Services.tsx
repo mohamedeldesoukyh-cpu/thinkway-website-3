@@ -56,7 +56,7 @@ const soohServices = [
     category: "Double Amplification",
     title: "Two Channels, One Campaign",
     desc: "Physical OOH impressions combined with social media reach — maximising brand visibility across both worlds.",
-    tags: ["Dual Channel", "10M+ Impressions", "3× Recall"],
+    tags: ["Dual Channel", "10M+ Impressions", "3x Recall"],
   },
   {
     num: "04",
@@ -67,9 +67,13 @@ const soohServices = [
   },
 ];
 
-function ServiceItem({ s, i, hovered, setHovered, idx }: {
-  s: typeof influencerServices[0]; i: number;
-  hovered: number | null; setHovered: (v: number | null) => void;
+function ServiceItem({
+  s, i, hovered, setHovered, idx,
+}: {
+  s: typeof influencerServices[0];
+  i: number;
+  hovered: number | null;
+  setHovered: (v: number | null) => void;
   idx: number;
 }) {
   const isHovered = hovered === idx;
@@ -81,50 +85,52 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
       transition={{ delay: i * 0.09, duration: 0.7 }}
       onMouseEnter={() => setHovered(idx)}
       onMouseLeave={() => setHovered(null)}
-      className="group py-8 px-2 border-b border-white/25 cursor-none"
+      className="group py-6 px-2 border-b border-white/10"
     >
       <div className="flex items-start gap-6">
         <span
           className="text-[10px] font-mono tracking-widest shrink-0 mt-1 transition-colors duration-300"
-          style={{ color: isHovered ? "#1535C2" : "rgba(255,255,255,0.4)" }}
+          style={{ color: isHovered ? "#1535C2" : "rgba(255,255,255,0.3)" }}
         >
           {s.num}
         </span>
 
         <div className="flex-1 min-w-0">
           <div
-            className="text-[9px] tracking-[0.28em] uppercase mb-2 transition-colors duration-300"
-            style={{ color: isHovered ? "#7b9fff" : "rgba(255,255,255,0.35)" }}
+            className="text-[9px] tracking-[0.28em] uppercase mb-1 transition-colors duration-300"
+            style={{ color: isHovered ? "#7b9fff" : "rgba(255,255,255,0.25)" }}
           >
             {s.category}
           </div>
 
-          <motion.h3
-            className="font-bold uppercase leading-[1] mb-3 transition-colors duration-300"
-           style={{
-  fontSize: "clamp(13px, 1.2vw, 16px)",
-              letterSpacing: "-0.02em",
-              color: isHovered ? "#ffffff" : "rgba(255,255,255,0.85)",
-              textShadow: "0 2px 20px rgba(0,0,0,0.5)",
+          <h3
+            className="font-semibold uppercase leading-[1] mb-3 transition-colors duration-300"
+            style={{
+              fontSize: "clamp(12px, 1vw, 14px)",
+              letterSpacing: "0.05em",
+              color: isHovered ? "#ffffff" : "rgba(255,255,255,0.6)",
             }}
           >
             {s.title}
-          </motion.h3>
+          </h3>
 
-          <motion.p
-            className="text-[10px] tracking-[0.06em] leading-[2] mb-4 max-w-md transition-all duration-400"
+          <div
             style={{
-              color: isHovered ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0)",
+              color: isHovered ? "rgba(255,255,255,0.65)" : "rgba(255,255,255,0)",
               height: isHovered ? "auto" : 0,
               overflow: "hidden",
+              fontSize: "10px",
+              lineHeight: "2",
+              letterSpacing: "0.06em",
+              transition: "all 0.4s",
             }}
           >
             {s.desc}
-          </motion.p>
+          </div>
 
           <div
-            className="flex flex-wrap gap-2 transition-all duration-400"
-            style={{ opacity: isHovered ? 1 : 0 }}
+            className="flex flex-wrap gap-2 mt-3"
+            style={{ opacity: isHovered ? 1 : 0, transition: "opacity 0.4s" }}
           >
             {s.tags.map((tag) => (
               <span
@@ -138,15 +144,19 @@ function ServiceItem({ s, i, hovered, setHovered, idx }: {
           </div>
         </div>
 
-        <motion.div
-          animate={{ x: isHovered ? 0 : -6, opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="shrink-0 mt-1"
+        <div
+          style={{
+            opacity: isHovered ? 1 : 0,
+            transform: isHovered ? "translateX(0)" : "translateX(-6px)",
+            transition: "all 0.3s",
+            flexShrink: 0,
+            marginTop: "4px",
+          }}
         >
-          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M1 7h12M7 1l6 6-6 6" stroke="#1535C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );
@@ -170,7 +180,10 @@ export default function Services() {
       >
         <video
           src={SERVICES_VIDEO}
-          autoPlay muted loop playsInline
+          autoPlay
+          muted
+          loop
+          playsInline
           onCanPlay={() => setVideoReady(true)}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           style={{ opacity: videoReady ? 0.4 : 0 }}
@@ -197,11 +210,14 @@ export default function Services() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2
               className="font-black uppercase text-white leading-[0.9]"
-              style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em" }}
             >
               SERVICES
             </h2>
-            <p className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p
+              className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
               AI-assisted strategy. Human-led execution. Built for brands that demand measurable outcomes.
             </p>
           </div>
@@ -211,55 +227,76 @@ export default function Services() {
 
           <div>
             <motion.div
-  initial={{ opacity: 0, x: -16 }}
-  animate={inView ? { opacity: 1, x: 0 } : {}}
-  transition={{ delay: 0.1, duration: 0.7 }}
-  className="mb-10"
->
-  <div className="flex items-center gap-3 mb-3">
-    <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-    <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>
-      01 — Service
-    </span>
-  </div>
-  <h3
-    className="font-black uppercase text-white leading-[0.9]"
-    style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
-  >
-    Influencer
-    <br />Marketing
-  </h3>
-</motion.div>
+              initial={{ opacity: 0, x: -16 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.1, duration: 0.7 }}
+              className="mb-10"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
+                <span
+                  className="text-[10px] tracking-[0.3em] uppercase"
+                  style={{ color: "rgba(255,255,255,0.35)" }}
+                >
+                  01 — Service
+                </span>
+              </div>
+              <h3
+                className="font-black uppercase text-white leading-[0.9]"
+                style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em" }}
+              >
+                Influencer
+                <br />Marketing
+              </h3>
+            </motion.div>
             <div>
               {influencerServices.map((s, i) => (
-                <ServiceItem key={s.num} s={s} i={i} hovered={hovered} setHovered={setHovered} idx={i} />
+                <ServiceItem
+                  key={s.num}
+                  s={s}
+                  i={i}
+                  hovered={hovered}
+                  setHovered={setHovered}
+                  idx={i}
+                />
               ))}
             </div>
           </div>
 
           <div>
             <motion.div
-  initial={{ opacity: 0, x: 16 }}
-  animate={inView ? { opacity: 1, x: 0 } : {}}
-  transition={{ delay: 0.2, duration: 0.7 }}
-  className="mb-10"
->
-  <div className="flex items-center gap-3 mb-3">
-    <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
-    <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>
-      02 — Service
-    </span>
-  </div>
-  <h3
-    className="font-black uppercase text-white leading-[0.9]"
-    style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
-  >
-    Social
-    <br />Out-of-Home
-  </h3>
-</motion.div>
+              initial={{ opacity: 0, x: 16 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.2, duration: 0.7 }}
+              className="mb-10"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-2 h-2 rounded-full bg-[#1535C2]" />
+                <span
+                  className="text-[10px] tracking-[0.3em] uppercase"
+                  style={{ color: "rgba(255,255,255,0.35)" }}
+                >
+                  02 — Service
+                </span>
+              </div>
+              <h3
+                className="font-black uppercase text-white leading-[0.9]"
+                style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em" }}
+              >
+                Social
+                <br />Out-of-Home
+              </h3>
+            </motion.div>
+            <div>
               {soohServices.map((s, i) => (
-                <ServiceItem key={s.num} s={s} i={i} hovered={hovered} setHovered={setHovered} idx={i + 10} />
+                <ServiceItem
+                  key={s.num}
+                  s={s}
+                  i={i}
+                  hovered={hovered}
+                  setHovered={setHovered}
+                  idx={i + 10}
+                />
               ))}
             </div>
           </div>
