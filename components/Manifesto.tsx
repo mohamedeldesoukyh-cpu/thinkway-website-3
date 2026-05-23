@@ -56,7 +56,7 @@ export default function Manifesto() {
             >
               {t("manifesto.line1")}
               <br />{t("manifesto.line2")}
-              <br /><em className="text-[#1535C2] not-italic font-light">{t("manifesto.line3")}</em>
+              <br /><em className="text-[#1535C2] not-italic font-black">{t("manifesto.line3")}</em>
               <br />{t("manifesto.line4")}
             </h2>
 
