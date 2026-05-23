@@ -198,7 +198,7 @@ export default function Services() {
     Influencer Marketing
   </span>
   <span
-    className="text-[8px] tracking-[0.18em] uppercase px-2 py-1 ml-2"
+    className="text-[8px] tracking-[0.18em] uppercase px-2 py-1"
     style={{ background: "rgba(21,53,194,0.3)", color: "#7b9fff", borderRadius: "4px" }}
   >
     AI-Powered
