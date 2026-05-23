@@ -66,15 +66,16 @@ export default function Navigation() {
           className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] ${lang === "ar" ? "pr-10 pl-4 lg:pr-16 lg:pl-12" : "pl-10 pr-4 lg:pl-16 lg:pr-12"}`}
         >
           {/* LOGO */}
-          <a
-  href="/"
-  className="block shrink-0 max-w-[140px] lg:max-w-none"
->
-  <ThinkwayLogo variant="dark" />
-</a>
+          
+            href="/"
+            className="block shrink-0 max-w-[140px] lg:max-w-none"
+            style={{ order: lang === "ar" ? 3 : 1 }}
+          >
+            <ThinkwayLogo variant="dark" />
+          </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10 justify-center">
+          <div className="hidden lg:flex items-center gap-10 justify-center" style={{ order: 2 }}>
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -93,7 +94,7 @@ export default function Navigation() {
           </div>
 
           {/* RIGHT SIDE ACTIONS */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 shrink-0" style={{ order: lang === "ar" ? 1 : 3 }}>
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
