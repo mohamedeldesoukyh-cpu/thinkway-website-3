@@ -198,30 +198,30 @@ export default function Services() {
       <div className="container-custom relative z-10">
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <div className="text-[10px] tracking-[0.3em] text-[#7b9fff] uppercase mb-5 flex items-center gap-4">
-            <div className="w-6 h-[1px] bg-[#1535C2]" />
-            What We Do
-          </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h2
-              className="font-black uppercase text-white leading-[0.9]"
-              style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em" }}
-            >
-              SERVICES
-            </h2>
-            <p
-              className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]"
-              style={{ color: "rgba(255,255,255,0.4)" }}
-            >
-              AI-assisted strategy. Human-led execution. Built for brands that demand measurable outcomes.
-            </p>
-          </div>
-        </motion.div>
+  initial={{ opacity: 0, y: 24 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.8 }}
+  className="mb-20"
+>
+  <div className="text-[10px] tracking-[0.3em] text-[#7b9fff] uppercase mb-5 flex items-center gap-4">
+    <div className="w-6 h-[1px] bg-[#1535C2]" />
+    What We Do
+  </div>
+  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+    <h2
+      className="font-black uppercase text-white leading-[0.9]"
+      style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em" }}
+    >
+      SERVICES
+    </h2>
+    <p
+      className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]"
+      style={{ color: "rgba(255,255,255,0.4)" }}
+    >
+      AI-assisted strategy. Human-led execution. Built for brands that demand measurable outcomes.
+    </p>
+  </div>
+</motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
