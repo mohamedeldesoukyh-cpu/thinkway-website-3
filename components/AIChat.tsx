@@ -4,13 +4,19 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function AIChat() {
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState(() => {
+  if (typeof window !== "undefined") {
+    const saved = localStorage.getItem("thinkway_chat");
+    if (saved) return JSON.parse(saved);
+  }
+  return [
     {
       role: "assistant",
       content:
         "Welcome to Thinkway AI. I'm your senior campaign strategist with 25+ years in MENA media. Tell me about your brand and I'll prescribe the right campaign strategy.",
     },
-  ]);
+  ];
+});
 
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -28,6 +34,15 @@ function AIChat() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+  useEffect(() => {
+  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages]);
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    localStorage.setItem("thinkway_chat", JSON.stringify(messages));
+  }
+}, [messages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
