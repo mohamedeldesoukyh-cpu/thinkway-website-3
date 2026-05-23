@@ -32,7 +32,7 @@ export default function ContactPage() {
               style={{
                 fontSize: isAr ? "clamp(16px,2vw,28px)" : "clamp(56px,7vw,110px)",
 letterSpacing: isAr ? "0em" : "-0.06em",
-lineHeight: isAr ? "2.2" : "0.88",
+lineHeight: isAr ? "3" : "0.88",
                 ...fontAr,
               }}
             >
