@@ -81,11 +81,12 @@ export default function Navigation() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <button
-              onClick={toggleLang}
-              className="text-[11px] tracking-[0.2em] uppercase text-[#8d8d8d] hover:text-[#1535C2] transition-colors duration-300 border border-[#e0e0e0] px-4 py-2 hover:border-[#1535C2]"
-            >
-              {lang === "en" ? "عربي" : "EN"}
-            </button>
+  onClick={toggleLang}
+  className="h-[38px] min-w-[44px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center rounded-none"
+  style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+>
+  {lang === "en" ? "عربي" : "EN"}
+</button>
             <button
               onClick={() => handleNav("/#contact")}
               className="btn-primary"
@@ -146,14 +147,15 @@ export default function Navigation() {
             ))}
 
             <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: navLinks.length * 0.08, duration: 0.4 }}
-              onClick={() => handleNav("/#contact")}
-              className="mt-6 bg-[#1535C2] text-white px-10 py-5 uppercase tracking-[0.22em] text-[11px]"
-            >
-              {t("nav.startCampaign")}
-            </motion.button>
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: (navLinks.length + 1) * 0.08, duration: 0.4 }}
+  onClick={toggleLang}
+  className="h-[44px] px-6 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[11px] tracking-[0.18em] uppercase flex items-center justify-center"
+  style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+>
+  {lang === "en" ? "عربي" : "EN"}
+</motion.button>
 
             {/* Language toggle in mobile menu */}
             <motion.button
