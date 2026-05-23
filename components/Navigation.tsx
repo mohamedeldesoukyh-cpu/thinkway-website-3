@@ -61,7 +61,7 @@ export default function Navigation() {
           borderBottom: "1px solid rgba(0,0,0,0.04)",
         }}
         dir={lang === "ar" ? "rtl" : "ltr"}
-      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "82px", width: "100%", maxWidth: "1440px", margin: "0 auto", flexDirection: lang === "ar" ? "row-reverse" : "row", paddingLeft: lang === "ar" ? "48px" : "40px", paddingRight: lang === "ar" ? "40px" : "48px" }}>
         <div className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] px-4 lg:px-12 ${lang === "ar" ? "flex-row-reverse pr-4 lg:pr-12 pl-10 lg:pl-16" : "pl-10 lg:pl-16 pr-4 lg:pr-12"}`}>
           {/* LOGO */}
           <a
