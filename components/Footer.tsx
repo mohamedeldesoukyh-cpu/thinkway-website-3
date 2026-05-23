@@ -46,11 +46,11 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 justify-center">
-            <a href="https://www.instagram.com/thinkway_media/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden">
-              <Image src="/media/Instagram.svg.png" alt="Instagram" width={20} height={20} className="object-contain" />
+            <a href="https://www.instagram.com/thinkway_media/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-all duration-300">
+              <Image src="/media/Instagram.svg.png" alt="Instagram" width={28} height={28} className="object-contain" />
             </a>
-            <a href="https://www.linkedin.com/company/thinkwaymedia/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-[#e0e0e0] bg-white flex items-center justify-center hover:border-[#1535C2] transition-all duration-300 overflow-hidden">
-              <Image src="/media/new-LinkedIn-icon-blue-png-large-size.png" alt="LinkedIn" width={20} height={20} className="object-contain" />
+            <a href="https://www.linkedin.com/company/thinkwaymedia/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-all duration-300">
+              <Image src="/media/new-LinkedIn-icon-blue-png-large-size.png" alt="LinkedIn" width={28} height={28} className="object-contain" />
             </a>
           </div>
         </div>
