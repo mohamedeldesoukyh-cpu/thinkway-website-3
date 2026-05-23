@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -66,7 +66,7 @@ export default function Navigation() {
           className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] ${lang === "ar" ? "pr-10 pl-4 lg:pr-16 lg:pl-12" : "pl-10 pr-4 lg:pl-16 lg:pr-12"}`}
         >
           {/* LOGO */}
-          
+          <a
             href="/"
             className="block shrink-0 max-w-[140px] lg:max-w-none"
             style={{ order: lang === "ar" ? 3 : 1 }}
