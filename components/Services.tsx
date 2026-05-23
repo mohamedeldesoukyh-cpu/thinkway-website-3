@@ -264,7 +264,7 @@ export default function Services() {
             >
               
               <h3
-                className="font-black uppercase text-white leading-[0.9]"
+                className="font-black uppercase text-white leading-[1.05]"
                 style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em" }}
               >
                 Social
