@@ -45,33 +45,25 @@ function CreatorCard({ cat, index, inView, lang }: { cat: typeof categoriesEn[0]
       <motion.div className="absolute inset-0" animate={{ scale: hovered ? 1.07 : 1 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
         <Image src={cat.image} alt={cat.title} fill className="object-cover" style={{ opacity: imgLoaded ? 1 : 0, transition: "opacity 0.8s ease" }} onLoad={() => setImgLoaded(true)} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
       </motion.div>
-
       <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.80) 100%)" }} />
-
       <motion.div className="absolute inset-0 pointer-events-none" animate={{ opacity: hovered ? 0.20 : 0 }} transition={{ duration: 0.4 }} style={{ background: `linear-gradient(180deg, transparent 40%, ${cat.accent}80 100%)` }} />
-
       <span className="absolute top-4 right-4 text-[10px] font-mono tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>{cat.id}</span>
-
       <motion.div className="absolute bottom-0 left-0 right-0 px-3 pb-4" animate={{ y: hovered ? -6 : 0 }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
         <motion.div className="text-[8px] tracking-[0.22em] uppercase font-medium mb-1 truncate" style={{ color: cat.accent, fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }} animate={{ opacity: hovered ? 1 : 0.7 }} transition={{ duration: 0.3 }}>
           {lang === "ar" ? "الفئة" : "Category"}
         </motion.div>
-
         <h3 className="font-bold text-white leading-[1.25] mb-2" style={{ fontSize: "clamp(11px, 1.4vw, 14px)", letterSpacing: "-0.01em", textShadow: "0 2px 12px rgba(0,0,0,0.6)", wordBreak: "break-word", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
           {cat.title}
         </h3>
-
         <motion.p className="leading-[1.7] mb-3 overflow-hidden" style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(9px, 0.85vw, 10px)", letterSpacing: "0.04em", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }} animate={{ opacity: hovered ? 1 : 0, maxHeight: hovered ? 80 : 0 }} transition={{ duration: 0.35 }}>
           {cat.desc}
         </motion.p>
-
         <motion.span className="tracking-[0.18em] uppercase font-medium flex items-center gap-1" style={{ color: cat.accent, fontSize: "clamp(8px, 0.75vw, 9px)" }} animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -8 }} transition={{ duration: 0.3 }}>
           <svg width="9" height="9" viewBox="0 0 14 14" fill="none" style={{ transform: lang === "ar" ? "scaleX(-1)" : "none" }}>
             <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.span>
       </motion.div>
-
       <motion.div className="absolute bottom-0 left-0 h-[2px]" style={{ background: cat.accent }} animate={{ width: hovered ? "100%" : "0%" }} transition={{ duration: 0.4 }} />
     </motion.div>
   );
@@ -81,24 +73,41 @@ export default function Creators() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10%" });
   const { t, lang } = useLang();
-
   const categories = lang === "ar" ? categoriesAr : categoriesEn;
 
   return (
     <section id="creators" ref={ref} className="section-padding bg-white" dir={lang === "ar" ? "rtl" : "ltr"}>
       <div className="container-custom">
-
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className={`flex flex-col md:flex-row md:items-end justify-between gap-2 ${lang === "ar" ? "mb-2" : "mb-16"}`}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className={`flex flex-col md:flex-row md:items-end justify-between gap-2 ${lang === "ar" ? "mb-4" : "mb-16"}`}
+        >
           <div>
-            <div className={`text-[10px] tracking-[0.3em] text-[#1535C2] uppercase flex items-center gap-4 ${lang === "ar" ? "mb-1" : "mb-5"}`}>
+            <div
+              className={`text-[10px] tracking-[0.3em] text-[#1535C2] uppercase flex items-center gap-4 ${lang === "ar" ? "mb-1" : "mb-5"}`}
+              style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+            >
               <div className="w-6 h-[1px] bg-[#1535C2]" />
               {t("creators.eyebrow")}
             </div>
-            <h2 className="font-black uppercase text-[#0a0a0a] leading-[0.9]" style={{ fontSize: lang === "ar" ? "clamp(16px, 2vw, 28px)" : "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", lineHeight: "1.2", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
-  {t("creators.title")}<br /><span className="text-[#1535C2]">{t("creators.title2")}</span>
-</h2>
+            <h2
+              className="font-black uppercase text-[#0a0a0a]"
+              style={{
+                fontSize: lang === "ar" ? "clamp(16px, 2vw, 26px)" : "clamp(30px, 4vw, 56px)",
+                letterSpacing: "-0.03em",
+                lineHeight: "1.1",
+                fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit",
+              }}
+            >
+              {t("creators.title")}<br /><span className="text-[#1535C2]">{t("creators.title2")}</span>
+            </h2>
           </div>
-          <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.2] max-w-xs text-left md:text-right" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+          <p
+            className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.2] max-w-xs text-left md:text-right"
+            style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+          >
             {t("creators.desc")}
           </p>
         </motion.div>
@@ -109,10 +118,15 @@ export default function Creators() {
           ))}
         </div>
 
-        <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.9, duration: 0.8 }} className="text-center text-[9px] tracking-[0.18em] text-[#ccc] uppercase mt-10" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="text-center text-[9px] tracking-[0.18em] text-[#ccc] uppercase mt-10"
+          style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+        >
           {t("creators.note")}
         </motion.p>
-
       </div>
     </section>
   );
