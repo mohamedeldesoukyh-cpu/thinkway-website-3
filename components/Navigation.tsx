@@ -62,20 +62,19 @@ export default function Navigation() {
         }}
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
-        <div
-          className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] ${lang === "ar" ? "pr-10 pl-4 lg:pr-16 lg:pl-12" : "pl-10 pr-4 lg:pl-16 lg:pr-12"}`}
+        <div className={`w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] ${lang === "ar" ? "flex-row-reverse" : ""}`}
         >
           {/* LOGO */}
           <a
             href="/"
             className="block shrink-0 pl-4 lg:pl-0"
-            style={{ order: lang === "ar" ? 3 : 1 }}
+            
           >
             <ThinkwayLogo variant="dark" />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10 justify-center" style={{ order: 2 }}>
+          <div className="hidden lg:flex items-center gap-10 justify-center" >
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -94,7 +93,7 @@ export default function Navigation() {
           </div>
 
           {/* RIGHT SIDE ACTIONS */}
-          <div className="flex items-center gap-3 shrink-0" style={{ order: lang === "ar" ? 1 : 3 }}>
+          <div className="flex items-center gap-3 shrink-0" >
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
