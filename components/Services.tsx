@@ -108,7 +108,7 @@ export default function Services() {
             {t("services.eyebrow")}
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
-            <h2 className="font-black uppercase text-white leading-[0.9]" style={{ fontSize: "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", ...fontStyle }}>
+            <h2 className="font-black uppercase text-white leading-[0.9]" style={{ fontSize: lang === "ar" ? "clamp(22px, 2.8vw, 40px)" : "clamp(30px, 4vw, 56px)", letterSpacing: "-0.03em", ...fontStyle }}>
               {t("services.title")}
             </h2>
             <p className="text-[10px] tracking-[0.1em] uppercase leading-[2.2] max-w-[280px]" style={{ color: "rgba(255,255,255,0.4)", ...fontStyle }}>
@@ -133,7 +133,7 @@ export default function Services() {
 
           <div>
             <motion.div initial={{ opacity: 0, x: 16 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.2, duration: 0.7 }} className="mb-40">
-              <h3 className="font-black uppercase text-white leading-[1.05]" style={{ fontSize: "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", ...fontStyle }}>
+              <h3 className="font-black uppercase text-white leading-[1.05]" style={{ fontSize: lang === "ar" ? "clamp(18px, 2vw, 32px)" : "clamp(28px, 3vw, 48px)", letterSpacing: "-0.03em", ...fontStyle }}>
                 {lang === "ar" ? "الإعلان الخارجي\nالاجتماعي" : "Social\nOut-of-Home"}
               </h3>
             </motion.div>
