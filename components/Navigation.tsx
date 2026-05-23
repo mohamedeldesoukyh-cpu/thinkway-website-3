@@ -64,8 +64,7 @@ export default function Navigation() {
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
         <div
-          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px]"
-          style={{ padding: "0 48px" }}
+          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] px-4 lg:px-12"
         >
           {/* LOGO */}
           <a href="/" className="block">
