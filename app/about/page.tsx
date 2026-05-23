@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="container-custom" style={{ paddingTop: "120px", paddingBottom: "120px" }}>
 
             {/* HEADER */}
-            <div className="mb-24" style={{ marginTop: "-60px" }}>
+            <div className="mb-12" style={{ marginTop: "0px" }}>
               <p className="uppercase tracking-[0.35em] text-[#1535C2] text-[10px] mb-6 flex items-center gap-4" style={fontAr}>
                 <span className="w-6 h-[1px] bg-[#1535C2] inline-block" />
                 {t("about.eyebrow")}
@@ -39,7 +39,7 @@ export default function AboutPage() {
   style={{
     fontSize: isAr ? "clamp(36px,5vw,72px)" : "clamp(56px,8vw,120px)",
     letterSpacing: isAr ? "-0.03em" : "-0.05em",
-    lineHeight: isAr ? "0.85" : "0.9",
+    lineHeight: isAr ? "1.1" : "0.9",
     fontFamily: isAr ? "var(--font-cairo)" : "inherit",
   }}
 >
