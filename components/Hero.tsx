@@ -68,7 +68,11 @@ export default function Hero() {
 
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.1) 100%)" }}
+          style={{
+            background: lang === "ar"
+              ? "linear-gradient(270deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.1) 100%)"
+              : "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.1) 100%)"
+          }}
         />
 
         <div
@@ -100,15 +104,18 @@ export default function Hero() {
 
       {/* FLOATING PLATFORMS */}
       <motion.div
-        className="absolute right-0 top-0 bottom-0 w-[42%] hidden lg:block z-10"
+        className={`absolute top-0 bottom-0 w-[42%] hidden lg:block z-10 ${lang === "ar" ? "left-0" : "right-0"}`}
         style={{ y, opacity }}
       >
         {platforms.map((p, i) => (
           <motion.div
             key={p.name}
             className="absolute"
-            style={{ top: `${18 + i * 19}%`, right: `${6 + (i % 2) * 10}%` }}
-            initial={{ opacity: 0, x: 60 }}
+            style={{
+              top: `${18 + i * 19}%`,
+              [lang === "ar" ? "left" : "right"]: `${6 + (i % 2) * 10}%`,
+            }}
+            initial={{ opacity: 0, x: lang === "ar" ? -60 : 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2 + i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
@@ -137,7 +144,10 @@ export default function Hero() {
             className="flex items-center gap-4 mb-10"
           >
             <div className="w-6 h-[1px] bg-[#1535C2]" />
-            <span className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase font-medium">
+            <span
+              className="text-[10px] tracking-[0.3em] text-[#1535C2] uppercase font-medium"
+              style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+            >
               {t("hero.eyebrow")}
             </span>
           </motion.div>
@@ -150,7 +160,11 @@ export default function Hero() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                   className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
-                  style={{ fontSize: "clamp(38px, 5.5vw, 76px)", letterSpacing: "-0.03em" }}
+                  style={{
+                    fontSize: lang === "ar" ? "clamp(28px, 4vw, 58px)" : "clamp(38px, 5.5vw, 76px)",
+                    letterSpacing: lang === "ar" ? "-0.01em" : "-0.03em",
+                    fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit",
+                  }}
                 >
                   {i === 3 ? (
                     <>{line}<span className="text-[#1535C2]">.</span></>
@@ -167,6 +181,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05 }}
             className="mt-8 text-[#888] text-[11px] tracking-[0.1em] uppercase leading-[2.2] max-w-md"
+            style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
           >
             {t("hero.sub")}
           </motion.p>
@@ -180,12 +195,14 @@ export default function Hero() {
             <button
               className="btn-primary"
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
             >
               {t("hero.cta1")}
             </button>
             <button
               className="btn-outline"
               onClick={() => document.querySelector("#creators")?.scrollIntoView({ behavior: "smooth" })}
+              style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
             >
               {t("hero.cta2")}
             </button>
