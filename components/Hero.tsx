@@ -135,7 +135,7 @@ export default function Hero() {
 
       {/* HERO CONTENT */}
       <motion.div className="container-custom relative z-20 pt-28 pb-16 w-full" style={{ opacity }}>
-        <div className={`w-full ${lang === "ar" ? "max-w-4xl" : "max-w-3xl"}`}>
+  <div className={`w-full ${lang === "ar" ? "max-w-2xl ml-auto pr-4" : "max-w-3xl"}`}>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <div className="overflow-hidden">
+          <div className={lang === "ar" ? "" : "overflow-hidden"}>
             {headline.map((line, i) => (
   <div key={i} style={{ overflow: "visible" }}>
                 <motion.h1
@@ -161,7 +161,7 @@ export default function Hero() {
                   transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                   className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
                   style={{
-                    fontSize: lang === "ar" ? "clamp(28px, 4vw, 58px)" : "clamp(38px, 5.5vw, 76px)",
+                    fontSize: lang === "ar" ? "clamp(24px, 3.2vw, 48px)" : "clamp(38px, 5.5vw, 76px)",
                     letterSpacing: lang === "ar" ? "-0.01em" : "-0.03em",
                     fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit",
                   }}
