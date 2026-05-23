@@ -63,7 +63,7 @@ export default function Navigation() {
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
         <div
-          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] px-4 lg:px-12"
+          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-[82px] pl-10 pr-4 lg:pl-16 lg:pr-12"
         >
           {/* LOGO */}
           <a
