@@ -28,8 +28,17 @@ export default function Navigation() {
 
   const handleNav = (href: string) => {
     setMenuOpen(false);
-    if (href.startsWith("/#")) { window.location.href = href; return; }
-    if (href.startsWith("/")) { window.location.href = href; return; }
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "#");
+      const el = document.querySelector(id);
+      if (el) { el.scrollIntoView({ behavior: "smooth" }); return; }
+      window.location.href = href;
+      return;
+    }
+    if (href.startsWith("/")) {
+      window.location.href = href;
+      return;
+    }
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
