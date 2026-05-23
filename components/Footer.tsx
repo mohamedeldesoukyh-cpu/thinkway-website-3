@@ -9,24 +9,24 @@ export default function Footer() {
   const { t, lang } = useLang();
 
   const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
-    [t("footer.agency")]: [
+    [lang === "ar" ? "الوكالة" : "Agency"]: [
       { label: lang === "ar" ? "من نحن" : "About Us", anchor: "/about" },
       { label: lang === "ar" ? "نهجنا" : "Our Approach", anchor: "/about#why-thinkway" },
       { label: lang === "ar" ? "وظائف" : "Careers", anchor: "/careers" },
     ],
-    [t("footer.services")]: [
+    [lang === "ar" ? "الخدمات" : "Services"]: [
       { label: lang === "ar" ? "حملات المؤثرين" : "Influencer Campaigns", anchor: "#services" },
       { label: lang === "ar" ? "إنتاج المحتوى" : "Content Creation", anchor: "#services" },
       { label: "SOOH", anchor: "#sooh" },
       { label: lang === "ar" ? "استراتيجية العلامة" : "Brand Strategy", anchor: "#services" },
     ],
-    [t("footer.network")]: [
+    [lang === "ar" ? "الشبكة" : "Network"]: [
       { label: lang === "ar" ? "استعرض المبدعين" : "Browse Creators", anchor: "#creators" },
       { label: lang === "ar" ? "برنامج المبدعين" : "Creator Program", anchor: "#program" },
       { label: lang === "ar" ? "انضم كمبدع" : "Apply as Creator", anchor: "#program" },
       { label: lang === "ar" ? "العلامات الشريكة" : "Partner Brands", anchor: "#contact" },
     ],
-    [t("footer.connect")]: [
+    [lang === "ar" ? "تواصل" : "Connect"]: [
       { label: "hello@thinkwaymedia.com" },
       { label: "+201204570000" },
       { label: lang === "ar" ? "الشيخ زايد – الجيزة" : "Sheikh Zayed – Giza" },
