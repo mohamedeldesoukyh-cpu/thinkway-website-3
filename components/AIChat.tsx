@@ -99,7 +99,7 @@ function AIChat() {
                 whiteSpace: "nowrap",
               }}
             >
-              Try Thinkway AI
+              Ask Thinkway AI
             </button>
           )}
 
