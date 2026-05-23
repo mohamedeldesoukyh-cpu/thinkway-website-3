@@ -34,7 +34,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   localStorage.setItem("thinkway_lang", newLang);
   document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
   document.documentElement.lang = newLang;
-  window.location.reload();
 };
 
   useEffect(() => {
