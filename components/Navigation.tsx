@@ -116,13 +116,13 @@ export default function Navigation() {
             </div>
               <button
                 onClick={toggleLang}
-                  fontFamily:
-                    lang === "ar"
-                      ? "var(--font-cairo)"
-                      : "inherit",
+                className="h-[38px] min-w-[44px] px-3 border border-[#e5e5e5] bg-white text-[#8d8d8d] hover:text-[#1535C2] hover:border-[#1535C2] transition-all duration-300 text-[10px] tracking-[0.18em] uppercase flex items-center justify-center rounded-none"
+                style={{
+                  fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit",
                 }}
               >
-                {lang === "en" ? "عربي" : "EN"}
+                {lang === "en" ? "\u0639\u0631\u0628\u064a" : "EN"}
+              </button>
               </button>
             </div>
 
