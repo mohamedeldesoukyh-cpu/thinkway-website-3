@@ -178,6 +178,17 @@ body::before {
   width: max-content;
 }
 
+@keyframes marquee-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.marquee-logos {
+  animation: marquee-logos 20s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
 /* Reveal animation */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
