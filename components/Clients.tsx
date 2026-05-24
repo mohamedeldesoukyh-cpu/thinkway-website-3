@@ -13,6 +13,8 @@ const clients = [
   { name: "Pharco", src: "/media/Pharco.jpg" },
 ];
 
+const doubled = [...clients, ...clients, ...clients];
+
 export default function Clients() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10%" });
@@ -40,14 +42,11 @@ export default function Clients() {
             <h2
               className="font-black uppercase text-[#0a0f1e] leading-[0.9]"
               style={{
-  fontSize:
-    lang === "ar"
-      ? "clamp(18px, 2.5vw, 36px)"
-      : "clamp(36px, 5vw, 70px)",
-  letterSpacing: "-0.04em",
-  lineHeight: "1.2",
-  ...fontStyle,
-}}
+                fontSize: lang === "ar" ? "clamp(18px, 2.5vw, 36px)" : "clamp(36px, 5vw, 70px)",
+                letterSpacing: "-0.04em",
+                lineHeight: "1.2",
+                ...fontStyle,
+              }}
             >
               {lang === "ar" ? "علامات تجارية" : "BRANDS WE'RE"}<br />
               <span className="text-[#1535C2]">{lang === "ar" ? "نفخر بخدمتها" : "PROUD TO SERVE"}</span>
@@ -60,45 +59,43 @@ export default function Clients() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-          {clients.map((client, i) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex items-center justify-center py-12 px-10 overflow-hidden"
+      </div>
+
+      {/* Looping logo marquee */}
+      <div className="relative overflow-hidden py-8 border-y border-[#ebebeb]">
+        <div className="marquee-track">
+          {doubled.map((client, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center mx-12 shrink-0"
+              style={{ width: 160, height: 80 }}
             >
-              <motion.div
-                className="absolute bottom-0 left-0 h-[2px] bg-[#1535C2]"
-                initial={{ width: 0 }}
-                whileHover={{ width: "100%" }}
-                transition={{ duration: 0.4 }}
-              />
-              <div className="relative w-full max-w-[200px] h-[80px]">
+              <div className="relative w-full h-full">
                 <Image
                   src={client.src}
                   alt={client.name}
                   fill
-                  className="object-contain transition-transform duration-400 group-hover:scale-105 mix-blend-multiply"
+                  className="object-contain mix-blend-multiply"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+      </div>
 
+      <div className="container-custom">
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-center text-[10px] tracking-[0.2em] text-[#ccc] uppercase mt-10"
+          className="text-center text-[10px] tracking-[0.2em] text-[#ccc] uppercase py-10"
           style={fontStyle}
         >
           {lang === "ar" ? "موثوق به في مصر ومنطقة الشرق الأوسط وشمال أفريقيا" : "Trusted across Egypt & the MENA region"}
         </motion.p>
-
       </div>
+
     </section>
   );
 }
