@@ -80,7 +80,7 @@ export default function Clients() {
                   src={client.src}
                   alt={client.name}
                   fill
-                  className="object-contain transition-transform duration-400 group-hover:scale-105"
+                  className="object-contain transition-transform duration-400 group-hover:scale-105 mix-blend-multiply"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                 />
               </div>
