@@ -52,7 +52,7 @@ export default function Manifesto() {
 
             <h2
               className="font-black uppercase leading-[0.88] text-[#0a0a0a]"
-              style={{ fontSize: lang === "ar" ? "clamp(26px, 3.5vw, 50px)" : "clamp(42px, 6vw, 80px)", letterSpacing: "-0.02em", lineHeight: lang === "ar" ? "1.3" : "0.88", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
+              style={{ fontSize: lang === "ar" ? "clamp(22px, 5vw, 50px)" : "clamp(32px, 9vw, 80px)", letterSpacing: "-0.02em", lineHeight: lang === "ar" ? "1.3" : "0.88", fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}
             >
               {t("manifesto.line1")}
               <br />{t("manifesto.line2")}
