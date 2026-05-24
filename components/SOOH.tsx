@@ -85,7 +85,7 @@ export default function SOOH() {
           <span className="text-[10px] tracking-[0.35em] text-[#7b9fff] uppercase" style={fontStyle}>{t("sooh.eyebrow")}</span>
         </motion.div>
 
-        <motion.div style={{ y: textY }} className={lang === "ar" ? "mb-[160px]" : "mb-[320px]"}>
+        <motion.div style={{ y: textY }} className={lang === "ar" ? "mb-[80px]" : "mb-[160px]"}>
           {headline.map((word, wi) => (
             <div key={wi} style={{ overflow: "hidden" }}>
               <motion.h2
@@ -93,7 +93,7 @@ export default function SOOH() {
                 animate={inView ? { y: 0, opacity: 1 } : {}}
                 transition={{ delay: 0.1 + wi * 0.14, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="font-black uppercase leading-[1] block"
-                style={{ fontSize: lang === "ar" ? "clamp(26px, 4vw, 60px)" : "clamp(52px, 9vw, 130px)", letterSpacing: "-0.04em", color: wi === 2 ? "#1535C2" : "rgba(255,255,255,0.92)", textShadow: "0 4px 60px rgba(0,0,0,0.5)", lineHeight: lang === "ar" ? "1.3" : "1", ...fontStyle }}
+                style={{ fontSize: lang === "ar" ? "clamp(22px, 3.5vw, 50px)" : "clamp(36px, 6vw, 85px)", letterSpacing: "-0.04em", color: wi === 2 ? "#1535C2" : "rgba(255,255,255,0.92)", textShadow: "0 4px 60px rgba(0,0,0,0.5)", lineHeight: lang === "ar" ? "1.3" : "1", ...fontStyle }}
               >
                 {word}
               </motion.h2>
@@ -102,7 +102,7 @@ export default function SOOH() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24 mt-20">
-          <div className="space-y-8 pt-[160px]">
+          <div className="space-y-8 pt-[60px]">
             {pillars.map((p, i) => (
               <motion.div key={p.num} initial={{ opacity: 0, x: -28 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.5 + i * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="group flex gap-6 py-7 border-b cursor-none" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
                 <span className="text-[10px] font-mono tracking-widest shrink-0 mt-1 transition-colors duration-300 group-hover:text-[#1535C2]" style={{ color: "rgba(255,255,255,0.25)" }}>{p.num}</span>
@@ -118,7 +118,7 @@ export default function SOOH() {
             {BIG_STATS.map((s, i) => (
               <motion.div key={s.labelKey} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 + i * 0.15, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
                 <div className="font-black leading-none tabular-nums"
-style={{ fontSize: lang === "ar" ? "clamp(36px, 5vw, 72px)" : "clamp(52px, 7vw, 96px)", letterSpacing: "-0.04em", color: "#1535C2", textShadow: "0 0 60px rgba(21,53,194,0.4)" }}>
+                style={{ fontSize: lang === "ar" ? "clamp(36px, 5vw, 72px)" : "clamp(52px, 7vw, 96px)", letterSpacing: "-0.04em", color: "#1535C2", textShadow: "0 0 60px rgba(21,53,194,0.4)" }}>
                   <AnimCounter to={s.val} suffix={s.suffix} />
                 </div>
                 <div className="text-[9px] tracking-[0.28em] uppercase mt-2" style={{ color: "rgba(255,255,255,0.35)", ...fontStyle }}>{t(s.labelKey)}</div>
