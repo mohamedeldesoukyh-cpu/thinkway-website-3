@@ -205,23 +205,34 @@ useEffect(() => {
             </div>
 
             {/* Input */}
-            <div style={{ padding: "20px", borderTop: "1px solid #f1f1f1", background: "white" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", background: "#f7f7f7", borderRadius: "16px", padding: "12px 16px" }}>
-                <input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => { if (e.key === "Enter" && !loading) sendMessage(); }}
-                  placeholder="Ask Thinkway AI..."
-                  style={{ flex: 1, background: "transparent", border: "none", outline: "none", fontSize: "14px", color: "#111" }}
-                />
-                <button
-                  onClick={sendMessage}
-                  style={{ width: "44px", height: "44px", borderRadius: "12px", background: "#1535C2", color: "white", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px" }}
-                >
-                  ↑
-                </button>
-              </div>
-            </div>
+<div style={{ padding: "20px", borderTop: "1px solid #f1f1f1", background: "white" }}>
+  <div style={{ display: "flex", alignItems: "flex-end", gap: "12px", background: "#f7f7f7", borderRadius: "16px", padding: "12px 16px" }}>
+    <textarea
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && !e.shiftKey && !loading) {
+          e.preventDefault();
+          sendMessage();
+        }
+      }}
+      placeholder="Ask Thinkway AI... (Shift+Enter for new line)"
+      rows={1}
+      style={{ flex: 1, background: "transparent", border: "none", outline: "none", fontSize: "14px", color: "#111", resize: "none", maxHeight: "120px", overflowY: "auto", lineHeight: "1.5", fontFamily: "inherit" }}
+      onInput={(e) => {
+        const el = e.currentTarget;
+        el.style.height = "auto";
+        el.style.height = Math.min(el.scrollHeight, 120) + "px";
+      }}
+    />
+    <button
+      onClick={sendMessage}
+      style={{ width: "44px", height: "44px", borderRadius: "12px", background: "#1535C2", color: "white", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", flexShrink: 0 }}
+    >
+      ↑
+    </button>
+  </div>
+</div>
           </motion.div>
         )}
       </AnimatePresence>
