@@ -61,7 +61,7 @@ export default function Manifesto() {
             </h2>
 
             <div className="mt-12 flex items-start gap-4">
-              <div className="w-[1px] h-20 bg-gradient-to-b from-[#1535C2] to-transparent shrink-0 mt-1" />
+              <div className="hidden sm:block w-[1px] h-20 bg-gradient-to-b from-[#1535C2] to-transparent shrink-0 mt-1" />
               <p className="text-[11px] tracking-[0.1em] uppercase leading-[2.4] text-[#999] max-w-sm" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
                 {t("manifesto.desc")}
               </p>
