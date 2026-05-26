@@ -25,8 +25,8 @@ export default function AboutPage() {
 
         <Navigation />
 
-        <section style={{ paddingTop: "80px" }} dir={isAr ? "rtl" : "ltr"}>
-          <div className="container-custom" style={{ paddingTop: "120px", paddingBottom: "120px" }}>
+        <section style={{ paddingTop: "20px" }} dir={isAr ? "rtl" : "ltr"}>
+          <div className="container-custom" style={{ paddingTop: "20px", paddingBottom: "120px" }}>
 
             {/* HEADER */}
             <div className="mb-12" style={{ marginTop: "0px" }}>
