@@ -21,12 +21,12 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Language>("en");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("thinkway_lang") as Language;
-    if (saved) setLang(saved);
-  }, []);
+ const [lang, setLang] = useState<Language>(() => {
+  if (typeof window !== "undefined") {
+    return (localStorage.getItem("thinkway_lang") as Language) || "en";
+  }
+  return "en";
+});
 
   const toggleLang = () => {
   const newLang = lang === "en" ? "ar" : "en";
