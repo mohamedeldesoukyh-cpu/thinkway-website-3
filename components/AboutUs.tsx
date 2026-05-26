@@ -31,7 +31,7 @@ export default function AboutUs() {
       <section
         id="about"
         ref={ref}
-        className="pt-16 pb-32 bg-white relative overflow-hidden"
+        className="pt-4 pb-32 bg-white relative overflow-hidden"
         dir={isAr ? "rtl" : "ltr"}
       >
         <div
