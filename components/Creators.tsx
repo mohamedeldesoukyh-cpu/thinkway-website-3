@@ -52,7 +52,7 @@ export default function Creators() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-screen overflow-hidden rounded-3xl"
-style={{ aspectRatio: "16 / 5", marginLeft: "calc(-50vw + 50%)", marginRight: "calc(-50vw + 50%)" }}
+style={{ aspectRatio: "16 / 7", marginLeft: "calc(-50vw + 50%)", marginRight: "calc(-50vw + 50%)" }}
         >
           <Image
             src="/media/Creators_Photo.jpeg"
