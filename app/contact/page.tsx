@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Navigation />
 
       {/* TOP SECTION */}
-      <section className="container-custom pt-40 pb-24" dir={isAr ? "rtl" : "ltr"}>
+      <section className="container-custom pt-16 pb-24" dir={isAr ? "rtl" : "ltr"}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
           {/* LEFT */}

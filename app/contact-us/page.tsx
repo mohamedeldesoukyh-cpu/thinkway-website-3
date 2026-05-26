@@ -30,7 +30,7 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="container-custom relative z-10" style={{ paddingTop: "120px" }}>
+        <div className="container-custom relative z-10" style={{ paddingTop: "40px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 items-start">
 
             {/* LEFT */}
