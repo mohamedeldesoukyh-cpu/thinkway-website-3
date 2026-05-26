@@ -21,7 +21,7 @@ const influencerServicesAr = [
 ];
 
 const soohServicesEn = [
-  { num: "01", category: "Billboard Placement", title: "Premium Placements", desc: "Your brand on high-traffic digital screens and static billboards — malls, highways, city centres across MENA.", tags: ["Digital OOH", "Static", "Malls", "Highways"] },
+  { num: "01", category: "Billboard Placement", title: "Premium Placements", desc: "Your brand on high-traffic digital screens and static billboards — malls, highways, city centres across Egypt.", tags: ["Digital OOH", "Static", "Malls", "Highways"] },
   { num: "02", category: "Creator Activation", title: "Influencer at the Billboard", desc: "Creators film authentic content at your billboard and publish across TikTok, Instagram, and Snapchat.", tags: ["TikTok", "Instagram", "Snapchat", "On-Site"] },
   { num: "03", category: "Double Amplification", title: "Two Channels, One Campaign", desc: "Physical OOH impressions combined with social media reach — maximising brand visibility across both worlds.", tags: ["Dual Channel", "10M+ Impressions", "3x Recall"] },
   { num: "04", category: "Full Tracking", title: "Unified Reporting", desc: "Outdoor impression data plus social engagement and conversions — all in a single dashboard.", tags: ["Analytics", "Impressions", "Engagement", "ROI"] },
