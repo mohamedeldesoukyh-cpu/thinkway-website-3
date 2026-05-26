@@ -29,8 +29,20 @@ export const metadata: Metadata = {
     "digital marketing",
   ],
   icons: {
-    icon: "/favicon.png",
-  },
+  icon: [
+    { url: "/favicon.ico", sizes: "any" },
+    { url: "/favicon.png", type: "image/png" },
+  ],
+  apple: "/favicon.png",
+  shortcut: "/favicon.png",
+},
+openGraph: {
+  title: "THINKWAY — Influencer Marketing Agency",
+  description: "We connect brands with high-impact creators to drive real results. From awareness to conversion — we build campaigns that perform.",
+  url: "https://thinkwaymedia.com",
+  siteName: "Thinkway Media",
+  type: "website",
+},
 };
 
 export default function RootLayout({
