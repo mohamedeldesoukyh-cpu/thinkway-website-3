@@ -92,7 +92,7 @@ export default function Clients() {
           className="text-center text-[10px] tracking-[0.2em] text-[#ccc] uppercase py-10"
           style={fontStyle}
         >
-          {lang === "ar" ? "موثوق به في مصر ومنطقة الشرق الأوسط وشمال أفريقيا" : "Trusted across Egypt & the MENA region"}
+          {lang === "ar" ? "موثوق به في مصر ومنطقة الشرق الأوسط وشمال أفريقيا" : "Trusted across Egypt"}
         </motion.p>
       </div>
 
