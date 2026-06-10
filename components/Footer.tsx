@@ -85,13 +85,15 @@ export default function Footer() {
           {t("footer.copyright")}
         </div>
         <div className="flex items-center gap-8">
-          {[
-            lang === "ar" ? "سياسة الخصوصية" : "Privacy Policy",
-            lang === "ar" ? "شروط الخدمة" : "Terms of Service",
-            lang === "ar" ? "إعدادات الكوكيز" : "Cookie Settings",
-          ].map((l) => (
-            <span key={l} className="text-[9px] tracking-[0.15em] text-[#ccc] uppercase hover:text-[#888] transition-colors cursor-none" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>{l}</span>
-          ))}
+          <a href="/privacy-policy" className="text-[9px] tracking-[0.15em] text-[#ccc] uppercase hover:text-[#0a0a0a] transition-colors cursor-none" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+            {lang === "ar" ? "سياسة الخصوصية" : "Privacy Policy"}
+          </a>
+          <span className="text-[9px] tracking-[0.15em] text-[#ccc] uppercase hover:text-[#888] transition-colors cursor-none" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+            {lang === "ar" ? "شروط الخدمة" : "Terms of Service"}
+          </span>
+          <span className="text-[9px] tracking-[0.15em] text-[#ccc] uppercase hover:text-[#888] transition-colors cursor-none" style={{ fontFamily: lang === "ar" ? "var(--font-cairo)" : "inherit" }}>
+            {lang === "ar" ? "إعدادات الكوكيز" : "Cookie Settings"}
+          </span>
         </div>
       </div>
 
