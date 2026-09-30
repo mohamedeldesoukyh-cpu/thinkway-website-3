@@ -63,7 +63,7 @@ export default function Navigation() {
           <Link href="/" className="block shrink-0" aria-label="Thinkway home">
             <ThinkwayLogo
               priority
-              className="w-[148px] sm:w-[170px] xl:w-[205px] 2xl:w-[225px]"
+              className="w-[120px] sm:w-[140px] xl:w-[170px] 2xl:w-[185px]"
             />
           </Link>
 
@@ -128,7 +128,7 @@ export default function Navigation() {
             className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
           >
             <div className="absolute top-7 left-7">
-              <ThinkwayLogo className="w-[180px]" />
+              <ThinkwayLogo className="w-[140px]" />
             </div>
 
             {navLinks.map((link, i) => (
