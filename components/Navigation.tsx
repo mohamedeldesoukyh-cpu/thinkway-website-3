@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThinkwayLogo from "@/components/ThinkwayLogo";
 
 const navLinks = [
@@ -11,11 +13,12 @@ const navLinks = [
   { label: "Creators", href: "/#creators" },
   { label: "SOOH", href: "/#sooh" },
   { label: "Program", href: "/#program" },
-  { label: "Portfolio", href: "/#clients" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -28,11 +31,11 @@ export default function Navigation() {
   const handleNav = (href: string) => {
     setMenuOpen(false);
     if (href.startsWith("/#")) {
-      window.location.href = href;
+      window.location.assign(href);
       return;
     }
     if (href.startsWith("/")) {
-      window.location.href = href;
+      window.location.assign(href);
       return;
     }
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -58,9 +61,9 @@ export default function Navigation() {
         >
 
           {/* LOGO */}
-          <a href="/" className="block">
+          <Link href="/" className="block">
             <ThinkwayLogo variant="dark" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 justify-center">
@@ -68,7 +71,10 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
-                className="text-[11px] tracking-[0.22em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors duration-300"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={`text-[11px] tracking-[0.22em] uppercase hover:text-[#0a0a0a] transition-colors duration-300 ${
+                  pathname === link.href ? "font-semibold text-[#1535C2]" : "text-[#9a9a9a]"
+                }`}
               >
                 {link.label}
               </button>
@@ -88,6 +94,8 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
             className="md:hidden flex flex-col gap-[5px] p-2"
           >
             <motion.span
@@ -128,7 +136,10 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 onClick={() => handleNav(link.href)}
-                className="text-3xl font-black tracking-[-0.04em] uppercase text-[#0a0a0a]"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={`text-3xl font-black tracking-[-0.04em] uppercase ${
+                  pathname === link.href ? "text-[#1535C2]" : "text-[#0a0a0a]"
+                }`}
               >
                 {link.label}
               </motion.button>
