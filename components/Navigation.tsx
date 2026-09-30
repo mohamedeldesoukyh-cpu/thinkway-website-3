@@ -56,17 +56,19 @@ export default function Navigation() {
         }}
       >
         <div
-          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-20"
-          style={{ padding: "0 48px" }}
+          className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-20 gap-4 px-5 sm:px-8 xl:px-12"
         >
 
           {/* LOGO */}
-          <Link href="/" className="block">
-            <ThinkwayLogo variant="dark" />
+          <Link href="/" className="block shrink-0" aria-label="Thinkway home">
+            <ThinkwayLogo
+              priority
+              className="w-[148px] sm:w-[170px] xl:w-[205px] 2xl:w-[225px]"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 justify-center">
+          <div className="hidden xl:flex flex-1 items-center justify-center gap-3 2xl:gap-6">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -82,7 +84,7 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden xl:flex items-center shrink-0">
             <button
               onClick={() => handleNav("/contact-us")}
               className="btn-primary"
@@ -96,7 +98,7 @@ export default function Navigation() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={menuOpen}
-            className="md:hidden flex flex-col gap-[5px] p-2"
+            className="xl:hidden flex flex-col gap-[5px] p-2"
           >
             <motion.span
               animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -126,7 +128,7 @@ export default function Navigation() {
             className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
           >
             <div className="absolute top-7 left-7">
-              <ThinkwayLogo variant="dark" />
+              <ThinkwayLogo className="w-[180px]" />
             </div>
 
             {navLinks.map((link, i) => (

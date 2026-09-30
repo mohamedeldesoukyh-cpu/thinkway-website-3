@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThinkwayLogo from "@/components/ThinkwayLogo";
 
 function AIChat() {
   const [messages, setMessages] = useState(() => {
@@ -167,7 +168,7 @@ useEffect(() => {
           >
             {/* Header */}
             <div style={{ padding: "20px 28px", borderBottom: "1px solid #f1f1f1", background: "white", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src="/media/Thinkway AI Logo.jpg" alt="Thinkway AI" style={{ height: "56px", objectFit: "contain" }} />
+              <ThinkwayLogo className="w-[180px]" />
               <button
                 onClick={() => setOpen(false)}
                 style={{ position: "absolute", right: "20px", width: "40px", height: "40px", borderRadius: "50%", background: "#f7f7f7", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}

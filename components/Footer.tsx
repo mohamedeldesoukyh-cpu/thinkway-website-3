@@ -47,7 +47,7 @@ export default function Footer() {
         {/* Brand — centered */}
         <div className="flex flex-col items-center mb-16">
           <div className="mb-6">
-            <ThinkwayLogo variant="dark" />
+            <ThinkwayLogo className="w-[220px] max-w-full" />
           </div>
           <p className="text-[10px] text-[#bbb] tracking-[0.1em] uppercase leading-[2.4] max-w-xs mb-8">
             Where influence meets strategy. We build campaigns that move culture — and move product.
