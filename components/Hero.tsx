@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const HERO_VIDEO = "/media/make_looping_animation_extended_202605100112.mp4";
@@ -16,8 +16,6 @@ const HEADLINE = ["YOUR BRAND", "DESERVES", "MORE THAN", "ADS."];
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -28,10 +26,6 @@ export default function Hero() {
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   const [videoReady, setVideoReady] = useState(false);
-
-  useEffect(() => {
-    videoRef.current?.play().catch(() => {});
-  }, []);
 
   return (
     <section
@@ -44,20 +38,20 @@ export default function Hero() {
         style={{ scale: videoScale }}
       >
         <video
-          ref={videoRef}
           src={HERO_VIDEO}
           autoPlay
           muted
           loop
           playsInline
-          onCanPlay={() => setVideoReady(true)}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 0.6 : 0 }}
+          preload="auto"
+          onLoadedData={() => setVideoReady(true)}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0.6 }}
         />
 
         <div
-          className="absolute inset-0 bg-white transition-opacity duration-1000"
-          style={{ opacity: videoReady ? 0 : 1, pointerEvents: "none" }}
+          className="absolute inset-0 bg-white transition-opacity duration-300"
+          style={{ opacity: videoReady ? 0 : 0.4, pointerEvents: "none" }}
         />
 
         {/* Left Fade */}
