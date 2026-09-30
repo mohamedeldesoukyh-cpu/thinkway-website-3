@@ -57,6 +57,7 @@ export default function Navigation() {
       >
         <div
           className="w-full max-w-[1440px] mx-auto flex items-center justify-between h-20 gap-4 px-5 sm:px-8 xl:px-12"
+          style={{ paddingInline: "clamp(24px, 3vw, 40px)" }}
         >
 
           {/* LOGO */}
