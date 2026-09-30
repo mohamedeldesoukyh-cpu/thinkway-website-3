@@ -3,13 +3,24 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { Bricolage_Grotesque } from "next/font/google";
 
-const clients = [
-  { name: "AM Group",                 src: "/media/AM Group.png" },
-  { name: "Arab Bank of Egypt",       src: "/media/Arab Bank of Egypt.jpg" },
-  { name: "Grand Water Technologies", src: "/media/Grand water Technologies.jpg" },
-  { name: "Praxo Pharm",               src: "/media/Praxo Pharm 2.jpg" },
-  { name: "Pharco",               src: "/media/Pharco.jpg" },
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+});
+
+const clients: { name: string; src?: string }[] = [
+  { name: "Arab Bank", src: "/portfolio/image-16.webp" },
+  { name: "NBK", src: "/portfolio/image-17.webp" },
+  { name: "Mobil", src: "/portfolio/image-18.webp" },
+  { name: "Formula 1", src: "/portfolio/image-19.webp" },
+  { name: "Dolphin", src: "/portfolio/image-20.webp" },
+  { name: "Americana" },
+  { name: "Vileda" },
+  { name: "Pharco Pharmaceuticals", src: "/portfolio/image-21.webp" },
+  { name: "Limitless Naturals", src: "/portfolio/image-22.webp" },
+  { name: "All Group-Misr", src: "/portfolio/image-23.webp" },
 ];
 
 export default function Clients() {
@@ -44,20 +55,20 @@ export default function Clients() {
               <span className="text-[#1535C2]">PROUD TO SERVE</span>
             </h2>
           </div>
-          <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.4] max-w-[260px]">
-            We partner with forward-thinking brands that believe in the power of authentic influence and measurable results.
+          <p className="text-[10px] text-[#aaa] tracking-[0.1em] uppercase leading-[2.4] max-w-[300px]">
+            We work across banking, energy and motorsport, food and home, health and wellness, and trading—connecting brands with creators and audiences.
           </p>
         </motion.div>
 
-        {/* Logo grid — full colour, 100% opacity */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+        {/* Client brands featured in the portfolio */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
           {clients.map((client, i) => (
             <motion.div
               key={client.name}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex items-center justify-center py-12 px-10 overflow-hidden"
+              className={`${bricolage.variable} group relative flex items-center justify-center py-8 px-6 overflow-hidden`}
             >
               {/* Hover accent line */}
               <motion.div
@@ -67,14 +78,28 @@ export default function Clients() {
                 transition={{ duration: 0.4 }}
               />
 
-              <div className="relative w-full max-w-[200px] h-[80px]">
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  fill
-                  className="object-contain transition-transform duration-400 group-hover:scale-105"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-                />
+              <div className="relative w-full max-w-[200px] h-[80px] flex items-center justify-center">
+                {client.src ? (
+                  <Image
+                    src={client.src}
+                    alt={client.name}
+                    fill
+                    className="object-contain transition-transform duration-400 group-hover:scale-105"
+                  />
+                ) : (
+                  <span
+                    className="text-2xl font-extrabold tracking-tight text-[#0a0f1e] transition-transform duration-400 group-hover:scale-105"
+                    style={{
+                      fontFamily: "var(--font-bricolage)",
+                      fontSize: "26px",
+                      fontWeight: 800,
+                      letterSpacing: "-0.02em",
+                      color: "#0B1026",
+                    }}
+                  >
+                    {client.name}
+                  </span>
+                )}
               </div>
             </motion.div>
           ))}
