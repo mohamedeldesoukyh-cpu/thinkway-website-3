@@ -1,13 +1,12 @@
-"use client”;
+"use client";
 
-import Navigation from “@/components/Navigation”;
-import Footer from “@/components/Footer”;
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function ProgramPage() {
 return (
 <main className="bg-[#020617] min-h-screen overflow-x-hidden text-white">
 
-```
   <Navigation />
 
   <div
@@ -63,7 +62,7 @@ return (
           </h1>
 
           <p className="text-[15px] text-[#a1a1aa] leading-[2] max-w-md mb-14">
-            Join Thinkway's creator network and collaborate with premium
+            Join Thinkway&apos;s creator network and collaborate with premium
             brands across influencer marketing, SOOH campaigns, UGC,
             and performance-driven activations.
           </p>
@@ -148,7 +147,5 @@ return (
   <Footer />
 
 </main>
-```
-
 );
 }
