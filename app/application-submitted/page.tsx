@@ -1,21 +1,15 @@
+import Link from "next/link";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+
 export default function ApplicationSubmittedPage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "linear-gradient(135deg, #0f172a 0%, #111827 35%, #172554 100%)",
-        color: "white",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "sans-serif",
-        padding: "40px",
-      }}
-    >
+    <main className="min-h-screen flex flex-col bg-[#0f172a] text-white">
+      <Navigation />
+      <section className="flex flex-1 items-center justify-center px-6 py-24">
       <div
         style={{
-          maxWidth: "700px",
+          maxWidth: "44rem",
           width: "100%",
           textAlign: "center",
         }}
@@ -91,7 +85,7 @@ export default function ApplicationSubmittedPage() {
           collaborations, we’ll contact you shortly.
         </p>
 
-        <a
+        <Link
           href="/"
           style={{
             display: "inline-block",
@@ -111,7 +105,7 @@ export default function ApplicationSubmittedPage() {
           }}
         >
           Back to Homepage
-        </a>
+        </Link>
 
         <style>{`
           @keyframes pop {
@@ -126,6 +120,8 @@ export default function ApplicationSubmittedPage() {
           }
         `}</style>
       </div>
+      </section>
+      <Footer />
     </main>
   );
 }

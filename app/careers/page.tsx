@@ -1,7 +1,13 @@
+import Link from "next/link";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+
 export default function CareersPage() {
   return (
-    <main className="min-h-screen bg-[#f8f8f8] flex items-center justify-center px-6">
-      <div className="text-center max-w-2xl">
+    <main className="min-h-screen bg-[#f8f8f8] flex flex-col">
+      <Navigation />
+      <section className="container-custom flex flex-1 items-center justify-center py-24">
+        <div className="text-center max-w-2xl">
         
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#1535C2] mb-6">
           Careers
@@ -26,16 +32,18 @@ export default function CareersPage() {
 
         <p className="mt-4 text-[#b0b0b0] uppercase tracking-[0.2em] text-[10px]">
           No open positions currently.
-          <a
-  href="/"
-  className="inline-flex items-center gap-3 mt-10 bg-[#1535C2] text-white px-8 py-4 text-[11px] tracking-[0.2em] uppercase hover:bg-[#2a4fd4] transition-all duration-300"
->
-  Back To Home
-  <span>→</span>
-</a>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-3 mt-10 bg-[#1535C2] text-white px-8 py-4 text-[11px] tracking-[0.2em] uppercase hover:bg-[#2a4fd4] transition-all duration-300"
+          >
+            Back To Home
+            <span>→</span>
+          </Link>
         </p>
 
-      </div>
+        </div>
+      </section>
+      <Footer />
     </main>
   );
 }

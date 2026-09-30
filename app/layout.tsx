@@ -50,7 +50,7 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.variable} antialiased`}>
-        {children}
+        <div className="site-shell">{children}</div>
       </body>
     </html>
   );

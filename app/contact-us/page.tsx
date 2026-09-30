@@ -10,8 +10,7 @@ export default function ContactPage() {
       <Navigation />
 
       <section
-        className="relative pb-32 overflow-hidden"
-        style={{ paddingTop: "80px" }}
+        className="relative overflow-hidden site-route-section"
       >
 
         <div
@@ -29,7 +28,7 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="container-custom relative z-10" style={{ paddingTop: "120px" }}>
+        <div className="container-custom relative z-10">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 items-start">
 

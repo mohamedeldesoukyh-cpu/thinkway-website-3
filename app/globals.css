@@ -8,6 +8,18 @@
   --gold: #c9a84c;
   --muted: #888888;
   --border: #e8e8e8;
+  --type-display: clamp(2.375rem, 4.4vw, 4rem);
+  --type-h1: clamp(2.5rem, 3.9vw, 3.5rem);
+  --type-h2: clamp(2rem, 3.2vw, 3rem);
+  --type-h3: clamp(1.25rem, 1.9vw, 1.75rem);
+  --type-h4: clamp(1.125rem, 1.4vw, 1.5rem);
+  --type-body-large: clamp(1rem, 1.1vw, 1.125rem);
+  --type-body: clamp(0.9375rem, 1vw, 1rem);
+  --type-support: clamp(0.8125rem, 0.9vw, 0.875rem);
+  --type-label: clamp(0.625rem, 0.8vw, 0.75rem);
+  --layout-gutter: clamp(1.5rem, 3.33vw, 3rem);
+  --section-space: clamp(4rem, 7.2vw, 6.5rem);
+  --control-height: 3rem;
 }
 
 * {
@@ -23,9 +35,123 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   cursor: none;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.site-shell > main h1,
+.site-shell > main h2,
+.site-shell > main h3,
+.site-shell > main h4,
+.site-shell > main h5,
+.site-shell > main h6 {
+  line-height: 1.08 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.site-shell > main h1 {
+  font-size: var(--type-h1) !important;
+  line-height: 0.98 !important;
+}
+
+.site-shell > main .site-display-title {
+  font-size: var(--type-display) !important;
+}
+
+.site-shell > main h2 {
+  font-size: var(--type-h2) !important;
+  line-height: 1.08 !important;
+}
+
+.site-shell > main .site-subheading {
+  font-size: var(--type-h3) !important;
+  line-height: 1.2 !important;
+}
+
+.site-shell > main h3 {
+  font-size: var(--type-h3) !important;
+  line-height: 1.2 !important;
+}
+
+.site-shell > main h4 {
+  font-size: var(--type-h4) !important;
+}
+
+.site-shell > main p {
+  font-size: var(--type-body) !important;
+  line-height: 1.65 !important;
+}
+
+.site-shell > main :is(p, span, div, label, li)[class*="text-[9px]"],
+.site-shell > main :is(p, span, div, label, li)[class*="text-[10px]"],
+.site-shell > main :is(p, span, div, label, li)[class*="text-[11px]"] {
+  font-size: var(--type-support) !important;
+}
+
+.site-shell > main :is(p, span, div, label, li)[class*="tracking-[0.3em]"][class*="uppercase"],
+.site-shell > main :is(p, span, div, label, li)[class*="tracking-[0.35em]"][class*="uppercase"] {
+  font-size: var(--type-label) !important;
+  line-height: 1.5 !important;
+}
+
+.site-shell > main nav button {
+  min-height: 2.75rem;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+.site-shell > main .site-mobile-menu button {
+  min-height: 2.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem) !important;
+  letter-spacing: -0.03em !important;
+}
+
+.site-shell > main footer :is(a, p, li, [class*="text-[9px]"], [class*="text-[10px]"]) {
+  font-size: var(--type-support) !important;
+  line-height: 1.6 !important;
+}
+
+.site-shell > main :is(input, textarea, select) {
+  min-height: var(--control-height);
+  padding-block: 0.75rem !important;
+  font-family: inherit;
+  font-size: var(--type-body) !important;
+  line-height: 1.5 !important;
+}
+
+.site-shell > main textarea {
+  min-height: 7.5rem;
+}
+
+.site-shell > main form :is(button, [type="submit"]) {
+  min-height: var(--control-height);
+  padding: 0.75rem 1.5rem !important;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.1em !important;
+}
+
+.site-shell > main .site-route-content {
+  padding-block: var(--section-space) !important;
+}
+
+.site-shell > main .site-route-section {
+  padding-top: calc(5rem + var(--section-space)) !important;
+  padding-bottom: var(--section-space) !important;
+}
+
+.site-shell > main .max-w-4xl.container-custom {
+  max-width: 56rem;
+}
+
+.site-shell > main :is(button, a):focus-visible,
+.site-shell > main :is(input, textarea, select):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* Custom cursor */
@@ -109,10 +235,11 @@ body::before {
   gap: 10px;
   background: #1535C2;
   color: #fff;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  min-height: var(--control-height);
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 16px 36px;
+  padding: 12px clamp(20px, 2.5vw, 32px);
   transition: background 0.3s, transform 0.3s;
   cursor: none;
 }
@@ -127,10 +254,11 @@ body::before {
   gap: 10px;
   background: transparent;
   color: #0a0a0a;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  min-height: var(--control-height);
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 16px 36px;
+  padding: 12px clamp(20px, 2.5vw, 32px);
   border: 1px solid #d8d8d8;
   transition: border-color 0.3s, background 0.3s;
   cursor: none;
@@ -144,26 +272,46 @@ body::before {
 
 /* Section spacing */
 .section-padding {
-  padding: 120px 0;
+  padding-block: var(--section-space);
 }
 
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 80px 0;
-  }
+.site-shell > main .section-padding {
+  padding-block: var(--section-space);
 }
 
 /* Container */
 .container-custom {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 48px;
+  padding-inline: var(--layout-gutter);
 }
 
-@media (max-width: 768px) {
-  .container-custom {
-    padding: 0 24px;
-  }
+.site-shell > main :is(.mb-28, .mb-24, .mb-20, .mb-16, .mb-14, .mt-16, .mt-20, .mt-24) {
+  margin-block: 0;
+}
+
+.site-shell > main .mb-28 { margin-bottom: clamp(3rem, 6vw, 5.5rem) !important; }
+.site-shell > main .mb-24 { margin-bottom: clamp(2.5rem, 5.2vw, 4.5rem) !important; }
+.site-shell > main .mb-20 { margin-bottom: clamp(2rem, 4.2vw, 4rem) !important; }
+.site-shell > main .mb-16 { margin-bottom: clamp(1.75rem, 3.5vw, 3.25rem) !important; }
+.site-shell > main .mb-14 { margin-bottom: clamp(1.5rem, 3vw, 3rem) !important; }
+.site-shell > main .mt-16 { margin-top: clamp(2rem, 4vw, 3.5rem) !important; }
+.site-shell > main .mt-20 { margin-top: clamp(2.5rem, 5vw, 4.5rem) !important; }
+.site-shell > main .mt-24 { margin-top: clamp(3rem, 6vw, 5.5rem) !important; }
+
+.site-shell > main :is(.gap-24, .gap-28) {
+  gap: clamp(2rem, 5vw, 5rem) !important;
+}
+
+.site-shell > main .py-24,
+.site-shell > main .py-32,
+.site-shell > main .pb-32 {
+  padding-block: var(--section-space) !important;
+}
+
+.site-shell > main .pt-28 {
+  padding-top: clamp(5rem, 8vw, 7rem) !important;
 }
 
 /* Marquee */

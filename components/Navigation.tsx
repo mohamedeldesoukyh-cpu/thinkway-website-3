@@ -126,7 +126,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+            className="site-mobile-menu fixed inset-0 z-40 bg-[#f5f5f3]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
           >
             <div className="absolute top-7 left-7">
               <ThinkwayLogo className="w-[120px]" />

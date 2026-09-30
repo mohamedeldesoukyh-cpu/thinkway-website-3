@@ -34,8 +34,7 @@ return (
     />
 
     <div
-      className="container-custom relative z-10 pb-32"
-      style={{ paddingTop: "120px" }}
+      className="container-custom relative z-10 site-route-content"
     >
 
       <div className="grid lg:grid-cols-2 gap-24 items-start">

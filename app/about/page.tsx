@@ -21,7 +21,7 @@ export default function AboutPage() {
         <Navigation />
 
         <section style={{ paddingTop: "80px" }}>
-          <div className="container-custom" style={{ paddingTop: "120px", paddingBottom: "120px" }}>
+          <div className="container-custom site-route-content">
 
             {/* HEADER */}
             <div className="mb-24">
@@ -42,7 +42,7 @@ export default function AboutPage() {
             {/* INTRO */}
             <div className="max-w-[760px] mb-28">
               <h2
-                className="font-black text-black mb-8 uppercase"
+                className="site-subheading font-black text-black mb-8 uppercase"
                 style={{ fontSize: "clamp(18px,2vw,26px)", letterSpacing: "-0.02em", lineHeight: "1.3" }}
               >
                 We Don&apos;t Just Run Campaigns —

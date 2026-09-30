@@ -185,7 +185,7 @@ export default function Hero() {
                     delay: 0.5 + i * 0.12,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="block font-black uppercase leading-[0.9] text-[#0a0a0a]"
+                  className="site-display-title block font-black uppercase leading-[0.9] text-[#0a0a0a]"
                   style={{
                     fontSize: "clamp(38px, 5.5vw, 76px)",
                     letterSpacing: "-0.03em",
