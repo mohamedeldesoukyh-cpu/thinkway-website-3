@@ -53,22 +53,31 @@ export default function Footer() {
             Where influence meets strategy. We build campaigns that move culture — and move product.
           </p>
           <div className="flex gap-3 justify-center">
-            {[
-              { label: "IG", href: "https://www.instagram.com/thinkway_tw" },
-              { label: "TT", href: null },
-              { label: "LI", href: "https://www.linkedin.com/company/thinkwaymedia/" },
-              { label: "YT", href: null },
-            ].map(({ label, href }) =>
-              href ? (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
-                  {label}
-                </a>
-              ) : (
-                <div key={label} className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[10px] text-[#ccc] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none">
-                  {label}
-                </div>
-              )
-            )}
+            <a
+              href="https://www.instagram.com/thinkway_media/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Thinkway on Instagram"
+              className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[#888] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/thinkwaymedia/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Thinkway on LinkedIn"
+              className="w-9 h-9 border border-[#e0e0e0] bg-white flex items-center justify-center text-[#888] hover:border-[#1535C2] hover:text-[#1535C2] transition-all duration-300 cursor-none"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                <circle cx="5.25" cy="6" r="1.75" />
+                <path d="M3.75 9.25h3v11h-3zM9.25 9.25h2.9v1.5h.05c.4-.75 1.4-1.85 3.55-1.85 3.8 0 4.5 2.4 4.5 5.5v5.85h-3v-5.2c0-1.25-.02-2.85-1.75-2.85-1.75 0-2 1.35-2 2.75v5.3h-3z" />
+              </svg>
+            </a>
           </div>
         </div>
 
