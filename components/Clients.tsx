@@ -17,7 +17,7 @@ export default function Clients() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section ref={ref} className="bg-[#f8f8f8] overflow-hidden">
+    <section id="clients" ref={ref} className="bg-[#f8f8f8] overflow-hidden">
 
       {/* Top rule */}
       <div className="hr-line mx-12" />
