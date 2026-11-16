@@ -10,7 +10,6 @@ import Services from "@/components/Services";
 import Creators from "@/components/Creators";
 import Clients from "@/components/Clients";
 import SOOH from "@/components/SOOH";
-import CreatorProgram from "@/components/CreatorProgram";
 import CampaignBrief from "@/components/CampaignBrief";
 import Footer from "@/components/Footer";
 import AIChat from "@/components/AIChat";
@@ -26,7 +25,6 @@ export default function Home() {
       <Services />
       <Creators />
       <SOOH />
-      <CreatorProgram />
       <CampaignBrief />
       <Clients />
       <Footer />

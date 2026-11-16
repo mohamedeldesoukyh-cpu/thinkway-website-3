@@ -19,8 +19,6 @@ const footerLinks: Record<string, { label: string; anchor?: string }[]> = {
   ],
   Network: [
     { label: "Browse Creators", anchor: "#creators" },
-    { label: "Creator Program", anchor: "#program" },
-    { label: "Apply as Creator", anchor: "#program" },
     { label: "Partner Brands", anchor: "#contact" },
   ],
   Connect: [

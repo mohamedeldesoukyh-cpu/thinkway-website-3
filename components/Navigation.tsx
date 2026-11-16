@@ -12,7 +12,6 @@ const navLinks = [
   { label: "Services", href: "/#services" },
   { label: "Creators", href: "/#creators" },
   { label: "SOOH", href: "/#sooh" },
-  { label: "Program", href: "/#program" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact Us", href: "/contact-us" },
 ];

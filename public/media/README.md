@@ -18,7 +18,6 @@ All images should be exported at minimum 2560×1440px (JPG or WebP).
 | campaign-showcase.jpg | Stats section background | #6 | 4:3 |
 | analytics-bg.jpg | Stats / Analytics background | #7 | 16:9 |
 | brand-partnerships.jpg | Packages section accent | #8 | 4:3 |
-| process-flatlay.jpg | Creator Program section | #9 | 4:3 |
 | testimonial.jpg | Testimonial quote image | #10 | 3:2 |
 | cta-bg.jpg | Campaign Brief / CTA section | #11 | 16:9 |
 | footer-texture.jpg | Footer background texture | #12 | 21:9 |
